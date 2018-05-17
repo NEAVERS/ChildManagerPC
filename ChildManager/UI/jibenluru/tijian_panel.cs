@@ -1606,7 +1606,7 @@ namespace ChildManager.UI.jibenluru
             }
             if (comboBox1.SelectedValue is TB_CHILDCHECK)
             {
-                checkid = (comboBox1.SelectedValue as TB_CHILDCHECK).ID;
+                checkid = (int)(comboBox1.SelectedValue as TB_CHILDCHECK).ID;
                 RefreshcheckCode(checkid);
             }
 

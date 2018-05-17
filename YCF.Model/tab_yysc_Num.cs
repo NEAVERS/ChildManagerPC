@@ -15,7 +15,7 @@ namespace YCF.Model
     public partial class TAB_YYSC_NUM
     {
         public decimal ID { get; set; }
-        public int YUELING { get; set; }
+        public decimal YUELING { get; set; }
         public string P10 { get; set; }
         public string P25 { get; set; }
         public string P50 { get; set; }

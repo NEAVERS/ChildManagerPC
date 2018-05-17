@@ -56,8 +56,8 @@ namespace ChildManager.UI
                     {
 
                         DataGridViewRow row = new DataGridViewRow();
-                        row.CreateCells(dataGridViewX1, i, obj.childgender,
-                            obj.childbirthday, obj.telephone, obj.fathername, obj.mothername, obj.identityno,obj.telephone);
+                        row.CreateCells(dataGridViewX1, i, obj.CHILDGENDER,
+                            obj.CHILDBIRTHDAY, obj.TELEPHONE, obj.FATHERNAME, obj.MOTHERNAME, obj.IDENTITYNO,obj.TELEPHONE);
                         row.Tag = obj;
                         dataGridViewX1.Rows.Add(row);
                         i++;

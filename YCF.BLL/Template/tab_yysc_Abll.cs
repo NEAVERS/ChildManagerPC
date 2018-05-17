@@ -17,7 +17,7 @@ namespace YCF.BLL.Template
 
         public tab_yysc_Numbll()
         {
-            orders = new List<Expression<Func<TAB_YYSC_NUM, int>>>() { t => t.YUELING };
+            orders = new List<Expression<Func<TAB_YYSC_NUM, int>>>() { t => (int)t.YUELING };
             isAscs = new List<bool>() { true };
         }
         public TAB_YYSC_NUM GetObj(string type, int yueling)
@@ -34,7 +34,7 @@ namespace YCF.BLL.Template
         public int GetMinYueling(string type)
         {
             var list = dal.GetList(t => t.TYPE == type, orders, isAscs);
-            return list[0].YUELING;
+            return (int)list[0].YUELING;
         }
 
         public string GetResultP50(string type, string num)

@@ -70,7 +70,7 @@ namespace ChildManager.UI.childSetInfo
                     foreach (childSetNutritionguidObj obj in list)
                     {
                         DataGridViewRow row = new DataGridViewRow();
-                        row.CreateCells(dgvNutrition, obj.SetAge, obj.ID);
+                        row.CreateCells(dgvNutrition, obj.SetAge, obj.Id);
                         row.Tag = obj;
                         dgvNutrition.Rows.Add(row);
                         this.dgvNutrition.Rows[0].Selected = true;
@@ -97,7 +97,7 @@ namespace ChildManager.UI.childSetInfo
             {
                  this.txt_shiyingxing.Text = obj.Shiyongxing;
                  this.txt_big.Text = obj.Bigdongzuo;
-                 id = obj.ID;
+                 id = obj.Id;
             }
             else
             {

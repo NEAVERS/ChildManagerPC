@@ -35,21 +35,21 @@ namespace ChildManager.UI.jibenluru
             InitializeComponent();
             _womeninfo = womeninfo;
             jibenobj = new tb_childbasebll().Get(_womeninfo.cd_id);
-            _sex = jibenobj.childgender;
+            _sex = jibenobj.CHILDGENDER;
             if (_sex == "性别不明")
             {
                 _sex = "男";
             }
-            _birthtime = jibenobj.childbirthday;
-            _ispre = jibenobj.ispre;
+            _birthtime = jibenobj.CHILDBIRTHDAY;
+            _ispre = jibenobj.ISPRE;
             if (!String.IsNullOrEmpty(_ispre) && _ispre == "1")
             {
                 ckb_isPre.Checked = true;
             }
-            _week = jibenobj.cs_week;
-            _days = jibenobj.cs_day;
-            _weight = jibenobj.birthweight;
-            _height = jibenobj.birthheight;
+            _week = jibenobj.CS_WEEK;
+            _days = jibenobj.CS_DAY;
+            _weight = jibenobj.BIRTHWEIGHT;
+            _height = jibenobj.BIRTHHEIGHT;
             //计算月份
             int[] age = getAgeBytime(_birthtime, DateTime.Now.ToString("yyyy-MM-dd"));
             double aa = (double)age[2] / 30;

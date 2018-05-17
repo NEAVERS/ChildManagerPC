@@ -83,7 +83,7 @@ namespace ChildManager.UI
                 {
                     obj.jiuzhenCardNo += "," + _txtNo;
                 }
-                int id = obj.ID;
+                int id = obj.id;
                 globalInfoClass.Wm_Index = id;
                 _panelyibanxinximain.obj = obj;
                 _panelyibanxinximain.RefreshCode();
@@ -105,7 +105,7 @@ namespace ChildManager.UI
                 {
                     obj.jiuzhenCardNo += "," + _txtNo;
                 }
-                int id = obj.ID;
+                int id = obj.Id;
                 globalInfoClass.Wm_Index = id;
                 _panelyibanxinximain.obj = obj;
                 _panelyibanxinximain.RefreshCode();

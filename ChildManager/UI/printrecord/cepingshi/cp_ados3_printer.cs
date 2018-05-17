@@ -175,7 +175,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("刻板的/特异的使用单字或片语", rect, g);
             left += 400;
             rect = new Rectangle(left, top, 45, 30);
-            MiddleLeftPrintTextAndLine(_obj.gt_kb, rect, g);
+            MiddleLeftPrintTextAndLine(_obj.GT_KB, rect, g);
 
 
             top += 25;
@@ -184,7 +184,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("报告事件", rect, g);
             left += 400;
             rect = new Rectangle(left, top, 45, 30);
-            MiddleLeftPrintTextAndLine(_obj.gt_bgsj, rect, g);
+            MiddleLeftPrintTextAndLine(_obj.GT_BGSJ, rect, g);
 
             top += 25;
             left = _rectBody.Left;
@@ -192,7 +192,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("会话", rect, g);
             left += 400;
             rect = new Rectangle(left, top, 45, 30);
-            MiddleLeftPrintTextAndLine(_obj.gt_hh, rect, g);
+            MiddleLeftPrintTextAndLine(_obj.GT_HH, rect, g);
 
             top += 25;
             left = _rectBody.Left;
@@ -200,7 +200,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("描述性、惯用的、工具性的、或资讯性的姿势动作", rect, g);
             left += 400;
             rect = new Rectangle(left, top, 45, 30);
-            MiddleLeftPrintTextAndLine(_obj.gt_msxdz, rect, g);
+            MiddleLeftPrintTextAndLine(_obj.GT_MSXDZ, rect, g);
             
             top += 25;
             left = _rectBody.Left + 300;
@@ -208,7 +208,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             BoldMiddleLeftPrintText("           沟通总分：", rect, g);
             left += 180;
             rect = new Rectangle(left, top, 45, 30);
-            MiddleLeftPrintTextAndLine(_obj.gt_sum, rect, g);
+            MiddleLeftPrintTextAndLine(_obj.GT_SUM, rect, g);
 
             top += 20;
             left = _rectBody.Left + 200;
@@ -229,7 +229,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("不寻常的眼神接触", rect, g);
             left += 400;
             rect = new Rectangle(left, top, 45, 30);
-            MiddleLeftPrintTextAndLine(_obj.hd_bxc, rect, g);
+            MiddleLeftPrintTextAndLine(_obj.HD_BXC, rect, g);
 
             top += 25;
             left = _rectBody.Left;
@@ -237,7 +237,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("朝向他人的脸部表情", rect, g);
             left += 400;
             rect = new Rectangle(left, top, 45, 30);
-            MiddleLeftPrintTextAndLine(_obj.hd_cxtr, rect, g);
+            MiddleLeftPrintTextAndLine(_obj.HD_CXTR, rect, g);
 
             top += 25;
             left = _rectBody.Left;
@@ -245,7 +245,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("洞察力", rect, g);
             left += 400;
             rect = new Rectangle(left, top, 45, 30);
-            MiddleLeftPrintTextAndLine(_obj.hd_dcl, rect, g);
+            MiddleLeftPrintTextAndLine(_obj.HD_DCL, rect, g);
 
             top += 25;
             left = _rectBody.Left;
@@ -253,7 +253,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("主动表达社交意向的品质", rect, g);
             left += 400;
             rect = new Rectangle(left, top, 45, 30);
-            MiddleLeftPrintTextAndLine(_obj.hd_zdbd, rect, g);
+            MiddleLeftPrintTextAndLine(_obj.HD_ZDBD, rect, g);
 
             top += 25;
             left = _rectBody.Left;
@@ -261,7 +261,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("社交反应品质", rect, g);
             left += 400;
             rect = new Rectangle(left, top, 45, 30);
-            MiddleLeftPrintTextAndLine(_obj.hd_sjfy, rect, g);
+            MiddleLeftPrintTextAndLine(_obj.HD_SJFY, rect, g);
 
             top += 25;
             left = _rectBody.Left;
@@ -269,7 +269,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("相互性社会沟通的数量", rect, g);
             left += 400;
             rect = new Rectangle(left, top, 45, 30);
-            MiddleLeftPrintTextAndLine(_obj.hd_xhxsh, rect, g);
+            MiddleLeftPrintTextAndLine(_obj.HD_XHXSH, rect, g);
 
             top += 25;
             left = _rectBody.Left;
@@ -277,7 +277,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("关系的整体品质", rect, g);
             left += 400;
             rect = new Rectangle(left, top, 45, 30);
-            MiddleLeftPrintTextAndLine(_obj.hd_gx, rect, g);
+            MiddleLeftPrintTextAndLine(_obj.HD_GX, rect, g);
 
             top += 25;
             left = _rectBody.Left + 300;
@@ -285,7 +285,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             BoldMiddleLeftPrintText("     社会互动 总分：", rect, g);
             left += 180;
             rect = new Rectangle(left, top, 45, 30);
-            MiddleLeftPrintTextAndLine(_obj.hd_sum, rect, g);
+            MiddleLeftPrintTextAndLine(_obj.HD_SUM, rect, g);
 
             top += 20;
             left = _rectBody.Left + 200;
@@ -298,7 +298,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             BoldMiddleLeftPrintText("沟通+社会互动 总分：", rect, g);
             left += 180;
             rect = new Rectangle(left, top, 45, 30);
-            MiddleLeftPrintTextAndLine(_obj.gt_hd_sum, rect, g);
+            MiddleLeftPrintTextAndLine(_obj.GT_HD_SUM, rect, g);
 
             top += 20;
             left = _rectBody.Left + 200;
@@ -319,7 +319,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("想象/创造力", rect, g);
             left += 400;
             rect = new Rectangle(left, top, 45, 30);
-            MiddleLeftPrintTextAndLine(_obj.yx_xx, rect, g);
+            MiddleLeftPrintTextAndLine(_obj.YX_XX, rect, g);
 
             #endregion
 
@@ -335,7 +335,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("对游戏素材/人的不寻常感官兴趣", rect, g);
             left += 400;
             rect = new Rectangle(left, top, 45, 30);
-            MiddleLeftPrintTextAndLine(_obj.kbxw_dyxsc, rect, g);
+            MiddleLeftPrintTextAndLine(_obj.KBXW_DYXSC, rect, g);
 
             top += 25;
             left = _rectBody.Left;
@@ -343,7 +343,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("手和手指及其他复杂的特殊习性动作", rect, g);
             left += 400;
             rect = new Rectangle(left, top, 45, 30);
-            MiddleLeftPrintTextAndLine(_obj.kbxw_shsz, rect, g);
+            MiddleLeftPrintTextAndLine(_obj.KBXW_SHSZ, rect, g);
 
             top += 25;
             left = _rectBody.Left;
@@ -351,7 +351,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("不寻常的重复兴趣或刻板行为", rect, g);
             left += 400;
             rect = new Rectangle(left, top, 45, 30);
-            MiddleLeftPrintTextAndLine(_obj.kbxw_btxc, rect, g);
+            MiddleLeftPrintTextAndLine(_obj.KBXW_BTXC, rect, g);
 
             top += 25;
             left = _rectBody.Left;
@@ -359,7 +359,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("强迫行为或仪式行为", rect, g);
             left += 400;
             rect = new Rectangle(left, top, 45, 30);
-            MiddleLeftPrintTextAndLine(_obj.kbxw_qpxw, rect, g);
+            MiddleLeftPrintTextAndLine(_obj.KBXW_QPXW, rect, g);
 
             top += 25;
             left = _rectBody.Left + 300;
@@ -367,7 +367,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             BoldMiddleLeftPrintText("刻板行为和局限兴趣：", rect, g);
             left += 180;
             rect = new Rectangle(left, top, 45, 30);
-            MiddleLeftPrintTextAndLine(_obj.kbxw_sum, rect, g);
+            MiddleLeftPrintTextAndLine(_obj.KBXW_SUM, rect, g);
 
             #endregion
 

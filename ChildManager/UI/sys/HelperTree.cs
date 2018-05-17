@@ -94,7 +94,7 @@ namespace ChildManager.UI.sys
         {
             foreach (TreeNode sbnod in node.Nodes)
             {
-                IList<sys_role_menu> list = mbll.GetList(sbnod.Tag.ToString(), role_code);
+                IList<SYS_ROLE_MENU> list = mbll.GetList(sbnod.Tag.ToString(), role_code);
                 if (list.Count > 0)
                 {
                     node.Checked = true;

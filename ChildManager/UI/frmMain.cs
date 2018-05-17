@@ -665,14 +665,14 @@ namespace ChildManager.UI
             {
                 ButtonItem btm = new ButtonItem();
                 btm.ButtonStyle = eButtonStyle.ImageAndText;
-                if (File.Exists(@Application.StartupPath + "\\" + obj.menu_image))
+                if (File.Exists(@Application.StartupPath + "\\" + obj.MENU_IMAGE))
                 {
-                    btm.Image = Image.FromFile(Application.StartupPath + "\\" + obj.menu_image);
+                    btm.Image = Image.FromFile(Application.StartupPath + "\\" + obj.MENU_IMAGE);
                 }
                 btm.ImagePosition = eImagePosition.Top;
-                btm.Name = obj.menu_code;
+                btm.Name = obj.MENU_CODE;
                 btm.SubItemsExpandWidth = 14;
-                btm.Text = obj.menu_name;
+                btm.Text = obj.MENU_NAME;
                 btm.Tag = obj;
                 btm.Click += new System.EventHandler(this.btm_Click);
                 this.ribbonBar1.Items.Add(btm);
@@ -683,14 +683,14 @@ namespace ChildManager.UI
             {
                 ButtonItem btm = new ButtonItem();
                 btm.ButtonStyle = eButtonStyle.ImageAndText;
-                if (File.Exists(@Application.StartupPath + "\\" + obj.menu_image))
+                if (File.Exists(@Application.StartupPath + "\\" + obj.MENU_IMAGE))
                 {
-                    btm.Image = Image.FromFile(Application.StartupPath + "\\" + obj.menu_image);
+                    btm.Image = Image.FromFile(Application.StartupPath + "\\" + obj.MENU_IMAGE);
                 }
                 btm.ImagePosition = eImagePosition.Top;
-                btm.Name = obj.menu_code;
+                btm.Name = obj.MENU_CODE;
                 btm.SubItemsExpandWidth = 14;
-                btm.Text = obj.menu_name;
+                btm.Text = obj.MENU_NAME;
                 btm.Tag = obj;
                 btm.Click += new System.EventHandler(this.btm_Click);
                 this.ribbonBar6.Items.Add(btm);

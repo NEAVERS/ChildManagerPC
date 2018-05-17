@@ -31,14 +31,14 @@ namespace ChildManager.UI.cepingshi
         {
             Cursor.Current = Cursors.WaitCursor;
 
-            IList<cp_yy_cou> yylist = yybll.GetList();
+            IList<CP_YY_COU> yylist = yybll.GetList();
             if (yylist != null)
             {
                 dataGridView1.Rows.Clear();
-                foreach (cp_yy_cou obj in yylist)
+                foreach (CP_YY_COU obj in yylist)
                 {
                     DataGridViewRow row = new DataGridViewRow();
-                    row.CreateCells(dataGridView1, obj.xmmc, obj.xmsl);
+                    row.CreateCells(dataGridView1, obj.XMMC, obj.XMSL);
                     row.Tag = obj;
                     dataGridView1.Rows.Add(row);
                 }
@@ -48,8 +48,8 @@ namespace ChildManager.UI.cepingshi
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            cp_yy_cou obj = dataGridView1.Rows[e.RowIndex].Tag as cp_yy_cou;
-            obj.xmsl = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
+            CP_YY_COU obj = dataGridView1.Rows[e.RowIndex].Tag as CP_YY_COU;
+            obj.XMSL = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
 
             if (yybll.Update(obj))
             {

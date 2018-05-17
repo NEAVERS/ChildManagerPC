@@ -34,9 +34,9 @@ namespace ChildManager.UI
 
         private void Paneltsb_pinxue_zhuanan_Load(object sender, EventArgs e)
         {
-            textBoxX1.Text = _baseobj.CHILDNAME;
-            textBoxX4.Text = _baseobj.CHILDGENDER;
-            textBoxX5.Text = _baseobj.CHILDBIRTHDAY;
+            textBoxX1.Text = _baseobj.childName;
+            textBoxX4.Text = _baseobj.childGender;
+            textBoxX5.Text = _baseobj.childBirthDay;
             textBoxX8.Text = _baseobj.MotherName;
             textBoxX9.Text = _baseobj.Telephone;
             textBoxX10.Text = _baseobj.address;

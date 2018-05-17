@@ -12,6 +12,7 @@ namespace ChildManager.UI.sys
         private sys_usersBll bll = new sys_usersBll();
         private sys_roleBll rolebll = new sys_roleBll();
         int[] _ids;
+        List<int> idList  = new List<int>() ;
         public sys_user_roles(int[] ids, sys_user_list yonghuguanli)
         {
             InitializeComponent();
@@ -23,8 +24,12 @@ namespace ChildManager.UI.sys
         private void button1_Click(object sender, EventArgs e)
         {
             SYS_USERS userobj = new SYS_USERS();
-            userobj.role_code = comboBox1.SelectedValue.ToString();
-            if (bll.UpdateByIds(userobj,_ids))
+            userobj.ROLE_CODE = comboBox1.SelectedValue.ToString();
+            foreach(var id in _ids)
+            {
+                idList.Add(id);
+            }
+            if (bll.UpdateByIds(userobj, idList))
             {
                 MessageBox.Show("修改成功", "软件提示");
                 _yonghuguanli.jiazaiList();
@@ -39,7 +44,7 @@ namespace ChildManager.UI.sys
         private void sys_user_roles_Load(object sender, EventArgs e)
         {
 
-            IList<sys_role> listrole = rolebll.GetList();
+            IList<SYS_ROLE> listrole = rolebll.GetList();
             comboBox1.DataSource = listrole;
             comboBox1.DisplayMember = "role_name";
             comboBox1.ValueMember = "role_code";

@@ -247,9 +247,9 @@ namespace ChildManager.UI.cepingshi
         {
             Cursor.Current = Cursors.WaitCursor;
             _cdiobj = cdibll.Get(id, _type);
-            _cdi1obj = cdi1bll.Get(_cpwomeninfo.cd_id, _type, _cdiobj?.ID ?? 0);
-            _ddstobj = ddstbll.GetByCdId(_cpwomeninfo.cd_id, _type, _cdiobj?.ID ?? 0);
-            _zqobj = zqbll.GetByCdId(_cpwomeninfo.cd_id, _type, _cdiobj?.ID ?? 0);
+            _cdi1obj = cdi1bll.Get(_cpwomeninfo.cd_id, _type, (int)(_cdiobj?.ID ?? 0));
+            _ddstobj = ddstbll.GetByCdId(_cpwomeninfo.cd_id, _type, (int)(_cdiobj?.ID ?? 0));
+            _zqobj = zqbll.GetByCdId(_cpwomeninfo.cd_id, _type, (int)(_cdiobj?.ID ?? 0));
             if (_cdiobj != null)
             {
                 CommonHelper.setForm(_cdiobj, panel1.Controls);
@@ -294,7 +294,7 @@ namespace ChildManager.UI.cepingshi
                     Cursor.Current = Cursors.WaitCursor;
                     try
                     {
-                        if (cdibll.Delete(_cdiobj.ID) && cdi1bll.DeleteByExternalid(_cdiobj.ID) && ddstbll.DeleteByExternalid(_cdiobj.ID) && zqbll.DeleteByExternalid(_cdiobj.ID))
+                        if (cdibll.Delete(_cdiobj.ID) && cdi1bll.DeleteByExternalid((int)_cdiobj.ID) && ddstbll.DeleteByExternalid((int)_cdiobj.ID) && zqbll.DeleteByExternalid((int)_cdiobj.ID))
                         {
                             MessageBox.Show("删除成功!", "软件提示");
                             RefreshRecordList();

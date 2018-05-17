@@ -16,7 +16,7 @@ namespace YCF.BLL.Template
         private readonly List<bool> isAscs;
         public mb_zdbll()
         {
-            order = new List<Expression<Func<MB_ZD, int>>>() { t => t.YFKS };
+            order = new List<Expression<Func<MB_ZD, int>>>() { t => (int)t.YFKS };
             isAscs = new List<bool>() { false };
         }
 

@@ -69,7 +69,7 @@ namespace ChildManager.UI.childSetInfo
                         DataGridViewRow row = new DataGridViewRow();
                         row.CreateCells(dgvyimiao, obj.YimiaoName, obj.ProductionDay, 
                             obj.FactorName, obj.Pihao,
-                            obj.Guige,obj.JiliangUnit,obj.Month,obj.ID);
+                            obj.Guige,obj.JiliangUnit,obj.Month,obj.Id);
                         row.Tag = obj;
                         dgvyimiao.Rows.Add(row);
                     }

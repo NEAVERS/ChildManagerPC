@@ -96,18 +96,18 @@ namespace ChildManager.UI
                         string birthstr = "";
                         string buidstr = "";
                         DateTime outtime = new DateTime();
-                        if (DateTime.TryParse(obj.childbirthday, out outtime))
+                        if (DateTime.TryParse(obj.CHILDBIRTHDAY, out outtime))
                         {
                             birthstr = outtime.ToString("yyyy-MM-dd");
                         }
-                        if (DateTime.TryParse(obj.childbuildday, out outtime))
+                        if (DateTime.TryParse(obj.CHILDBUILDDAY, out outtime))
                         {
                             buidstr = outtime.ToString("yyyy-MM-dd");
                         }
 
                         DataGridViewRow row = new DataGridViewRow();
-                        row.CreateCells(dataGridView1, i, obj.healthcardno, obj.patient_id, obj.childname, obj.childgender,
-                            birthstr, obj.telephone, buidstr, obj.gaoweiyinsu);
+                        row.CreateCells(dataGridView1, i, obj.HEALTHCARDNO, obj.PATIENT_ID, obj.CHILDNAME, obj.CHILDGENDER,
+                            birthstr, obj.TELEPHONE, buidstr, obj.GAOWEIYINSU);
                         row.Tag = obj;
                         dataGridView1.Rows.Add(row);
                         i++;

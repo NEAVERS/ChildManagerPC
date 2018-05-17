@@ -15,7 +15,7 @@ namespace YCF.Model
     public partial class TB_CHILDCHECK
     {
 
-        public int ID { get; set; }
+        public decimal ID { get; set; }
         public decimal CHILDID { get; set; }
         public string CHECKAGE { get; set; }
         public string CHECKFACTAGE { get; set; }

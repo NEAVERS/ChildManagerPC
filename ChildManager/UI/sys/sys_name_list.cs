@@ -86,7 +86,7 @@ namespace ChildManager.UI.sys
                     {
                         DataGridViewRow row = new DataGridViewRow();
                         string _type = GetType(obj.TYPE);
-                        row.CreateCells(dgvConditionTreatRecordList, i.ToString(),obj.ID, obj.name, obj.code, _type);
+                        row.CreateCells(dgvConditionTreatRecordList, i.ToString(),obj.ID, obj.NAME, obj.CODE, _type);
                         row.Tag = obj;
                         dgvConditionTreatRecordList.Rows.Add(row);
                         txtnum.Text = i.ToString();
@@ -104,9 +104,9 @@ namespace ChildManager.UI.sys
         private void btnInput_Click(object sender, EventArgs e)
         {
             TAB_PERSON_DATA newobj = new TAB_PERSON_DATA();
-            newobj.name = name.Text.Trim();
-            newobj.code=code.Text.Trim();
-            newobj.type = SetType(type.Text.Trim());
+            newobj.NAME = name.Text.Trim();
+            newobj.CODE=code.Text.Trim();
+            newobj.TYPE = SetType(type.Text.Trim());
             if (databll.Add(newobj))
             {
                 MessageBox.Show("添加成功！");
@@ -123,9 +123,9 @@ namespace ChildManager.UI.sys
             if (dgvConditionTreatRecordList.SelectedRows.Count >= 1)
             {
                 TAB_PERSON_DATA updataobj = databll.Get(data_id);
-                updataobj.name = name.Text.Trim();
-                updataobj.code = code.Text.Trim();
-                updataobj.type = SetType(type.Text.Trim());
+                updataobj.NAME = name.Text.Trim();
+                updataobj.CODE = code.Text.Trim();
+                updataobj.TYPE = SetType(type.Text.Trim());
                 if (databll.Update(updataobj))
                 {
                     MessageBox.Show("修改成功！");
@@ -195,9 +195,9 @@ namespace ChildManager.UI.sys
             }
             this.data_id = Convert.ToInt32(this.dgvConditionTreatRecordList.SelectedRows[0].Cells[1].Value);//信息id
             TAB_PERSON_DATA dataobj = databll.Get(data_id);
-            name.Text = dataobj.name;
-            code.Text = dataobj.code;
-            type.Text = GetType(dataobj.type);
+            name.Text = dataobj.NAME;
+            code.Text = dataobj.CODE;
+            type.Text = GetType(dataobj.TYPE);
         }
 
         private void button1_Click_1(object sender, EventArgs e)

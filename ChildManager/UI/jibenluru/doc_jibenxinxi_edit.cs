@@ -293,11 +293,11 @@ namespace ChildManager.UI.jibenluru
             TB_CHILDBASE obj = getChildBaseInfoObj();
 
             //自动生成保健卡号
-            obj.healthcardno = jibenbll.stateval().ToString();//保健卡号
+            obj.HEALTHCARDNO = jibenbll.stateval().ToString();//保健卡号
             b = jibenbll.Add(obj);
             if (b)
             {
-                this.healthcardno.Text = obj.healthcardno;
+                this.healthcardno.Text = obj.HEALTHCARDNO;
                 if (MessageBox.Show("保存成功！退出？", "软件提示", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     DialogResult = DialogResult.OK;
@@ -320,24 +320,24 @@ namespace ChildManager.UI.jibenluru
             if (globalInfoClass.Zhiwu == "护士")
             {
                 obj = CommonHelper.GetObj<TB_CHILDBASE>(groupPanel1.Controls);
-                obj.status = "1";
-                obj.childbuildday = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
-                obj.childbuildhospital = "重医大附属儿童医院";
+                obj.STATUS = "1";
+                obj.CHILDBUILDDAY = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                obj.CHILDBUILDHOSPITAL = "重医大附属儿童医院";
                 return obj;
             }
             else
             {
-                obj.patient_id = patient_id_doc.Text.Trim();
-                obj.jiuzhencardno = jiuzhencardno_doc.Text.Trim();
-                obj.childname = childname_doc.Text.Trim();
-                obj.identityno = identityno_doc.Text.Trim();
-                obj.sfzlb = sfzlb_doc.Text.Trim();
-                obj.childgender = childgender_doc.Text.Trim();
-                obj.childbirthday = childbirthday_doc.Text;
-                obj.province = province_doc.Text.Trim();
-                obj.jtzz_cx = jtzz_cx_doc.Text.Trim();
-                obj.telephone = telephone_doc.Text.Trim();
-                obj.telephone2 = telephone2_doc.Text.Trim();
+                obj.PATIENT_ID = patient_id_doc.Text.Trim();
+                obj.JIUZHENCARDNO = jiuzhencardno_doc.Text.Trim();
+                obj.CHILDNAME = childname_doc.Text.Trim();
+                obj.IDENTITYNO = identityno_doc.Text.Trim();
+                obj.SFZLB = sfzlb_doc.Text.Trim();
+                obj.CHILDGENDER = childgender_doc.Text.Trim();
+                obj.CHILDBIRTHDAY = childbirthday_doc.Text;
+                obj.PROVINCE = province_doc.Text.Trim();
+                obj.JTZZ_CX = jtzz_cx_doc.Text.Trim();
+                obj.TELEPHONE = telephone_doc.Text.Trim();
+                obj.TELEPHONE2 = telephone2_doc.Text.Trim();
 
                 return obj;
             }

@@ -90,8 +90,8 @@ namespace ChildManager.BLL
                 {
                     sdr.Read();//读取第一行数据记录
                     obj = new ProjectGaoweiobj();
-                    obj.ID = Convert.ToInt32(sdr["id"]);
-                    obj.TYPE = sdr["type"].ToString();
+                    obj.id = Convert.ToInt32(sdr["id"]);
+                    obj.type = sdr["type"].ToString();
                 }
                 return obj;
 
@@ -118,8 +118,8 @@ namespace ChildManager.BLL
                 while (sdr.Read())
                 {
                     obj = new ProjectGaoweiobj();
-                    obj.ID = Convert.ToInt32(sdr["id"]);
-                    obj.TYPE = sdr["p_id"].ToString();
+                    obj.id = Convert.ToInt32(sdr["id"]);
+                    obj.type = sdr["p_id"].ToString();
                     obj.content = sdr["content"].ToString();
                     arraylist.Add(obj);
                 }

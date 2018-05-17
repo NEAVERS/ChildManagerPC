@@ -160,12 +160,12 @@ namespace ChildManager.UI.jibenluru
             else
             {
                 //自动生成保健卡号
-                obj.healthcardno = jibenbll.stateval().ToString();//保健卡号
+                obj.HEALTHCARDNO = jibenbll.stateval().ToString();//保健卡号
                 b = jibenbll.Add(obj);
                 if (b)
                 {
-                    _womeninfo.cd_id = obj.ID;
-                    this.healthcardno.Text = obj.healthcardno;
+                    _womeninfo.cd_id = (int)obj.ID;
+                    this.healthcardno.Text = obj.HEALTHCARDNO;
                     MessageBox.Show("保存成功！", "软件提示");
                     //if (!String.IsNullOrEmpty(textBoxX12.Text.Trim()))
                     //{
@@ -178,7 +178,7 @@ namespace ChildManager.UI.jibenluru
                 }
             }
             //int[] age = CommonHelper.getAgeBytime(obj.childbirthday, DateTime.Now.ToString("yyyy-MM-dd"));
-            _womeninfo.l_age.Text = CommonHelper.getAgeStr(obj.childbirthday);
+            _womeninfo.l_age.Text = CommonHelper.getAgeStr(obj.CHILDBIRTHDAY);
 
         }
 
@@ -189,9 +189,9 @@ namespace ChildManager.UI.jibenluru
         private TB_CHILDBASE getChildBaseInfoObj()
         {
             TB_CHILDBASE obj = CommonHelper.GetObj<TB_CHILDBASE>(panel1.Controls);
-            obj.status = "1";
-            obj.childbuildday = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
-            obj.childbuildhospital = "重医大附属儿童医院";
+            obj.STATUS = "1";
+            obj.CHILDBUILDDAY = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+            obj.CHILDBUILDHOSPITAL = "重医大附属儿童医院";
             return obj;
         }
 
@@ -225,8 +225,8 @@ namespace ChildManager.UI.jibenluru
             if (obj != null)
             {
                 healthcardno.Text = "";//保健卡号
-                string childname = obj.mothername;
-                if (obj.childgender == "女")
+                string childname = obj.MOTHERNAME;
+                if (obj.CHILDGENDER == "女")
                 {
                     childname += "之女";
                 }
@@ -236,10 +236,10 @@ namespace ChildManager.UI.jibenluru
                 }
 
                 this.childname.Text = childname;//姓名
-                childgender.Text = obj.childgender;//性别
+                childgender.Text = obj.CHILDGENDER;//性别
                 //bloodtype.Text = obj.bloodtype;//血型
                 DateTime dtbirth = DateTime.Now;
-                DateTime.TryParse(obj.childbirthday, out dtbirth);
+                DateTime.TryParse(obj.CHILDBIRTHDAY, out dtbirth);
                 childbirthday.Value = dtbirth;
                 //childbuildday.Value = DateTime.Now;
                 //childbuildhospital.Text = "重医大附属儿童医院";//建册医院
@@ -248,16 +248,16 @@ namespace ChildManager.UI.jibenluru
                 //                                //父亲母亲
                 //fathername.Text = obj.fathername;
                 //fatherage.Text = obj.fatherage;
-                fatherheight.Text = obj.fatherheight;
-                fathereducation.Text = obj.fathereducation;
+                fatherheight.Text = obj.FATHERHEIGHT;
+                fathereducation.Text = obj.FATHEREDUCATION;
                 //fatherjob.Text = obj.fatherjob;
                 //mothername.Text = obj.mothername;
                 //motherage.Text = obj.motherage;
-                motherheight.Text = obj.motherheight;
-                mothereducation.Text = obj.mothereducation;
+                motherheight.Text = obj.MOTHERHEIGHT;
+                mothereducation.Text = obj.MOTHEREDUCATION;
                 //motherjob.Text = obj.motherjob;
-                telephone.Text = obj.telephone;
-                province.Text = obj.province;
+                telephone.Text = obj.TELEPHONE;
+                province.Text = obj.PROVINCE;
                 //city.Text = obj.city;
                 //area.Text = obj.area;
                 //address.Text = obj.address;
@@ -269,16 +269,16 @@ namespace ChildManager.UI.jibenluru
                 //obj.Community = comboBox5.Text.Trim();
                 //obj.CensusRegister = comboBox4.Text.Trim();
                 //出生史
-                cs_fetus.Text = obj.cs_fetus;
-                cs_produce.Text = obj.cs_produce;
-                cs_week.Text = obj.cs_week;
-                cs_day.Text = obj.cs_day;
-                modedelivery.Text = obj.modedelivery;
+                cs_fetus.Text = obj.CS_FETUS;
+                cs_produce.Text = obj.CS_PRODUCE;
+                cs_week.Text = obj.CS_WEEK;
+                cs_day.Text = obj.CS_DAY;
+                modedelivery.Text = obj.MODEDELIVERY;
                 //perineumincision.Text = obj.perineumincision;
                 //obj.FetusNumber = cbx_fetusNumber.Text = ;
                 //neonatalcondition.Text = obj.neonatalcondition;
-                birthweight.Text = obj.birthweight;
-                birthheight.Text = obj.birthheight;
+                birthweight.Text = obj.BIRTHWEIGHT;
+                birthheight.Text = obj.BIRTHHEIGHT;
                 //birthaddress.Text = obj.birthaddress;
                 //母乳喂养
                 //hospitalizedstates.Text = "纯母乳";

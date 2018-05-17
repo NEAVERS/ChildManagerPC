@@ -208,7 +208,7 @@ namespace ChildManager.UI.jibenluru
                     if (b)
                     {
                         globalInfoClass.Wm_Index = childBaseInfobll.getchild_id("select id from TB_CHILDBASE where healthCardNo='" + obj.HealthCardNo + "'");
-                        obj.ID = globalInfoClass.Wm_Index;
+                        obj.id = globalInfoClass.Wm_Index;
                         this.textBoxX2.Text = obj.HealthCardNo;
                         MessageBox.Show("保存成功！", "软件提示");
                         if (!String.IsNullOrEmpty(textBoxX12.Text.Trim()))
@@ -2282,11 +2282,11 @@ namespace ChildManager.UI.jibenluru
             if (tabControl1.SelectedTab == tabPage2)
             {
                 TB_HEALTHCHECK_MOBAN healthmoban = new TB_HEALTHCHECK_MOBAN();
-                healthmoban.zhusu = this.textBox5.Text.Trim();
-                healthmoban.bingshi = this.textBox6.Text.Trim();
-                healthmoban.tijian = this.textBox7.Text.Trim();
-                healthmoban.zhenduan = this.textBox8.Text.Trim();
-                healthmoban.chuli = this.textBox9.Text.Trim();
+                healthmoban.ZHUSU = this.textBox5.Text.Trim();
+                healthmoban.BINGSHI = this.textBox6.Text.Trim();
+                healthmoban.TIJIAN = this.textBox7.Text.Trim();
+                healthmoban.ZHENDUAN = this.textBox8.Text.Trim();
+                healthmoban.CHULI = this.textBox9.Text.Trim();
                 Panel_moban_save mobansave = new Panel_moban_save(healthmoban);
                 mobansave.ShowDialog();
             }
@@ -2301,11 +2301,11 @@ namespace ChildManager.UI.jibenluru
                 if(mobanlist.DialogResult == DialogResult.OK)
                 {
                     TB_HEALTHCHECK_MOBAN healthmoban = mobanlist._healthcheckobj;
-                    this.textBox5.Text = healthmoban.zhusu;
-                    this.textBox6.Text = healthmoban.bingshi;
-                    this.textBox7.Text = healthmoban.tijian;
-                    this.textBox8.Text = healthmoban.zhenduan;
-                    this.textBox9.Text = healthmoban.chuli;
+                    this.textBox5.Text = healthmoban.ZHUSU;
+                    this.textBox6.Text = healthmoban.BINGSHI;
+                    this.textBox7.Text = healthmoban.TIJIAN;
+                    this.textBox8.Text = healthmoban.ZHENDUAN;
+                    this.textBox9.Text = healthmoban.CHULI;
                 }
             }
         }

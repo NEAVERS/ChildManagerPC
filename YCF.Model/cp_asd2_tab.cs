@@ -14,7 +14,7 @@ namespace YCF.Model
     
     public partial class CP_ASD2_TAB
     {
-        public int ID { get; set; }
+        public decimal ID { get; set; }
         public decimal CHILD_ID { get; set; }
         public string SRS_ZJ { get; set; }
         public string SRS_RZ { get; set; }

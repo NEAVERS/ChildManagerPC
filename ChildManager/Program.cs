@@ -64,13 +64,13 @@ namespace ChildManager
             {
                 Database.SetInitializer<YCF.Model.Entities>(null);
 
-                using (var db = new YCF.Model.Entities(YCF.Common.CommonHelper.EFConnentionString))
+                using (var db = new YCF.Model.OracleEntities(YCF.Common.CommonHelper.EFConnentionString))
                 {
                     var objectContext = ((System.Data.Entity.Infrastructure.IObjectContextAdapter)db).ObjectContext;
                     var mappingCollection = (System.Data.Entity.Core.Mapping.StorageMappingItemCollection)objectContext.MetadataWorkspace.GetItemCollection(System.Data.Entity.Core.Metadata.Edm.DataSpace.CSSpace);
                     mappingCollection.GenerateViews(new List<System.Data.Entity.Core.Metadata.Edm.EdmSchemaError>());
 
-                    db.SYS_MENUS.Count(t => t.id == 0);
+                    db.SYS_MENUS.Count(t => t.ID == 0);
                 }
 
             }

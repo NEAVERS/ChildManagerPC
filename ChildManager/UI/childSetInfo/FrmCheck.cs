@@ -54,7 +54,7 @@ namespace ChildManager.UI.childSetInfo
             builder.Append("update TB_CHILDCHECK set ");
             builder.Append("nuerzhidao = '" + obj.nuerzhidao + "',");
             builder.Append("checkdiagnose = '" + obj.checkdiagnose + "'");
-            builder.Append(" where id ="+_obj.ID+"");
+            builder.Append(" where id ="+_obj.Id + "");
             return builder.ToString();
         }
 

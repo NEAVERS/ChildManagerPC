@@ -51,7 +51,7 @@ namespace ChildManager.UI
                 }
                 else
                 {
-                    if (password != users.password)
+                    if (password != users.PASSWORD)
                     {
                         MessageBox.Show("用户名或者密码错误！", "系统提示");
                         textBox2.Focus();
@@ -59,12 +59,12 @@ namespace ChildManager.UI
                     }
                     else
                     {
-                        globalInfoClass.PassWord = users.password;//赋值用户密码
-                        globalInfoClass.UserCode = users.user_code;//赋值用户编码
-                        globalInfoClass.UserName = users.user_name;//赋值用户姓名
-                        globalInfoClass.UserType = users.user_type;//赋值用户类型,判断权限
-                        globalInfoClass.Pre_Max = users.pre_max;//赋值用户类型,判断权限
-                        globalInfoClass.User_Role = users.role_code;//赋值用户类型,判断权限
+                        globalInfoClass.PassWord = users.PASSWORD;//赋值用户密码
+                        globalInfoClass.UserCode = users.USER_CODE;//赋值用户编码
+                        globalInfoClass.UserName = users.USER_NAME;//赋值用户姓名
+                        globalInfoClass.UserType = users.USER_TYPE;//赋值用户类型,判断权限
+                        globalInfoClass.Pre_Max = (int)users.PRE_MAX;//赋值用户类型,判断权限
+                        globalInfoClass.User_Role = users.ROLE_CODE;//赋值用户类型,判断权限
                         this.DialogResult = DialogResult.OK;//跳转到主窗体控件
                         this.Close();
                     }

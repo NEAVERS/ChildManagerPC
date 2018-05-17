@@ -49,7 +49,7 @@ namespace YCF.BLL.sys
 
         public bool UpdateByIds(SYS_USERS userobj,List<int> ids)
         {
-            return dal.Update(userobj, t => ids.Contains(t.ID),"role_code") >0;
+            return dal.Update(userobj, t => ids.Contains((int)t.ID),"role_code") >0;
         }
 
         public bool UpdatePwd(SYS_USERS userobj)

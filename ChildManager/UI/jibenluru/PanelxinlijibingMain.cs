@@ -193,7 +193,7 @@ namespace ChildManager.UI.jibenluru
             if (dataGridView1.RowCount > 0 && dataGridView1.CurrentCell.RowIndex != -1)
             {
                 ChildBaseInfoObj obj = dataGridView1.CurrentRow.Tag as ChildBaseInfoObj;
-                int id = obj.ID;
+                int id = obj.Id;
                 globalInfoClass.Wm_Index = id;
                 ChildMainForm mianform = this.ParentForm as ChildMainForm;
                 mianform.updateMdiForm("儿保建卡", typeof(PanelyibanxinxiMain));

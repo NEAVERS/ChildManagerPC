@@ -50,12 +50,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\YCF.Model\bin\Debug\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
@@ -63,7 +62,16 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\MQDLL.dll</HintPath>
     </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.12.2.1100\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.OracleClient">
       <HintPath>bin\Debug\System.Data.OracleClient.dll</HintPath>
@@ -1678,6 +1686,7 @@
     <None Include="cqet_yytchild2DataSet.xss">
       <DependentUpon>cqet_yytchild2DataSet.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

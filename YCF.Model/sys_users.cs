@@ -14,7 +14,7 @@ namespace YCF.Model
     
     public partial class SYS_USERS
     {
-        public int ID { get; set; }
+        public decimal ID { get; set; }
         public string USER_CODE { get; set; }
         public string USER_NAME { get; set; }
         public string PASSWORD { get; set; }

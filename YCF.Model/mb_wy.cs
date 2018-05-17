@@ -16,7 +16,7 @@ namespace YCF.Model
     {
 
         public decimal ID { get; set; }
-        public int YFKS { get; set; }
+        public decimal YFKS { get; set; }
         public decimal YFJS { get; set; }
         public string WYLX { get; set; }
         public string WYZD { get; set; }

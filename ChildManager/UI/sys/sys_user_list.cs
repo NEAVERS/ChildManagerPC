@@ -30,18 +30,18 @@ namespace ChildManager.UI.sys
                     foreach (SYS_USERS csobj in userlist)
                     {
                         string role_name = "";
-                        sys_role _Role = rolebll.GetByCode(csobj.role_code);
+                        SYS_ROLE _Role = rolebll.GetByCode(csobj.ROLE_CODE);
                         if (_Role != null)
                         {
-                            role_name = _Role.role_name;
+                            role_name = _Role.ROLE_NAME;
                         }
                         else
                         {
-                            role_name = csobj.role_code;
+                            role_name = csobj.ROLE_CODE;
                         }
                         DataGridViewRow row = new DataGridViewRow();
-                        row.CreateCells(dgvConditionTreatRecordList, new DataGridViewCheckBoxCell().Value, i.ToString(), csobj.user_code
-                            , csobj.user_name, csobj.dept_name, csobj.dept_id, csobj.phone, role_name, csobj.address);
+                        row.CreateCells(dgvConditionTreatRecordList, new DataGridViewCheckBoxCell().Value, i.ToString(), csobj.USER_CODE
+                            , csobj.USER_NAME, csobj.DEPT_NAME, csobj.DEPT_ID, csobj.PHONE, role_name, csobj.ADDRESS);
                         row.Tag = csobj;
                         dgvConditionTreatRecordList.Rows.Add(row);
                         i++;
@@ -129,7 +129,7 @@ namespace ChildManager.UI.sys
                     Cursor.Current = Cursors.WaitCursor;
                     try
                     {
-                        userobj.password = "123";
+                        userobj.PASSWORD = "123";
                         if (bll.Update(userobj))
                         {
                             MessageBox.Show("重置成功", "软件提示");
@@ -159,7 +159,7 @@ namespace ChildManager.UI.sys
                 string _selectValue = dgvConditionTreatRecordList.Rows[i].Cells["Column6"].EditedFormattedValue.ToString();
                 if (_selectValue == "True")
                 {
-                    list.Add(userobj.id);
+                    list.Add((int)userobj.ID);
                 }
             }
             int[] ids = new int[list.Count];
@@ -172,10 +172,10 @@ namespace ChildManager.UI.sys
         private void yonghuliebiao_Load_1(object sender, EventArgs e)
         {
 
-            IList<sys_role> listrole = rolebll.GetList();
-            sys_role role = new sys_role();
-            role.role_code = "";
-            role.role_name = "全部";
+            IList<SYS_ROLE> listrole = rolebll.GetList();
+            SYS_ROLE role = new SYS_ROLE();
+            role.ROLE_CODE = "";
+            role.ROLE_NAME = "全部";
             listrole.Add(role);
             comboBox2.DataSource = listrole;
             comboBox2.DisplayMember = "role_name";

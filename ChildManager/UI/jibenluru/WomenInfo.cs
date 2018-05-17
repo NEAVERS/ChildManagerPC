@@ -75,31 +75,31 @@ namespace ChildManager.UI.jibenluru
                 {
                     if (obj.MENU_LEVER == "1")
                     {
-                        if (String.IsNullOrEmpty(obj.menu_url))
+                        if (String.IsNullOrEmpty(obj.MENU_URL))
                         {
                             ToolStripDropDownButton tsdb = new ToolStripDropDownButton();
-                            if (File.Exists(@Application.StartupPath + "\\" + obj.menu_image))
+                            if (File.Exists(@Application.StartupPath + "\\" + obj.MENU_IMAGE))
                             {
-                                tsdb.Image = Image.FromFile(Application.StartupPath + "\\" + obj.menu_image);
+                                tsdb.Image = Image.FromFile(Application.StartupPath + "\\" + obj.MENU_IMAGE);
                             }
-                            tsdb.Name = obj.menu_code;
+                            tsdb.Name = obj.MENU_CODE;
                             tsdb.Size = new System.Drawing.Size(85, 29);
-                            tsdb.Text = obj.menu_name;
+                            tsdb.Text = obj.MENU_NAME;
                             tsdb.Tag = obj;
                             toolStrip2.Items.Add(tsdb);
                         }
                         else
                         {
                             ToolStripButton tsdb = new ToolStripButton();
-                            if (File.Exists(@Application.StartupPath + "\\" + obj.menu_image))
+                            if (File.Exists(@Application.StartupPath + "\\" + obj.MENU_IMAGE))
                             {
-                                tsdb.Image = Image.FromFile(Application.StartupPath + "\\" + obj.menu_image);
+                                tsdb.Image = Image.FromFile(Application.StartupPath + "\\" + obj.MENU_IMAGE);
                             }
-                            tsdb.Name = obj.menu_code;
+                            tsdb.Name = obj.MENU_CODE;
                             tsdb.Size = new System.Drawing.Size(85, 29);
-                            tsdb.Text = obj.menu_name;
+                            tsdb.Text = obj.MENU_NAME;
                             tsdb.Tag = obj;
-                            if (obj.is_custom == "2")//如果不是自定义的页面，调用已有的页面
+                            if (obj.IS_CUSTOM == "2")//如果不是自定义的页面，调用已有的页面
                             {
                                 tsdb.Click += new System.EventHandler(this.tsdb_Click);
                             }
@@ -108,7 +108,7 @@ namespace ChildManager.UI.jibenluru
                                 tsdb.Click += new System.EventHandler(this.tsdb_temp_Click);
                             }
                             toolStrip2.Items.Add(tsdb);
-                            if (obj.is_default == "1")
+                            if (obj.IS_DEFAULT == "1")
                             {
                                 tsdb.PerformClick();
                             }
@@ -119,15 +119,15 @@ namespace ChildManager.UI.jibenluru
                     {
 
                         ToolStripMenuItem tsm = new ToolStripMenuItem();
-                        if (File.Exists(@Application.StartupPath + "\\" + obj.menu_image))
+                        if (File.Exists(@Application.StartupPath + "\\" + obj.MENU_IMAGE))
                         {
-                            tsm.Image = Image.FromFile(Application.StartupPath + "\\" + obj.menu_image);
+                            tsm.Image = Image.FromFile(Application.StartupPath + "\\" + obj.MENU_IMAGE);
                         }
-                        tsm.Name = obj.menu_code;
+                        tsm.Name = obj.MENU_CODE;
                         tsm.Size = new System.Drawing.Size(220, 22);
-                        tsm.Text = obj.menu_name;
+                        tsm.Text = obj.MENU_NAME;
                         tsm.Tag = obj;
-                        if (obj.is_custom == "2")//如果不是自定义的页面，调用已有的页面
+                        if (obj.IS_CUSTOM == "2")//如果不是自定义的页面，调用已有的页面
                         {
                             tsm.Click += new System.EventHandler(this.tsm_Click);
                         }
@@ -137,13 +137,13 @@ namespace ChildManager.UI.jibenluru
                         }
                         foreach (ToolStripItem tsdb in toolStrip2.Items)
                         {
-                            if (tsdb.Name == obj.menu_parent)
+                            if (tsdb.Name == obj.MENU_PARENT)
                             {
                                 (tsdb as ToolStripDropDownButton).DropDownItems.Add(tsm);
                                 break;
                             }
                         }
-                        if (obj.is_default == "1")
+                        if (obj.IS_DEFAULT == "1")
                         {
                             tsm.PerformClick();
                         }
@@ -166,7 +166,7 @@ namespace ChildManager.UI.jibenluru
         {
             ToolStripMenuItem tsm = sender as ToolStripMenuItem;
             SYS_MENUS menuobj = tsm.Tag as SYS_MENUS;
-            if (this.cd_id == -1 && menuobj.menu_code != "1001")
+            if (this.cd_id == -1 && menuobj.MENU_CODE != "1001")
             {
                 MessageBox.Show("请选择儿童！");
                 return;
@@ -196,7 +196,7 @@ namespace ChildManager.UI.jibenluru
         {
             ToolStripMenuItem tsm = sender as ToolStripMenuItem;
             SYS_MENUS menuobj = tsm.Tag as SYS_MENUS;
-            if (this.cd_id == -1 && menuobj.menu_code != "1001")
+            if (this.cd_id == -1 && menuobj.MENU_CODE != "1001")
             {
                 MessageBox.Show("请选择儿童！");
                 return;
@@ -239,7 +239,7 @@ namespace ChildManager.UI.jibenluru
         {
             ToolStripButton tsb = sender as ToolStripButton;
             SYS_MENUS menuobj = tsb.Tag as SYS_MENUS;
-            if (this.cd_id == -1 && menuobj.menu_code != "1001")
+            if (this.cd_id == -1 && menuobj.MENU_CODE != "1001")
             {
                 MessageBox.Show("请选择儿童！");
                 return;
@@ -263,7 +263,7 @@ namespace ChildManager.UI.jibenluru
 
             ToolStripButton tsm = sender as ToolStripButton;
             SYS_MENUS menuobj = tsm.Tag as SYS_MENUS;
-            if (this.cd_id == -1 && menuobj.menu_code != "1001")
+            if (this.cd_id == -1 && menuobj.MENU_CODE != "1001")
             {
                 MessageBox.Show("请选择儿童！");
                 return;
@@ -375,7 +375,7 @@ namespace ChildManager.UI.jibenluru
                     bool isinclude = true;
                     for (int i = 0; i < treeView1.Nodes[0].Nodes.Count; i++)
                     {
-                        if ((treeView1.Nodes[0].Nodes[i].Tag as TB_CHILDBASE).healthcardno == jibenobj.healthcardno)
+                        if ((treeView1.Nodes[0].Nodes[i].Tag as TB_CHILDBASE).HEALTHCARDNO == jibenobj.HEALTHCARDNO)
                         {
                             treeView1.Nodes[0].Nodes[i].Checked = true;
                             treeView1.SelectedNode = treeView1.Nodes[0].Nodes[i];
@@ -385,7 +385,7 @@ namespace ChildManager.UI.jibenluru
                     }
                     for (int i = 0; i < treeView1.Nodes[1].Nodes.Count; i++)
                     {
-                        if ((treeView1.Nodes[1].Nodes[i].Tag as TB_CHILDBASE).healthcardno == jibenobj.healthcardno)
+                        if ((treeView1.Nodes[1].Nodes[i].Tag as TB_CHILDBASE).HEALTHCARDNO == jibenobj.HEALTHCARDNO)
                         {
                             treeView1.Nodes[1].Nodes[i].Checked = true;
                             treeView1.SelectedNode = treeView1.Nodes[1].Nodes[i];
@@ -401,7 +401,7 @@ namespace ChildManager.UI.jibenluru
                         //this.dataGridView1.Rows[this.dataGridView1.Rows.Count - 1].Selected = true; ;//选中查询到的数据行
                         //treeview节点添加
                         TreeNode tn = new TreeNode();
-                        tn.Text = jibenobj.childname;
+                        tn.Text = jibenobj.CHILDNAME;
                         tn.Tag = jibenobj;
                         treeView1.Nodes[1].Nodes.Add(tn);
                         tn.Checked = true;
@@ -458,7 +458,7 @@ namespace ChildManager.UI.jibenluru
                         //DataGridViewRow row = new DataGridViewRow();
                         //row.CreateCells(dataGridView1, obj.healthcardno, obj.childname, obj.ID.ToString(), obj.childgender, obj.childbirthday);// 
                         //dataGridView1.Rows.Add(row);
-                        tn.Text=obj.childname;
+                        tn.Text=obj.CHILDNAME;
                         tn.Tag = obj;
                         treeView1.Nodes[0].Nodes.Add(tn);
                         if (obj.ID == this.cd_id)
@@ -483,7 +483,7 @@ namespace ChildManager.UI.jibenluru
                         //DataGridViewRow row = new DataGridViewRow();
                         //row.CreateCells(dataGridView1, obj.healthcardno, obj.childname, obj.ID.ToString(), obj.childgender, obj.childbirthday);// 
                         //dataGridView1.Rows.Add(row);
-                        tn.Text = obj.childname;
+                        tn.Text = obj.CHILDNAME;
                         tn.Tag = obj;
                         treeView1.Nodes[1].Nodes.Add(tn);
                         if (obj.ID == this.cd_id )
@@ -564,18 +564,18 @@ namespace ChildManager.UI.jibenluru
             treeView1.SelectedNode = node;
             
             TB_CHILDBASE tbc = (TB_CHILDBASE)this.treeView1.SelectedNode.Tag;
-            l_cardno.Text = tbc.healthcardno;//档案号
-            l_name.Text = tbc.childname;
-            this.cd_id = tbc.id;
-            l_sex.Text = tbc.childgender;
-            l_birth.Text = tbc.childbirthday;
+            l_cardno.Text = tbc.HEALTHCARDNO;//档案号
+            l_name.Text = tbc.CHILDNAME;
+            this.cd_id = (int)tbc.ID;
+            l_sex.Text = tbc.CHILDGENDER;
+            l_birth.Text = tbc.CHILDBIRTHDAY;
             //int[] age = CommonHelper.getAgeBytime(l_birth.Text, DateTime.Now.ToString("yyyy-MM-dd"));
             l_age.Text = CommonHelper.getAgeStr(l_birth.Text);
-            l_patientid.Text = tbc.patient_id;
-            l_weight.Text = tbc.birthweight + "kg";
-            l_gp.Text = "G" + tbc.cs_fetus + "P" + tbc.cs_produce;
-            l_yunzhou.Text = tbc.cs_week==null||tbc.cs_week.Trim().Equals("") ? tbc.sfzy : tbc.cs_day.Trim().Equals("") ? tbc.cs_week + "周" : tbc.cs_week + "+" + tbc.cs_day + "周";
-            l_csqk.Text = tbc.modedelivery;
+            l_patientid.Text = tbc.PATIENT_ID;
+            l_weight.Text = tbc.BIRTHWEIGHT + "kg";
+            l_gp.Text = "G" + tbc.CS_FETUS + "P" + tbc.CS_PRODUCE;
+            l_yunzhou.Text = tbc.CS_WEEK==null||tbc.CS_WEEK.Trim().Equals("") ? tbc.SFZY : tbc.CS_DAY.Trim().Equals("") ? tbc.CS_WEEK + "周" : tbc.CS_WEEK + "+" + tbc.CS_DAY + "周";
+            l_csqk.Text = tbc.MODEDELIVERY;
             foreach (ToolStripItem tsdb in toolStrip2.Items)
             {
                 SYS_MENUS menuobj = tsdb.Tag as SYS_MENUS;
@@ -680,7 +680,7 @@ namespace ChildManager.UI.jibenluru
                     bool isinclude = true;
                     for (int i = 0; i < treeView1.Nodes[0].Nodes.Count; i++)
                     {
-                        if ((treeView1.Nodes[0].Nodes[i].Tag as TB_CHILDBASE).healthcardno == childbase.healthcardno)
+                        if ((treeView1.Nodes[0].Nodes[i].Tag as TB_CHILDBASE).HEALTHCARDNO == childbase.HEALTHCARDNO)
                         {
                             treeView1.Nodes[0].Nodes[i].Checked = true;
                             treeView1.SelectedNode = treeView1.Nodes[0].Nodes[i];
@@ -690,7 +690,7 @@ namespace ChildManager.UI.jibenluru
                     }
                     for (int i = 0; i < treeView1.Nodes[1].Nodes.Count; i++)
                     {
-                        if ((treeView1.Nodes[1].Nodes[i].Tag as TB_CHILDBASE).healthcardno == childbase.healthcardno)
+                        if ((treeView1.Nodes[1].Nodes[i].Tag as TB_CHILDBASE).HEALTHCARDNO == childbase.HEALTHCARDNO)
                         {
                             treeView1.Nodes[1].Nodes[i].Checked = true;
                             treeView1.SelectedNode = treeView1.Nodes[1].Nodes[i];
@@ -706,7 +706,7 @@ namespace ChildManager.UI.jibenluru
                         //this.dataGridView1.Rows[this.dataGridView1.Rows.Count - 1].Selected = true; ;//选中查询到的数据行
                         //treeview节点添加
                         TreeNode tn = new TreeNode();
-                        tn.Text = childbase.childname;
+                        tn.Text = childbase.CHILDNAME;
                         tn.Tag = childbase;
                         treeView1.Nodes[1].Nodes.Add(tn);
                         tn.Checked = true;
@@ -760,7 +760,7 @@ namespace ChildManager.UI.jibenluru
             bool isinclude = true;
             for (int i = 0; i < treeView1.Nodes[0].Nodes.Count; i++)
             {
-                if ((treeView1.Nodes[0].Nodes[i].Tag as TB_CHILDBASE).healthcardno == jibenobj.healthcardno)
+                if ((treeView1.Nodes[0].Nodes[i].Tag as TB_CHILDBASE).HEALTHCARDNO == jibenobj.HEALTHCARDNO)
                 {
                     treeView1.Nodes[0].Nodes[i].Checked = true;
                     treeView1.SelectedNode = treeView1.Nodes[0].Nodes[i];
@@ -770,7 +770,7 @@ namespace ChildManager.UI.jibenluru
             }
             for (int i = 0; i < treeView1.Nodes[1].Nodes.Count; i++)
             {
-                if ((treeView1.Nodes[1].Nodes[i].Tag as TB_CHILDBASE).healthcardno == jibenobj.healthcardno)
+                if ((treeView1.Nodes[1].Nodes[i].Tag as TB_CHILDBASE).HEALTHCARDNO == jibenobj.HEALTHCARDNO)
                 {
                     treeView1.Nodes[1].Nodes[i].Checked = true;
                     treeView1.SelectedNode = treeView1.Nodes[1].Nodes[i];
@@ -786,7 +786,7 @@ namespace ChildManager.UI.jibenluru
                 //this.dataGridView1.Rows[this.dataGridView1.Rows.Count - 1].Selected = true; ;//选中查询到的数据行
                 //treeview节点添加
                 TreeNode tn = new TreeNode();
-                tn.Text = jibenobj.childname;
+                tn.Text = jibenobj.CHILDNAME;
                 tn.Tag = jibenobj;
                 treeView1.Nodes[1].Nodes.Add(tn);
                 tn.Checked = true;

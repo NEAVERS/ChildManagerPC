@@ -7123,3 +7123,86 @@ Entities.msl(3,4) : 错误 3027: 没有为以下 EntitySet/AssociationSet 指定
 【异常方法】：Void .ctor(System.Data.ProviderBase.DbConnectionPoolIdentity, System.Data.SqlClient.SqlConnectionString, System.Data.SqlClient.SqlCredential, System.Object, System.String, System.Security.SecureString, Boolean, System.Data.SqlClient.SqlConnectionString, System.Data.SqlClient.SessionData, System.Data.ProviderBase.DbConnectionPool, System.String, Boolean)
 ***************************************************************
 
+****************************异常文本****************************
+【出现时间】：2018/5/17 20:41:08
+【异常类型】：UnintentionalCodeFirstException
+【异常信息】：正在 Code First 模式下将此上下文与从 EDMX 文件生成的用于 Database First 或 Model First 开发的代码一起使用。这将无法正常工作。若要解决此问题，请不要删除引发此异常的代码行。如果希望使用 Database First 或 Model First，请确保 Entity Framework 连接字符串包括在启动项目的 app.config 或 web.config 中。如果要创建你自己的 DbConnection，请确保它是 EntityConnection 而不是某种其他类型的 DbConnection，并且确保将其传递到接受 DbConnection 的基本 DbContext 构造函数之一。若要了解 Code First、Database First 和 Model First，请参阅此处的 Entity Framework 文档: http://go.microsoft.com/fwlink/?LinkId=394715
+【堆栈调用】：   在 YCF.Model.OracleEntities.OnModelCreating(DbModelBuilder modelBuilder) 位置 E:\Project\test\ChildManagerPC\YCF.Model\OracleEntities.Context.cs:行号 25
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModelBuilder()
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.ForceOSpaceLoadingForKnownEntityTypes()
+   在 System.Data.Entity.DbContext.System.Data.Entity.Infrastructure.IObjectContextAdapter.get_ObjectContext()
+   在 ChildManager.Program.InitEF() 位置 E:\Project\test\ChildManagerPC\ChildManager\Program.cs:行号 69
+【异常方法】：Void OnModelCreating(System.Data.Entity.DbModelBuilder)
+***************************************************************
+
+****************************异常文本****************************
+【出现时间】：2018/5/17 20:42:41
+【异常类型】：ArgumentException
+【异常信息】：具有固定名称“Oracle.ManagedDataAccess.Client”的 ADO.NET 提供程序未在计算机或应用程序配置文件中注册或无法加载。有关详细信息，请参阅内部异常。
+【堆栈调用】：   在 System.Data.Entity.Infrastructure.DependencyResolution.DefaultProviderFactoryResolver.<GetService>b__0(ArgumentException e, String n)
+   在 System.Data.Entity.Infrastructure.DependencyResolution.DefaultProviderFactoryResolver.GetService(Type type, Object key, Func`3 handleFailedLookup)
+   在 System.Data.Entity.Infrastructure.DependencyResolution.DefaultProviderFactoryResolver.GetService(Type type, Object key)
+   在 System.Data.Entity.Infrastructure.DependencyResolution.CachingDependencyResolver.<>c__DisplayClass1.<GetService>b__0(Tuple`2 k)
+   在 System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   在 System.Data.Entity.Infrastructure.DependencyResolution.CachingDependencyResolver.GetService(Type type, Object key)
+   在 System.Data.Entity.Infrastructure.DependencyResolution.ResolverChain.<>c__DisplayClass3.<GetService>b__0(IDbDependencyResolver r)
+   在 System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   在 System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 System.Data.Entity.Infrastructure.DependencyResolution.ResolverChain.GetService(Type type, Object key)
+   在 System.Data.Entity.Infrastructure.DependencyResolution.RootDependencyResolver.GetService(Type type, Object key)
+   在 System.Data.Entity.Infrastructure.DependencyResolution.ResolverChain.<>c__DisplayClass3.<GetService>b__0(IDbDependencyResolver r)
+   在 System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   在 System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 System.Data.Entity.Infrastructure.DependencyResolution.ResolverChain.GetService(Type type, Object key)
+   在 System.Data.Entity.Infrastructure.DependencyResolution.CompositeResolver`2.GetService(Type type, Object key)
+   在 System.Data.Entity.Infrastructure.DependencyResolution.DbDependencyResolverExtensions.GetService[T](IDbDependencyResolver resolver, Object key)
+   在 System.Data.Entity.Core.EntityClient.EntityConnection.ChangeConnectionString(String newConnectionString)
+   在 System.Data.Entity.Core.EntityClient.EntityConnection..ctor(String connectionString)
+   在 System.Data.Entity.Internal.LazyInternalConnection.InitializeFromConnectionStringSetting(ConnectionStringSettings appConfigConnection)
+   在 System.Data.Entity.Internal.LazyInternalConnection.TryInitializeFromAppConfig(String name, AppConfig config)
+   在 System.Data.Entity.Internal.LazyInternalConnection.Initialize()
+   在 System.Data.Entity.Internal.LazyInternalConnection.CreateObjectContextFromConnectionModel()
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.ForceOSpaceLoadingForKnownEntityTypes()
+   在 System.Data.Entity.DbContext.System.Data.Entity.Infrastructure.IObjectContextAdapter.get_ObjectContext()
+   在 ChildManager.Program.InitEF() 位置 E:\Project\test\ChildManagerPC\ChildManager\Program.cs:行号 69
+【异常方法】：System.Object <GetService>b__0(System.ArgumentException, System.String)
+***************************************************************
+
+****************************异常文本****************************
+【出现时间】：2018/5/17 20:42:58
+【异常类型】：ArgumentException
+【异常信息】：找不到请求的 .Net Framework Data Provider。可能没有安装。
+【堆栈调用】：   在 System.Data.Common.DbProviderFactories.GetFactory(String providerInvariantName)
+   在 System.Data.Entity.Infrastructure.DependencyResolution.DefaultProviderFactoryResolver.GetService(Type type, Object key, Func`3 handleFailedLookup)
+【异常方法】：System.Data.Common.DbProviderFactory GetFactory(System.String)
+***************************************************************
+
+****************************异常文本****************************
+【出现时间】：2018/5/17 20:44:14
+【异常类型】：MappingException
+【异常信息】：The type 'Edm.Decimal' of the member 'ID' in the conceptual side type 'Model.CP_ASD1_TAB' does not match with the type 'System.Int32' of the member 'ID' on the object side type 'YCF.Model.CP_ASD1_TAB'.
+【堆栈调用】：   在 System.Data.Entity.Core.Mapping.DefaultObjectMappingItemCollection.ValidateMembersMatch(EdmMember edmMember, EdmMember objectMember)
+   在 System.Data.Entity.Core.Mapping.DefaultObjectMappingItemCollection.LoadEntityTypeOrComplexTypeMapping(ObjectTypeMapping objectMapping, EdmType edmType, EdmType objectType, DefaultObjectMappingItemCollection ocItemCollection, Dictionary`2 typeMappings)
+   在 System.Data.Entity.Core.Mapping.DefaultObjectMappingItemCollection.LoadObjectMapping(EdmType edmType, EdmType objectType, DefaultObjectMappingItemCollection ocItemCollection, Dictionary`2 typeMappings)
+   在 System.Data.Entity.Core.Mapping.DefaultObjectMappingItemCollection.LoadObjectMapping(EdmType cdmType, EdmType objectType, DefaultObjectMappingItemCollection ocItemCollection)
+   在 System.Data.Entity.Core.Mapping.DefaultObjectMappingItemCollection.TryGetMap(String identity, DataSpace typeSpace, Boolean ignoreCase, Map& map)
+   在 System.Data.Entity.Core.Mapping.DefaultObjectMappingItemCollection.TryGetMap(String identity, DataSpace typeSpace, Map& map)
+   在 System.Data.Entity.Core.Mapping.DefaultObjectMappingItemCollection.TryGetMap(GlobalItem item, Map& map)
+   在 System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.TryGetMap(GlobalItem item, DataSpace dataSpace, Map& map)
+   在 System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.TryGetEdmSpaceType[T](T objectSpaceType, T& edmSpaceType)
+   在 System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.GetEdmSpaceType[T](T objectSpaceType)
+   在 System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.GetEdmSpaceType(StructuralType objectSpaceType)
+   在 System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappings()
+   在 System.Data.Entity.Internal.InternalContext.TryUpdateEntitySetMappingsForType(Type entityType)
+   在 System.Data.Entity.Internal.InternalContext.TryGetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.TryInitialize()
+   在 System.Data.Entity.Internal.InternalContext.ForceOSpaceLoadingForKnownEntityTypes()
+   在 System.Data.Entity.DbContext.System.Data.Entity.Infrastructure.IObjectContextAdapter.get_ObjectContext()
+   在 ChildManager.Program.InitEF() 位置 E:\Project\test\ChildManagerPC\ChildManager\Program.cs:行号 69
+【异常方法】：Void ValidateMembersMatch(System.Data.Entity.Core.Metadata.Edm.EdmMember, System.Data.Entity.Core.Metadata.Edm.EdmMember)
+***************************************************************
+
