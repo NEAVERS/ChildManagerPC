@@ -80,7 +80,7 @@ namespace ChildManager.UI
             //    return;
             //}
             //连接后台数据库判断本用户是否存在！
-            sys_users users = userbll.Get(usercode);
+            SYS_USERS users = userbll.Get(usercode);
             try
             {
                 if (users==null)
@@ -91,7 +91,7 @@ namespace ChildManager.UI
                 }
                 else
                 {
-                    if (password != users.password)
+                    if (password != users.PASSWORD)
                     {
                         MessageBox.Show("用户名或者密码错误！", "系统提示");
                         textBox2.Focus();
@@ -99,15 +99,15 @@ namespace ChildManager.UI
                     }
                     else
                     {
-                        globalInfoClass.PassWord = users.password;//赋值用户密码
-                        globalInfoClass.UserCode = users.user_code;//赋值用户编码
-                        globalInfoClass.UserName = users.user_name;//赋值用户姓名
-                        globalInfoClass.UserType = users.user_type;//赋值用户类型,判断权限
-                        globalInfoClass.Pre_Max = users.pre_max;//赋值用户类型,判断权限
-                        globalInfoClass.User_Role = users.role_code;//赋值用户类型,判断权限
-                        globalInfoClass.Ward_name = users.ward_name;
-                        globalInfoClass.Zhicheng = users.zhicheng;
-                        globalInfoClass.Zhiwu = users.zhiwu;
+                        globalInfoClass.PassWord = users.PASSWORD;//赋值用户密码
+                        globalInfoClass.UserCode = users.USER_CODE;//赋值用户编码
+                        globalInfoClass.UserName = users.USER_NAME;//赋值用户姓名
+                        globalInfoClass.UserType = users.USER_TYPE;//赋值用户类型,判断权限
+                        globalInfoClass.Pre_Max = (int)users.PRE_MAX;//赋值用户类型,判断权限
+                        globalInfoClass.User_Role = users.ROLE_CODE;//赋值用户类型,判断权限
+                        globalInfoClass.Ward_name = users.WARD_NAME;
+                        globalInfoClass.Zhicheng = users.ZHICHENG;
+                        globalInfoClass.Zhiwu = users.ZHIWU;
                         //globalInfoClass.Hospital = "礼嘉分院";//this.hospital.Text.Trim();
                         textBox1.Text = OperatFile.SetIniFileString("HospitalInfo", "hospital_name", hospital, Application.StartupPath + "\\hospitalinfo.ini");
 

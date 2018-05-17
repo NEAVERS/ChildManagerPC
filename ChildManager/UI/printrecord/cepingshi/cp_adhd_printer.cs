@@ -10,10 +10,10 @@ namespace ChildManager.UI.printrecord.cepingshi
     {
         private Rectangle _rectBody;
 
-        private tb_childbase _baseobj = null;
-        private cp_adhd_tab _obj = null;
+        private TB_CHILDBASE _baseobj = null;
+        private CP_ADHD_TAB _obj = null;
 
-        public cp_adhd_printer(tb_childbase baseobj, cp_adhd_tab obj)
+        public cp_adhd_printer(TB_CHILDBASE baseobj, CP_ADHD_TAB obj)
         {
             InitializeComponent();
             _baseobj = baseobj;
@@ -98,7 +98,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             left += nameheadwidth;
 
             rect = new Rectangle(left, top, namewidth, 30);
-            MiddleCenterPrintTextNoBold(_baseobj.childname,rect,g);
+            MiddleCenterPrintTextNoBold(_baseobj.CHILDNAME,rect,g);
             g.DrawLine(pen, rect.Left, rect.Top + 20, rect.Right, rect.Top + 20);
             left += namewidth;
             left += 50;
@@ -107,7 +107,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             left += sexheadwidth;
 
             rect = new Rectangle(left, top, sexwidth, 30);
-            MiddleCenterPrintTextNoBold(_baseobj.childgender, rect, g);
+            MiddleCenterPrintTextNoBold(_baseobj.CHILDGENDER, rect, g);
             g.DrawLine(pen, rect.Left, rect.Top + 20, rect.Right, rect.Top + 20);
             left += sexwidth;
 			left += 50;
@@ -115,7 +115,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("年龄", rect, g);
             left += ageheadwidth;
 
-            int[] age = CommonHelper.getAgeBytime(_baseobj.childbirthday, _obj.csrq);
+            int[] age = CommonHelper.getAgeBytime(_baseobj.CHILDBIRTHDAY, _obj.CSRQ);
             string agestr = (age[0] > 0 ? age[0].ToString() + "岁" : "") + (age[1] > 0 ? age[1].ToString() + "月" : "") + (age[2] > 0 ? age[2].ToString() + "天" : "");
             rect = new Rectangle(left, top, agewidth, 30);
             MiddleCenterPrintTextNoBold(agestr, rect, g);
@@ -136,13 +136,13 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("  病史提供者", rect, g);
             left += 100;
             rect = new Rectangle(left, top, 120, 30);
-            MiddleCenterPrintTextNoBold(_obj.adhd1_bstgz, rect, g);
+            MiddleCenterPrintTextNoBold(_obj.ADHD1_BSTGZ, rect, g);
             g.DrawLine(pen, rect.Left, rect.Top + 20, rect.Right, rect.Top + 20);
 
             top += 40;
             left = _rectBody.Left+80;
             rect = new Rectangle(left, top, 150, 30);
-            MiddleLeftPrintText("（  "+ _obj.adhd1_pf + "  ）分", rect, g);
+            MiddleLeftPrintText("（  "+ _obj.ADHD1_PF + "  ）分", rect, g);
 
             top += 40;
             left = _rectBody.Left + 80;
@@ -150,7 +150,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             BoldMiddleLeftPrintText("结论：", rect, g);
             left += 60;
             rect = new Rectangle(left, top, 150, 30);
-            MiddleLeftPrintText(_obj.adhd1_jl, rect, g);
+            MiddleLeftPrintText(_obj.ADHD1_JL, rect, g);
             top += 40;
             #endregion
 
@@ -165,7 +165,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("  病史提供者", rect, g);
             left += 100;
             rect = new Rectangle(left, top, 120, 30);
-            MiddleCenterPrintTextNoBold(_obj.adhd2_bstgz, rect, g);
+            MiddleCenterPrintTextNoBold(_obj.ADHD2_BSTGZ, rect, g);
             g.DrawLine(pen, rect.Left, rect.Top + 20, rect.Right, rect.Top + 20);
 
             top += 40;
@@ -175,7 +175,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             //添加多选框
             int checkindex = 0;
             rect = new Rectangle(left, top, 30, 30);
-            int.TryParse(_obj.adhd2_zyqx,out checkindex);
+            int.TryParse(_obj.ADHD2_ZYQX,out checkindex);
             MiddleCenterPrintText(checkindex>=6?"☑":"☐", new Font("宋体", 16f), new SolidBrush(Color.Black),rect, g);
             left += 30;
             
@@ -183,13 +183,13 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("注意缺陷(", rect, g);
             left += 100;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.adhd2_zyqx, rect, g);
+            MiddleLeftPrintText(_obj.ADHD2_ZYQX, rect, g);
             left += 40;
             rect = new Rectangle(left, top, 150, 30);
             MiddleLeftPrintText(") / 9    总分（", rect, g);
             left += 150;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.adhd2_zyqx_sum, rect, g);
+            MiddleLeftPrintText(_obj.ADHD2_ZYQX_SUM, rect, g);
             left += 40;
             rect = new Rectangle(left, top, 40, 30);
             MiddleLeftPrintText(")", rect, g);
@@ -200,7 +200,7 @@ namespace ChildManager.UI.printrecord.cepingshi
               //添加多选框
             checkindex = 0;
             rect = new Rectangle(left, top, 30, 30);
-            int.TryParse(_obj.adhd2_ddcd,out checkindex);
+            int.TryParse(_obj.ADHD2_DDCD,out checkindex);
             MiddleCenterPrintText(checkindex>=6?"☑":"☐", new Font("宋体", 16f), new SolidBrush(Color.Black),rect, g);
             left += 30;
             
@@ -208,13 +208,13 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("多动冲动(", rect, g);
             left += 100;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.adhd2_ddcd, rect, g);
+            MiddleLeftPrintText(_obj.ADHD2_DDCD, rect, g);
             left += 40;
             rect = new Rectangle(left, top, 150, 30);
             MiddleLeftPrintText(") / 9    总分（", rect, g);
             left += 150;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.adhd2_ddcd_sum, rect, g);
+            MiddleLeftPrintText(_obj.ADHD2_DDCD_SUM, rect, g);
             left += 40;
             rect = new Rectangle(left, top, 40, 30);
             MiddleLeftPrintText(")", rect, g);
@@ -225,7 +225,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             //添加多选框
             checkindex = 0;
             rect = new Rectangle(left, top, 30, 30);
-            int.TryParse(_obj.adhd2_gnsh,out checkindex);
+            int.TryParse(_obj.ADHD2_GNSH,out checkindex);
             MiddleCenterPrintText(checkindex>=1?"☑":"☐", new Font("宋体", 16f), new SolidBrush(Color.Black),rect, g);
             left += 30;
             
@@ -233,13 +233,13 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("功能损害(", rect, g);
             left += 100;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.adhd2_gnsh, rect, g);
+            MiddleLeftPrintText(_obj.ADHD2_GNSH, rect, g);
             left += 40;
             rect = new Rectangle(left, top, 150, 30);
             MiddleLeftPrintText(") / 8    总分（", rect, g);
             left += 150;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.adhd2_gnsh_sum, rect, g);
+            MiddleLeftPrintText(_obj.ADHD2_GNSH_SUM, rect, g);
             left += 40;
             rect = new Rectangle(left, top, 40, 30);
             MiddleLeftPrintText(")", rect, g);
@@ -250,7 +250,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             BoldMiddleLeftPrintText("结论：", rect, g);
             left += 60;
             rect = new Rectangle(left, top, 150, 30);
-            MiddleLeftPrintText(_obj.adhd2_jl, rect, g);
+            MiddleLeftPrintText(_obj.ADHD2_JL, rect, g);
             top += 40;
 #endregion
 
@@ -264,7 +264,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("  病史提供者", rect, g);
             left += 100;
             rect = new Rectangle(left, top, 120, 30);
-            MiddleCenterPrintTextNoBold(_obj.adhd3_bstgz, rect, g);
+            MiddleCenterPrintTextNoBold(_obj.ADHD3_BSTGZ, rect, g);
             g.DrawLine(pen, rect.Left, rect.Top + 20, rect.Right, rect.Top + 20);
 
             top += 40;
@@ -273,7 +273,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             //添加多选框
             checkindex = 0;
             rect = new Rectangle(left, top, 30, 30);
-            int.TryParse(_obj.adhd3_dlwk,out checkindex);
+            int.TryParse(_obj.ADHD3_DLWK,out checkindex);
             MiddleCenterPrintText(checkindex>=4?"☑":"☐", new Font("宋体", 16f), new SolidBrush(Color.Black),rect, g);
             left += 30;
             
@@ -281,13 +281,13 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText(" 对立违抗(", rect, g);
             left += 100;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.adhd3_dlwk, rect, g);
+            MiddleLeftPrintText(_obj.ADHD3_DLWK, rect, g);
             left += 40;
             rect = new Rectangle(left, top, 150, 30);
             MiddleLeftPrintText(") / 8    总分（", rect, g);
             left += 150;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.adhd3_dlwk_sum, rect, g);
+            MiddleLeftPrintText(_obj.ADHD3_DLWK_SUM, rect, g);
             left += 40;
             rect = new Rectangle(left, top, 40, 30);
             MiddleLeftPrintText(")", rect, g);
@@ -298,7 +298,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             //添加多选框
             checkindex = 0;
             rect = new Rectangle(left, top, 30, 30);
-            int.TryParse(_obj.adhd3_pxza,out checkindex);
+            int.TryParse(_obj.ADHD3_PXZA,out checkindex);
             MiddleCenterPrintText(checkindex>=3?"☑":"☐", new Font("宋体", 16f), new SolidBrush(Color.Black),rect, g);
             left += 30;
             
@@ -306,13 +306,13 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText(" 品行障碍(", rect, g);
             left += 100;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.adhd3_pxza, rect, g);
+            MiddleLeftPrintText(_obj.ADHD3_PXZA, rect, g);
             left += 40;
             rect = new Rectangle(left, top, 150, 30);
             MiddleLeftPrintText(") / 14   总分（", rect, g);
             left += 150;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.adhd3_pxza_sum, rect, g);
+            MiddleLeftPrintText(_obj.ADHD3_PXZA_SUM, rect, g);
             left += 40;
             rect = new Rectangle(left, top, 40, 30);
             MiddleLeftPrintText(")", rect, g);
@@ -323,7 +323,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             //添加多选框
             checkindex = 0;
             rect = new Rectangle(left, top, 30, 30);
-            int.TryParse(_obj.adhd3_jlyy,out checkindex);
+            int.TryParse(_obj.ADHD3_JLYY,out checkindex);
             MiddleCenterPrintText(checkindex>=3?"☑":"☐", new Font("宋体", 16f), new SolidBrush(Color.Black),rect, g);
             left += 30;
             
@@ -331,13 +331,13 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("焦虑/抑郁(", rect, g);
             left += 100;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.adhd3_jlyy, rect, g);
+            MiddleLeftPrintText(_obj.ADHD3_JLYY, rect, g);
             left += 40;
             rect = new Rectangle(left, top, 150, 30);
             MiddleLeftPrintText(") / 7    总分（", rect, g);
             left += 150;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.adhd3_jlyy_sum, rect, g);
+            MiddleLeftPrintText(_obj.ADHD3_JLYY_SUM, rect, g);
             left += 40;
             rect = new Rectangle(left, top, 40, 30);
             MiddleLeftPrintText(")", rect, g);
@@ -354,7 +354,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("教师任教科目", rect, g);
             left += 100;
             rect = new Rectangle(left, top, 120, 30);
-            MiddleCenterPrintTextNoBold(_obj.adhd4_bstgz, rect, g);
+            MiddleCenterPrintTextNoBold(_obj.ADHD4_BSTGZ, rect, g);
             g.DrawLine(pen, rect.Left, rect.Top + 20, rect.Right, rect.Top + 20);
 
             top += 40;
@@ -363,7 +363,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             //添加多选框
             checkindex = 0;
             rect = new Rectangle(left, top, 30, 30);
-            int.TryParse(_obj.adhd4_zyqx,out checkindex);
+            int.TryParse(_obj.ADHD4_ZYQX,out checkindex);
             MiddleCenterPrintText(checkindex>=6?"☑":"☐", new Font("宋体", 16f), new SolidBrush(Color.Black),rect, g);
             left += 30;
             
@@ -372,13 +372,13 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("注意缺陷(", rect, g);
             left += 100;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.adhd4_zyqx, rect, g);
+            MiddleLeftPrintText(_obj.ADHD4_ZYQX, rect, g);
             left += 40;
             rect = new Rectangle(left, top, 150, 30);
             MiddleLeftPrintText(") / 9    总分（", rect, g);
             left += 150;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.adhd4_zyqx_sum, rect, g);
+            MiddleLeftPrintText(_obj.ADHD4_ZYQX_SUM, rect, g);
             left += 40;
             rect = new Rectangle(left, top, 40, 30);
             MiddleLeftPrintText(")", rect, g);
@@ -389,7 +389,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             //添加多选框
             checkindex = 0;
             rect = new Rectangle(left, top, 30, 30);
-            int.TryParse(_obj.adhd4_ddcd,out checkindex);
+            int.TryParse(_obj.ADHD4_DDCD,out checkindex);
             MiddleCenterPrintText(checkindex>=6?"☑":"☐", new Font("宋体", 16f), new SolidBrush(Color.Black),rect, g);
             left += 30;
             
@@ -397,13 +397,13 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("多动冲动(", rect, g);
             left += 100;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.adhd4_ddcd, rect, g);
+            MiddleLeftPrintText(_obj.ADHD4_DDCD, rect, g);
             left += 40;
             rect = new Rectangle(left, top, 150, 30);
             MiddleLeftPrintText(") / 9    总分（", rect, g);
             left += 150;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.adhd4_ddcd_sum, rect, g);
+            MiddleLeftPrintText(_obj.ADHD4_DDCD_SUM, rect, g);
             left += 40;
             rect = new Rectangle(left, top, 40, 30);
             MiddleLeftPrintText(")", rect, g);
@@ -414,7 +414,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             //添加多选框
             checkindex = 0;
             rect = new Rectangle(left, top, 30, 30);
-            int.TryParse(_obj.adhd4_gnsh,out checkindex);
+            int.TryParse(_obj.ADHD4_GNSH,out checkindex);
             MiddleCenterPrintText(checkindex>=1?"☑":"☐", new Font("宋体", 16f), new SolidBrush(Color.Black),rect, g);
             left += 30;
             
@@ -422,13 +422,13 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("功能损害(", rect, g);
             left += 100;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.adhd4_gnsh, rect, g);
+            MiddleLeftPrintText(_obj.ADHD4_GNSH, rect, g);
             left += 40;
             rect = new Rectangle(left, top, 150, 30);
             MiddleLeftPrintText(") / 8    总分（", rect, g);
             left += 150;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.adhd4_gnsh_sum, rect, g);
+            MiddleLeftPrintText(_obj.ADHD4_GNSH_SUM, rect, g);
             left += 40;
             rect = new Rectangle(left, top, 40, 30);
             MiddleLeftPrintText(")", rect, g);
@@ -439,7 +439,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             BoldMiddleLeftPrintText("结论：", rect, g);
             left += 60;
             rect = new Rectangle(left, top, 150, 30);
-            MiddleLeftPrintText(_obj.adhd4_jl, rect, g);
+            MiddleLeftPrintText(_obj.ADHD4_JL, rect, g);
             top += 40;
             #endregion
 
@@ -450,12 +450,12 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("送诊医生", rect, g);
             left += 80;
             rect = new Rectangle(left, top, 120, 30);
-            MiddleCenterPrintTextNoBold(_obj.szys, rect, g);
+            MiddleCenterPrintTextNoBold(_obj.SZYS, rect, g);
             g.DrawLine(pen, rect.Left, rect.Top + 20, rect.Right, rect.Top + 20);
 
             left = _rectBody.Right - 120;
             rect = new Rectangle(left, top, 120, 30);
-            MiddleCenterPrintTextNoBold(_obj.cszqm, rect, g);
+            MiddleCenterPrintTextNoBold(_obj.CSZQM, rect, g);
             g.DrawLine(pen, rect.Left, rect.Top + 20, rect.Right, rect.Top + 20);
             left -= 100;
             rect = new Rectangle(left, top, 100, 30);
@@ -464,7 +464,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             top += 25;
             left = _rectBody.Right - 120;
             rect = new Rectangle(left, top, 120, 30);
-            MiddleCenterPrintTextNoBold(_obj.csrq, rect, g);
+            MiddleCenterPrintTextNoBold(_obj.CSRQ, rect, g);
             g.DrawLine(pen, rect.Left, rect.Top + 20, rect.Right, rect.Top + 20);
             left -= 100;
             rect = new Rectangle(left, top, 100, 30);
