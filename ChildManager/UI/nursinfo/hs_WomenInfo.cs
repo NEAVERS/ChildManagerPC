@@ -56,7 +56,7 @@ namespace ChildManager.UI.nursinfo
         tab_person_databll personbll = new tab_person_databll();
         tb_childbasebll basebll = new tb_childbasebll();
         tb_childcheckbll checkbll = new tb_childcheckbll();
-        tb_childbase _jibenobj = null;
+        TB_CHILDBASE _jibenobj = null;
         HisPatientInfo _hisPatientobj = null;
         XmlDocument doc = new XmlDocument();
         string _hospital = globalInfoClass.Hospital;
@@ -159,11 +159,11 @@ namespace ChildManager.UI.nursinfo
             if (_jibenobj != null)
             {
                 CommonHelper.setForm(_jibenobj, panel2.Controls);
-                this.patient_id.Text = _jibenobj.patient_id;
-                this.jiuzhencardno.Text = _jibenobj.jiuzhencardno;
-                if (!string.IsNullOrEmpty(_jibenobj.patient_id) || !string.IsNullOrEmpty(_jibenobj.jiuzhencardno))
+                this.patient_id.Text = _jibenobj.PATIENT_ID;
+                this.jiuzhencardno.Text = _jibenobj.JIUZHENCARDNO;
+                if (!string.IsNullOrEmpty(_jibenobj.PATIENT_ID) || !string.IsNullOrEmpty(_jibenobj.JIUZHENCARDNO))
                 {
-                    _hisPatientobj = ReadCard.GetHisPatientInfo(_jibenobj.patient_id, _jibenobj.jiuzhencardno, true);
+                    _hisPatientobj = ReadCard.GetHisPatientInfo(_jibenobj.PATIENT_ID, _jibenobj.JIUZHENCARDNO, true);
                     if (_hisPatientobj != null)
                     {
                         string[] strInfo = null;
@@ -184,7 +184,7 @@ namespace ChildManager.UI.nursinfo
                             typename = type.Split('(');
                             ck_fz.Text = typename[0];
                         }
-                        if (string.IsNullOrEmpty(_jibenobj.jiuzhencardno))
+                        if (string.IsNullOrEmpty(_jibenobj.JIUZHENCARDNO))
                         {
                             this.jiuzhencardno.Text = _hisPatientobj.VISIT_CARD_NO;
                         }
@@ -196,7 +196,7 @@ namespace ChildManager.UI.nursinfo
                 }
 
                 ClearControls(panel5);
-                //this.childbirthday.Value =Convert.ToDateTime( _jibenobj.childbirthday);
+                //this.childbirthday.Value =Convert.ToDateTime( _jibenobj.CHILDBIRTHDAY);
             }
             RefreshCheckList();
             Cursor.Current = Cursors.WaitCursor;
@@ -215,15 +215,15 @@ namespace ChildManager.UI.nursinfo
             string isjiuzhen = CommonHelper.getcheckedValue(panel1);
             try
             {
-                IList<tb_childbase> list = basebll.GetListByCheckHs(checkday, isjiuzhen, _hospital,cd_id);
+                IList<TB_CHILDBASE> list = basebll.GetListByCheckHs(checkday, isjiuzhen, _hospital,cd_id);
                 if (list != null)
                 {
-                    foreach (tb_childbase obj in list)
+                    foreach (TB_CHILDBASE obj in list)
                     {
                         DataGridViewRow row = new DataGridViewRow();
-                        row.CreateCells(dataGridView1, obj.healthcardno, obj.childname, obj.id.ToString(), obj.childgender, obj.childbirthday);// 
+                        row.CreateCells(dataGridView1, obj.HEALTHCARDNO, obj.CHILDNAME, obj.ID.ToString(), obj.CHILDGENDER, obj.CHILDBIRTHDAY);// 
                         dataGridView1.Rows.Add(row);
-                        if (obj.id == this.cd_id)
+                        if (obj.ID == this.cd_id)
                         {
                             row.Selected = true;
                         }
@@ -263,7 +263,7 @@ namespace ChildManager.UI.nursinfo
             frmsearcher.ShowDialog();
             if (frmsearcher.DialogResult == DialogResult.OK)
             {
-                tb_childbase jibenobj = frmsearcher.returnval;
+                TB_CHILDBASE jibenobj = frmsearcher.returnval;
                 if (jibenobj != null)
                 {
                     SetInfo(sender,jibenobj);
@@ -317,18 +317,18 @@ namespace ChildManager.UI.nursinfo
                 }
             }
 
-            tb_childbase obj = getChildBaseInfoObj();
+            TB_CHILDBASE obj = getChildBaseInfoObj();
             if (_jibenobj != null)
             {
-                obj.id = _jibenobj.id;
-                obj.healthcardno = _jibenobj.healthcardno;
-                obj.gaoweiyinsu = _jibenobj.gaoweiyinsu;
+                obj.ID = _jibenobj.ID;
+                obj.HEALTHCARDNO = _jibenobj.HEALTHCARDNO;
+                obj.GAOWEIYINSU = _jibenobj.GAOWEIYINSU;
                 b = basebll.Update(obj);
                 if (b)
                 {
                     MessageBox.Show("保存成功！", "软件提示");
                     _jibenobj = obj;
-                    cd_id = _jibenobj.id;
+                    cd_id = (int)_jibenobj.ID;
                     checkweight.Focus();
                 }
                 else
@@ -339,18 +339,18 @@ namespace ChildManager.UI.nursinfo
             else
             {
                 //自动生成保健卡号
-                obj.healthcardno = basebll.stateval().ToString();//保健卡号
+                obj.HEALTHCARDNO = basebll.stateval().ToString();//保健卡号
                 b = basebll.Add(obj);
                 if (b)
                 {
                     _jibenobj = obj;
-                    this.healthcardno.Text = obj.healthcardno;
+                    this.healthcardno.Text = obj.HEALTHCARDNO;
                     MessageBox.Show("保存成功！", "软件提示");
-                    cd_id = _jibenobj.id;
+                    cd_id = (int)_jibenobj.ID;
                     checkweight.Focus();
                     dataGridView2.Rows.Clear();
 
-                    string[] rowmrn = new string[] { _jibenobj.healthcardno, _jibenobj.childname, _jibenobj.id.ToString(), _jibenobj.childgender, _jibenobj.childbirthday };
+                    string[] rowmrn = new string[] { _jibenobj.HEALTHCARDNO, _jibenobj.CHILDNAME, _jibenobj.ID.ToString(), _jibenobj.CHILDGENDER, _jibenobj.CHILDBIRTHDAY };
                     dataGridView1.Rows.Add(rowmrn);
                     this.dataGridView1.Rows[this.dataGridView1.Rows.Count - 1].Selected = true;//选中查询到的数据行
                 }
@@ -399,13 +399,13 @@ namespace ChildManager.UI.nursinfo
         /// 获取数据
         /// </summary>
         /// <returns></returns>
-        private tb_childbase getChildBaseInfoObj()
+        private TB_CHILDBASE getChildBaseInfoObj()
         {
-            tb_childbase obj = CommonHelper.GetObj<tb_childbase>(panel2.Controls);
+            TB_CHILDBASE obj = CommonHelper.GetObj<TB_CHILDBASE>(panel2.Controls);
             //obj.childbirthday = this.childbirthday.Text;
-            obj.status = "1";
-            obj.childbuildday = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
-            obj.childbuildhospital = "重医大附属儿童医院";
+            obj.STATUS = "1";
+            obj.CHILDBUILDDAY = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+            obj.CHILDBUILDHOSPITAL = "重医大附属儿童医院";
             return obj;
         }
 
@@ -482,7 +482,7 @@ namespace ChildManager.UI.nursinfo
                     bool isinclude = true;
                     for (int i = 0; i < dataGridView1.RowCount; i++)
                     {
-                        if (dataGridView1.Rows[i].Cells[0].Value.ToString() == _jibenobj.healthcardno)
+                        if (dataGridView1.Rows[i].Cells[0].Value.ToString() == _jibenobj.HEALTHCARDNO)
                         {
                             dataGridView1.Rows[i].Selected = true;
                             isinclude = false;
@@ -492,12 +492,12 @@ namespace ChildManager.UI.nursinfo
                     if (isinclude)
                     {
                         //bindDataNowday(jibenobj.wm_mrn);//档案号查数据
-                        string[] rowmrn = new string[] { _jibenobj.healthcardno, _jibenobj.childname, _jibenobj.id.ToString(), _jibenobj.childgender, _jibenobj.childbirthday };
+                        string[] rowmrn = new string[] { _jibenobj.HEALTHCARDNO, _jibenobj.CHILDNAME, _jibenobj.ID.ToString(), _jibenobj.CHILDGENDER, _jibenobj.CHILDBIRTHDAY };
                         dataGridView1.Rows.Add(rowmrn);
                         this.dataGridView1.Rows[this.dataGridView1.Rows.Count - 1].Selected = true; ;//选中查询到的数据行
                     }
                     dataGridView1_CellEnter(sender, null);
-                    cd_id = _jibenobj.id;
+                    cd_id = (int)_jibenobj.ID;
                     CommonHelper.setForm(_jibenobj, panel2.Controls);
                     telephone2.Focus();
                 }
@@ -528,7 +528,7 @@ namespace ChildManager.UI.nursinfo
                     bool isinclude = true;
                     for (int i = 0; i < dataGridView1.RowCount; i++)
                     {
-                        if (dataGridView1.Rows[i].Cells[0].Value.ToString() == _jibenobj.healthcardno)
+                        if (dataGridView1.Rows[i].Cells[0].Value.ToString() == _jibenobj.HEALTHCARDNO)
                         {
                             dataGridView1.Rows[i].Selected = true;
                             isinclude = false;
@@ -538,7 +538,7 @@ namespace ChildManager.UI.nursinfo
                     if (isinclude)
                     {
                         //bindDataNowday(jibenobj.wm_mrn);//档案号查数据
-                        string[] rowmrn = new string[] { _jibenobj.healthcardno, _jibenobj.childname, _jibenobj.id.ToString(), _jibenobj.childgender, _jibenobj.childbirthday };
+                        string[] rowmrn = new string[] { _jibenobj.HEALTHCARDNO, _jibenobj.CHILDNAME, _jibenobj.ID.ToString(), _jibenobj.CHILDGENDER, _jibenobj.CHILDBIRTHDAY };
                         dataGridView1.Rows.Add(rowmrn);
                         this.dataGridView1.Rows[this.dataGridView1.Rows.Count - 1].Selected = true; ;//选中查询到的数据行
                     }
@@ -666,7 +666,7 @@ namespace ChildManager.UI.nursinfo
                     bool isinclude = true;
                     for (int i = 0; i < dataGridView1.RowCount; i++)
                     {
-                        if (dataGridView1.Rows[i].Cells[0].Value.ToString() == _jibenobj.healthcardno)
+                        if (dataGridView1.Rows[i].Cells[0].Value.ToString() == _jibenobj.HEALTHCARDNO)
                         {
                             dataGridView1.Rows[i].Selected = true;
                             isinclude = false;
@@ -676,7 +676,7 @@ namespace ChildManager.UI.nursinfo
                     if (isinclude)
                     {
                         //bindDataNowday(jibenobj.wm_mrn);//档案号查数据
-                        string[] rowmrn = new string[] { _jibenobj.healthcardno, _jibenobj.childname, _jibenobj.id.ToString(), _jibenobj.childgender, _jibenobj.childbirthday };
+                        string[] rowmrn = new string[] { _jibenobj.HEALTHCARDNO, _jibenobj.CHILDNAME, _jibenobj.ID.ToString(), _jibenobj.CHILDGENDER, _jibenobj.CHILDBIRTHDAY };
                         dataGridView1.Rows.Add(rowmrn);
                         this.dataGridView1.Rows[this.dataGridView1.Rows.Count - 1].Selected = true; ;//选中查询到的数据行
                     }
@@ -815,7 +815,7 @@ namespace ChildManager.UI.nursinfo
                 return;
             }
            
-            tb_childcheck checkobj = GetObj();
+            TB_CHILDCHECK checkobj = GetObj();
             string fzinfo = ck_fz.Text.Trim();
             if (!issave)
             {
@@ -824,10 +824,10 @@ namespace ChildManager.UI.nursinfo
                     string[] typename = null;
                     typename = SIGNAL_SOURCE_CODE.Text.Split('(');
                     fzinfo = typename[0];
-                    checkobj.ck_fz = fzinfo;
+                    checkobj.CK_FZ = fzinfo;
                 }
             }
-            tb_childcheck _checkobj = dataGridView2.SelectedRows.Count > 0 ? dataGridView2.SelectedRows[0].Tag as tb_childcheck : null;
+            TB_CHILDCHECK _checkobj = dataGridView2.SelectedRows.Count > 0 ? dataGridView2.SelectedRows[0].Tag as TB_CHILDCHECK : null;
             if (_checkobj == null)
             {
                 if (checkbll.Add(checkobj))
@@ -852,7 +852,7 @@ namespace ChildManager.UI.nursinfo
             }
             else
             {
-                checkobj.id = _checkobj.id;
+                checkobj.ID = _checkobj.ID;
                 if (checkbll.UpdateNurse(checkobj))
                 {
                     if(issave)
@@ -879,11 +879,11 @@ namespace ChildManager.UI.nursinfo
         /// 体检保存
         /// </summary>
         /// <returns></returns>
-        private tb_childcheck GetObj()
+        private TB_CHILDCHECK GetObj()
         {
-            tb_childcheck obj = CommonHelper.GetObj<tb_childcheck>(panel5.Controls);
-            obj.hospital = _hospital;
-            obj.childid = this.cd_id;
+            TB_CHILDCHECK obj = CommonHelper.GetObj<TB_CHILDCHECK>(panel5.Controls);
+            obj.HOSPITAL = _hospital;
+            obj.CHILDID = this.cd_id;
             return obj;
         }
 
@@ -897,21 +897,21 @@ namespace ChildManager.UI.nursinfo
             dataGridView2.Rows.Clear();
             if (this.cd_id != -1)
             {
-                IList<tb_childcheck> checklist = checkbll.GetList(this.cd_id);
+                IList<TB_CHILDCHECK> checklist = checkbll.GetList(this.cd_id);
                 
                 if (checklist != null)
                 {
-                    checklist = checklist.OrderByDescending(x => x.checkday).ThenByDescending(x => x.id).ToList();
-                    foreach (tb_childcheck checkobj in checklist)
+                    checklist = checklist.OrderByDescending(x => x.CHECKDAY).ThenByDescending(x => x.ID).ToList();
+                    foreach (TB_CHILDCHECK checkobj in checklist)
                     {
                         DataGridViewRow row = new DataGridViewRow();
                         //当前体检年龄
-                        int [] age = CommonHelper.getAgeBytime(childbirthday.Value.ToString("yyyy-MM-dd"),checkobj.checkday);
+                        int [] age = CommonHelper.getAgeBytime(childbirthday.Value.ToString("yyyy-MM-dd"),checkobj.CHECKDAY);
                         string ageStr = age[0]+"岁"+age[1]+"月"+age[2]+"天";
-                        row.CreateCells(dataGridView2, checkobj.checkday,ageStr,checkobj.checkweight, checkobj.checkheight, checkobj.checkzuogao, checkobj.checktouwei, checkobj.ck_fz);
+                        row.CreateCells(dataGridView2, checkobj.CHECKDAY, ageStr,checkobj.CHECKWEIGHT, checkobj.CHECKHEIGHT, checkobj.checkzuogao, checkobj.CHECKTOUWEI, checkobj.CK_FZ);
                         row.Tag = checkobj;
                         dataGridView2.Rows.Add(row);
-                        if (checkobj.checkday == checkday.Text)
+                        if (checkobj.CHECKDAY == checkday.Text)
                         {
                             row.Selected = true;
                         }
@@ -929,7 +929,7 @@ namespace ChildManager.UI.nursinfo
                 MessageBox.Show("请选择要删除的记录！");
                 return;
             }
-            tb_childcheck _checkobj = dataGridView2.SelectedRows[0].Tag as tb_childcheck;
+            TB_CHILDCHECK _checkobj = dataGridView2.SelectedRows[0].Tag as TB_CHILDCHECK;
             if (_checkobj != null)
             {
                 if (MessageBox.Show("删除该记录？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
@@ -937,7 +937,7 @@ namespace ChildManager.UI.nursinfo
                     Cursor.Current = Cursors.WaitCursor;
                     try
                     {
-                        if (checkbll.Delete(_checkobj.id))
+                        if (checkbll.Delete(_checkobj.ID))
                         {
                             MessageBox.Show("删除成功!", "软件提示");
                             RefreshCheckList();
@@ -976,7 +976,7 @@ namespace ChildManager.UI.nursinfo
         {
             if (e.RowIndex != -1)
             {
-                tb_childcheck checkobj = dataGridView2.SelectedRows[0].Tag as tb_childcheck;
+                TB_CHILDCHECK checkobj = dataGridView2.SelectedRows[0].Tag as TB_CHILDCHECK;
                 CommonHelper.setForm(checkobj, panel5.Controls);
             }
         }
@@ -1021,16 +1021,16 @@ namespace ChildManager.UI.nursinfo
         /// <param name="type">分类</param>
         public void SetData(ListBox con, List<DicObj> diclist, string type)
         {
-            IList<tab_person_data> list = personbll.GetList(type);
+            IList<TAB_PERSON_DATA> list = personbll.GetList(type);
             DataTable dt = new DataTable();
             dt.Columns.Add("code", typeof(string));
             dt.Columns.Add("name", typeof(string));
 
-            foreach (tab_person_data obj in list)
+            foreach (TAB_PERSON_DATA obj in list)
             {
                 DicObj dicobj = new DicObj();
-                dicobj.name = obj.name;   //获取name属性值  
-                dicobj.code = obj.code;   //获取name属性值 
+                dicobj.name = obj.NAME;   //获取name属性值  
+                dicobj.code = obj.CODE;   //获取name属性值 
                 diclist.Add(dicobj);
                 dt.Rows.Add(dicobj.code, dicobj.name);
             }
@@ -1099,7 +1099,7 @@ namespace ChildManager.UI.nursinfo
 
                     patient_id.Text = hisobj.PAT_INDEX_NO;//界面赋值查询的病人ID
 
-                    tb_childbase jibenobj = basebll.GetByPatientId(hisobj.PAT_INDEX_NO);//通过病人ID查询本地数据库
+                    TB_CHILDBASE jibenobj = basebll.GetByPatientId(hisobj.PAT_INDEX_NO);//通过病人ID查询本地数据库
                     if (jibenobj == null)//查询结果为null
                     {
                         //MessageBox.Show("（通过病人ID）本地无数据！");
@@ -1203,7 +1203,7 @@ namespace ChildManager.UI.nursinfo
                     bool isinclude = true;
                     for (int i = 0; i < dataGridView1.RowCount; i++)
                     {
-                        if (dataGridView1.Rows[i].Cells[0].Value.ToString() == _jibenobj.healthcardno)
+                        if (dataGridView1.Rows[i].Cells[0].Value.ToString() == _jibenobj.HEALTHCARDNO)
                         {
                             dataGridView1.Rows[i].Selected = true;
                             isinclude = false;
@@ -1213,15 +1213,15 @@ namespace ChildManager.UI.nursinfo
                     if (isinclude)
                     {
                         //bindDataNowday(jibenobj.wm_mrn);//档案号查数据
-                        string[] rowmrn = new string[] { _jibenobj.healthcardno, _jibenobj.childname, _jibenobj.id.ToString(), _jibenobj.childgender, _jibenobj.childbirthday };
+                        string[] rowmrn = new string[] { _jibenobj.HEALTHCARDNO, _jibenobj.CHILDNAME, _jibenobj.ID.ToString(), _jibenobj.CHILDGENDER, _jibenobj.CHILDBIRTHDAY };
                         dataGridView1.Rows.Add(rowmrn);
                         this.dataGridView1.Rows[this.dataGridView1.Rows.Count - 1].Selected = true; ;//选中查询到的数据行
                     }
                     dataGridView1_CellEnter(null, null);
                     //CommonHelper.setForm(_jibenobj, panel2.Controls);
-                    //HisPatientInfo _hisPatientobj=VisitandPatientRequestOne(_jibenobj.patient_id, null);
+                    //HisPatientInfo _hisPatientobj=VisitandPatientRequestOne(_jibenobj.PATIENT_ID, null);
                     //SetHisInfo(_hisPatientobj);
-                    //if (string.IsNullOrEmpty(_jibenobj.jiuzhencardno))
+                    //if (string.IsNullOrEmpty(_jibenobj.JIUZHENCARDNO))
                     //{
                     //    this.jiuzhencardno.Text = _hisPatientobj.VISIT_CARD_NO;
                     //}
@@ -1247,7 +1247,7 @@ namespace ChildManager.UI.nursinfo
                     bool isinclude = true;
                     for (int i = 0; i < dataGridView1.RowCount; i++)
                     {
-                        if (dataGridView1.Rows[i].Cells[0].Value.ToString() == _jibenobj.healthcardno)
+                        if (dataGridView1.Rows[i].Cells[0].Value.ToString() == _jibenobj.HEALTHCARDNO)
                         {
                             dataGridView1.Rows[i].Selected = true;
                             isinclude = false;
@@ -1257,7 +1257,7 @@ namespace ChildManager.UI.nursinfo
                     if (isinclude)
                     {
                         //bindDataNowday(jibenobj.wm_mrn);//档案号查数据
-                        string[] rowmrn = new string[] { _jibenobj.healthcardno, _jibenobj.childname, _jibenobj.id.ToString(), _jibenobj.childgender, _jibenobj.childbirthday };
+                        string[] rowmrn = new string[] { _jibenobj.HEALTHCARDNO, _jibenobj.CHILDNAME, _jibenobj.ID.ToString(), _jibenobj.CHILDGENDER, _jibenobj.CHILDBIRTHDAY };
                         dataGridView1.Rows.Add(rowmrn);
                         this.dataGridView1.Rows[this.dataGridView1.Rows.Count - 1].Selected = true; ;//选中查询到的数据
                     }
@@ -1305,12 +1305,12 @@ namespace ChildManager.UI.nursinfo
         /// </summary>
         /// <param name="sender">控件</param>
         /// <param name="jibenobj">基本信息</param>
-        public void SetInfo(object sender, tb_childbase jibenobj)
+        public void SetInfo(object sender, TB_CHILDBASE jibenobj)
         {
             bool isinclude = true;
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
-                if (dataGridView1.Rows[i].Cells[0].Value.ToString() == jibenobj.healthcardno)
+                if (dataGridView1.Rows[i].Cells[0].Value.ToString() == jibenobj.HEALTHCARDNO)
                 {
                     dataGridView1.Rows[i].Selected = true;
                     isinclude = false;
@@ -1320,7 +1320,7 @@ namespace ChildManager.UI.nursinfo
             if (isinclude)
             {
                 //bindDataNowday(jibenobj.wm_mrn);//档案号查数据
-                string[] rowmrn = new string[] { jibenobj.healthcardno, jibenobj.childname, jibenobj.id.ToString(), jibenobj.childgender, jibenobj.childbirthday };
+                string[] rowmrn = new string[] { jibenobj.HEALTHCARDNO, jibenobj.CHILDNAME, jibenobj.ID.ToString(), jibenobj.CHILDGENDER, jibenobj.CHILDBIRTHDAY };
                 dataGridView1.Rows.Add(rowmrn);
                 this.dataGridView1.Rows[this.dataGridView1.Rows.Count - 1].Selected = true; ;//选中查询到的数据行
             }
@@ -1465,7 +1465,7 @@ namespace ChildManager.UI.nursinfo
                     buttonX4.PerformClick();//清空界面
                     patient_id.Text = hisobj.PAT_INDEX_NO;//界面赋值查询的病人ID
 
-                    tb_childbase jibenobj = basebll.GetByPatientId(hisobj.PAT_INDEX_NO);//通过病人ID查询本地数据库
+                    TB_CHILDBASE jibenobj = basebll.GetByPatientId(hisobj.PAT_INDEX_NO);//通过病人ID查询本地数据库
                     if (jibenobj == null)//查询结果为null
                     {
                         //MessageBox.Show("（通过病人ID）本地无数据！");
@@ -1529,12 +1529,12 @@ namespace ChildManager.UI.nursinfo
                 }
             }
 
-            tb_childbase obj = getChildBaseInfoObj();
+            TB_CHILDBASE obj = getChildBaseInfoObj();
             if (_jibenobj != null)
             {
-                obj.id = _jibenobj.id;
-                obj.healthcardno = _jibenobj.healthcardno;
-                obj.gaoweiyinsu = _jibenobj.gaoweiyinsu;
+                obj.ID = _jibenobj.ID;
+                obj.HEALTHCARDNO = _jibenobj.HEALTHCARDNO;
+                obj.GAOWEIYINSU = _jibenobj.GAOWEIYINSU;
                 b = basebll.Update(obj);
                 if (b)
                 {
@@ -1550,18 +1550,18 @@ namespace ChildManager.UI.nursinfo
             else
             {
                 //自动生成保健卡号
-                obj.healthcardno = basebll.stateval().ToString();//保健卡号
+                obj.HEALTHCARDNO = basebll.stateval().ToString();//保健卡号
                 b = basebll.Add(obj);
                 if (b)
                 {
                     _jibenobj = obj;
-                    this.healthcardno.Text = obj.healthcardno;
+                    this.healthcardno.Text = obj.HEALTHCARDNO;
                     MessageBox.Show("保存成功！", "软件提示");
-                    cd_id = _jibenobj.id;
+                    cd_id = (int)_jibenobj.ID;
                     checkweight.Focus();
                     dataGridView2.Rows.Clear();
 
-                    string[] rowmrn = new string[] { _jibenobj.healthcardno, _jibenobj.childname, _jibenobj.id.ToString(), _jibenobj.childgender, _jibenobj.childbirthday };
+                    string[] rowmrn = new string[] { _jibenobj.HEALTHCARDNO, _jibenobj.CHILDNAME, _jibenobj.ID.ToString(), _jibenobj.CHILDGENDER, _jibenobj.CHILDBIRTHDAY };
                     dataGridView1.Rows.Add(rowmrn);
                     this.dataGridView1.Rows[this.dataGridView1.Rows.Count - 1].Selected = true;//选中查询到的数据行
                 }

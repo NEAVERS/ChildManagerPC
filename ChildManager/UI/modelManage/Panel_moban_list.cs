@@ -11,7 +11,7 @@ namespace ChildManager.UI
     public partial class Panel_moban_list : Office2007Form
     {
         private tb_healthcheck_mobanbll bll = new tb_healthcheck_mobanbll();
-        public tb_healthcheck_moban _healthcheckobj = new tb_healthcheck_moban();
+        public TB_HEALTHCHECK_MOBAN _healthcheckobj = new TB_HEALTHCHECK_MOBAN();
 
         public Panel_moban_list()
         {
@@ -26,17 +26,17 @@ namespace ChildManager.UI
             string moban_type = CommonHelper.getcheckedValue(panel4);
             string creater_name = globalInfoClass.UserName;
 
-            IList<tb_healthcheck_moban> mobanlist = bll.GetList(moban_name,moban_type, creater_name);
+            IList<TB_HEALTHCHECK_MOBAN> mobanlist = bll.GetList(moban_name,moban_type, creater_name);
             if (mobanlist != null && mobanlist.Count > 0)
             {
                 dataGridView1.Rows.Clear();
                 try
                 {
                     int i = 1;
-                    foreach (tb_healthcheck_moban obj in mobanlist)
+                    foreach (TB_HEALTHCHECK_MOBAN obj in mobanlist)
                     {
                         DataGridViewRow row = new DataGridViewRow();
-                        row.CreateCells(dataGridView1, obj.moban_name);
+                        row.CreateCells(dataGridView1, obj.MOBAN_NAME);
                         row.Tag = obj;
                         dataGridView1.Rows.Add(row);
                         i++;
@@ -71,7 +71,7 @@ namespace ChildManager.UI
         {
             if (dataGridView1.CurrentCell.RowIndex != -1)
             {
-                _healthcheckobj = dataGridView1.CurrentRow.Tag as tb_healthcheck_moban;
+                _healthcheckobj = dataGridView1.CurrentRow.Tag as TB_HEALTHCHECK_MOBAN;
                 this.DialogResult = DialogResult.OK;//关闭窗体，导入值
             }
         }

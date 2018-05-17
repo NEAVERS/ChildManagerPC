@@ -402,7 +402,7 @@ namespace login.UI.printrecord
                     left += 80;
 
                     rect = new Rectangle(left, top, 170, _patientInfoHeight);
-                    g.DrawString(_baseobj.ChildName, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                    g.DrawString(_baseobj.CHILDNAME, new Font("Arial Unicode MS", 11f), brush, rect, sf);
                     g.DrawLine(pen, rect.Left, rect.Bottom - lineOffset, rect.Right, rect.Bottom - lineOffset);
                     left += 170;
 
@@ -411,7 +411,7 @@ namespace login.UI.printrecord
                     left += 45;
 
                     rect = new Rectangle(left, top, 80, _patientInfoHeight);
-                    g.DrawString(_baseobj.ChildGender, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                    g.DrawString(_baseobj.CHILDGENDER, new Font("Arial Unicode MS", 11f), brush, rect, sf);
                     g.DrawLine(pen, rect.Left, rect.Bottom - lineOffset, rect.Right, rect.Bottom - lineOffset);
                     left += 80;
 
@@ -420,7 +420,7 @@ namespace login.UI.printrecord
                     left += 100;
 
                     rect = new Rectangle(left, top, 190, _patientInfoHeight);
-                    g.DrawString(Convert.ToDateTime(_baseobj.ChildBirthDay).ToString("yyyy年MM月dd日"), new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                    g.DrawString(Convert.ToDateTime(_baseobj.CHILDBIRTHDAY).ToString("yyyy年MM月dd日"), new Font("Arial Unicode MS", 11f), brush, rect, sf);
                     g.DrawLine(pen, rect.Left, rect.Bottom - lineOffset, rect.Right, rect.Bottom - lineOffset);
                     left += 190;
 

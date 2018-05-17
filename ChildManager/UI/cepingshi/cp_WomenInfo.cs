@@ -168,7 +168,7 @@ namespace ChildManager.UI.cepingshi
             }
             if (!tsm.Checked)
             {
-                //Type ty = Assembly.Load("login").GetType(string.Format("UI.xinxitongji.{0}", menuobj.menu_url));
+                //Type ty = Assembly.Load("login").GetType(string.Format("UI.xinxitongji.{0}", menuobj.MENU_URL));
                 //Object obj = Activator.CreateInstance(ty);
                 CommonHelper.DisposeControls(pnlContent.Controls);
                 UserControl uc = Activator.CreateInstance(Type.GetType(menuobj.MENU_URL), new object[] { this }) as UserControl;

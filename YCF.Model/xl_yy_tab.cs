@@ -25,5 +25,6 @@ namespace YCF.Model
         public string UPDATE_TIME { get; set; }
         public decimal CHILD_ID { get; set; }
         public string YY_SJD { get; set; }
+        public string yy_sjd { get; set; }
     }
 }

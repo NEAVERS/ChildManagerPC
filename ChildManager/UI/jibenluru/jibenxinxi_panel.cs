@@ -139,10 +139,10 @@ namespace ChildManager.UI.jibenluru
                 }
             }
             
-            tb_childbase obj = getChildBaseInfoObj();
+            TB_CHILDBASE obj = getChildBaseInfoObj();
             if (_womeninfo.cd_id != -1)
             {
-                obj.id = _womeninfo.cd_id;
+                obj.ID = _womeninfo.cd_id;
                 b = jibenbll.Update(obj);
                 
                 if (b)
@@ -164,7 +164,7 @@ namespace ChildManager.UI.jibenluru
                 b = jibenbll.Add(obj);
                 if (b)
                 {
-                    _womeninfo.cd_id = obj.id;
+                    _womeninfo.cd_id = obj.ID;
                     this.healthcardno.Text = obj.healthcardno;
                     MessageBox.Show("保存成功！", "软件提示");
                     //if (!String.IsNullOrEmpty(textBoxX12.Text.Trim()))
@@ -186,9 +186,9 @@ namespace ChildManager.UI.jibenluru
         /// 获取数据
         /// </summary>
         /// <returns></returns>
-        private tb_childbase getChildBaseInfoObj()
+        private TB_CHILDBASE getChildBaseInfoObj()
         {
-            tb_childbase obj = CommonHelper.GetObj<tb_childbase>(panel1.Controls);
+            TB_CHILDBASE obj = CommonHelper.GetObj<TB_CHILDBASE>(panel1.Controls);
             obj.status = "1";
             obj.childbuildday = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
             obj.childbuildhospital = "重医大附属儿童医院";
@@ -204,7 +204,7 @@ namespace ChildManager.UI.jibenluru
             if (_womeninfo.cd_id != -1)
             {
                 Cursor.Current = Cursors.WaitCursor;
-                tb_childbase obj = jibenbll.Get(_womeninfo.cd_id);
+                TB_CHILDBASE obj = jibenbll.Get(_womeninfo.cd_id);
 
                 if (obj != null)
                 {
@@ -219,7 +219,7 @@ namespace ChildManager.UI.jibenluru
         /// 本院信息导入
         /// </summary>
         /// <param name="id"></param>
-        public void RefreshCode1(tb_childbase obj)
+        public void RefreshCode1(TB_CHILDBASE obj)
         {
 
             if (obj != null)

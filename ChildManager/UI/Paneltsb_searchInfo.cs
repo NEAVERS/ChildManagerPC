@@ -11,7 +11,7 @@ namespace ChildManager.UI
     public partial class Paneltsb_searchInfo : Office2007Form
     {
         tb_childbasebll bll = new tb_childbasebll();
-        public tb_childbase returnval = null;
+        public TB_CHILDBASE returnval = null;
         private bool _isAutoQuery = true;
 
         public Paneltsb_searchInfo()
@@ -77,7 +77,7 @@ namespace ChildManager.UI
             {
                 checkTime = "";
             }
-            IList<tb_childbase> list = null;
+            IList<TB_CHILDBASE> list = null;
             if (checkTime != "")
             {
                 list = bll.GetListBySqlCheckTime(checkTime);
@@ -91,7 +91,7 @@ namespace ChildManager.UI
                 try
                 {
                     int i = 1;
-                    foreach (tb_childbase obj in list)
+                    foreach (TB_CHILDBASE obj in list)
                     {
                         string birthstr = "";
                         string buidstr = "";
@@ -134,7 +134,7 @@ namespace ChildManager.UI
         {
             if (e.RowIndex >= 0)
             {
-                tb_childbase obj = dataGridView1.Rows[e.RowIndex].Tag as tb_childbase;
+                TB_CHILDBASE obj = dataGridView1.Rows[e.RowIndex].Tag as TB_CHILDBASE;
                 returnval = obj;
                 DialogResult = System.Windows.Forms.DialogResult.OK;
             }
@@ -175,7 +175,7 @@ namespace ChildManager.UI
                 if (dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Tag != null)
                    
                 {
-                    tb_childbase obj = dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Tag as tb_childbase;
+                    TB_CHILDBASE obj = dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Tag as TB_CHILDBASE;
                     returnval = obj;
                     DialogResult = System.Windows.Forms.DialogResult.OK;
                 }
@@ -209,7 +209,7 @@ namespace ChildManager.UI
             {
                 if (dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Selected == true)
                 {
-                    tb_childbase obj = dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Tag as tb_childbase;
+                    TB_CHILDBASE obj = dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Tag as TB_CHILDBASE;
                     returnval = obj;
                     DialogResult = System.Windows.Forms.DialogResult.OK;
                 }

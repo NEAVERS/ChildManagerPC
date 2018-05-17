@@ -183,7 +183,7 @@ namespace ChildManager.UI.sys
         private void BindChildAreas(TreeNode fNode)
         {
             //父节点数据关联的数据行  
-            string sqls = "select * from sys_menus where menu_parent='" + fNode.Tag + "' and is_enable='1'";
+            string sqls = "select * from SYS_MENUS where menu_parent='" + fNode.Tag + "' and is_enable='1'";
             DataSet ds = menubll.getDataSet(sqls);
             DataTable dt = ds.Tables[0];
             //父节点ID           

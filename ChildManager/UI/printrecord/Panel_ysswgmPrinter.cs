@@ -35,11 +35,11 @@ namespace ChildManager.UI.printrecord
         private Rectangle _rectBody;
         private Rectangle _rectTail;
 
-        private tb_childbase _baseobj = null;
+        private TB_CHILDBASE _baseobj = null;
   
-        private ys_ywgm_tab _obj = null;
+        private YS_YWGM_TAB _obj = null;
 
-        public Panel_ysswgmPrinter(ys_ywgm_tab obj)
+        public Panel_ysswgmPrinter(YS_YWGM_TAB obj)
         {
             InitializeComponent();
             _obj = obj;
@@ -232,56 +232,56 @@ namespace ChildManager.UI.printrecord
                 //Rectangle cckaishi = new Rectangle(currLeft, currTop, 255, 45);
                 //g.DrawRectangle(pen, cckaishi);
                 string str = "主诉：";
-                string zs_zz = _obj.zs_zz;
+                string zs_zz = _obj.ZS_ZZ;
                 str += "症状："+zs_zz+"，";
-                string zs_time = _obj.zs_time;
+                string zs_time = _obj.ZS_TIME;
                 str += "时间：" + zs_time + "天/月";
                 str += "。\r\n现病史：";
-                string xbs_pf = _obj.xbs_pf;
+                string xbs_pf = _obj.XBS_PF;
                 str += "皮肤症状："+xbs_pf;
-                string xbs_xhd = _obj.xbs_hxd;
+                string xbs_xhd = _obj.XBS_HXD;
                 str+= "，消化道症状：" + xbs_xhd;
-                string xbs_hxd = _obj.xbs_hxd;
+                string xbs_hxd = _obj.XBS_HXD;
                 str += "，呼吸道症状：" + xbs_hxd;
-                string other = _obj.xbs_other;
-                str += "，其它症状："+_obj.xbs_other;
+                string other = _obj.XBS_OTHER;
+                str += "，其它症状："+_obj.XBS_OTHER;
                 //与摄食物关系:
-                string xbs_ysswgx = _obj.xbs_ysswgx;
+                string xbs_ysswgx = _obj.XBS_YSSWGX;
                 str += "，与摄食物关系：" + xbs_ysswgx;
-                string xbs_wyfs = _obj.xbs_wyfs;
+                string xbs_wyfs = _obj.XBS_WYFS;
                 str += "，喂养方式：" + xbs_ysswgx;
-                string xbs_kysw = _obj.xbs_kysw;
+                string xbs_kysw = _obj.XBS_KYSW;
                 str += "，可疑食物：" + xbs_kysw;
-                string xbs_jshzzsj = _obj.xbs_jshzzsj;
+                string xbs_jshzzsj = _obj.XBS_JSHZZSJ;
                 str += "，进食后出现症状时间：" + xbs_jshzzsj;
-                string xbs_kzsw = _obj.xbs_kzsw;
+                string xbs_kzsw = _obj.XBS_KZSW;
                 str += "，进食可症食物是：" + xbs_kzsw;
-                string xbs_lszz = _obj.xbs_lszz;
+                string xbs_lszz = _obj.XBS_LSZZ;
                 str += "，类似症状出现次数：" + xbs_kzsw+"次";
-                string xbs_jwqk = _obj.xbs_jwqk;
+                string xbs_jwqk = _obj.XBS_JWQK;
                 str += "，既往处理情况：" + xbs_kzsw;
                 str += "。\r\n高危因素：";
-                string xbs_gw_gwjzs = _obj.xbs_gw_gwjzs;
+                string xbs_gw_gwjzs = _obj.XBS_GW_GWJZS;
                 //有,:rer,:ee,:123
                 if (xbs_gw_gwjzs.Contains(":"))
                 {
                     //string[] spitval = xbs_gw_gwjzs.Split(':');
                     xbs_gw_gwjzs = xbs_gw_gwjzs.Replace(":","");
                 }
-                str += "过往家族史："+ xbs_gw_gwjzs + "，父：" + _obj.xbs_fu + "，母：" + _obj.xbs_mu + "，同胞：" + _obj.xbs_tb;
-                string xbs_gw_fmfs = _obj.xbs_gw_fmfs;
+                str += "过往家族史："+ xbs_gw_gwjzs + "，父：" + _obj.XBS_FU + "，母：" + _obj.XBS_MU + "，同胞：" + _obj.XBS_TB;
+                string xbs_gw_fmfs = _obj.XBS_GW_FMFS;
                 str += "，分娩方式：" + xbs_gw_fmfs;
-                string xbs_gw_yz = _obj.xbs_gw_yz;
-                str += "，孕周："+_obj.xbs_gw_yz;
+                string xbs_gw_yz = _obj.XBS_GW_YZ;
+                str += "，孕周："+_obj.XBS_GW_YZ;
                 //孕期接生与使用
-                string xbs_gw_jssy = _obj.xbs_gw_jssy;
+                string xbs_gw_jssy = _obj.XBS_GW_JSSY;
                 if (xbs_gw_jssy.Contains(":"))
                 {
                     xbs_gw_jssy = xbs_gw_jssy.Replace(":","");
                 }
-                str += "，孕期接生与使用：" + _obj.xbs_gw_jssy;
+                str += "，孕期接生与使用：" + _obj.XBS_GW_JSSY;
 
-                string xbs_cw = _obj.xbs_cw;
+                string xbs_cw = _obj.XBS_CW;
                 str += "，宠物："+xbs_cw;
                 str += "。";
                 Rectangle rect = new Rectangle(currLeft, currTop, _rectBody.Width, _rectBody.Height);

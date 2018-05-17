@@ -10,10 +10,10 @@ namespace ChildManager.UI.printrecord.cepingshi
     {
         private Rectangle _rectBody;
 
-        private tb_childbase _baseobj = null;
-        private cp_ados3_tab _obj = null;
+        private TB_CHILDBASE _baseobj = null;
+        private CP_ADOS3_TAB _obj = null;
 
-        public cp_ados3_printer(tb_childbase baseobj, cp_ados3_tab obj)
+        public cp_ados3_printer(TB_CHILDBASE baseobj, CP_ADOS3_TAB obj)
         {
             InitializeComponent();
             _baseobj = baseobj;
@@ -106,7 +106,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             left += nameheadwidth;
 
             rect = new Rectangle(left, top, namewidth, 30);
-            MiddleLeftPrintTextAndLine(_baseobj.childname, rect, g);
+            MiddleLeftPrintTextAndLine(_baseobj.CHILDNAME, rect, g);
             left += namewidth;
 
             rect = new Rectangle(left, top, sexheadwidth, 30);
@@ -114,7 +114,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             left += sexheadwidth;
 
             rect = new Rectangle(left, top, sexwidth, 30);
-            MiddleLeftPrintTextAndLine(_baseobj.childgender, rect, g);
+            MiddleLeftPrintTextAndLine(_baseobj.CHILDGENDER, rect, g);
             left += sexwidth;
 
             rect = new Rectangle(left, top, birthheadwidth, 30);
@@ -122,14 +122,14 @@ namespace ChildManager.UI.printrecord.cepingshi
             left += birthheadwidth;
 
             rect = new Rectangle(left, top, birthwidth, 30);
-            MiddleLeftPrintTextAndLine(_baseobj.childbirthday, rect, g);
+            MiddleLeftPrintTextAndLine(_baseobj.CHILDBIRTHDAY, rect, g);
             left += birthwidth;
 
             rect = new Rectangle(left, top, ageheadwidth, 30);
             MiddleLeftPrintText("年龄", rect, g);
             left += ageheadwidth;
 
-            int[] age = CommonHelper.getAgeBytime(_baseobj.childbirthday, _obj.pgrq);
+            int[] age = CommonHelper.getAgeBytime(_baseobj.CHILDBIRTHDAY, _obj.PGRQ);
             string agestr = (age[0] > 0 ? age[0].ToString() + "岁" : "") + (age[1] > 0 ? age[1].ToString() + "月" : "") + (age[2] > 0 ? age[2].ToString() + "天" : "");
             rect = new Rectangle(left, top, agewidth, 30);
             MiddleLeftPrintTextAndLine(agestr, rect, g);
@@ -142,7 +142,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             left += pgrqheadwidth;
 
             rect = new Rectangle(left, top, pgrqwidth, 30);
-            MiddleLeftPrintTextAndLine(_obj.pgrq, rect, g);
+            MiddleLeftPrintTextAndLine(_obj.PGRQ, rect, g);
             left += pgrqwidth;
 
             rect = new Rectangle(left, top, pgzheadwidth, 30);
@@ -150,7 +150,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             left += pgzheadwidth;
 
             rect = new Rectangle(left, top, pgzwidth, 30);
-            MiddleLeftPrintTextAndLine(_obj.pgzqm, rect, g);
+            MiddleLeftPrintTextAndLine(_obj.PGZQM, rect, g);
             left += pgzwidth + 60;
 
             rect = new Rectangle(left, top, szysheadwidth, 30);
@@ -158,7 +158,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             left += szysheadwidth - 5;
 
             rect = new Rectangle(left, top, szyswidth, 30);
-            MiddleLeftPrintTextAndLine(_obj.szys, rect, g);
+            MiddleLeftPrintTextAndLine(_obj.SZYS, rect, g);
             left += szyswidth;
 
             top += 25;
@@ -424,9 +424,9 @@ namespace ChildManager.UI.printrecord.cepingshi
 
             top += 50;
 
-            if (_obj.bz_visible != null)
+            if (_obj.BZ_VISIBLE != null)
             {
-                if (_obj.bz_visible.Contains("病人可见"))
+                if (_obj.BZ_VISIBLE.Contains("病人可见"))
                 {
                     left = _rectBody.Left;
                     rect = new Rectangle(left, top, 50, 30);
@@ -434,7 +434,7 @@ namespace ChildManager.UI.printrecord.cepingshi
 
                     left += 50;
                     rect = new Rectangle(left, top, _rectBody.Width - 100, 130);
-                    MiddleLeftPrintText(_obj.bz, rect, g);
+                    MiddleLeftPrintText(_obj.BZ, rect, g);
 
                     top += 150;
                 }

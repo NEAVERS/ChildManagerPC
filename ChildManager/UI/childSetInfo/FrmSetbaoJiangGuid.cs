@@ -39,7 +39,7 @@ namespace ChildManager.UI.childSetInfo
                     foreach (childSetbaoJiangGuidObj obj in list)
                     {
                         DataGridViewRow row = new DataGridViewRow();
-                        row.CreateCells(dgvbaojianguid, obj.Setage, obj.Id);
+                        row.CreateCells(dgvbaojianguid, obj.Setage, obj.ID);
                         row.Tag = obj;
                         dgvbaojianguid.Rows.Add(row);
                         this.dgvbaojianguid.Rows[0].Selected = true;
@@ -99,7 +99,7 @@ namespace ChildManager.UI.childSetInfo
                 this.txt_shanshi.Text = obj.Shanshi;
                 this.txt_jibing.Text = obj.Jibing;
                 this.txt_huli.Text = obj.Huli;
-                id = obj.Id;
+                id = obj.ID;
             }
             else
             {

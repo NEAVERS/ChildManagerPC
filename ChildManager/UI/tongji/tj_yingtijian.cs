@@ -132,9 +132,9 @@ namespace ChildManager.UI.tongji
             string starttime = dateTimePicker1.Value.ToString("yyyy-MM-dd");
             string endtime = dateTimePicker2.Value.ToString("yyyy-MM-dd");
             string sqls = "select healthCardNo,childName,childGender,childBirthDay,telephone,a.fuzenday,b.checkday"
-            + " from tb_childcheck a "
-            + " left join tb_childBase d on a.childid=d.id "
-            + " left join tb_childcheck b on a.childid=b.childid and DATEDIFF ( day, b.checkday, a.fuzenday )>=-7 and DATEDIFF ( day, b.checkday, a.fuzenday )<=7 "
+            + " from TB_CHILDCHECK a "
+            + " left join TB_CHILDBASE d on a.childid=d.id "
+            + " left join TB_CHILDCHECK b on a.childid=b.childid and DATEDIFF ( day, b.checkday, a.fuzenday )>=-7 and DATEDIFF ( day, b.checkday, a.fuzenday )<=7 "
             + "where  a.fuzenDay>='" + starttime + "' and a.fuzenDay <='" + endtime + "' and d.id is not null and a.user_code='"+globalInfoClass.UserCode+"'";
 
             IList<yingtijianObj> list = bll.GetList(sqls);

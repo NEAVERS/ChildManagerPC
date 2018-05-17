@@ -35,16 +35,16 @@ namespace ChildManager.UI.printrecord
         private Rectangle _rectBody;
         private Rectangle _rectTail;
 
-        private tb_childbase _baseobj = null;
-        private tb_childcheck _checkobj = null;
+        private TB_CHILDBASE _baseobj = null;
+        private TB_CHILDCHECK _checkobj = null;
         int _height;
         int _weight;
         int _childid;
         string[] _bmipingfen;
         private List<PointF> _checkpointlist = null;
-        private ys_gdzpxza_tab _obj = null;
+        private YS_GDZPXZA_TAB _obj = null;
 
-        public Panel_ysgdzpxzaPrinter(ys_gdzpxza_tab obj)
+        public Panel_ysgdzpxzaPrinter(YS_GDZPXZA_TAB obj)
         {
             InitializeComponent();
             _obj = obj;
@@ -58,7 +58,7 @@ namespace ChildManager.UI.printrecord
             printDoc.DocumentName = "儿童健康检查表";
 
             ChildCheckBll bll = new ChildCheckBll();
-            string sqls = string.Format("select * from tb_childcheck where childId  = " + _childid + "");
+            string sqls = string.Format("select * from TB_CHILDCHECK where childId  = " + _childid + "");
 
             _checkpointlist = bll.getchildcheckPrint(sqls);
             #region
@@ -224,24 +224,24 @@ namespace ChildManager.UI.printrecord
             using (StringFormat sf = new StringFormat())
             {
                 string str = "主诉：";
-                string zs_check = _obj.zs_check;
-                string zs_text = _obj.zs_text;
+                string zs_check = _obj.ZS_CHECK;
+                string zs_text = _obj.ZS_TEXT;
                 str +=  zs_check+"。"+ zs_text;
                 str += "。\r\n现病史：";
-                string xbs_yylj = _obj.xbs_yylj;
+                string xbs_yylj = _obj.XBS_YYLJ;
                 str += "语言理解："+ xbs_yylj;
-                string xbs_yybd = _obj.xbs_yybd;
+                string xbs_yybd = _obj.XBS_YYBD;
                 str += "，语言表达：" + xbs_yybd;
-                string xbs_fyybd = _obj.xbs_fyybd;
+                string xbs_fyybd = _obj.XBS_FYYBD;
                 str += "，非语言表达：" + xbs_fyybd;
-                string xbs_shjw = _obj.xbs_shjw;
+                string xbs_shjw = _obj.XBS_SHJW;
                 str += "，社会交往：" + xbs_shjw;
-                string xbs_cfkb = _obj.xbs_cfkb;
+                string xbs_cfkb = _obj.XBS_CFKB;
                 str += "，重复刻板和狭隘兴趣：" + xbs_cfkb;
-                string xbs_cf = _obj.xbs_cfkb;
+                string xbs_cf = _obj.XBS_CFKB;
                 str += "，重复：" + xbs_cf;
                 //其他共患情况
-                string xbs_other = _obj.xbs_other;
+                string xbs_other = _obj.XBS_OTHER;
                 str += "，其他共患情况：" + xbs_cf;
 
                 Rectangle rect = new Rectangle(currLeft, currTop, _rectBody.Width, _rectBody.Height);

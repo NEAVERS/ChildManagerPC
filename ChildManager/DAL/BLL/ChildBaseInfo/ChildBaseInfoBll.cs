@@ -64,7 +64,7 @@ namespace ChildManager.BLL.ChildBaseInfo
                 {
                     sdr.Read();//读取第一行数据记录
                     obj = new ChildBaseInfoObj();
-                    obj.Id = Convert.ToInt32(sdr["id"]);
+                    obj.id = Convert.ToInt32(sdr["id"]);
                     obj.HealthCardNo = sdr["healthCardNo"].ToString();
                     obj.ChildName = sdr["childName"].ToString();
                     obj.ChildGender = sdr["childGender"].ToString();
@@ -817,7 +817,7 @@ namespace ChildManager.BLL.ChildBaseInfo
             
             using (SqlCommand cmd = new SqlCommand(builder.ToString(), conn))
             {
-                builder.Append("insert into tb_childBase ");
+                builder.Append("insert into TB_CHILDBASE ");
                 builder.Append("( ");
                 //儿童
                 builder.Append("healthCardNo");
@@ -1078,7 +1078,7 @@ namespace ChildManager.BLL.ChildBaseInfo
 
             using (SqlCommand cmd = new SqlCommand(builder.ToString(), conn))
             {
-                builder.Append("update  tb_childBase set ");
+                builder.Append("update  TB_CHILDBASE set ");
                 //儿童
                 builder.Append("childName = @childName");
                 builder.Append(",childGender = @childGender");
@@ -1268,7 +1268,7 @@ namespace ChildManager.BLL.ChildBaseInfo
         public bool isExist(string cname, string Identityno)
         {
             StringBuilder sql = new StringBuilder();
-            sql.Append("select count(1) from tb_childBase");
+            sql.Append("select count(1) from TB_CHILDBASE");
             sql.Append(" where ");
             sql.Append(" childName = @childName and Identityno=@Identityno ");
             SqlParameter[] pms = {
@@ -1291,7 +1291,7 @@ namespace ChildManager.BLL.ChildBaseInfo
             SqlConnection conn = dg.getconn();
             using (SqlCommand cmd = new SqlCommand(builder.ToString(), conn))
             {
-                builder.Append("update  tb_childBase set ");
+                builder.Append("update  TB_CHILDBASE set ");
                 builder.Append("status = @status");
                 builder.Append(" where  id = @id");
                 cmd.CommandType = CommandType.Text;

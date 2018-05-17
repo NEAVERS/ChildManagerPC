@@ -197,7 +197,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             //days = (nowtime - changeDate).TotalDays;
 
 
-           //var d1= Convert.ToDateTime(_baseobj.childbirthday).AddDays(280-Convert.ToInt16(_baseobj.cs_week) * 7 - Convert.ToInt16(_baseobj.cs_day));
+           //var d1= Convert.ToDateTime(_baseobj.CHILDBIRTHDAY).AddDays(280-Convert.ToInt16(_baseobj.cs_week) * 7 - Convert.ToInt16(_baseobj.cs_day));
            // int[] age1 = CommonHelper.getAgeBytime(Convert.ToString( d1), Convert.ToString(DateTime.Now));
            // string age1str = (age1[0] > 0 ? age1[0].ToString() + "岁" : "") + (age1[1] > 0 ? age1[1].ToString() + "月" : "") + (age1[2] > 0 ? age1[2].ToString() + "天" : "");
 

@@ -31,8 +31,8 @@ namespace ChildManager.UI.tongji
                 //+" ("
                 //+"select childid,(select gaoweiyinsu+',' from tb_gaowei where childid=b.childid for xml path('')) as gaoweistr from tb_gaowei b where b.type='高危' group by childid"
                 //+") c "
-            + " tb_childcheck a "
-            + " left join tb_childBase d on a.childid=d.id "
+            + " TB_CHILDCHECK a "
+            + " left join TB_CHILDBASE d on a.childid=d.id "
             + "where  checkDay>='" + starttime + "' and checkDay <='" + endtime + "'  ";
 
             string fuzhujiancha = cbx_fuzhujianchan.Text.Trim();

@@ -38,7 +38,7 @@ namespace ChildManager.UI.jibenluru
             string num1 = this.txtnumber1.Text.Trim();
             string num2 = this.txtnumber2.Text.Trim();
 
-            string sqls = "select * from tb_childBase where status=1 and  healthCardNo in ('" + num1 + "','" + num2 + "')";
+            string sqls = "select * from TB_CHILDBASE where status=1 and  healthCardNo in ('" + num1 + "','" + num2 + "')";
             sqls += " order by childBuildDay";
             ArrayList list = bll.getchildBaseList1(sqls);
             if (list != null && list.Count > 0)
@@ -81,7 +81,7 @@ namespace ChildManager.UI.jibenluru
             string num1 = this.txtnumber1.Text.Trim();
             string num2 = this.txtnumber2.Text.Trim();
 
-            string sqls = "select * from tb_childBase where status=1 and  healthCardNo in ('"+num1+"','"+num2+"')";
+            string sqls = "select * from TB_CHILDBASE where status=1 and  healthCardNo in ('"+num1+"','"+num2+"')";
             sqls += " order by childBuildDay";
             ArrayList list = bll.getchildBaseList1(sqls);
             if (list != null && list.Count > 0)
@@ -170,7 +170,7 @@ namespace ChildManager.UI.jibenluru
             obj.fourToSixMonth = rowMergeView1.Rows[0].Cells[36].Value.ToString();
             obj.gaowei = rowMergeView1.Rows[0].Cells[37].Value.ToString();
 
-            string[] tableName = { "tb_childcheck", "child_yingyanggean", "child_yingyanggean_record",
+            string[] tableName = { "TB_CHILDCHECK", "child_yingyanggean", "child_yingyanggean_record",
                                "child_pinxuegean_record", "child_goulougean_record","tb_gaowei","tb_gaowei_record"
                                  };
             string sqls = "";

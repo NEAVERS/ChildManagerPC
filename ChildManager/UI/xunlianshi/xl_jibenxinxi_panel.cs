@@ -39,19 +39,19 @@ namespace ChildManager.UI.xunlianshi
 
         private void loadyyxinxi()
         {
-            IList<xl_yy_tab> yylist = xlbll.GetList(_xlwomeninfo.cd_id);
+            IList<XL_YY_TAB> yylist = xlbll.GetList(_xlwomeninfo.cd_id);
             if (yylist != null)
             {
                 int rowindex = -1;
                 dataGridView2.Rows.Clear();
                 for (int i=0;i<yylist.Count;i++ )
                 {
-                    xl_yy_tab obj = yylist[i];
+                    XL_YY_TAB obj = yylist[i];
                     DataGridViewRow row = new DataGridViewRow();
-                    row.CreateCells(dataGridView2, obj.yy_rq, obj.yy_sjd, obj.yy_xm);
+                    row.CreateCells(dataGridView2, obj.YY_RQ, obj.yy_sjd, obj.YY_XM);
                     row.Tag = obj;
                     dataGridView2.Rows.Add(row);
-                    if (obj.yy_rq.Equals(yy_rq.Text.Trim()))
+                    if (obj.YY_RQ.Equals(yy_rq.Text.Trim()))
                     {
                         rowindex = i;
                     }
@@ -77,36 +77,36 @@ namespace ChildManager.UI.xunlianshi
             }
             int sjdsfbd = 0;
             int xmsfbd = 0;
-            xl_yy_tab _xlobj = CommonHelper.GetObjMenzhen<xl_yy_tab>(groupBox1.Controls, _xlwomeninfo.cd_id);
+            XL_YY_TAB _xlobj = CommonHelper.GetObjMenzhen<XL_YY_TAB>(groupBox1.Controls, _xlwomeninfo.cd_id);
             if (dataGridView2.SelectedRows.Count>0)
             {
-                xl_yy_tab xlobj = dataGridView2.SelectedRows[0].Tag as xl_yy_tab;
-                _xlobj.id = xlobj.id;
-                if (xlobj.yy_sjd == _xlobj.yy_sjd&&xlobj.yy_rq==_xlobj.yy_rq)
+                XL_YY_TAB xlobj = dataGridView2.SelectedRows[0].Tag as XL_YY_TAB;
+                _xlobj.ID = xlobj.ID;
+                if (xlobj.YY_SJD == _xlobj.YY_SJD&&xlobj.YY_RQ==_xlobj.YY_RQ)
                     sjdsfbd = 1;
-                if (xlobj.yy_xm == _xlobj.yy_xm && xlobj.yy_rq == _xlobj.yy_rq)
+                if (xlobj.YY_XM == _xlobj.YY_XM && xlobj.YY_RQ == _xlobj.YY_RQ)
                     xmsfbd = 1;
             }
-            int sjdsum = xlbll.GetSjdCou(_xlobj.yy_sjd,_xlobj.yy_rq)-sjdsfbd;//如果时间段没变，减去自己这条
-            int xmsum = xlbll.GetXmCou(_xlobj.yy_xm,_xlobj.yy_rq)-xmsfbd;//如果项目没变，减去自己这条
-            IList<xl_yy_cou> listcou = couxlbll.GetList();
+            int sjdsum = xlbll.GetSjdCou(_xlobj.yy_sjd,_xlobj.YY_RQ)-sjdsfbd;//如果时间段没变，减去自己这条
+            int xmsum = xlbll.GetXmCou(_xlobj.YY_XM,_xlobj.YY_RQ)-xmsfbd;//如果项目没变，减去自己这条
+            IList<XL_YY_COU> listcou = couxlbll.GetList();
             int sjdcou = 0;
             int xmcou = 0;
-            foreach(xl_yy_cou obj in listcou)
+            foreach(XL_YY_COU obj in listcou)
             {
-                if (obj.xmmc == _xlobj.yy_xm)
-                    xmcou = obj.xmsl;
-                else if (obj.xmmc == _xlobj.yy_sjd)
-                    sjdcou = obj.xmsl;
+                if (obj.XMMC == _xlobj.YY_XM)
+                    xmcou = (int)obj.XMSL;
+                else if (obj.XMMC == _xlobj.yy_sjd)
+                    sjdcou = (int)obj.XMSL;
             }
             if(sjdsum>=sjdcou)
             {
-                MessageBox.Show(_xlobj.yy_rq+" "+_xlobj.yy_sjd+"已约满"+ sjdsum + "人");
+                MessageBox.Show(_xlobj.YY_RQ+" "+_xlobj.yy_sjd+"已约满"+ sjdsum + "人");
                 return;
             }
             if (xmsum >= xmcou)
             {
-                MessageBox.Show(_xlobj.yy_rq + " " + _xlobj.yy_xm + "已约满" + xmsum + "人");
+                MessageBox.Show(_xlobj.YY_RQ + " " + _xlobj.YY_XM + "已约满" + xmsum + "人");
                 return;
             }
 
@@ -125,7 +125,7 @@ namespace ChildManager.UI.xunlianshi
         {
             if(e.RowIndex!=-1)
             {
-                xl_yy_tab xlobj = dataGridView2.SelectedRows[0].Tag as xl_yy_tab;
+                XL_YY_TAB xlobj = dataGridView2.SelectedRows[0].Tag as XL_YY_TAB;
                 CommonHelper.setForm(xlobj, groupBox1.Controls);
             }
         }

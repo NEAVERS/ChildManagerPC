@@ -22,11 +22,11 @@ namespace ChildManager.UI.yuyue
         yy_asd_tabbll bll = new yy_asd_tabbll();
         yy_pz_tabbll pzbll = new yy_pz_tabbll();
         yy_pz_details_tabbll detailsbll = new yy_pz_details_tabbll();
-        yy_asd_tab _obj = null;
+        YY_ASD_TAB _obj = null;
         string _pz_lx = "";
-        private IList<yy_pz_tab> _xmList;
-        private IList<yy_pz_details_tab> _detailList;
-        private tb_childbase _jibenobj;
+        private IList<YY_PZ_TAB> _xmList;
+        private IList<YY_PZ_DETAILS_TAB> _detailList;
+        private TB_CHILDBASE _jibenobj;
         private yy_asd_tabCount _countobj;
 
         public bool IsEdit
@@ -91,7 +91,7 @@ namespace ChildManager.UI.yuyue
 
                     return;
                 }
-                if (bll.Exists(_jibenobj.id, yy_rq.Text))
+                if (bll.Exists((int)_jibenobj.ID, yy_rq.Text))
                 {
                     MessageBox.Show("该儿童当天已建档！");
 
@@ -107,7 +107,7 @@ namespace ChildManager.UI.yuyue
             }
             else
             {
-                if ((_obj.yy_xm != yy_xm.Text || _obj.yy_rq != yy_rq.Text || _obj.yy_sjd != yy_sjd.Text)
+                if ((_obj.YY_XM != yy_xm.Text || _obj.YY_RQ != yy_rq.Text || _obj.YY_SJD != yy_sjd.Text)
                     && bll.IsFull(yy_xm.Text, yy_rq.Text, yy_sjd.Text))
                 {
                     MessageBox.Show("该时间预约已满！");
@@ -132,10 +132,10 @@ namespace ChildManager.UI.yuyue
             }
         }
 
-        private yy_asd_tab GetObj()
+        private YY_ASD_TAB GetObj()
         {
-            var obj = CommonHelper.GetObjMenzhen<yy_asd_tab>(panel2.Controls, IsEdit ? _obj.child_id : _jibenobj.id);
-            obj.id = _obj?.id ?? 0;
+            var obj = CommonHelper.GetObjMenzhen<YY_ASD_TAB>(panel2.Controls, IsEdit ? (int)_obj.CHILD_ID : (int)_jibenobj.ID);
+            obj.ID = _obj?.ID ?? 0;
 
             return obj;
         }

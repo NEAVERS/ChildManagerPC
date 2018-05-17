@@ -11,9 +11,9 @@ namespace ChildManager.UI
     public partial class Panel_moban_save : Office2007Form
     {
         ChildBaseInfoBll bll = new ChildBaseInfoBll();
-        tb_healthcheck_moban _healthcheckobj = new tb_healthcheck_moban();
+        TB_HEALTHCHECK_MOBAN _healthcheckobj = new TB_HEALTHCHECK_MOBAN();
 
-        public Panel_moban_save(tb_healthcheck_moban healthcheckobj)
+        public Panel_moban_save(TB_HEALTHCHECK_MOBAN healthcheckobj)
         {
             InitializeComponent();
             _healthcheckobj = healthcheckobj;
@@ -23,9 +23,9 @@ namespace ChildManager.UI
 
         private void buttonX1_Click(object sender, EventArgs e)
         {
-            _healthcheckobj.moban_name = txtNo.Text.Trim();
-            _healthcheckobj.creater_name = globalInfoClass.UserName;
-            _healthcheckobj.moban_type = CommonHelper.getcheckedValue(panel4);
+            _healthcheckobj.MOBAN_NAME = txtNo.Text.Trim();
+            _healthcheckobj.CREATER_NAME = globalInfoClass.UserName;
+            _healthcheckobj.MOBAN_TYPE = CommonHelper.getcheckedValue(panel4);
             if(new tb_healthcheck_mobanbll().ExsitsSaveOrUpdateById(_healthcheckobj))
             {
                 MessageBox.Show("模板保存成功！");

@@ -21,8 +21,8 @@ namespace ChildManager.UI.yuyue
     {
         private yy_pz_panel _yypzpanel;
         private yy_pz_tabbll yypzbll = new yy_pz_tabbll();
-        private yy_pz_tab _pzobj;
-        public yy_pz_xg_panel(yy_pz_panel yypzpanel, yy_pz_tab pzobj)
+        private YY_PZ_TAB _pzobj;
+        public yy_pz_xg_panel(yy_pz_panel yypzpanel, YY_PZ_TAB pzobj)
         {
             InitializeComponent();
 
@@ -32,7 +32,7 @@ namespace ChildManager.UI.yuyue
 
         private void buttonX4_Click(object sender, EventArgs e)
         {
-            yy_pz_tab yypzobj = GetObj();
+            YY_PZ_TAB yypzobj = GetObj();
             if (yypzbll.SaveOrUpdate(yypzobj))
             {
                 MessageBox.Show("保存成功！");
@@ -45,12 +45,12 @@ namespace ChildManager.UI.yuyue
             }
         }
 
-        private yy_pz_tab GetObj()
+        private YY_PZ_TAB GetObj()
         {
-            yy_pz_tab yypzobj = CommonHelper.GetObj<yy_pz_tab>(this.Controls);
+            YY_PZ_TAB yypzobj = CommonHelper.GetObj<YY_PZ_TAB>(this.Controls);
             if(_pzobj!=null)
             {
-                yypzobj.id = _pzobj.id;
+                yypzobj.ID = _pzobj.ID;
             }
             return yypzobj;
         }

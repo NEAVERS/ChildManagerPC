@@ -90,7 +90,7 @@ namespace ChildManager.BLL.childSetInfo
                     {
                         //sdr.Read();//读取第一行数据记录
                         childSetyimiaoObj obj = new childSetyimiaoObj();
-                        obj.Id = Convert.ToInt32(sdr["id"]);
+                        obj.ID = Convert.ToInt32(sdr["id"]);
                         //obj.ChildId = Convert.ToInt32(sdr["childId"]);
                         obj.YimiaoName = sdr["yimiaoName"].ToString();
                         obj.FactorName = sdr["factorName"].ToString();
@@ -128,7 +128,7 @@ namespace ChildManager.BLL.childSetInfo
                 {
                     obj = new childSetyimiaoObj();
                     sdr.Read();//读取第一行数据记录
-                    obj.Id = Convert.ToInt32(sdr["id"]);
+                    obj.ID = Convert.ToInt32(sdr["id"]);
                     //obj.ChildId = Convert.ToInt32(sdr["childId"]);
                     obj.YimiaoName = sdr["yimiaoName"].ToString();
                     obj.FactorName = sdr["factorName"].ToString();

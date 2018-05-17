@@ -53,7 +53,7 @@ namespace ChildManager.UI.childSetInfo
                     //DataGridViewCell cell = dgvSetCheckAgeList.Rows[i].Cells[1];
                     if (obj.IsCheck == 1)//检查
                     {
-                        row.CreateCells(dgvSetmianyiAge, i.ToString(), obj.MianyiMonth, obj.MianyiContent, obj.Id);
+                        row.CreateCells(dgvSetmianyiAge, i.ToString(), obj.MianyiMonth, obj.MianyiContent, obj.ID);
                         row.Tag = obj;
                         dgvSetmianyiAge.Rows.Add(row);
                         //cell.Style.ForeColor = Color.Red;
@@ -63,7 +63,7 @@ namespace ChildManager.UI.childSetInfo
                     }
                     else if (obj.IsCheck == 2)//不检查
                     {
-                        row.CreateCells(dgvSetmianyiAge, i.ToString(), obj.MianyiMonth, obj.MianyiContent, obj.Id);
+                        row.CreateCells(dgvSetmianyiAge, i.ToString(), obj.MianyiMonth, obj.MianyiContent, obj.ID);
                         row.Tag = obj;
                         dgvSetmianyiAge.Rows.Add(row);
                         //dgvSetCheckAgeList.Rows[currentRow].Cells[1].Style.ForeColor = Color.Blue;

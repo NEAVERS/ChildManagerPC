@@ -201,7 +201,7 @@ namespace ChildManager.BLL.ChildBaseInfo
                 }
             }
 
-            string basesql = "update tb_childbase set gaoweiyinsu='" + getGaoweistr(globalInfoClass.Wm_Index, "", "高危") + "'"
+            string basesql = "update TB_CHILDBASE set gaoweiyinsu='" + getGaoweistr(globalInfoClass.Wm_Index, "", "高危") + "'"
                 + " ,yingyangbuliang='" + getGaoweistr(globalInfoClass.Wm_Index, "", "营养不良") + "' where id=" + globalInfoClass.Wm_Index;
             dg.executeupdate(basesql);
         }

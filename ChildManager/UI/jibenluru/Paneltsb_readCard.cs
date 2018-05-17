@@ -6,7 +6,6 @@ using System.Collections;
 using ChildManager.BLL.ChildBaseInfo;
 using ChildManager.Model.ChildBaseInfo;
 using YCF.Common;
-using System.Data.OracleClient;
 using login.Hospital.DAL;
 using System.Data.SqlClient;
 
@@ -27,7 +26,7 @@ namespace ChildManager.UI
         {
             if (e.KeyChar == (char)13)
             {
-                string sqls = string.Format("select * from tb_childBase where status='1' ");
+                string sqls = string.Format("select * from TB_CHILDBASE where status='1' ");
                 if (!String.IsNullOrEmpty(txtNo.Text))
                 {
                     sqls += " and jiuzhenCardNo like '%" + txtNo.Text + "%'";
@@ -73,7 +72,7 @@ namespace ChildManager.UI
                             {
                                 obj.childBirthDay = sdr["birthtime"].ToString();
                             }
-                            sqls = "select * from tb_childBase where status='1' and childName like '%" + obj.ChildName + "%'";
+                            sqls = "select * from TB_CHILDBASE where status='1' and childName like '%" + obj.ChildName + "%'";
                             list = bll.getchildBaseListTwo(sqls);
                             if (list != null && list.Count > 0)
                             {

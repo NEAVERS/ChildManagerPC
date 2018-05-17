@@ -73,7 +73,7 @@ namespace ChildManager.BLL.childSetInfo
                     {
                         //sdr.Read();//读取第一行数据记录
                         childSetMianyiAgeObj obj = new  childSetMianyiAgeObj();
-                        obj.Id = Convert.ToInt32(sdr["id"]);
+                        obj.ID = Convert.ToInt32(sdr["id"]);
                         //obj.ChildId = Convert.ToInt32(sdr["childId"]);
                         obj.MianyiMonth = sdr["mianyiMonth"].ToString();
                         obj.MianyiContent = sdr["mianyiContent"].ToString();

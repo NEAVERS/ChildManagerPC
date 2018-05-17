@@ -140,7 +140,7 @@ namespace ChildManager.UI.tongji
             sqls += "  when datediff(year, childbirthday, getdate()) >= 6 and datediff(year, childbirthday, getdate()) < 10 then '6~10岁'";
             sqls += "  when datediff(year, childbirthday, getdate()) >= 10 then '>10岁'";
             sqls += "  end";
-            sqls += "  as nnd, id from tb_childbase";
+            sqls += "  as nnd, id from TB_CHILDBASE";
             sqls += " ) b on a.childid = b.id";
             sqls += " where  recordtime>='" + starttime + "' and recordtime <='" + endtime + "' ";
             sqls += " group by b.nnd,a.gaoweiyinsu order by nnd ";

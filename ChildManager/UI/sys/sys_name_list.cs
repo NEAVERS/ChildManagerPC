@@ -65,7 +65,7 @@ namespace ChildManager.UI.sys
         public void GetList(string name,string type)
         {
             Cursor.Current = Cursors.WaitCursor;
-            IList<tab_person_data> list = null;
+            IList<TAB_PERSON_DATA> list = null;
             if (string.IsNullOrEmpty(name) && string.IsNullOrEmpty(type))
             {
                 list = databll.GetList();
@@ -82,11 +82,11 @@ namespace ChildManager.UI.sys
                 if (list != null && list.Count > 0)
                 {
                     int i = 1;
-                    foreach (tab_person_data obj in list)
+                    foreach (TAB_PERSON_DATA obj in list)
                     {
                         DataGridViewRow row = new DataGridViewRow();
-                        string _type = GetType(obj.type);
-                        row.CreateCells(dgvConditionTreatRecordList, i.ToString(),obj.id, obj.name, obj.code, _type);
+                        string _type = GetType(obj.TYPE);
+                        row.CreateCells(dgvConditionTreatRecordList, i.ToString(),obj.ID, obj.name, obj.code, _type);
                         row.Tag = obj;
                         dgvConditionTreatRecordList.Rows.Add(row);
                         txtnum.Text = i.ToString();
@@ -103,7 +103,7 @@ namespace ChildManager.UI.sys
 
         private void btnInput_Click(object sender, EventArgs e)
         {
-            tab_person_data newobj = new tab_person_data();
+            TAB_PERSON_DATA newobj = new TAB_PERSON_DATA();
             newobj.name = name.Text.Trim();
             newobj.code=code.Text.Trim();
             newobj.type = SetType(type.Text.Trim());
@@ -122,7 +122,7 @@ namespace ChildManager.UI.sys
         {
             if (dgvConditionTreatRecordList.SelectedRows.Count >= 1)
             {
-                tab_person_data updataobj = databll.Get(data_id);
+                TAB_PERSON_DATA updataobj = databll.Get(data_id);
                 updataobj.name = name.Text.Trim();
                 updataobj.code = code.Text.Trim();
                 updataobj.type = SetType(type.Text.Trim());
@@ -148,7 +148,7 @@ namespace ChildManager.UI.sys
             if (dgvConditionTreatRecordList.SelectedRows.Count >= 1)
             {
 
-                tab_person_data userobj = dgvConditionTreatRecordList.SelectedRows[0].Tag as tab_person_data;
+                TAB_PERSON_DATA userobj = dgvConditionTreatRecordList.SelectedRows[0].Tag as TAB_PERSON_DATA;
 
                 if (MessageBox.Show("删除所选的记录？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
@@ -194,7 +194,7 @@ namespace ChildManager.UI.sys
                 return;
             }
             this.data_id = Convert.ToInt32(this.dgvConditionTreatRecordList.SelectedRows[0].Cells[1].Value);//信息id
-            tab_person_data dataobj = databll.Get(data_id);
+            TAB_PERSON_DATA dataobj = databll.Get(data_id);
             name.Text = dataobj.name;
             code.Text = dataobj.code;
             type.Text = GetType(dataobj.type);

@@ -265,7 +265,7 @@ namespace ChildManager.UI.cepingshi
                 }
             }
 
-            tb_childbase obj = getChildBaseInfoObj();
+            TB_CHILDBASE obj = getChildBaseInfoObj();
 
             //自动生成保健卡号
             obj.healthcardno = jibenbll.stateval().ToString();//保健卡号
@@ -289,12 +289,12 @@ namespace ChildManager.UI.cepingshi
         /// 获取数据
         /// </summary>
         /// <returns></returns>
-        private tb_childbase getChildBaseInfoObj()
+        private TB_CHILDBASE getChildBaseInfoObj()
         {
-            tb_childbase obj = new tb_childbase();
+            TB_CHILDBASE obj = new TB_CHILDBASE();
             if (globalInfoClass.Zhiwu == "护士")
             {
-                obj = CommonHelper.GetObj<tb_childbase>(groupPanel1.Controls);
+                obj = CommonHelper.GetObj<TB_CHILDBASE>(groupPanel1.Controls);
                 obj.status = "1";
                 obj.childbuildday = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
                 obj.childbuildhospital = "重医大附属儿童医院";

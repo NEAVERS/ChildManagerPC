@@ -22,17 +22,17 @@ namespace ChildManager.UI.cepingshi
         private cp_ppvt_tabbll ppvtbll = new cp_ppvt_tabbll();//
         cp_WomenInfo _cpwomeninfo = null;
         private bool _isShowTopPanel;
-        IList<cp_cdi_tab> _list = null;
+        IList<CP_CDI_TAB> _list = null;
         public List<DicObj> listszys = new List<DicObj>();
         public List<DicObj> listtest = new List<DicObj>();
         InputLanguage InputHuoDong = null;//当前输入法
 
         public string _type = "YYSC1";
         public string _hospital = globalInfoClass.Hospital;
-        private cp_cdi_tab _cdiobj;
-        private cp_cdi1_tab _cdi1obj;
-        private cp_ddst_tab _ddstobj;
-        private cp_ppvt_tab _zqobj;
+        private CP_CDI_TAB _cdiobj;
+        private CP_CDI1_TAB _cdi1obj;
+        private CP_DDST_TAB _ddstobj;
+        private CP_PPVT_TAB _zqobj;
 
         public cp_yysc1_panel(cp_WomenInfo cpwomeninfo)
         {
@@ -94,19 +94,19 @@ namespace ChildManager.UI.cepingshi
         private void buttonX1_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            cp_cdi_tab cdiobj = getCdiObj();
-            cp_cdi1_tab cdi1obj = getCdi1Obj();
-            cp_ddst_tab ddstobj = getDdstObj();
-            cp_ppvt_tab ppvtobj = getPpvtObj();
+            CP_CDI_TAB cdiobj = getCdiObj();
+            CP_CDI1_TAB cdi1obj = getCdi1Obj();
+            CP_DDST_TAB ddstobj = getDdstObj();
+            CP_PPVT_TAB ppvtobj = getPpvtObj();
 
 
             bool succ = false;
             if (cdibll.SaveOrUpdate(cdiobj))
             {
                 succ = true;
-                cdi1obj.externalid = cdiobj.id;
-                ddstobj.externalid = cdiobj.id;
-                ppvtobj.externalid = cdiobj.id;
+                cdi1obj.EXTERNALID = cdiobj.ID;
+                ddstobj.EXTERNALID = cdiobj.ID;
+                ppvtobj.EXTERNALID = cdiobj.ID;
             }
             else
             {
@@ -141,7 +141,7 @@ namespace ChildManager.UI.cepingshi
             {
                 MessageBox.Show("保存成功！");
                 RefreshRecordList();
-                update_time.SelectedIndex = _list.IndexOf(_list.FirstOrDefault(t => t.update_time == cdiobj.update_time));
+                update_time.SelectedIndex = _list.IndexOf(_list.FirstOrDefault(t => t.UPDATE_TIME == cdiobj.UPDATE_TIME));
             }
             else
             {
@@ -150,91 +150,91 @@ namespace ChildManager.UI.cepingshi
             Cursor.Current = Cursors.Default;
         }
         //CDI短表（词汇及手势）测试结果
-        private cp_cdi_tab getCdiObj()
+        private CP_CDI_TAB getCdiObj()
         {
             if (cszqm.Text.Trim() == "")
             {
                 cszqm.Text = globalInfoClass.UserName;
             }
-            cp_cdi_tab cdiobj = CommonHelper.GetObjMenzhen<cp_cdi_tab>(groupBox2.Controls, _cpwomeninfo.cd_id);
-            cdiobj.type = _type;
-            cdiobj.hospital = _hospital;
-            cdiobj.chbd_df = ss_chbd_df.Text;
-            cdiobj.chbd_p50 = ss_chbd_p50.Text;
-            cdiobj.chbd_p75 = ss_chbd_p75.Text;
-            cdiobj.bstgz = ss_bstgz.Text;
-            cdiobj.etdyr = ss_etdyr.Text;
-            cdiobj.cszqm = cszqm.Text;
-            cdiobj.csrq = csrq.Text;
-            cdiobj.szys = szys.Text.Trim();
+            CP_CDI_TAB cdiobj = CommonHelper.GetObjMenzhen<CP_CDI_TAB>(groupBox2.Controls, _cpwomeninfo.cd_id);
+            cdiobj.TYPE = _type;
+            cdiobj.HOSPITAL = _hospital;
+            cdiobj.CHBD_DF = ss_chbd_df.Text;
+            cdiobj.CHBD_P50 = ss_chbd_p50.Text;
+            cdiobj.CHBD_P75 = ss_chbd_p75.Text;
+            cdiobj.BSTGZ = ss_bstgz.Text;
+            cdiobj.ETDYR = ss_etdyr.Text;
+            cdiobj.CSZQM = cszqm.Text;
+            cdiobj.CSRQ = csrq.Text;
+            cdiobj.SZYS = szys.Text.Trim();
             if (_cdiobj != null)
             {
-                cdiobj.id = _cdiobj.id;
-                cdiobj.operate_code = _cdiobj.operate_code;
-                cdiobj.operate_name = _cdiobj.operate_name;
-                cdiobj.operate_time = _cdiobj.operate_time;
+                cdiobj.ID = _cdiobj.ID;
+                cdiobj.OPERATE_CODE = _cdiobj.OPERATE_CODE;
+                cdiobj.OPERATE_NAME = _cdiobj.OPERATE_NAME;
+                cdiobj.OPERATE_TIME = _cdiobj.OPERATE_TIME;
             }
             return cdiobj;
 
         }
         //CDI短表（词汇及句子）测试结果
-        private cp_cdi1_tab getCdi1Obj()
+        private CP_CDI1_TAB getCdi1Obj()
         {
             if (cszqm.Text.Trim() == "")
             {
                 cszqm.Text = globalInfoClass.UserName;
             }
-            cp_cdi1_tab cdi1obj = CommonHelper.GetObjMenzhen<cp_cdi1_tab>(groupBox3.Controls, _cpwomeninfo.cd_id);
-            cdi1obj.type = _type;
-            cdi1obj.hospital = _hospital;
-            cdi1obj.cszqm = cszqm.Text.Trim();
-            cdi1obj.csrq = csrq.Text.Trim();
-            cdi1obj.szys = szys.Text.Trim();
+            CP_CDI1_TAB cdi1obj = CommonHelper.GetObjMenzhen<CP_CDI1_TAB>(groupBox3.Controls, _cpwomeninfo.cd_id);
+            cdi1obj.TYPE = _type;
+            cdi1obj.HOSPITAL = _hospital;
+            cdi1obj.CSZQM = cszqm.Text.Trim();
+            cdi1obj.CSRQ = csrq.Text.Trim();
+            cdi1obj.SZYS = szys.Text.Trim();
             if (_cdi1obj != null)
             {
-                cdi1obj.id = _cdi1obj.id;
-                cdi1obj.operate_code = _cdi1obj.operate_code;
-                cdi1obj.operate_name = _cdi1obj.operate_name;
-                cdi1obj.operate_time = _cdi1obj.operate_time;
+                cdi1obj.ID = _cdi1obj.ID;
+                cdi1obj.OPERATE_CODE = _cdi1obj.OPERATE_CODE;
+                cdi1obj.OPERATE_NAME = _cdi1obj.OPERATE_NAME;
+                cdi1obj.OPERATE_TIME = _cdi1obj.OPERATE_TIME;
             }
             return cdi1obj;
         }
         //DDST结果
-        private cp_ddst_tab getDdstObj()
+        private CP_DDST_TAB getDdstObj()
         {
             if (cszqm.Text.Trim() == "")
             {
                 cszqm.Text = globalInfoClass.UserName;
             }
-            cp_ddst_tab ddstobj = CommonHelper.GetObjMenzhen<cp_ddst_tab>(panel1.Controls, _cpwomeninfo.cd_id);
-            ddstobj.type = _type;
-            ddstobj.hospital = _hospital;
+            CP_DDST_TAB ddstobj = CommonHelper.GetObjMenzhen<CP_DDST_TAB>(panel1.Controls, _cpwomeninfo.cd_id);
+            ddstobj.TYPE = _type;
+            ddstobj.HOSPITAL = _hospital;
             if (_ddstobj != null)
             {
-                ddstobj.id = _ddstobj.id;
-                ddstobj.operate_code = _ddstobj.operate_code;
-                ddstobj.operate_name = _ddstobj.operate_name;
-                ddstobj.operate_time = _ddstobj.operate_time;
+                ddstobj.ID = _ddstobj.ID;
+                ddstobj.OPERATE_CODE = _ddstobj.OPERATE_CODE;
+                ddstobj.OPERATE_NAME = _ddstobj.OPERATE_NAME;
+                ddstobj.OPERATE_TIME = _ddstobj.OPERATE_TIME;
             }
             return ddstobj;
 
         }
         //皮勃迪图片词汇测试（PPVT）
-        private cp_ppvt_tab getPpvtObj()
+        private CP_PPVT_TAB getPpvtObj()
         {
             if (cszqm.Text.Trim() == "")
             {
                 cszqm.Text = globalInfoClass.UserName;
             }
-            cp_ppvt_tab ppvtobj = CommonHelper.GetObjMenzhen<cp_ppvt_tab>(panel1.Controls, _cpwomeninfo.cd_id);
-            ppvtobj.type = _type;
-            ppvtobj.hospital = _hospital;
+            CP_PPVT_TAB ppvtobj = CommonHelper.GetObjMenzhen<CP_PPVT_TAB>(panel1.Controls, _cpwomeninfo.cd_id);
+            ppvtobj.TYPE = _type;
+            ppvtobj.HOSPITAL = _hospital;
             if (_zqobj != null)
             {
-                ppvtobj.id = _zqobj.id;
-                ppvtobj.operate_code = _zqobj.operate_code;
-                ppvtobj.operate_name = _zqobj.operate_name;
-                ppvtobj.operate_time = _zqobj.operate_time;
+                ppvtobj.ID = _zqobj.ID;
+                ppvtobj.OPERATE_CODE = _zqobj.OPERATE_CODE;
+                ppvtobj.OPERATE_NAME = _zqobj.OPERATE_NAME;
+                ppvtobj.OPERATE_TIME = _zqobj.OPERATE_TIME;
             }
             return ppvtobj;
 
@@ -243,22 +243,22 @@ namespace ChildManager.UI.cepingshi
         /// <summary>
         /// 刷新列表
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="ID"></param>
         public void RefreshCode(int id)
         {
             Cursor.Current = Cursors.WaitCursor;
             _cdiobj = cdibll.Get(id, _type);
-            _cdi1obj = cdi1bll.Get(_cpwomeninfo.cd_id,  _type, _cdiobj?.id ?? 0);
-            _ddstobj = ddstbll.GetByType(_cpwomeninfo.cd_id, _type, _cdiobj?.id ?? 0);
-            _zqobj = ppvtbll.GetByType(_cpwomeninfo.cd_id, _type, _cdiobj?.id ?? 0);
+            _cdi1obj = cdi1bll.Get(_cpwomeninfo.cd_id,  _type, _cdiobj?.ID ?? 0);
+            _ddstobj = ddstbll.GetByType(_cpwomeninfo.cd_id, _type, _cdiobj?.ID ?? 0);
+            _zqobj = ppvtbll.GetByType(_cpwomeninfo.cd_id, _type, _cdiobj?.ID ?? 0);
             if (_cdiobj != null)
             {
                 CommonHelper.setForm(_cdiobj, panel1.Controls);
-                ss_chbd_df.Text = _cdiobj.chbd_df;
-                ss_chbd_p50.Text = _cdiobj.chbd_p50;
-                ss_chbd_p75.Text = _cdiobj.chbd_p75;
-                ss_bstgz.Text = _cdiobj.bstgz;
-                ss_etdyr.Text = _cdiobj.etdyr;
+                ss_chbd_df.Text = _cdiobj.CHBD_DF;
+                ss_chbd_p50.Text = _cdiobj.CHBD_P50;
+                ss_chbd_p75.Text = _cdiobj.CHBD_P75;
+                ss_bstgz.Text = _cdiobj.BSTGZ;
+                ss_etdyr.Text = _cdiobj.ETDYR;
             }
             if (_cdi1obj != null)
             {
@@ -281,10 +281,10 @@ namespace ChildManager.UI.cepingshi
 
         private void SetDefault()
         {
-            CommonHelper.setForm(new cp_cdi_tab(), panel1.Controls);
-            CommonHelper.setForm(new cp_cdi1_tab(), panel1.Controls);
-            CommonHelper.setForm(new cp_ddst_tab(), panel1.Controls);
-            CommonHelper.setForm(new cp_ppvt_tab(), panel1.Controls);
+            CommonHelper.setForm(new CP_CDI_TAB(), panel1.Controls);
+            CommonHelper.setForm(new CP_CDI1_TAB(), panel1.Controls);
+            CommonHelper.setForm(new CP_DDST_TAB(), panel1.Controls);
+            CommonHelper.setForm(new CP_PPVT_TAB(), panel1.Controls);
         }
 
         private void buttonX3_Click(object sender, EventArgs e)
@@ -296,7 +296,7 @@ namespace ChildManager.UI.cepingshi
                     Cursor.Current = Cursors.WaitCursor;
                     try
                     {
-                        if (cdibll.Delete(_cdiobj.id) && cdi1bll.DeleteByExternalid(_cdiobj.id) && ddstbll.DeleteByExternalid(_cdiobj.id) && ppvtbll.DeleteByExternalid(_cdiobj.id))
+                        if (cdibll.Delete(_cdiobj.ID) && cdi1bll.DeleteByExternalid(_cdiobj.ID) && ddstbll.DeleteByExternalid(_cdiobj.ID) && ppvtbll.DeleteByExternalid(_cdiobj.ID))
                         {
                             MessageBox.Show("删除成功!", "软件提示");
                             RefreshRecordList();
@@ -339,7 +339,7 @@ namespace ChildManager.UI.cepingshi
             }
             try
             {
-                tb_childbase baseobj = new tb_childbasebll().Get(_cpwomeninfo.cd_id);
+                TB_CHILDBASE baseobj = new tb_childbasebll().Get(_cpwomeninfo.cd_id);
                 cp_yysc1_printer printer = new cp_yysc1_printer(baseobj, _cdiobj,  _ddstobj, _cdi1obj, _zqobj);
                 printer.Print(ispre);
             }
@@ -372,8 +372,8 @@ namespace ChildManager.UI.cepingshi
         {
             if (_cdiobj != null)
             {
-                var obj = new cp_cdi_tab();
-                obj.update_time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                var obj = new CP_CDI_TAB();
+                obj.UPDATE_TIME = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 _list.Add(obj);
                 update_time.DataSource = null;//数据源先置空，否则同一个对象不会刷新
                 update_time.ValueMember = "id";
@@ -403,16 +403,16 @@ namespace ChildManager.UI.cepingshi
         /// <param name="type">分类</param>
         public void SetData(ListBox con, List<DicObj> diclist, string type)
         {
-            IList<tab_person_data> list = personbll.GetList(type);
+            IList<TAB_PERSON_DATA> list = personbll.GetList(type);
             DataTable dt = new DataTable();
             dt.Columns.Add("code", typeof(string));
             dt.Columns.Add("name", typeof(string));
 
-            foreach (tab_person_data obj in list)
+            foreach (TAB_PERSON_DATA obj in list)
             {
                 DicObj dicobj = new DicObj();
-                dicobj.name = obj.name;   //获取name属性值  
-                dicobj.code = obj.code;   //获取name属性值 
+                dicobj.name = obj.NAME;   //获取name属性值  
+                dicobj.code = obj.CODE;   //获取name属性值 
                 diclist.Add(dicobj);
                 dt.Rows.Add(dicobj.code, dicobj.name);
             }

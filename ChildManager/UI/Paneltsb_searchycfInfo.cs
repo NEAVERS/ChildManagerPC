@@ -11,7 +11,7 @@ namespace ChildManager.UI
     public partial class Paneltsb_searchycfInfo : Office2007Form
     {
         SearchYcfBll bll = new SearchYcfBll();
-        public tb_childbase returnval = new tb_childbase();
+        public TB_CHILDBASE returnval = new TB_CHILDBASE();
         public Paneltsb_searchycfInfo()
         {
             InitializeComponent();
@@ -52,7 +52,7 @@ namespace ChildManager.UI
                 try
                 {
                     int i = 1;
-                    foreach (tb_childbase obj in list)
+                    foreach (TB_CHILDBASE obj in list)
                     {
 
                         DataGridViewRow row = new DataGridViewRow();
@@ -80,7 +80,7 @@ namespace ChildManager.UI
         {
             if (dataGridViewX1.Rows[e.RowIndex].Tag != "")
             {
-                tb_childbase obj = dataGridViewX1.Rows[e.RowIndex].Tag as tb_childbase;
+                TB_CHILDBASE obj = dataGridViewX1.Rows[e.RowIndex].Tag as TB_CHILDBASE;
                 returnval = obj; 
                 DialogResult = System.Windows.Forms.DialogResult.OK;
             }

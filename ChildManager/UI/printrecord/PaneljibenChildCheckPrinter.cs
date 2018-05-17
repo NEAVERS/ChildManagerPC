@@ -34,15 +34,15 @@ namespace ChildManager.UI.printrecord
         private Rectangle _rectBody;
         private Rectangle _rectTail;
 
-        private tb_childbase _baseobj = null;
-        private tb_childcheck _checkobj = null;
+        private TB_CHILDBASE _baseobj = null;
+        private TB_CHILDCHECK _checkobj = null;
         int _height;
         int _weight;
         int _childid;
         string[] _bmipingfen ;
         private List<PointF> _checkpointlist=null;
 
-        public PaneljibenChildCheckPrinter(tb_childbase baseobj, tb_childcheck checkobj,int childid, string[] bmipingfen)
+        public PaneljibenChildCheckPrinter(TB_CHILDBASE baseobj, TB_CHILDCHECK checkobj,int childid, string[] bmipingfen)
         {
             InitializeComponent();
             _baseobj = baseobj;
@@ -59,7 +59,7 @@ namespace ChildManager.UI.printrecord
             printDoc.DocumentName = "儿童健康检查表";
 
             ChildCheckBll bll = new ChildCheckBll();
-            string sqls = string.Format("select * from tb_childcheck where childId  = "+_childid+"");
+            string sqls = string.Format("select * from TB_CHILDCHECK where childId  = "+_childid+"");
             //ChildCheckObj obj = bll.getChildCheckobj(sqls);
             //if (obj != null)
             //{
@@ -246,7 +246,7 @@ namespace ChildManager.UI.printrecord
 
                 currLeft += 40;
                 rect = new Rectangle(currLeft, currTop, 80, 20);
-                g.DrawString(_baseobj.childname, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_baseobj.CHILDNAME, new Font("Arial Unicode MS", 11f), brush, rect, sf);
                 g.DrawLine(pen, rect.Left, rect.Bottom - 2, rect.Right, rect.Bottom - 2);
 
                 //出生日期
@@ -254,7 +254,7 @@ namespace ChildManager.UI.printrecord
                 rect = new Rectangle(currLeft, currTop, 80, 20);
                 g.DrawString("出生日期", new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
-                DateTime dt = Convert.ToDateTime(_baseobj.childbirthday);
+                DateTime dt = Convert.ToDateTime(_baseobj.CHILDBIRTHDAY);
 
                 currLeft += 80;
                 rect = new Rectangle(currLeft, currTop, 80, 20);
@@ -296,7 +296,7 @@ namespace ChildManager.UI.printrecord
 
                 currLeft += 80;
                 rect = new Rectangle(currLeft, currTop, 80, 20);
-                g.DrawString(_checkobj.checkfactage, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.CHECKFACTAGE, new Font("Arial Unicode MS", 11f), brush, rect, sf);
                 g.DrawLine(pen, rect.Left, rect.Bottom - 2, rect.Right, rect.Bottom - 2);
 
                 currLeft += 80;
@@ -310,7 +310,7 @@ namespace ChildManager.UI.printrecord
 
                 currLeft += 20;
                 rect = new Rectangle(currLeft, currTop, 80, 20);
-                g.DrawString(_baseobj.cs_fetus, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_baseobj.CS_FETUS, new Font("Arial Unicode MS", 11f), brush, rect, sf);
                 g.DrawLine(pen, rect.Left, rect.Bottom - 2, rect.Right, rect.Bottom - 2);
 
                 currLeft += 80;
@@ -319,7 +319,7 @@ namespace ChildManager.UI.printrecord
 
                 currLeft += 40;
                 rect = new Rectangle(currLeft, currTop, 80, 20);
-                g.DrawString(_baseobj.cs_produce, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_baseobj.CS_PRODUCE, new Font("Arial Unicode MS", 11f), brush, rect, sf);
                 g.DrawLine(pen, rect.Left, rect.Bottom - 2, rect.Right, rect.Bottom - 2);
 
                 currLeft += 80;
@@ -337,7 +337,7 @@ namespace ChildManager.UI.printrecord
 
                 currLeft += 80;
                 rect = new Rectangle(currLeft, currTop, 80, 20);
-                g.DrawString(_baseobj.birthweight, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_baseobj.BIRTHWEIGHT, new Font("Arial Unicode MS", 11f), brush, rect, sf);
                 g.DrawLine(pen, rect.Left, rect.Bottom - 2, rect.Right, rect.Bottom - 2);
 
                 currLeft += 80;
@@ -350,7 +350,7 @@ namespace ChildManager.UI.printrecord
 
                 currLeft += 200;
                 rect = new Rectangle(currLeft, currTop, 80, 20);
-                g.DrawString(_baseobj.fathereducation, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_baseobj.FATHEREDUCATION, new Font("Arial Unicode MS", 11f), brush, rect, sf);
                 g.DrawLine(pen, rect.Left, rect.Bottom - 2, rect.Right, rect.Bottom - 2);
 
                 currLeft += 80;
@@ -359,7 +359,7 @@ namespace ChildManager.UI.printrecord
 
                 currLeft += 100;
                 rect = new Rectangle(currLeft, currTop, 80, 20);
-                g.DrawString(_baseobj.mothereducation, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_baseobj.MOTHEREDUCATION, new Font("Arial Unicode MS", 11f), brush, rect, sf);
                 g.DrawLine(pen, rect.Left, rect.Bottom - 2, rect.Right, rect.Bottom - 2);
 
                 currLeft = _rectBody.Left;
@@ -369,7 +369,7 @@ namespace ChildManager.UI.printrecord
 
                 currLeft += 80;
                 rect = new Rectangle(currLeft, currTop, 60, 20);
-                g.DrawString(_baseobj.fatherheight, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_baseobj.FATHERHEIGHT, new Font("Arial Unicode MS", 11f), brush, rect, sf);
                 g.DrawLine(pen, rect.Left, rect.Bottom - 2, rect.Right, rect.Bottom - 2);
 
                 currLeft += 60;
@@ -382,7 +382,7 @@ namespace ChildManager.UI.printrecord
 
                 currLeft += 80;
                 rect = new Rectangle(currLeft, currTop, 60, 20);
-                g.DrawString(_baseobj.motherheight, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_baseobj.MOTHERHEIGHT, new Font("Arial Unicode MS", 11f), brush, rect, sf);
                 g.DrawLine(pen, rect.Left, rect.Bottom - 2, rect.Right, rect.Bottom - 2);
 
                 currLeft += 60;
@@ -400,7 +400,7 @@ namespace ChildManager.UI.printrecord
 
                 currLeft += 60;
                 rect = new Rectangle(currLeft, currTop, 60, 20);
-                g.DrawString(_checkobj.checkweight, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.CHECKWEIGHT, new Font("Arial Unicode MS", 11f), brush, rect, sf);
                 g.DrawLine(pen, rect.Left, rect.Bottom - 2, rect.Right, rect.Bottom - 2);
 
                 currLeft += 60;
@@ -409,7 +409,7 @@ namespace ChildManager.UI.printrecord
 
                 currLeft += 80;
                 rect = new Rectangle(currLeft, currTop, 60, 20);
-                g.DrawString(_checkobj.checkheight, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.CHECKHEIGHT, new Font("Arial Unicode MS", 11f), brush, rect, sf);
                 g.DrawLine(pen, rect.Left, rect.Bottom - 2, rect.Right, rect.Bottom - 2);
 
                 currLeft += 60;
@@ -418,7 +418,7 @@ namespace ChildManager.UI.printrecord
 
                 currLeft += 80;
                 rect = new Rectangle(currLeft, currTop, 60, 20);
-                g.DrawString(_checkobj.checktouwei, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.CHECKTOUWEI, new Font("Arial Unicode MS", 11f), brush, rect, sf);
                 g.DrawLine(pen, rect.Left, rect.Bottom - 2, rect.Right, rect.Bottom - 2);
 
                 currLeft += 60;
@@ -427,7 +427,7 @@ namespace ChildManager.UI.printrecord
 
                 currLeft += 80;
                 rect = new Rectangle(currLeft, currTop, 60, 20);
-                g.DrawString(_checkobj.checkzuogao, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.CHECKZUOGAO, new Font("Arial Unicode MS", 11f), brush, rect, sf);
                 g.DrawLine(pen, rect.Left, rect.Bottom - 2, rect.Right, rect.Bottom - 2);
 
                 currLeft += 60;
@@ -441,7 +441,7 @@ namespace ChildManager.UI.printrecord
 
                 currLeft += 360;
                 rect = new Rectangle(currLeft, currTop, 60, 20);
-                g.DrawString(_checkobj.bloodsesu, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.BLOODSESU, new Font("Arial Unicode MS", 11f), brush, rect, sf);
                 g.DrawLine(pen, rect.Left, rect.Bottom - 2, rect.Right, rect.Bottom - 2);
 
                 currLeft += 60;
@@ -455,7 +455,7 @@ namespace ChildManager.UI.printrecord
 
                 currLeft += 60;
                 rect = new Rectangle(currLeft, currTop, 300, 45);
-                g.DrawString(_checkobj.zhushi, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.ZHUSHI, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currLeft += 300;
                 rect = new Rectangle(currLeft, currTop, 120, 45);
@@ -463,7 +463,7 @@ namespace ChildManager.UI.printrecord
 
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 300, 45);
-                g.DrawString(_checkobj.vitd, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.VITD, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
 
                 currLeft = _rectBody.Left;
@@ -473,7 +473,7 @@ namespace ChildManager.UI.printrecord
 
                 currLeft += 60;
                 rect = new Rectangle(currLeft, currTop, 300, 45);
-                g.DrawString(_checkobj.fushi, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.FUSHI, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currLeft += 300;
                 rect = new Rectangle(currLeft, currTop, 60, 45);
@@ -481,7 +481,7 @@ namespace ChildManager.UI.printrecord
 
                 currLeft += 60;
                 rect = new Rectangle(currLeft, currTop, 300, 45);
-                g.DrawString(_checkobj.otherbingshi, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.OTHERBINGSHI, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 #endregion
 
@@ -849,7 +849,7 @@ namespace ChildManager.UI.printrecord
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
                 g.DrawRectangle(pen, rect);
-                g.DrawString(_checkobj.shehui, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.SHEHUI, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
@@ -859,7 +859,7 @@ namespace ChildManager.UI.printrecord
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
                 g.DrawRectangle(pen, rect);
-                g.DrawString(_checkobj.wuguan, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.WUGUAN, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
@@ -869,7 +869,7 @@ namespace ChildManager.UI.printrecord
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
                 g.DrawRectangle(pen, rect);
-                g.DrawString(_checkobj.pizang, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.PIZANG, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 #endregion
 
@@ -883,7 +883,7 @@ namespace ChildManager.UI.printrecord
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
                 g.DrawRectangle(pen, rect);
-                g.DrawString(_checkobj.dongzuo, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.DONGZUO, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
@@ -893,7 +893,7 @@ namespace ChildManager.UI.printrecord
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
                 g.DrawRectangle(pen, rect);
-                g.DrawString(_checkobj.skin, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.SKIN, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
@@ -903,7 +903,7 @@ namespace ChildManager.UI.printrecord
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
                 g.DrawRectangle(pen, rect);
-                g.DrawString(_checkobj.jizhu, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.JIZHU, new Font("Arial Unicode MS", 11f), brush, rect, sf);
                 #endregion  
 
                 #region 第三行
@@ -916,7 +916,7 @@ namespace ChildManager.UI.printrecord
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
                 g.DrawRectangle(pen, rect);
-                g.DrawString(_checkobj.laguage, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.LAGUAGE, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
@@ -926,7 +926,7 @@ namespace ChildManager.UI.printrecord
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
                 g.DrawRectangle(pen, rect);
-                g.DrawString(_checkobj.lingbajie, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.LINGBAJIE, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
@@ -936,7 +936,7 @@ namespace ChildManager.UI.printrecord
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
                 g.DrawRectangle(pen, rect);
-                g.DrawString(_checkobj.jizhu, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.JIZHU, new Font("Arial Unicode MS", 11f), brush, rect, sf);
                 #endregion
 
                 #region 第四行
@@ -949,7 +949,7 @@ namespace ChildManager.UI.printrecord
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
                 g.DrawRectangle(pen, rect);
-                g.DrawString(_checkobj.bigsport, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.BIGSPORT, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
@@ -959,7 +959,7 @@ namespace ChildManager.UI.printrecord
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
                 g.DrawRectangle(pen, rect);
-                g.DrawString(_checkobj.xiongbu, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.XIONGBU, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
@@ -969,7 +969,7 @@ namespace ChildManager.UI.printrecord
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
                 g.DrawRectangle(pen, rect);
-                g.DrawString(_checkobj.sizhi, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.SIZHI, new Font("Arial Unicode MS", 11f), brush, rect, sf);
                 #endregion
 
                 #region 第五行
@@ -982,7 +982,7 @@ namespace ChildManager.UI.printrecord
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
                 g.DrawRectangle(pen, rect);
-                g.DrawString(_checkobj.checkqianlu, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.CHECKQIANLU, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
@@ -992,7 +992,7 @@ namespace ChildManager.UI.printrecord
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
                 g.DrawRectangle(pen, rect);
-                g.DrawString(_checkobj.xinzang, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.XINZANG, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
@@ -1015,7 +1015,7 @@ namespace ChildManager.UI.printrecord
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
                 g.DrawRectangle(pen, rect);
-                g.DrawString(_checkobj.toulu, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.TOULU, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
@@ -1025,7 +1025,7 @@ namespace ChildManager.UI.printrecord
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
                 g.DrawRectangle(pen, rect);
-                g.DrawString(_checkobj.feibu, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.FEIBU, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
@@ -1048,7 +1048,7 @@ namespace ChildManager.UI.printrecord
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
                 g.DrawRectangle(pen, rect);
-                g.DrawString(_checkobj.yacinumber, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.YACINUMBER, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
@@ -1058,7 +1058,7 @@ namespace ChildManager.UI.printrecord
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
                 g.DrawRectangle(pen, rect);
-                g.DrawString(_checkobj.fubu, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.FUBU, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
@@ -1068,7 +1068,7 @@ namespace ChildManager.UI.printrecord
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
                 g.DrawRectangle(pen, rect);
-                g.DrawString(_checkobj.miniaoqi, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.MINIAOQI, new Font("Arial Unicode MS", 11f), brush, rect, sf);
                 #endregion
 
                 #region 第八行
@@ -1081,7 +1081,7 @@ namespace ChildManager.UI.printrecord
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
                 g.DrawRectangle(pen, rect);
-                g.DrawString(_checkobj.yucinumber, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.YUCINUMBER, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
@@ -1091,7 +1091,7 @@ namespace ChildManager.UI.printrecord
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
                 g.DrawRectangle(pen, rect);
-                g.DrawString(_checkobj.ganzang, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.GANZANG, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
@@ -1101,7 +1101,7 @@ namespace ChildManager.UI.printrecord
                 currLeft += 120;
                 rect = new Rectangle(currLeft, currTop, 120, 30);
                 g.DrawRectangle(pen, rect);
-                g.DrawString(_checkobj.otherbingshi, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString(_checkobj.OTHERBINGSHI, new Font("Arial Unicode MS", 11f), brush, rect, sf);
                 #endregion
                 #endregion
 
@@ -1109,11 +1109,11 @@ namespace ChildManager.UI.printrecord
                 currTop += 40;
 
                 rect = new Rectangle(currLeft, currTop, 250, 30);
-                g.DrawString("体检时间："+Convert.ToDateTime(_checkobj.checkday).ToString("yyyy-MM-dd"), new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString("体检时间："+Convert.ToDateTime(_checkobj.CHECKDAY).ToString("yyyy-MM-dd"), new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currLeft += 200;
                 rect = new Rectangle(currLeft, currTop, 600, 70);
-                g.DrawString("诊断/结论：" + _checkobj.zhenduan, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString("诊断/结论：" + _checkobj.ZHENDUAN, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currLeft = _rectBody.Left;
                 currTop += 70;
@@ -1124,20 +1124,20 @@ namespace ChildManager.UI.printrecord
 
                 currLeft += 100;
                 rect = new Rectangle(currLeft, currTop, 700, 70);
-                g.DrawString( _checkobj.chuli, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString( _checkobj.CHULI, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currLeft = _rectBody.Left;
                 currTop += 70;
                 rect = new Rectangle(currLeft, currTop, 240, 180);
-                g.DrawString("营养指导："+ _checkobj.nuerzhidao, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString("营养指导："+ _checkobj.NUERZHIDAO, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currLeft += 235;
                 rect = new Rectangle(currLeft, currTop, 240, 180);
-                g.DrawString("行为习惯培养："+_checkobj.checkdiagnose, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString("行为习惯培养："+_checkobj.CHECKDIAGNOSE, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currLeft += 235;
                 rect = new Rectangle(currLeft, currTop, 240, 180);
-                g.DrawString("早期综合发展：" + _checkobj.zonghefazhan, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString("早期综合发展：" + _checkobj.ZONGHEFAZHAN, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currLeft = _rectBody.Left;
                 currTop += 180;
@@ -1155,7 +1155,7 @@ namespace ChildManager.UI.printrecord
                 //currLeft = _rectBody.Left;
                 currTop += 30;
                 rect = new Rectangle(currLeft, currTop, 720, 150);
-                g.DrawString("复诊日期："+_checkobj.fuzenday, new Font("Arial Unicode MS", 11f), brush, rect, sf);
+                g.DrawString("复诊日期："+_checkobj.FUZENDAY, new Font("Arial Unicode MS", 11f), brush, rect, sf);
 
                 currTop += 30;
                 rect = new Rectangle(currLeft, currTop, 720, 150);

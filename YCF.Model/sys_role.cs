@@ -14,6 +14,7 @@ namespace YCF.Model
     
     public partial class SYS_ROLE
     {
+
         public decimal ID { get; set; }
         public string ROLE_NAME { get; set; }
         public string ROLE_CODE { get; set; }

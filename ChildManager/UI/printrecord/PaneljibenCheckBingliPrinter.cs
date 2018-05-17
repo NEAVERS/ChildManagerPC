@@ -42,14 +42,14 @@ namespace ChildManager.UI.printrecord
         private bool zhenduanhasprint = true;
         private bool chulihasprint = true;
 
-        private tb_childbase _baseobj = null;
-        private tb_childcheck _checkobj = null;
+        private TB_CHILDBASE _baseobj = null;
+        private TB_CHILDCHECK _checkobj = null;
         int _height;
         int _weight;
         int _childid;
         private List<PointF> _checkpointlist=null;
 
-        public PaneljibenCheckBingliPrinter(tb_childbase baseobj, tb_childcheck checkobj,int childid)
+        public PaneljibenCheckBingliPrinter(TB_CHILDBASE baseobj, TB_CHILDCHECK checkobj,int childid)
         {
             InitializeComponent();
             _baseobj = baseobj;
@@ -183,20 +183,20 @@ namespace ChildManager.UI.printrecord
                 { 
                 	
                 	Rectangle rect = new Rectangle(currLeft, currTop, 200, 25);
-                	g.DrawString("编号："+_baseobj.healthcardno.Trim(), new Font("宋体", 10.5f), brush, rect, sf);
+                	g.DrawString("编号："+_baseobj.HEALTHCARDNO.Trim(), new Font("宋体", 10.5f), brush, rect, sf);
                 	currLeft += 100;
                 	rect = new Rectangle(currLeft, currTop, 200, 25);
-                	g.DrawString("姓名：" + _baseobj.childname.Trim(), cellFont, brush, rect, sf);
+                	g.DrawString("姓名：" + _baseobj.CHILDNAME.Trim(), cellFont, brush, rect, sf);
                     
                     currLeft += 140;
                     
                     rect = new Rectangle(currLeft, currTop, 200, 25);
-                    g.DrawString("性别：" + _baseobj.childgender.Trim(), cellFont, brush, rect, sf);
+                    g.DrawString("性别：" + _baseobj.CHILDGENDER.Trim(), cellFont, brush, rect, sf);
                     
 					currLeft += 70;
 					
 					//得到年龄
-					int[] ages = CommonHelper.getAgeBytime(_baseobj.childbirthday, _checkobj.checkday);
+					int[] ages = CommonHelper.getAgeBytime(_baseobj.CHILDBIRTHDAY, _checkobj.CHECKDAY);
                     
                     string ageStr = "";
                     if (ages[0] != 0)
@@ -213,17 +213,17 @@ namespace ChildManager.UI.printrecord
                     }
                     
                     rect = new Rectangle(currLeft, currTop, 200, 25);
-                    g.DrawString("年龄：" + (_checkobj.checkfactage==null || _checkobj.checkfactage.Trim().Length==0?ageStr:_checkobj.checkfactage.Trim()), cellFont, brush, rect, sf);
+                    g.DrawString("年龄：" + (_checkobj.CHECKFACTAGE==null || _checkobj.CHECKFACTAGE.Trim().Length==0?ageStr:_checkobj.CHECKFACTAGE.Trim()), cellFont, brush, rect, sf);
                     
                     currLeft = _rectBody.Left;
                     currTop += 20;
                     
                     rect = new Rectangle(currLeft, currTop, 200, 25);
-                    g.DrawString("就诊时间：" + Convert.ToDateTime(_checkobj.checkday).ToString("yyyy-MM-dd"), cellFont, brush, rect, sf);
+                    g.DrawString("就诊时间：" + Convert.ToDateTime(_checkobj.CHECKDAY).ToString("yyyy-MM-dd"), cellFont, brush, rect, sf);
 
                     currLeft += 180;
                     rect = new Rectangle(currLeft, currTop, 200, 25);
-                    g.DrawString("出生日期：" + Convert.ToDateTime(_baseobj.childbirthday).ToString("yyyy年MM月dd日"), cellFont, brush, rect, sf);
+                    g.DrawString("出生日期：" + Convert.ToDateTime(_baseobj.CHILDBIRTHDAY).ToString("yyyy年MM月dd日"), cellFont, brush, rect, sf);
 
                    
 					currTop += 5;
@@ -238,7 +238,7 @@ namespace ChildManager.UI.printrecord
 
                 if (zhusuhasprint)
                 {
-                    string zhusu = _checkobj.zhusu;
+                    string zhusu = _checkobj.ZHUSU;
                     int height = (int)Math.Ceiling(g.MeasureString(zhusu, cellFont, _rectBody.Width - 70).Height);
                     if(height==0)
                     {
@@ -252,7 +252,7 @@ namespace ChildManager.UI.printrecord
 
                         currLeft += 60;
                         rect = new Rectangle(currLeft, currTop, _rectBody.Width - 70, height);
-                        g.DrawString(_checkobj.zhusu, cellFont, brush, rect);
+                        g.DrawString(_checkobj.ZHUSU, cellFont, brush, rect);
 
                         zhusuhasprint = false;
                         currLeft = _rectBody.Left;
@@ -266,7 +266,7 @@ namespace ChildManager.UI.printrecord
 
                         currLeft += 60;
                         rect = new Rectangle(currLeft, currTop, _rectBody.Width - 70, height);
-                        g.DrawString(_checkobj.zhusu, cellFont, brush, rect);
+                        g.DrawString(_checkobj.ZHUSU, cellFont, brush, rect);
 
                         zhusuhasprint = false;
 
@@ -275,7 +275,7 @@ namespace ChildManager.UI.printrecord
                     }
                     else
                     {
-                        string printstr = getPrintStr(_checkobj.zhusu, cellFont, g, currTop);
+                        string printstr = getPrintStr(_checkobj.ZHUSU, cellFont, g, currTop);
                         if (printstr == "")
                         {
                             hasnextpage = true;
@@ -288,7 +288,7 @@ namespace ChildManager.UI.printrecord
                         rect = new Rectangle(currLeft, currTop, _rectBody.Width - 70, _rectBody.Bottom - currTop);
                         g.DrawString(printstr, cellFont, brush, rect);
                         
-                            _checkobj.zhusu = _checkobj.zhusu.Replace(printstr, "");
+                            _checkobj.ZHUSU = _checkobj.ZHUSU.Replace(printstr, "");
 
                         hasnextpage = true;
                         return;
@@ -298,7 +298,7 @@ namespace ChildManager.UI.printrecord
                 if (bingshihasprint)
                 {
 
-                    int height = (int)Math.Ceiling(g.MeasureString(_checkobj.bingshi, cellFont, _rectBody.Width - 70).Height);
+                    int height = (int)Math.Ceiling(g.MeasureString(_checkobj.BINGSHI, cellFont, _rectBody.Width - 70).Height);
                     if (height == 0)
                     {
                         height = 20;
@@ -311,7 +311,7 @@ namespace ChildManager.UI.printrecord
 
                         currLeft += 60;
                         rect = new Rectangle(currLeft, currTop, _rectBody.Width - 70, height);
-                        g.DrawString(_checkobj.bingshi, cellFont, brush, rect);
+                        g.DrawString(_checkobj.BINGSHI, cellFont, brush, rect);
 
                         bingshihasprint = false;
                         currLeft = _rectBody.Left;
@@ -325,7 +325,7 @@ namespace ChildManager.UI.printrecord
 
                         currLeft += 60;
                         rect = new Rectangle(currLeft, currTop, _rectBody.Width - 70, height);
-                        g.DrawString(_checkobj.bingshi, cellFont, brush, rect);
+                        g.DrawString(_checkobj.BINGSHI, cellFont, brush, rect);
 
                         bingshihasprint = false;
 
@@ -334,7 +334,7 @@ namespace ChildManager.UI.printrecord
                     }
                     else
                     {
-                        string printstr = getPrintStr(_checkobj.bingshi, cellFont, g, currTop);
+                        string printstr = getPrintStr(_checkobj.BINGSHI, cellFont, g, currTop);
                         if (printstr == "")
                         {
                             hasnextpage = true;
@@ -347,7 +347,7 @@ namespace ChildManager.UI.printrecord
                         rect = new Rectangle(currLeft, currTop, _rectBody.Width - 70, _rectBody.Bottom - currTop);
                         g.DrawString(printstr, cellFont, brush, rect);
                         
-                            _checkobj.bingshi = _checkobj.bingshi.Replace(printstr, "");
+                            _checkobj.BINGSHI = _checkobj.BINGSHI.Replace(printstr, "");
 
                         hasnextpage = true;
                         return;
@@ -357,7 +357,7 @@ namespace ChildManager.UI.printrecord
                 if (tijianhasprint)
                 {
 
-                    int height = (int)Math.Ceiling(g.MeasureString(_checkobj.tijian, cellFont, _rectBody.Width - 70).Height);
+                    int height = (int)Math.Ceiling(g.MeasureString(_checkobj.TIJIAN, cellFont, _rectBody.Width - 70).Height);
                     if (height == 0)
                     {
                         height = 20;
@@ -370,7 +370,7 @@ namespace ChildManager.UI.printrecord
 
                         currLeft += 60;
                         rect = new Rectangle(currLeft, currTop, _rectBody.Width - 70, height);
-                        g.DrawString(_checkobj.tijian, cellFont, brush, rect);
+                        g.DrawString(_checkobj.TIJIAN, cellFont, brush, rect);
 
                         tijianhasprint = false;
                         currLeft = _rectBody.Left;
@@ -384,7 +384,7 @@ namespace ChildManager.UI.printrecord
 
                         currLeft += 60;
                         rect = new Rectangle(currLeft, currTop, _rectBody.Width - 70, height);
-                        g.DrawString(_checkobj.tijian, cellFont, brush, rect);
+                        g.DrawString(_checkobj.TIJIAN, cellFont, brush, rect);
 
                         tijianhasprint = false;
 
@@ -393,7 +393,7 @@ namespace ChildManager.UI.printrecord
                     }
                     else
                     {
-                        string printstr = getPrintStr(_checkobj.tijian, cellFont, g, currTop);
+                        string printstr = getPrintStr(_checkobj.TIJIAN, cellFont, g, currTop);
                         if (printstr == "")
                         {
                             hasnextpage = true;
@@ -406,7 +406,7 @@ namespace ChildManager.UI.printrecord
                         rect = new Rectangle(currLeft, currTop, _rectBody.Width - 70, _rectBody.Bottom - currTop);
                         g.DrawString(printstr, cellFont, brush, rect);
                         
-                            _checkobj.tijian = _checkobj.tijian.Replace(printstr, "");
+                            _checkobj.TIJIAN = _checkobj.TIJIAN.Replace(printstr, "");
 
                         hasnextpage = true;
                         return;
@@ -416,7 +416,7 @@ namespace ChildManager.UI.printrecord
                 if (zhenduanhasprint)
                 {
 
-                    int height = (int)Math.Ceiling(g.MeasureString(_checkobj.zhenduan, cellFont, _rectBody.Width - 70).Height);
+                    int height = (int)Math.Ceiling(g.MeasureString(_checkobj.ZHENDUAN, cellFont, _rectBody.Width - 70).Height);
                     if (height == 0)
                     {
                         height = 20;
@@ -429,7 +429,7 @@ namespace ChildManager.UI.printrecord
 
                         currLeft += 60;
                         rect = new Rectangle(currLeft, currTop, _rectBody.Width - 70, height);
-                        g.DrawString(_checkobj.zhenduan, cellFont, brush, rect);
+                        g.DrawString(_checkobj.ZHENDUAN, cellFont, brush, rect);
 
                         zhenduanhasprint = false;
                         currLeft = _rectBody.Left;
@@ -443,7 +443,7 @@ namespace ChildManager.UI.printrecord
 
                         currLeft += 60;
                         rect = new Rectangle(currLeft, currTop, _rectBody.Width - 70, height);
-                        g.DrawString(_checkobj.zhenduan, cellFont, brush, rect);
+                        g.DrawString(_checkobj.ZHENDUAN, cellFont, brush, rect);
 
                         zhenduanhasprint = false;
 
@@ -452,7 +452,7 @@ namespace ChildManager.UI.printrecord
                     }
                     else
                     {
-                        string printstr = getPrintStr(_checkobj.zhenduan, cellFont, g, currTop);
+                        string printstr = getPrintStr(_checkobj.ZHENDUAN, cellFont, g, currTop);
                         if (printstr == "")
                         {
                             hasnextpage = true;
@@ -465,7 +465,7 @@ namespace ChildManager.UI.printrecord
                         rect = new Rectangle(currLeft, currTop, _rectBody.Width - 70, _rectBody.Bottom - currTop);
                         g.DrawString(printstr, cellFont, brush, rect);
                         
-                            _checkobj.zhenduan = _checkobj.zhenduan.Replace(printstr, "");
+                            _checkobj.ZHENDUAN = _checkobj.ZHENDUAN.Replace(printstr, "");
 
                         hasnextpage = true;
                         return;
@@ -475,7 +475,7 @@ namespace ChildManager.UI.printrecord
                 if (chulihasprint)
                 {
 
-                    int height = (int)Math.Ceiling(g.MeasureString(_checkobj.chuli, cellFont, _rectBody.Width - 70).Height);
+                    int height = (int)Math.Ceiling(g.MeasureString(_checkobj.CHULI, cellFont, _rectBody.Width - 70).Height);
                     if (height == 0)
                     {
                         height = 20;
@@ -488,7 +488,7 @@ namespace ChildManager.UI.printrecord
 
                         currLeft += 60;
                         rect = new Rectangle(currLeft, currTop, _rectBody.Width - 70, height);
-                        g.DrawString(_checkobj.chuli, cellFont, brush, rect);
+                        g.DrawString(_checkobj.CHULI, cellFont, brush, rect);
 
                         chulihasprint = false;
                         currLeft = _rectBody.Left;
@@ -502,7 +502,7 @@ namespace ChildManager.UI.printrecord
 
                         currLeft += 60;
                         rect = new Rectangle(currLeft, currTop, _rectBody.Width - 70, height);
-                        g.DrawString(_checkobj.chuli, cellFont, brush, rect);
+                        g.DrawString(_checkobj.CHULI, cellFont, brush, rect);
 
                         chulihasprint = false;
 
@@ -511,7 +511,7 @@ namespace ChildManager.UI.printrecord
                     }
                     else
                     {
-                        string printstr = getPrintStr(_checkobj.chuli, cellFont, g,currTop);
+                        string printstr = getPrintStr(_checkobj.CHULI, cellFont, g,currTop);
                         if (printstr == "")
                         {
                             hasnextpage = true;
@@ -526,26 +526,26 @@ namespace ChildManager.UI.printrecord
                         g.DrawString(printstr, cellFont, brush, rect);
 
                         
-                            _checkobj.chuli = _checkobj.chuli.Replace(printstr, "");
+                            _checkobj.CHULI = _checkobj.CHULI.Replace(printstr, "");
 
                         hasnextpage = true;
                         return;
                     }
                 }
 
-                //PrintStr("主诉：", ref _checkobj.zhusu, ref currLeft, ref currTop,cellFont,BcellFont,brush,g,ref zhusuhasprint,ref hasnextpage);
+                //PrintStr("主诉：", ref _checkobj.ZHUSU, ref currLeft, ref currTop,cellFont,BcellFont,brush,g,ref zhusuhasprint,ref hasnextpage);
                 //if (hasnextpage) return;
 
-                //PrintStr("病史：", ref _checkobj.bingshi, ref currLeft, ref currTop, cellFont, BcellFont, brush, g, ref bingshihasprint, ref hasnextpage);
+                //PrintStr("病史：", ref _checkobj.BINGSHI, ref currLeft, ref currTop, cellFont, BcellFont, brush, g, ref bingshihasprint, ref hasnextpage);
                 //if (hasnextpage) return;
 
-                //PrintStr("体检：", ref _checkobj.tijian, ref currLeft, ref currTop, cellFont, BcellFont, brush, g, ref tijianhasprint, ref hasnextpage);
+                //PrintStr("体检：", ref _checkobj.TIJIAN, ref currLeft, ref currTop, cellFont, BcellFont, brush, g, ref tijianhasprint, ref hasnextpage);
                 //if (hasnextpage) return;
 
-                //PrintStr("诊断：", ref _checkobj.zhenduan, ref currLeft, ref currTop, cellFont, BcellFont, brush, g, ref zhenduanhasprint, ref hasnextpage);
+                //PrintStr("诊断：", ref _checkobj.ZHENDUAN, ref currLeft, ref currTop, cellFont, BcellFont, brush, g, ref zhenduanhasprint, ref hasnextpage);
                 //if (hasnextpage) return;
 
-                //PrintStr("处理：", ref _checkobj.chuli, ref currLeft, ref currTop, cellFont, BcellFont, brush, g, ref chulihasprint, ref hasnextpage);
+                //PrintStr("处理：", ref _checkobj.CHULI, ref currLeft, ref currTop, cellFont, BcellFont, brush, g, ref chulihasprint, ref hasnextpage);
 
             }
         }
@@ -561,7 +561,7 @@ namespace ChildManager.UI.printrecord
             	pen.Width=1.5F;
                 g.DrawRectangle(pen, _rectTail);
                 Rectangle rect = new Rectangle(_rectTail.Left, _rectTail.Top + 6, _rectTail.Width, _rectTail.Height);
-                g.DrawString("医师：" + _checkobj.ck_fz + "                   打印日期：" + _checkobj.checkday, new Font("宋体", 11f), brush, rect, sf);
+                g.DrawString("医师：" + _checkobj.CK_FZ + "                   打印日期：" + _checkobj.CHECKDAY, new Font("宋体", 11f), brush, rect, sf);
 
             }
         }

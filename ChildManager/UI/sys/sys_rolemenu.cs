@@ -13,7 +13,7 @@ namespace ChildManager.UI.sys
 {
     public partial class sys_rolemenu : UserControl
     {
-        IList<sys_role> listRole;
+        IList<SYS_ROLE> listRole;
         /// <summary>
         /// 用来存放DGV单元格修改之前值
         /// </summary>
@@ -153,7 +153,7 @@ namespace ChildManager.UI.sys
                     foreach (var obj in listRole)
                     {
                         DataGridViewRow row = new DataGridViewRow();
-                        row.CreateCells(dgvrole, obj.role_name, obj.role_code, obj.id);
+                        row.CreateCells(dgvrole, obj.ROLE_NAME, obj.ROLE_CODE, obj.ID);
                         row.Tag = obj;
                         dgvrole.Rows.Add(row);
                         //加载角色名称的列表
@@ -176,7 +176,7 @@ namespace ChildManager.UI.sys
             foreach (TreeNode node in tvInfo.Nodes)
             {
                 //加载菜单
-                string sqls = string.Format("select * from sys_menus where menu_type='" + node.Text + "' and is_enable='1' and menu_parent='-1'");
+                string sqls = string.Format("select * from SYS_MENUS where menu_type='" + node.Text + "' and is_enable='1' and menu_parent='-1'");
                 ds = blls.getDataSet(sqls);
                 dt = ds.Tables[0];
                 if (dt.Rows.Count > 0)
@@ -316,9 +316,9 @@ namespace ChildManager.UI.sys
                 {
                     foreach (var item in list)
                     {
-                        sys_role_menu obj = new sys_role_menu();
-                        obj.role_code = role_code;
-                        obj.menu_code = item.ToString();
+                        SYS_ROLE_MENU obj = new SYS_ROLE_MENU();
+                        obj.ROLE_CODE = role_code;
+                        obj.MENU_CODE = item.ToString();
                         isTure = mbll.Add(obj);
                     }
                 }
@@ -352,8 +352,8 @@ namespace ChildManager.UI.sys
         /// <param name="e"></param>
         private void buttonItem1_Click(object sender, EventArgs e)
         {
-            sys_role role = new sys_role();
-            role.role_name = "";
+            SYS_ROLE role = new SYS_ROLE();
+            role.ROLE_NAME = "";
             int code = 0;
             if (dgvrole.Rows.Count >= 1)
             {
@@ -361,11 +361,11 @@ namespace ChildManager.UI.sys
             }
             if (code < 10)
             {
-                role.role_code = "0" + (code + 1).ToString();
+                role.ROLE_CODE = "0" + (code + 1).ToString();
             }
             else
             {
-                role.role_code = (code + 1).ToString();
+                role.ROLE_CODE = (code + 1).ToString();
             }
             if (blls.Add(role))
             {
@@ -447,7 +447,7 @@ namespace ChildManager.UI.sys
 
         private void dgvrole_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            sys_role roleobj = new sys_role();
+            SYS_ROLE roleobj = new SYS_ROLE();
             if (dgvrole.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == null)
             {
                 MessageBox.Show("请输入角色名称！", "系统提示");
@@ -467,9 +467,9 @@ namespace ChildManager.UI.sys
             //}
 
             //dgvrole.Columns[0].DataPropertyName; //所选单元格列名
-            roleobj.role_name = dgvrole.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString(); //所选单元格修改后的值
-            roleobj.role_code = dgvrole.Rows[e.RowIndex].Cells[1].Value.ToString();
-            roleobj.id = Convert.ToInt32(dgvrole.Rows[e.RowIndex].Cells[2].Value);
+            roleobj.ROLE_NAME = dgvrole.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString(); //所选单元格修改后的值
+            roleobj.ROLE_CODE = dgvrole.Rows[e.RowIndex].Cells[1].Value.ToString();
+            roleobj.ID = Convert.ToInt32(dgvrole.Rows[e.RowIndex].Cells[2].Value);
             blls.Update(roleobj);
         }
     }

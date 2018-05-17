@@ -40,7 +40,7 @@ namespace ChildManager.UI
             }
             //连接后台数据库判断本用户是否存在！
             //连接后台数据库判断本用户是否存在！
-            sys_users users = userbll.Get(usercode);
+            SYS_USERS users = userbll.Get(usercode);
             try
             {
                 if (users == null)

@@ -22,7 +22,7 @@ namespace ChildManager.UI.sys
         //批量修改角色
         private void button1_Click(object sender, EventArgs e)
         {
-            sys_users userobj = new sys_users();
+            SYS_USERS userobj = new SYS_USERS();
             userobj.role_code = comboBox1.SelectedValue.ToString();
             if (bll.UpdateByIds(userobj,_ids))
             {

@@ -35,16 +35,16 @@ namespace ChildManager.UI.printrecord
         private Rectangle _rectBody;
         private Rectangle _rectTail;
 
-        private tb_childbase _baseobj = null;
-        private tb_childcheck _checkobj = null;
+        private TB_CHILDBASE _baseobj = null;
+        private TB_CHILDCHECK _checkobj = null;
         int _height;
         int _weight;
         int _childid;
         string[] _bmipingfen;
         private List<PointF> _checkpointlist = null;
-        private ys_yybl_tab _obj = null;
+        private YS_YYBL_TAB _obj = null;
 
-        public Panel_ysyyblPrinter(ys_yybl_tab obj)
+        public Panel_ysyyblPrinter(YS_YYBL_TAB obj)
         {
             InitializeComponent();
             _obj = obj;
@@ -223,72 +223,72 @@ namespace ChildManager.UI.printrecord
             using (StringFormat sf = new StringFormat())
             {
                 string str = "主诉：";
-                string zs_check = _obj.zs_check;
+                string zs_check = _obj.ZS_CHECK;
                 str += ""+ zs_check;
                 str += "。\r\n现病史：";
-                string xbs = _obj.xbs;
+                string xbs = _obj.XBS;
                 str += xbs+"";
                 str += "。\r\n生产史：";
-                string sc_g = _obj.sc_g;
+                string sc_g = _obj.SC_G;
                 str += "G："+sc_g;
-                string sc_p = _obj.sc_p;
+                string sc_p = _obj.SC_P;
                 str += "，P：" + sc_p;
-                string sc_yz = _obj.sc_yz;
+                string sc_yz = _obj.SC_YZ;
                 str += "，孕："+sc_yz+" 周";
-                string sc_fs = _obj.sc_fs;
+                string sc_fs = _obj.SC_FS;
                 str += "，分娩方式：" + sc_fs;
-                string sc_yy = _obj.sc_yy;
+                string sc_yy = _obj.SC_YY;
                 str += "，原因：" + sc_yy;
-                string sc_weight = _obj.sc_weight;
+                string sc_weight = _obj.SC_WEIGHT;
                 str += "，产重：" + sc_weight;
-                string sc_mqyqyy = _obj.sc_mqyqyy;
-                str += "，母亲孕期营养："+_obj.sc_mqyqyy;
+                string sc_mqyqyy = _obj.SC_MQYQYY;
+                str += "，母亲孕期营养："+_obj.SC_MQYQYY;
                 //母孕期疾病
-                string sc_ismqjb = _obj.sc_ismqjb;
-                str += "，母孕期疾病：" + _obj.sc_ismqjb;
+                string sc_ismqjb = _obj.SC_ISMQJB;
+                str += "，母孕期疾病：" + _obj.SC_ISMQJB;
 
-                string sc_mqjb = _obj.sc_mqjb;
-                str += _obj.sc_mqjb;
-                string sc_isbts = _obj.sc_isbts;
-                string sc_bts = _obj.sc_bts;
+                string sc_mqjb = _obj.SC_MQJB;
+                str += _obj.SC_MQJB;
+                string sc_isbts = _obj.SC_ISBTS;
+                string sc_bts = _obj.SC_BTS;
                 str += "，保胎史："+ sc_isbts+" "+ sc_bts;
                 str += "。\r\n喂养史：";
-                string wy_sh = _obj.wy_sh;
+                string wy_sh = _obj.WY_SH;
                 str += "生后：" + wy_sh;
-                string wy_xs = _obj.wy_xs;
+                string wy_xs = _obj.WY_XS;
                 str += "，吸吮：" + wy_xs;
-                string wy_qs = _obj.wy_qs;
+                string wy_qs = _obj.WY_QS;
                 str += "，呛吮：" + wy_qs;
-                string wy_cnsd = _obj.wy_cnsd;
+                string wy_cnsd = _obj.WY_CNSD;
                 str += "，吃奶速度：" + wy_cnsd;
-                string wy_jjcn = _obj.wy_jjcn;
+                string wy_jjcn = _obj.WY_JJCN;
                 str += "，拒绝吃奶：" + wy_jjcn;
-                string wy_jsl = _obj.wy_jsl;
+                string wy_jsl = _obj.WY_JSL;
                 str += "，进食量：" + wy_jsl;
 
-                string wy_fsnl = _obj.wy_fsnl;
+                string wy_fsnl = _obj.WY_FSNL;
                 str += "，辅食添加年龄：" + wy_fsnl;
                 str += "。\r\n生长发育史：";
-                string szfy_dyd = _obj.szfy_dyd;
+                string szfy_dyd = _obj.SZFY_DYD;
                 if (szfy_dyd.Contains(":"))
                 {
                     szfy_dyd = szfy_dyd.Replace(":", "") + "次";
                 }
                 str += "大运动：" + szfy_dyd;
 
-                string szfy_jxyd = _obj.szfy_jxyd;
+                string szfy_jxyd = _obj.SZFY_JXYD;
                 if (szfy_jxyd.Contains(":"))
                 {
                     szfy_jxyd = szfy_jxyd.Replace(":", "") + "次";
                 }
                 str += "，精细运动：" + szfy_jxyd;
-                string szfy_yy = _obj.szfy_yy;
+                string szfy_yy = _obj.SZFY_YY;
                 if (szfy_yy.Contains(":"))
                 {
                     szfy_yy = szfy_yy.Replace(":", "") + "次";
                 }
                 str += "，语言：" + szfy_yy;
-                string szfy_grsh = _obj.szfy_grsh;
+                string szfy_grsh = _obj.SZFY_GRSH;
                 if (szfy_grsh.Contains(":"))
                 {
                     szfy_grsh = szfy_grsh.Replace(":", "") + "次";
@@ -296,49 +296,49 @@ namespace ChildManager.UI.printrecord
                 str += "，个人社会：" + szfy_grsh;
 
                 str += "。\r\n预防接种史：";
-                string yfjz_jz = _obj.yfjz_jz;
+                string yfjz_jz = _obj.YFJZ_JZ;
                 str += yfjz_jz;
 
                 str += "。\r\n既往史：";
-                string jws_sb = _obj.jws_sb;
+                string jws_sb = _obj.JWS_SB;
                 str += jws_sb;
-                string jws_fxs = _obj.jws_fxs;
+                string jws_fxs = _obj.JWS_FXS;
                 if (jws_fxs.Contains(":"))
                 {
                     jws_fxs = jws_fxs.Replace(":","")+"次";
                 }
                 str += "，腹泻史：" + jws_fxs;
-                string jws_fys = _obj.jws_fys;
+                string jws_fys = _obj.JWS_FYS;
                 if (jws_fys.Contains(":"))
                 {
                     jws_fys = jws_fys.Replace(":", "") + "次";
                 }
                 str += "，肺炎史：" + jws_fys;
-                string jws_xcs = _obj.jws_xcs;
+                string jws_xcs = _obj.JWS_XCS;
                 if (jws_xcs.Contains(":"))
                 {
                     jws_xcs = jws_xcs.Replace(":", "") + "次";
                 }
                 str += "，哮喘史：" + jws_xcs;
-                string swgm = _obj.jws_swgm;
+                string swgm = _obj.JWS_SWGM;
                 str += "，食物过敏："+swgm;
-                string jws_ywgm = _obj.jws_ywgm;
+                string jws_ywgm = _obj.JWS_YWGM;
                 str += "，药物过敏：" + jws_ywgm;
 
                 str += "。\r\n家庭生后环境：";
-                string jthj_fmtx = _obj.jthj_fmtx;
+                string jthj_fmtx = _obj.JTHJ_FMTX;
                 str += " " + jthj_fmtx;
-                string jthj_ycs = _obj.jthj_ycs;
+                string jthj_ycs = _obj.JTHJ_YCS;
                 str += "，遗传病史：" + jthj_ycs;
-                string jthj_crbs = _obj.jthj_crbs;
+                string jthj_crbs = _obj.JTHJ_CRBS;
                 str += "，传染病接触史：" + jthj_crbs;
 
                 str += "。\r\n体检：";
-                string tj_w = _obj.tj_w;
+                string tj_w = _obj.TJ_W;
                 str += " W：" + tj_w+" Kg";
-                string tj_l = _obj.tj_l;
+                string tj_l = _obj.TJ_L;
                 str += " ，L：" + tj_l+" CM";
-                string tj_js = _obj.tj_js;
+                string tj_js = _obj.TJ_JS;
                 str += "，精神：" + tj_js;
                 str += "。";
                 Rectangle rect = new Rectangle(currLeft, currTop, _rectBody.Width, _rectBody.Height);

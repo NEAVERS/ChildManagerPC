@@ -19,10 +19,10 @@ namespace ChildManager.UI.yuyue
         yy_asd_tabbll bll = new yy_asd_tabbll();
         yy_pz_tabbll pzbll = new yy_pz_tabbll();
         yy_pz_details_tabbll detailsbll = new yy_pz_details_tabbll();
-        yy_asd_tab _obj = null;
+        YY_ASD_TAB _obj = null;
         string _pz_lx = "";
-        private IList<yy_pz_tab> _xmList;
-        private IList<yy_pz_details_tab> _detailList;
+        private IList<YY_PZ_TAB> _xmList;
+        private IList<YY_PZ_DETAILS_TAB> _detailList;
 
         public yy_all_panel(string pz_lx)
         {
@@ -91,15 +91,15 @@ namespace ChildManager.UI.yuyue
         /// 体检保存
         /// </summary>
         /// <returns></returns>
-        private yy_asd_tab GetObj()
+        private YY_ASD_TAB GetObj()
         {
-            yy_asd_tab obj = CommonHelper.GetObj<yy_asd_tab>(panel2.Controls);
+            YY_ASD_TAB obj = CommonHelper.GetObj<YY_ASD_TAB>(panel2.Controls);
             if (dgvConditionTreatRecordList.SelectedRows.Count > 0)
             {
                 yy_asd_tabNotMap qttab = dgvConditionTreatRecordList.SelectedRows[0].Tag as yy_asd_tabNotMap;
-                obj.id = qttab.id;
-                obj.child_id = qttab.child_id;
-                obj.yy_djrq = qttab.yy_djrq;
+                obj.ID = qttab.id;
+                obj.CHILD_ID = qttab.child_id;
+                obj.YY_DJRQ = qttab.yy_djrq;
             }
 
             return obj;
@@ -182,22 +182,22 @@ namespace ChildManager.UI.yuyue
         {
             var isFull = true;
             var yy_xm = this.yy_xm.Text;
-            yy_pz_tab pzobj = pzbll.GetByXm(yy_xm);
+            YY_PZ_TAB pzobj = pzbll.GetByXm(yy_xm);
 
             DateTime starttime = dateTimePicker1.Value;
             DateTime endtime = dateTimePicker2.Value;
             int daycount = (endtime - starttime).Days;
             if (pzobj != null)
             {
-                yy_asd_tab yyobj = CommonHelper.GetObjMenzhen<yy_asd_tab>(panel2.Controls, 0);
-                if (!String.IsNullOrEmpty(pzobj.pz_xq))
+                YY_ASD_TAB yyobj = CommonHelper.GetObjMenzhen<YY_ASD_TAB>(panel2.Controls, 0);
+                if (!String.IsNullOrEmpty(pzobj.PZ_XQ))
                 {
-                    string[] xqargs = pzobj.pz_xq.Split(',');
+                    string[] xqargs = pzobj.PZ_XQ.Split(',');
                     //foreach (string xq in xqargs)
                     //{
                     for (int i = 0; i <= daycount; i++)
                     {
-                        var sjdargs = _detailList.Select(t => t.time).ToArray();
+                        var sjdargs = _detailList.Select(t => t.TIME).ToArray();
                         if (xqargs.Contains(((int)starttime.AddDays(i).DayOfWeek).ToString()))
                         {
                             for (int j = 0; j < sjdargs.Length; j++)
@@ -209,13 +209,13 @@ namespace ChildManager.UI.yuyue
 
                                 isFull = false;
 
-                                yyobj.yy_bh = "";
-                                yyobj.yy_bz = "";
-                                yyobj.yy_djrq = DateTime.Now.ToString("yyyy-MM-dd");
-                                yyobj.yy_rq = starttime.AddDays(i).ToString("yyyy-MM-dd");
-                                yyobj.yy_sfjf = "";
-                                yyobj.yy_sjd = sjdargs[j];
-                                yyobj.yy_xm = yy_xm;
+                                yyobj.YY_BH = "";
+                                yyobj.YY_BZ = "";
+                                yyobj.YY_DJRQ = DateTime.Now.ToString("yyyy-MM-dd");
+                                yyobj.YY_RQ = starttime.AddDays(i).ToString("yyyy-MM-dd");
+                                yyobj.YY_SFJF = "";
+                                yyobj.YY_SJD = sjdargs[j];
+                                yyobj.YY_XM = yy_xm;
                                 bll.Add(yyobj);
 
                                 if (justOne)
@@ -321,11 +321,11 @@ namespace ChildManager.UI.yuyue
             frmsearcher.ShowDialog();
             if (frmsearcher.DialogResult == DialogResult.OK)
             {
-                tb_childbase jibenobj = frmsearcher.returnval;
+                TB_CHILDBASE jibenobj = frmsearcher.returnval;
                 if (jibenobj != null)
                 {
-                    yy_asd_tab obj = GetObj();
-                    obj.child_id = jibenobj.id;
+                    YY_ASD_TAB obj = GetObj();
+                    obj.CHILD_ID = jibenobj.ID;
                     if (bll.SaveOrUpdate(obj))
                     {
                         MessageBox.Show("保存成功！", "软件提示");

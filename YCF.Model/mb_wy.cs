@@ -14,6 +14,7 @@ namespace YCF.Model
     
     public partial class MB_WY
     {
+
         public decimal ID { get; set; }
         public int YFKS { get; set; }
         public decimal YFJS { get; set; }

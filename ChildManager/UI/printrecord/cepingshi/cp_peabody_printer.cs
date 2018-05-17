@@ -536,7 +536,7 @@ namespace ChildManager.UI.printrecord.cepingshi
 
             //left = _rectBody.Right - 120;
             //rect = new Rectangle(left, top, 120, 30);
-            //MiddleLeftPrintText(_obj.cszqm, rect, g);
+            //MiddleLeftPrintText(_obj.CSZQM, rect, g);
             //g.DrawLine(pen, rect.Left, rect.Top + 20, rect.Right, rect.Top + 20);
             //left -= 100;
             //rect = new Rectangle(left, top, 100, 30);
@@ -545,7 +545,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             //top += 25;
             //left = _rectBody.Right - 120;
             //rect = new Rectangle(left, top, 120, 30);
-            //MiddleLeftPrintText(_obj.csrq, rect, g);
+            //MiddleLeftPrintText(_obj.CSRQ, rect, g);
             //g.DrawLine(pen, rect.Left, rect.Top + 20, rect.Right, rect.Top + 20);
             //left -= 100;
             //rect = new Rectangle(left, top, 100, 30);

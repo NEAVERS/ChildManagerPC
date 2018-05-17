@@ -18,10 +18,10 @@ namespace ChildManager.UI.yuyue
         yy_asd_tabbll bll = new yy_asd_tabbll();
         yy_pz_tabbll pzbll = new yy_pz_tabbll();
         yy_pz_details_tabbll detailsbll = new yy_pz_details_tabbll();
-        yy_asd_tab _obj = null;
+        YY_ASD_TAB _obj = null;
         string _pz_lx = "";
-        private IList<yy_pz_tab> _xmList;
-        private IList<yy_pz_details_tab> _detailList;
+        private IList<YY_PZ_TAB> _xmList;
+        private IList<YY_PZ_DETAILS_TAB> _detailList;
 
         public yy_all_details(string pz_lx)
         {
@@ -73,7 +73,7 @@ namespace ChildManager.UI.yuyue
                     row.CreateCells(dataGridView2, obj.yy_djrq, obj.yy_bh, obj.childname, obj.childgender, obj.childbirthday, obj.telephone, obj.yy_rq, obj.yy_xm, obj.yy_sjd, obj.yy_sfjf, obj.yy_bz);
                     row.Tag = obj;
                     dataGridView2.Rows.Add(row);
-                    if (_obj != null && obj.id == _obj.id)
+                    if (_obj != null && obj.id == _obj.ID)
                         selectindex = i;
                     i++;
                 }

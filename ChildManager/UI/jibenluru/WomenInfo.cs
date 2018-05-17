@@ -43,8 +43,8 @@ namespace ChildManager.UI.jibenluru
         {
             foreach (ToolStripItem tsdb in toolStrip2.Items)
             {
-                sys_menus menuobj = tsdb.Tag as sys_menus;
-                tsdb.Text = menuobj.menu_name;
+                SYS_MENUS menuobj = tsdb.Tag as SYS_MENUS;
+                tsdb.Text = menuobj.MENU_NAME;
                 tsdb.BackColor = System.Drawing.Color.Transparent;
                 if (tsdb is ToolStripDropDownButton)
                 {
@@ -70,10 +70,10 @@ namespace ChildManager.UI.jibenluru
             try
             {
                 sysmenuBll menubll = new sysmenuBll();
-                IList<sys_menus> list = menubll.GetListBySql("医生工作站", globalInfoClass.User_Role);
-                foreach (sys_menus obj in list)
+                IList<SYS_MENUS> list = menubll.GetListBySql("医生工作站", globalInfoClass.User_Role);
+                foreach (SYS_MENUS obj in list)
                 {
-                    if (obj.menu_lever == "1")
+                    if (obj.MENU_LEVER == "1")
                     {
                         if (String.IsNullOrEmpty(obj.menu_url))
                         {
@@ -115,7 +115,7 @@ namespace ChildManager.UI.jibenluru
                         }
 
                     }
-                    else if (obj.menu_lever == "2")
+                    else if (obj.MENU_LEVER == "2")
                     {
 
                         ToolStripMenuItem tsm = new ToolStripMenuItem();
@@ -165,7 +165,7 @@ namespace ChildManager.UI.jibenluru
         private void tsm_Click(object sender, EventArgs e)
         {
             ToolStripMenuItem tsm = sender as ToolStripMenuItem;
-            sys_menus menuobj = tsm.Tag as sys_menus;
+            SYS_MENUS menuobj = tsm.Tag as SYS_MENUS;
             if (this.cd_id == -1 && menuobj.menu_code != "1001")
             {
                 MessageBox.Show("请选择儿童！");
@@ -173,11 +173,11 @@ namespace ChildManager.UI.jibenluru
             }
             if (!tsm.Checked)
             {
-                //Type ty = Assembly.Load("login").GetType(string.Format("UI.xinxitongji.{0}", menuobj.menu_url));
+                //Type ty = Assembly.Load("login").GetType(string.Format("UI.xinxitongji.{0}", menuobj.MENU_URL));
                 //Object obj = Activator.CreateInstance(ty);
                 CommonHelper.DisposeControls(pnlContent.Controls);
 
-                UserControl uc = Activator.CreateInstance(Type.GetType(menuobj.menu_url), new object[] { this }) as UserControl;
+                UserControl uc = Activator.CreateInstance(Type.GetType(menuobj.MENU_URL), new object[] { this }) as UserControl;
                 uc.Dock = DockStyle.Fill;
                 this.pnlContent.Controls.Clear();
                 this.pnlContent.Controls.Add(uc);
@@ -186,8 +186,8 @@ namespace ChildManager.UI.jibenluru
                 tsm.Checked = true;
                 tsm.BackColor = Color.FromArgb(255, 199, 142);
                 ToolStripDropDownButton tsdb = tsm.OwnerItem as ToolStripDropDownButton;
-                sys_menus tsdbmenuobj = tsdb.Tag as sys_menus;
-                tsdb.Text = tsdbmenuobj.menu_name + "： " + menuobj.menu_name;
+                SYS_MENUS tsdbmenuobj = tsdb.Tag as SYS_MENUS;
+                tsdb.Text = tsdbmenuobj.MENU_NAME + "： " + menuobj.MENU_NAME;
                 tsdb.BackColor = Color.FromArgb(255, 199, 142);
             }
         }
@@ -195,7 +195,7 @@ namespace ChildManager.UI.jibenluru
         private void tsm_temp_Click(object sender, EventArgs e)
         {
             ToolStripMenuItem tsm = sender as ToolStripMenuItem;
-            sys_menus menuobj = tsm.Tag as sys_menus;
+            SYS_MENUS menuobj = tsm.Tag as SYS_MENUS;
             if (this.cd_id == -1 && menuobj.menu_code != "1001")
             {
                 MessageBox.Show("请选择儿童！");
@@ -204,7 +204,7 @@ namespace ChildManager.UI.jibenluru
             if (!tsm.Checked)
             {
                 CommonHelper.DisposeControls(pnlContent.Controls);
-                string bllname = menuobj.menu_url.Substring(menuobj.menu_url.LastIndexOf(".")).Trim('.');
+                string bllname = menuobj.MENU_URL.Substring(menuobj.MENU_URL.LastIndexOf(".")).Trim('.');
                 Assembly ass;
                 //Type type;
                 object obj;
@@ -215,11 +215,11 @@ namespace ChildManager.UI.jibenluru
                     ass = Assembly.Load(buffer);
 
                     //获取类的类型：必须使用名称空间+类名称
-                    //type = ass.GetType("login.UI.tempreport." + menuobj.menu_url);
+                    //type = ass.GetType("login.UI.tempreport." + menuobj.MENU_URL);
 
                     //对获取的类进行创建实例。//必须使用名称空间+类名称
                     //UserControl uc = Activator.CreateInstance(Type.GetType("tongji_gaowei.tempreport.tongji_gaowei")) as UserControl;
-                    obj = ass.CreateInstance(menuobj.menu_url, false, BindingFlags.Default, null, new object[] { "xxx" }, null, null);
+                    obj = ass.CreateInstance(menuobj.MENU_URL, false, BindingFlags.Default, null, new object[] { "xxx" }, null, null);
                     UserControl uc = obj as UserControl;
                     uc.Dock = DockStyle.Fill;
                     this.pnlContent.Controls.Clear();
@@ -229,8 +229,8 @@ namespace ChildManager.UI.jibenluru
                 tsm.Checked = true;
                 tsm.BackColor = Color.FromArgb(255, 199, 142);
                 ToolStripDropDownButton tsdb = tsm.OwnerItem as ToolStripDropDownButton;
-                sys_menus tsdbmenuobj = tsdb.Tag as sys_menus;
-                tsdb.Text = tsdbmenuobj.menu_name + "： " + menuobj.menu_name;
+                SYS_MENUS tsdbmenuobj = tsdb.Tag as SYS_MENUS;
+                tsdb.Text = tsdbmenuobj.MENU_NAME + "： " + menuobj.MENU_NAME;
                 tsdb.BackColor = Color.FromArgb(255, 199, 142);
             }
         }
@@ -238,7 +238,7 @@ namespace ChildManager.UI.jibenluru
         private void tsdb_Click(object sender, EventArgs e)
         {
             ToolStripButton tsb = sender as ToolStripButton;
-            sys_menus menuobj = tsb.Tag as sys_menus;
+            SYS_MENUS menuobj = tsb.Tag as SYS_MENUS;
             if (this.cd_id == -1 && menuobj.menu_code != "1001")
             {
                 MessageBox.Show("请选择儿童！");
@@ -247,7 +247,7 @@ namespace ChildManager.UI.jibenluru
             if (!tsb.Checked)
             {
                 CommonHelper.DisposeControls(pnlContent.Controls);
-                UserControl uc = Activator.CreateInstance(Type.GetType(menuobj.menu_url), new object[] { this }) as UserControl;
+                UserControl uc = Activator.CreateInstance(Type.GetType(menuobj.MENU_URL), new object[] { this }) as UserControl;
                 uc.Dock = DockStyle.Fill;
                 this.pnlContent.Controls.Clear();
                 this.pnlContent.Controls.Add(uc);
@@ -262,7 +262,7 @@ namespace ChildManager.UI.jibenluru
         {
 
             ToolStripButton tsm = sender as ToolStripButton;
-            sys_menus menuobj = tsm.Tag as sys_menus;
+            SYS_MENUS menuobj = tsm.Tag as SYS_MENUS;
             if (this.cd_id == -1 && menuobj.menu_code != "1001")
             {
                 MessageBox.Show("请选择儿童！");
@@ -271,7 +271,7 @@ namespace ChildManager.UI.jibenluru
             if (!tsm.Checked)
             {
                 CommonHelper.DisposeControls(pnlContent.Controls);
-                string bllname = menuobj.menu_url.Substring(menuobj.menu_url.LastIndexOf(".")).Trim('.');
+                string bllname = menuobj.MENU_URL.Substring(menuobj.MENU_URL.LastIndexOf(".")).Trim('.');
                 Assembly ass;
                 //Type type;
                 object obj;
@@ -282,11 +282,11 @@ namespace ChildManager.UI.jibenluru
                     ass = Assembly.Load(buffer);
 
                     //获取类的类型：必须使用名称空间+类名称
-                    //type = ass.GetType("login.UI.tempreport." + menuobj.menu_url);
+                    //type = ass.GetType("login.UI.tempreport." + menuobj.MENU_URL);
 
                     //对获取的类进行创建实例。//必须使用名称空间+类名称
                     //UserControl uc = Activator.CreateInstance(Type.GetType("tongji_gaowei.tempreport.tongji_gaowei")) as UserControl;
-                    obj = ass.CreateInstance(menuobj.menu_url, false, BindingFlags.Default, null, new object[] { "xxx" }, null, null);
+                    obj = ass.CreateInstance(menuobj.MENU_URL, false, BindingFlags.Default, null, new object[] { "xxx" }, null, null);
                     UserControl uc = obj as UserControl;
                     uc.Dock = DockStyle.Fill;
                     this.pnlContent.Controls.Clear();
@@ -296,8 +296,8 @@ namespace ChildManager.UI.jibenluru
                 tsm.Checked = true;
                 tsm.BackColor = Color.FromArgb(255, 199, 142);
                 ToolStripDropDownButton tsdb = tsm.OwnerItem as ToolStripDropDownButton;
-                sys_menus tsdbmenuobj = tsdb.Tag as sys_menus;
-                tsdb.Text = tsdbmenuobj.menu_name + "： " + menuobj.menu_name;
+                SYS_MENUS tsdbmenuobj = tsdb.Tag as SYS_MENUS;
+                tsdb.Text = tsdbmenuobj.MENU_NAME + "： " + menuobj.MENU_NAME;
                 tsdb.BackColor = Color.FromArgb(255, 199, 142);
             }
         }
@@ -323,17 +323,17 @@ namespace ChildManager.UI.jibenluru
         //    string isjiuzhen = CommonHelper.getcheckedValue(panel1);
         //    try
         //    {
-        //        IList<tb_childbase> list = basebll.GetListByCheckDoc(checkday, isjiuzhen,cd_id);
+        //        IList<TB_CHILDBASE> list = basebll.GetListByCheckDoc(checkday, isjiuzhen,cd_id);
         //        if(list!=null)
         //        {
-        //            foreach (tb_childbase obj in list)
+        //            foreach (TB_CHILDBASE obj in list)
         //            {
         //                if (obj == null)
         //                    continue;
         //                DataGridViewRow row = new DataGridViewRow();
-        //                row.CreateCells(dataGridView1, obj.healthcardno, obj.childname, obj.id.ToString(), obj.childgender, obj.childbirthday);// 
+        //                row.CreateCells(dataGridView1, obj.healthcardno, obj.childname, obj.ID.ToString(), obj.childgender, obj.childbirthday);// 
         //                dataGridView1.Rows.Add(row);
-        //                if(obj.id==this.cd_id)
+        //                if(obj.ID==this.cd_id)
         //                {
         //                    row.Selected = true;
         //                }
@@ -368,14 +368,14 @@ namespace ChildManager.UI.jibenluru
             frmsearcher.ShowDialog();
             if (frmsearcher.DialogResult == DialogResult.OK)
             {
-                tb_childbase jibenobj = frmsearcher.returnval;
+                TB_CHILDBASE jibenobj = frmsearcher.returnval;
                 if (jibenobj != null)
                 {
                     
                     bool isinclude = true;
                     for (int i = 0; i < treeView1.Nodes[0].Nodes.Count; i++)
                     {
-                        if ((treeView1.Nodes[0].Nodes[i].Tag as tb_childbase).healthcardno == jibenobj.healthcardno)
+                        if ((treeView1.Nodes[0].Nodes[i].Tag as TB_CHILDBASE).healthcardno == jibenobj.healthcardno)
                         {
                             treeView1.Nodes[0].Nodes[i].Checked = true;
                             treeView1.SelectedNode = treeView1.Nodes[0].Nodes[i];
@@ -385,7 +385,7 @@ namespace ChildManager.UI.jibenluru
                     }
                     for (int i = 0; i < treeView1.Nodes[1].Nodes.Count; i++)
                     {
-                        if ((treeView1.Nodes[1].Nodes[i].Tag as tb_childbase).healthcardno == jibenobj.healthcardno)
+                        if ((treeView1.Nodes[1].Nodes[i].Tag as TB_CHILDBASE).healthcardno == jibenobj.healthcardno)
                         {
                             treeView1.Nodes[1].Nodes[i].Checked = true;
                             treeView1.SelectedNode = treeView1.Nodes[1].Nodes[i];
@@ -445,23 +445,23 @@ namespace ChildManager.UI.jibenluru
             {
                 TreeNode tn;
                 isjiuzhen = "未就诊";
-                IList<tb_childbase> list = basebll.GetListByCheckDoc(checkday, isjiuzhen, -1);
+                IList<TB_CHILDBASE> list = basebll.GetListByCheckDoc(checkday, isjiuzhen, -1);
                 
                 if (list != null)
                 {
                     treeView1.Nodes[0].Nodes.Clear();
-                    foreach (tb_childbase obj in list)
+                    foreach (TB_CHILDBASE obj in list)
                     {
                         if (obj == null)
                             continue;
                         tn = new TreeNode();
                         //DataGridViewRow row = new DataGridViewRow();
-                        //row.CreateCells(dataGridView1, obj.healthcardno, obj.childname, obj.id.ToString(), obj.childgender, obj.childbirthday);// 
+                        //row.CreateCells(dataGridView1, obj.healthcardno, obj.childname, obj.ID.ToString(), obj.childgender, obj.childbirthday);// 
                         //dataGridView1.Rows.Add(row);
                         tn.Text=obj.childname;
                         tn.Tag = obj;
                         treeView1.Nodes[0].Nodes.Add(tn);
-                        if (obj.id == this.cd_id)
+                        if (obj.ID == this.cd_id)
                         {
                             tn.Checked = true;
                             treeView1.SelectedNode = tn;
@@ -475,18 +475,18 @@ namespace ChildManager.UI.jibenluru
                 if (list != null)
                 {
                     treeView1.Nodes[1].Nodes.Clear();
-                    foreach (tb_childbase obj in list)
+                    foreach (TB_CHILDBASE obj in list)
                     {
                         if (obj == null)
                             continue;
                         tn = new TreeNode();
                         //DataGridViewRow row = new DataGridViewRow();
-                        //row.CreateCells(dataGridView1, obj.healthcardno, obj.childname, obj.id.ToString(), obj.childgender, obj.childbirthday);// 
+                        //row.CreateCells(dataGridView1, obj.healthcardno, obj.childname, obj.ID.ToString(), obj.childgender, obj.childbirthday);// 
                         //dataGridView1.Rows.Add(row);
                         tn.Text = obj.childname;
                         tn.Tag = obj;
                         treeView1.Nodes[1].Nodes.Add(tn);
-                        if (obj.id == this.cd_id )
+                        if (obj.ID == this.cd_id )
                         {
                             tn.Checked = true;
                             treeView1.SelectedNode = tn;
@@ -563,7 +563,7 @@ namespace ChildManager.UI.jibenluru
             
             treeView1.SelectedNode = node;
             
-            tb_childbase tbc = (tb_childbase)this.treeView1.SelectedNode.Tag;
+            TB_CHILDBASE tbc = (TB_CHILDBASE)this.treeView1.SelectedNode.Tag;
             l_cardno.Text = tbc.healthcardno;//档案号
             l_name.Text = tbc.childname;
             this.cd_id = tbc.id;
@@ -578,8 +578,8 @@ namespace ChildManager.UI.jibenluru
             l_csqk.Text = tbc.modedelivery;
             foreach (ToolStripItem tsdb in toolStrip2.Items)
             {
-                sys_menus menuobj = tsdb.Tag as sys_menus;
-                tsdb.Text = menuobj.menu_name;
+                SYS_MENUS menuobj = tsdb.Tag as SYS_MENUS;
+                tsdb.Text = menuobj.MENU_NAME;
                 tsdb.BackColor = System.Drawing.Color.Transparent;
                 if (tsdb is ToolStripButton)
                 {
@@ -621,7 +621,7 @@ namespace ChildManager.UI.jibenluru
 
                 // MessageBox.Show("病人ID：" + _chipobj.PAT_INDEX_NO + "\r\n就诊卡号：" + _chipobj.CARD_NO);
 
-                tb_childbase _childobj = basebll.GetByPatientId(_chipobj.PAT_INDEX_NO);
+                TB_CHILDBASE _childobj = basebll.GetByPatientId(_chipobj.PAT_INDEX_NO);
                 if (_childobj != null)
                 {
                     MessageBox.Show("本地病人ID查询有数据");
@@ -670,7 +670,7 @@ namespace ChildManager.UI.jibenluru
         /// 2017-12-06 cc
         /// </summary>
         /// <param name="childbase">病人信息</param>
-        public void SetChildInfo(tb_childbase childbase, object sender)
+        public void SetChildInfo(TB_CHILDBASE childbase, object sender)
         {
             if (childbase != null)
             {
@@ -680,7 +680,7 @@ namespace ChildManager.UI.jibenluru
                     bool isinclude = true;
                     for (int i = 0; i < treeView1.Nodes[0].Nodes.Count; i++)
                     {
-                        if ((treeView1.Nodes[0].Nodes[i].Tag as tb_childbase).healthcardno == childbase.healthcardno)
+                        if ((treeView1.Nodes[0].Nodes[i].Tag as TB_CHILDBASE).healthcardno == childbase.healthcardno)
                         {
                             treeView1.Nodes[0].Nodes[i].Checked = true;
                             treeView1.SelectedNode = treeView1.Nodes[0].Nodes[i];
@@ -690,7 +690,7 @@ namespace ChildManager.UI.jibenluru
                     }
                     for (int i = 0; i < treeView1.Nodes[1].Nodes.Count; i++)
                     {
-                        if ((treeView1.Nodes[1].Nodes[i].Tag as tb_childbase).healthcardno == childbase.healthcardno)
+                        if ((treeView1.Nodes[1].Nodes[i].Tag as TB_CHILDBASE).healthcardno == childbase.healthcardno)
                         {
                             treeView1.Nodes[1].Nodes[i].Checked = true;
                             treeView1.SelectedNode = treeView1.Nodes[1].Nodes[i];
@@ -737,7 +737,7 @@ namespace ChildManager.UI.jibenluru
             doc_Jibenxinxi_Edit.ShowDialog();
             if (doc_Jibenxinxi_Edit.DialogResult == DialogResult.OK)
             {
-                tb_childbase _Childbase = basebll.GetByPatientId(hisPatientInfo.PAT_INDEX_NO);
+                TB_CHILDBASE _Childbase = basebll.GetByPatientId(hisPatientInfo.PAT_INDEX_NO);
                 if (_Childbase != null)
                 {
                     SetInfo(sender, _Childbase);
@@ -755,12 +755,12 @@ namespace ChildManager.UI.jibenluru
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="jibenobj"></param>
-        public void SetInfo(object sender, tb_childbase jibenobj)
+        public void SetInfo(object sender, TB_CHILDBASE jibenobj)
         {
             bool isinclude = true;
             for (int i = 0; i < treeView1.Nodes[0].Nodes.Count; i++)
             {
-                if ((treeView1.Nodes[0].Nodes[i].Tag as tb_childbase).healthcardno == jibenobj.healthcardno)
+                if ((treeView1.Nodes[0].Nodes[i].Tag as TB_CHILDBASE).healthcardno == jibenobj.healthcardno)
                 {
                     treeView1.Nodes[0].Nodes[i].Checked = true;
                     treeView1.SelectedNode = treeView1.Nodes[0].Nodes[i];
@@ -770,7 +770,7 @@ namespace ChildManager.UI.jibenluru
             }
             for (int i = 0; i < treeView1.Nodes[1].Nodes.Count; i++)
             {
-                if ((treeView1.Nodes[1].Nodes[i].Tag as tb_childbase).healthcardno == jibenobj.healthcardno)
+                if ((treeView1.Nodes[1].Nodes[i].Tag as TB_CHILDBASE).healthcardno == jibenobj.healthcardno)
                 {
                     treeView1.Nodes[1].Nodes[i].Checked = true;
                     treeView1.SelectedNode = treeView1.Nodes[1].Nodes[i];

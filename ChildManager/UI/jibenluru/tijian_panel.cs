@@ -30,11 +30,11 @@ namespace ChildManager.UI.jibenluru
         private WhoChildStandardDayObj shengaostandobj = null;
         private WhoChildStandardDayObj touweistandobj = null;
 
-        IList<tb_childcheck> _listcheck = null;
+        IList<TB_CHILDCHECK> _listcheck = null;
 
-        private tb_childcheck _checkobj = null;
-        private tb_childcheck checkobjForRef = null;
-        private tb_childbase baseobj = null;
+        private TB_CHILDCHECK _checkobj = null;
+        private TB_CHILDCHECK checkobjForRef = null;
+        private TB_CHILDBASE baseobj = null;
         private ChildCheckObj checkmobanobj = new ChildCheckObj();
         string _hospital = globalInfoClass.Hospital;
         private WomenInfo _womeninfo;
@@ -97,7 +97,7 @@ namespace ChildManager.UI.jibenluru
             //    return;
             //}
 
-            tb_childcheck checkboj = GetObj();
+            TB_CHILDCHECK checkboj = GetObj();
             
             //int precout = checkbll.countpre(checkboj.fuzenday, globalInfoClass.UserCode);
             //if (precout >= globalInfoClass.Pre_Max)
@@ -112,8 +112,8 @@ namespace ChildManager.UI.jibenluru
 
             if (_checkobj == null)
             {
-                checkboj.ck_fz = globalInfoClass.UserName;
-                checkboj.hospital = _hospital;
+                checkboj.CK_FZ = globalInfoClass.UserName;
+                checkboj.HOSPITAL = _hospital;
                 if (checkbll.Add(checkboj))
                 {
                     checkobjForRef = checkboj;
@@ -134,9 +134,9 @@ namespace ChildManager.UI.jibenluru
             }
             else
             {
-                checkboj.ck_fz = _checkobj.ck_fz;
-                checkboj.id = _checkobj.id;
-                checkboj.hospital = _checkobj.hospital;
+                checkboj.CK_FZ = _checkobj.CK_FZ;
+                checkboj.ID = _checkobj.ID;
+                checkboj.HOSPITAL = _checkobj.HOSPITAL;
                 if (checkbll.Update(checkboj))
                 {
                     checkobjForRef = checkboj;
@@ -160,37 +160,37 @@ namespace ChildManager.UI.jibenluru
         /// 体检保存
         /// </summary>
         /// <returns></returns>
-        private tb_childcheck GetObj()
+        private TB_CHILDCHECK GetObj()
         {
             StringBuilder builder = new StringBuilder();
-            tb_childcheck obj = CommonHelper.GetObj<tb_childcheck>(panel2.Controls);
-            if (string.IsNullOrEmpty(obj.zhenduan))
+            TB_CHILDCHECK obj = CommonHelper.GetObj<TB_CHILDCHECK>(panel2.Controls);
+            if (string.IsNullOrEmpty(obj.ZHENDUAN))
             {
-                obj.zhenduan = "体检";
+                obj.ZHENDUAN = "体检";
             }
             if (this.fuzencombobox.Text.Trim().Equals("1个月"))
             {
-                obj.fuzenday = this.checkday.Value.AddMonths(1).ToString("yyyy-MM-dd");
+                obj.FUZENDAY = this.checkday.Value.AddMonths(1).ToString("yyyy-MM-dd");
             }
             else if (this.fuzencombobox.Text.Trim().Equals("2个月"))
             {
-                obj.fuzenday = this.checkday.Value.AddMonths(2).ToString("yyyy-MM-dd");
+                obj.FUZENDAY = this.checkday.Value.AddMonths(2).ToString("yyyy-MM-dd");
             }
             else if (this.fuzencombobox.Text.Trim().Equals("3个月"))
             {
-                obj.fuzenday = this.checkday.Value.AddMonths(3).ToString("yyyy-MM-dd");
+                obj.FUZENDAY = this.checkday.Value.AddMonths(3).ToString("yyyy-MM-dd");
             }
             else if (this.fuzencombobox.Text.Trim().Equals("6个月"))
             {
-                obj.fuzenday = this.checkday.Value.AddMonths(6).ToString("yyyy-MM-dd");
+                obj.FUZENDAY = this.checkday.Value.AddMonths(6).ToString("yyyy-MM-dd");
             }
             else if (this.fuzencombobox.Text.Trim().Equals("1年"))
             {
-                obj.fuzenday = this.checkday.Value.AddYears(1).ToString("yyyy-MM-dd");
+                obj.FUZENDAY = this.checkday.Value.AddYears(1).ToString("yyyy-MM-dd");
             }
 
-            obj.childid = _womeninfo.cd_id;
-            obj.user_code = globalInfoClass.UserCode;
+            obj.CHILDID = _womeninfo.cd_id;
+            obj.USER_CODE = globalInfoClass.UserCode;
             return obj;
         }
 
@@ -224,12 +224,12 @@ namespace ChildManager.UI.jibenluru
             lblHeigthWeight.ForeColor = Color.Black;
             lblHeigthWeight.Text = "体重/身高评价：";
 
-            int[] age = CommonHelper.getAgeBytime(baseobj.childbirthday, this.checkday.Value.ToString("yyyy-MM-dd"));
+            int[] age = CommonHelper.getAgeBytime(baseobj.CHILDBIRTHDAY, this.checkday.Value.ToString("yyyy-MM-dd"));
             string agestr = (age[0] > 0 ? age[0].ToString() + "岁" : "") + (age[1] > 0 ? age[1].ToString() + "月" : "") + (age[2] > 0 ? age[2].ToString() + "天" : "");
             if (age[0] <= 2)
             {
-                string sqls_stand = "select top 1 * from who_childstand where sex='" + baseobj.childgender + "' and CAST(length as float) <='" + checkheight.Text.Trim() + "' and  ptype='身高的体重0-2' order by CAST(length as float) desc";
-                //string sqls_stand = "select * from who_childstand where sex='" + baseobj.childgender + "' and length='" + checkheight.Text.Trim() + "' and  ptype='身高的体重0-2'";
+                string sqls_stand = "select top 1 * from who_childstand where sex='" + baseobj.CHILDGENDER + "' and CAST(length as float) <='" + checkheight.Text.Trim() + "' and  ptype='身高的体重0-2' order by CAST(length as float) desc";
+                //string sqls_stand = "select * from who_childstand where sex='" + baseobj.CHILDGENDER + "' and length='" + checkheight.Text.Trim() + "' and  ptype='身高的体重0-2'";
                 ArrayList standlist = new ChildStandardBll().getwhoStandardlist(sqls_stand);
 
                 if (standlist != null && standlist.Count > 0)
@@ -803,16 +803,16 @@ namespace ChildManager.UI.jibenluru
         private void getBmistand(string checkday)
         {
             string sqls_stand = "";
-            int[] ages = CommonHelper.getAgeBytime(baseobj.childbirthday, _checkobj?.checkday ?? comboBox1.Text);
+            int[] ages = CommonHelper.getAgeBytime(baseobj.CHILDBIRTHDAY, _checkobj?.CHECKDAY ?? comboBox1.Text);
             int yf = ages[0] * 12 + ages[1];
 
 //            if (yf < 61)
 //            {
-//                sqls_stand = "select * from who_childstand_day where sex='" + baseobj.childgender + "' and tian=datediff(day,'" + baseobj.childbirthday + "','" + checkday + "')";
+//                sqls_stand = "select * from who_childstand_day where sex='" + baseobj.CHILDGENDER + "' and tian=datediff(day,'" + baseobj.CHILDBIRTHDAY + "','" + checkday + "')";
 //            }
 //            else
 //            {
-                sqls_stand = "select * from who_childstand where sex='" + baseobj.childgender + "' and month ='" + yf + "'"; ;
+                sqls_stand = "select * from who_childstand where sex='" + baseobj.CHILDGENDER + "' and month ='" + yf + "'"; ;
 //            }
 
             ArrayList standlist = new ChildStandardBll().getwhoStandardlist(sqls_stand);
@@ -845,7 +845,7 @@ namespace ChildManager.UI.jibenluru
         //指导等
         private void getzhidaostand(string checkday)
         {
-            string sqls_zhidao = "select * from tb_moban where  yf<=datediff(month,'" + baseobj.childbirthday + "','" + checkday + "') and yfend>=datediff(month,'" + baseobj.childbirthday + "','" + checkday + "') ";
+            string sqls_zhidao = "select * from tb_moban where  yf<=datediff(month,'" + baseobj.CHILDBIRTHDAY + "','" + checkday + "') and yfend>=datediff(month,'" + baseobj.CHILDBIRTHDAY + "','" + checkday + "') ";
             ArrayList mobanlist = new MobanManageBll().getMobanList(sqls_zhidao);
             if (mobanlist != null && mobanlist.Count > 0)
             {
@@ -889,23 +889,23 @@ namespace ChildManager.UI.jibenluru
             _checkobj = checkbll.Get(id);
             if (_checkobj != null)
             {
-                 if (_checkobj.zhenduan != null)
+                 if (_checkobj.ZHENDUAN != null)
                 {
                     CommonHelper.setForm(_checkobj, panel2.Controls);
                 }
                 else
                 {
                     SetControlsDefaultValue();
-                    var obj = new tb_childcheck { checkweight = _checkobj.checkweight, checkheight = _checkobj.checkheight, checktouwei = _checkobj.checktouwei, checkzuogao = _checkobj.checkzuogao };
+                    var obj = new TB_CHILDCHECK { CHECKWEIGHT = _checkobj.CHECKWEIGHT, CHECKHEIGHT = _checkobj.CHECKHEIGHT, CHECKTOUWEI = _checkobj.CHECKTOUWEI, CHECKZUOGAO = _checkobj.CHECKZUOGAO };
                     //CommonHelper.setForm(obj, panel2.Controls);
-                    checkweight.Text = obj.checkweight;
-                    checkheight.Text = obj.checkheight;
-                    checktouwei.Text = obj.checktouwei;
-                    checkzuogao.Text = obj.checkzuogao;
+                    checkweight.Text = obj.CHECKWEIGHT;
+                    checkheight.Text = obj.CHECKHEIGHT;
+                    checktouwei.Text = obj.CHECKTOUWEI;
+                    checkzuogao.Text = obj.CHECKZUOGAO;
 
                 }
 
-                if (String.IsNullOrEmpty(_checkobj.doctorname))
+                if (String.IsNullOrEmpty(_checkobj.DOCTORNAME))
                 {
                     doctorname.Text = globalInfoClass.UserName;
                 }
@@ -1001,7 +1001,7 @@ namespace ChildManager.UI.jibenluru
             //DateTime dtbirth = Convert.ToDateTime(obj.ChildBirthDay);
             //DateTime dtnow = DateTime.Now;
             //TimeSpan timeSpan = dtnow - dtbirth;
-            int[] age = CommonHelper.getAgeBytime(baseobj.childbirthday, this.checkday.Value.ToString("yyyy-MM-dd"));
+            int[] age = CommonHelper.getAgeBytime(baseobj.CHILDBIRTHDAY, this.checkday.Value.ToString("yyyy-MM-dd"));
             string agestr = (age[0] > 0 ? age[0].ToString() + "岁" : "") + (age[1] > 0 ? age[1].ToString() + "月" : "") + (age[2] > 0 ? age[2].ToString() + "天" : "");
             this.checkfactage.Text = agestr;
 
@@ -1111,19 +1111,19 @@ namespace ChildManager.UI.jibenluru
             if (_listcheck != null && _listcheck.Count > 0)
             {
                 if (checkobjForRef != null)
-                    comboBox1.SelectedValue = checkobjForRef.id;
+                    comboBox1.SelectedValue = checkobjForRef.ID;
                 else
                 {
-                    var date = (comboBox1.Items[0] as tb_childcheck).checkday;
-                    foreach (tb_childcheck item in comboBox1.Items)
+                    var date = (comboBox1.Items[0] as TB_CHILDCHECK).CHECKDAY;
+                    foreach (TB_CHILDCHECK item in comboBox1.Items)
                     {
-                        if (item.checkday != date)
+                        if (item.CHECKDAY != date)
                         {
                             break;
                         }
-                        if (item.zhenduan == null)
+                        if (item.ZHENDUAN == null)
                         {
-                            comboBox1.SelectedValue = item.id;
+                            comboBox1.SelectedValue = item.ID;
                             break;
                         }
                     }
@@ -1188,15 +1188,15 @@ namespace ChildManager.UI.jibenluru
                         return;
                     }
 
-                    int[] ages = CommonHelper.getAgeBytime(baseobj.childbirthday, _checkobj.checkday);
+                    int[] ages = CommonHelper.getAgeBytime(baseobj.CHILDBIRTHDAY, _checkobj.CHECKDAY);
                     int yf = ages[0] * 12 + ages[1];
-                    mb_zd zdobj = new mb_zdbll().GetByYf(yf);
-                    mb_wy wyobj = new mb_wybll().GetByYfandLx(yf, _checkobj.zhushi);
+                    MB_ZD zdobj = new mb_zdbll().GetByYf(yf);
+                    MB_WY wyobj = new mb_wybll().GetByYfandLx(yf, _checkobj.ZHUSHI);
                     string[] bmipingfen = new string[] {
                         label52.Text,label53.Text ,
-                        "身高：," + _checkobj.checkheight + "cm," + label59.Text.Remove(0,5),
-                        "体重：," + _checkobj.checkweight + "kg," + label58.Text.Remove(0,5),
-                        "头围：," + _checkobj.checktouwei + "cm," + label60.Text.Remove(0,5),
+                        "身高：," + _checkobj.CHECKHEIGHT + "cm," + label59.Text.Remove(0,5),
+                        "体重：," + _checkobj.CHECKWEIGHT + "kg," + label58.Text.Remove(0,5),
+                        "头围：," + _checkobj.CHECKTOUWEI + "cm," + label60.Text.Remove(0,5),
                         lblHeigthWeight.Text.Trim(),
                         "坐高：," + (_checkobj.checkzuogao ?? "    ") + "cm",
                         //评价分等级  上、中上、中、中下、下
@@ -1265,7 +1265,7 @@ namespace ChildManager.UI.jibenluru
                     try
                     {
 
-                        if (checkbll.Delete(_checkobj.id))
+                        if (checkbll.Delete(_checkobj.ID))
                         {
 
                             MessageBox.Show("删除成功!", "软件提示");
@@ -1309,7 +1309,7 @@ namespace ChildManager.UI.jibenluru
             getzhidaostand(this.checkday.Value.ToString("yyyy-MM-dd"));
 
 
-            int[] age = CommonHelper.getAgeBytime(baseobj.childbirthday, checkday.Value.ToString("yyyy-MM-dd"));
+            int[] age = CommonHelper.getAgeBytime(baseobj.CHILDBIRTHDAY, checkday.Value.ToString("yyyy-MM-dd"));
             string agestr = (age[0] > 0 ? age[0].ToString() + "岁" : "") + (age[1] > 0 ? age[1].ToString() + "月" : "") + (age[2] > 0 ? age[2].ToString() + "天" : "");
             checkfactage.Text = agestr;
             int totalmonth = age[0] * 12 + age[1];
@@ -1337,7 +1337,7 @@ namespace ChildManager.UI.jibenluru
 
         private void dtp_checkDay_ValueChanged(object sender, EventArgs e)
         {
-            int[] age = CommonHelper.getAgeBytime(baseobj.childbirthday, checkday.Value.ToString("yyyy-MM-dd"));
+            int[] age = CommonHelper.getAgeBytime(baseobj.CHILDBIRTHDAY, checkday.Value.ToString("yyyy-MM-dd"));
             string agestr = (age[0] > 0 ? age[0].ToString() + "岁" : "") + (age[1] > 0 ? age[1].ToString() + "月" : "") + (age[2] > 0 ? age[2].ToString() + "天" : "");
             checkfactage.Text = agestr;
             int totalmonth = age[0] * 12 + age[1];
@@ -1381,7 +1381,7 @@ namespace ChildManager.UI.jibenluru
 
         private void textBoxX25_TextChanged(object sender, EventArgs e)
         {
-            if (_checkobj == null || String.IsNullOrEmpty(_checkobj.doctorname))
+            if (_checkobj == null || String.IsNullOrEmpty(_checkobj.DOCTORNAME))
             {
                 if (String.IsNullOrEmpty(zhushi.Text.Trim()))
                 {
@@ -1416,12 +1416,12 @@ namespace ChildManager.UI.jibenluru
         private void buttonX12_Click(object sender, EventArgs e)
         {
 
-            tb_healthcheck_moban healthmoban = new tb_healthcheck_moban();
-            healthmoban.zhusu = this.zhusu.Text.Trim();
-            healthmoban.bingshi = this.bingshi.Text.Trim();
-            healthmoban.tijian = this.tijian.Text.Trim();
-            healthmoban.zhenduan = this.zhenduan.Text.Trim();
-            healthmoban.chuli = this.chuli.Text.Trim();
+            TB_HEALTHCHECK_MOBAN healthmoban = new TB_HEALTHCHECK_MOBAN();
+            healthmoban.ZHUSU = this.zhusu.Text.Trim();
+            healthmoban.BINGSHI = this.bingshi.Text.Trim();
+            healthmoban.TIJIAN = this.tijian.Text.Trim();
+            healthmoban.ZHENDUAN = this.zhenduan.Text.Trim();
+            healthmoban.CHULI = this.chuli.Text.Trim();
             Panel_moban_save mobansave = new Panel_moban_save(healthmoban);
             mobansave.ShowDialog();
         }
@@ -1432,12 +1432,12 @@ namespace ChildManager.UI.jibenluru
             mobanlist.ShowDialog();
             if (mobanlist.DialogResult == DialogResult.OK)
             {
-                tb_healthcheck_moban healthmoban = mobanlist._healthcheckobj;
-                this.zhusu.Text = healthmoban.zhusu;
-                this.bingshi.Text = healthmoban.bingshi;
-                this.tijian.Text = healthmoban.tijian;
-                this.zhenduan.Text = healthmoban.zhenduan;
-                this.chuli.Text = healthmoban.chuli;
+                TB_HEALTHCHECK_MOBAN healthmoban = mobanlist._healthcheckobj;
+                this.zhusu.Text = healthmoban.ZHUSU;
+                this.bingshi.Text = healthmoban.BINGSHI;
+                this.tijian.Text = healthmoban.TIJIAN;
+                this.zhenduan.Text = healthmoban.ZHENDUAN;
+                this.chuli.Text = healthmoban.CHULI;
             }
         }
 
@@ -1460,13 +1460,13 @@ namespace ChildManager.UI.jibenluru
                 }
                 else
                 {
-                    _checkobj = checkbll.Get(_checkobj.id);
+                    _checkobj = checkbll.Get(_checkobj.ID);
                     if (_checkobj == null)
                     {
                         MessageBox.Show("请选择儿童体检信息后再打印！", "软件提示");
                         return;
                     }
-                    tb_childcheck checkobj = _checkobj;
+                    TB_CHILDCHECK checkobj = _checkobj;
                     PaneljibenCheckBingliPrinter checkbingliPrinter = new PaneljibenCheckBingliPrinter(baseobj, checkobj, _womeninfo.cd_id);
                     //panelrecord.Patient = _patient;
                     checkbingliPrinter.Print(ispre);
@@ -1555,7 +1555,7 @@ namespace ChildManager.UI.jibenluru
 
         private void tijian_panel_Load(object sender, EventArgs e)
         {
-            int[] age = CommonHelper.getAgeBytime(baseobj.childbirthday, this.checkday.Value.ToString("yyyy-MM-dd"));
+            int[] age = CommonHelper.getAgeBytime(baseobj.CHILDBIRTHDAY, this.checkday.Value.ToString("yyyy-MM-dd"));
 
 
             if (age != null)
@@ -1604,9 +1604,9 @@ namespace ChildManager.UI.jibenluru
             {
                 RefreshcheckCode(checkid);
             }
-            if (comboBox1.SelectedValue is tb_childcheck)
+            if (comboBox1.SelectedValue is TB_CHILDCHECK)
             {
-                checkid = (comboBox1.SelectedValue as tb_childcheck).id;
+                checkid = (comboBox1.SelectedValue as TB_CHILDCHECK).ID;
                 RefreshcheckCode(checkid);
             }
 
@@ -1616,8 +1616,8 @@ namespace ChildManager.UI.jibenluru
         {
             if (_checkobj != null)
             {
-                tb_childcheck che = new tb_childcheck();
-                che.checkday = DateTime.Now.ToString("yyyy-MM-dd");
+                TB_CHILDCHECK che = new TB_CHILDCHECK();
+                che.CHECKDAY = DateTime.Now.ToString("yyyy-MM-dd");
                 _listcheck.Add(che);
                 comboBox1.DataSource = null;//数据源先置空，否则同一个对象不会刷新
                 comboBox1.DisplayMember = "checkday";

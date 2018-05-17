@@ -38,7 +38,7 @@ namespace ChildManager.BLL.tongji
                     while (sdr.Read())
                     {
                         obj = new ChildCheckObj();
-                        obj.Id = Convert.ToInt32(sdr["id"]);
+                        obj.ID = Convert.ToInt32(sdr["id"]);
                         obj.ChildId = Convert.ToInt32(sdr["childId"]);
                         obj.CheckAge = sdr["checkAge"].ToString();
                         obj.CheckFactAge = sdr["checkFactAge"].ToString();

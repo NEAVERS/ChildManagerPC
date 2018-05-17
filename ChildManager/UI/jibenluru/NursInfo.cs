@@ -17,7 +17,7 @@ namespace ChildManager.UI.jibenluru
         tb_childbasebll jibenbll = new tb_childbasebll();
         tb_childcheckbll checkbll = new tb_childcheckbll();
         IDCardValidation validation = new IDCardValidation();
-        tb_childbase _jibenobj = null;
+        TB_CHILDBASE _jibenobj = null;
         public NursInfo()
         {
             InitializeComponent();
@@ -34,16 +34,16 @@ namespace ChildManager.UI.jibenluru
         {
             if (_jibenobj != null)
             {
-                IList<tb_childcheck> checklist = checkbll.GetList(_jibenobj.id);
+                IList<TB_CHILDCHECK> checklist = checkbll.GetList(_jibenobj.ID);
                 if (checklist != null)
                 {
-                    foreach (tb_childcheck checkobj in checklist)
+                    foreach (TB_CHILDCHECK checkobj in checklist)
                     {
                         DataGridViewRow row = new DataGridViewRow();
-                        row.CreateCells(dataGridView2, checkobj.checkday, checkobj.checkweight, checkobj.checkheight, checkobj.checktouwei, checkobj.checkzuogao, checkobj.doctorname);
+                        row.CreateCells(dataGridView2, checkobj.CHECKDAY, checkobj.CHECKWEIGHT, checkobj.CHECKHEIGHT, checkobj.CHECKTOUWEI, checkobj.checkzuogao, checkobj.DOCTORNAME);
                         row.Tag = checkobj;
                         dataGridView2.Rows.Add(row);
-                        if (checkobj.checkday == checkday.Text)
+                        if (checkobj.CHECKDAY == checkday.Text)
                         {
                             row.Selected = true;
                         }
@@ -138,13 +138,13 @@ namespace ChildManager.UI.jibenluru
             frmsearcher.ShowDialog();
             if (frmsearcher.DialogResult == DialogResult.OK)
             {
-                tb_childbase jibenobj = frmsearcher.returnval;
+                TB_CHILDBASE jibenobj = frmsearcher.returnval;
                 if (jibenobj != null)
                 {
                     bool isinclude = true;
                     for (int i = 0; i < dataGridView1.RowCount; i++)
                     {
-                        if (dataGridView1.Rows[i].Cells[0].Value.ToString() == jibenobj.healthcardno)
+                        if (dataGridView1.Rows[i].Cells[0].Value.ToString() == jibenobj.HEALTHCARDNO)
                         {
                             dataGridView1.Rows[i].Selected = true;
                             isinclude = false;
@@ -154,7 +154,7 @@ namespace ChildManager.UI.jibenluru
                     if (isinclude)
                     {
                         //bindDataNowday(jibenobj.wm_mrn);//档案号查数据
-                        string[] rowmrn = new string[] { jibenobj.healthcardno, jibenobj.childname, jibenobj.id.ToString(), jibenobj.childgender, jibenobj.childbirthday };
+                        string[] rowmrn = new string[] { jibenobj.HEALTHCARDNO, jibenobj.CHILDNAME, jibenobj.ID.ToString(), jibenobj.CHILDGENDER, jibenobj.CHILDBIRTHDAY };
                         dataGridView1.Rows.Add(rowmrn);
                         this.dataGridView1.Rows[this.dataGridView1.Rows.Count - 1].Selected = true; ;//选中查询到的数据行
                     }
@@ -178,14 +178,14 @@ namespace ChildManager.UI.jibenluru
         /// 本院信息导入
         /// </summary>
         /// <param name="id"></param>
-        public void RefreshCode1(tb_childbase obj)
+        public void RefreshCode1(TB_CHILDBASE obj)
         {
 
             if (obj != null)
             {
                 healthcardno.Text = "";//保健卡号
-                string childname = obj.mothername;
-                if (obj.childgender == "女")
+                string childname = obj.MOTHERNAME;
+                if (obj.CHILDGENDER == "女")
                 {
                     childname += "之女";
                 }
@@ -195,32 +195,32 @@ namespace ChildManager.UI.jibenluru
                 }
 
                 this.childname.Text = childname;//姓名
-                childgender.Text = obj.childgender;//性别
-                bloodtype.Text = obj.bloodtype;//血型
+                childgender.Text = obj.CHILDGENDER;//性别
+                bloodtype.Text = obj.BLOODTYPE;//血型
                 DateTime dtbirth = DateTime.Now;
-                DateTime.TryParse(obj.childbirthday, out dtbirth);
+                DateTime.TryParse(obj.CHILDBIRTHDAY, out dtbirth);
                 childbirthday.Value = dtbirth;
                 childbuildday.Value = DateTime.Now;
                 childbuildhospital.Text = "重医大附属儿童医院";//建册医院
                                                       //存图片
                                                       //byte[] imageBytes = bll.GetImageBytes(this.pictureBox1.Image);//转换图片为二进制
                                                       //父亲母亲
-                fathername.Text = obj.fathername;
-                fatherage.Text = obj.fatherage;
-                fatherheight.Text = obj.fatherheight;
-                fathereducation.Text = obj.fathereducation;
-                fatherjob.Text = obj.fatherjob;
-                mothername.Text = obj.mothername;
-                motherage.Text = obj.motherage;
-                motherheight.Text = obj.motherheight;
-                mothereducation.Text = obj.mothereducation;
-                motherjob.Text = obj.motherjob;
-                telephone.Text = obj.telephone;
-                province.Text = obj.province;
-                city.Text = obj.city;
-                area.Text = obj.area;
-                address.Text = obj.address;
-                nurseryinstitution.Text = obj.nurseryinstitution;
+                fathername.Text = obj.FATHERNAME;
+                fatherage.Text = obj.FATHERAGE;
+                fatherheight.Text = obj.FATHERHEIGHT;
+                fathereducation.Text = obj.FATHEREDUCATION;
+                fatherjob.Text = obj.FATHERJOB;
+                mothername.Text = obj.MOTHERNAME;
+                motherage.Text = obj.MOTHERAGE;
+                motherheight.Text = obj.MOTHERHEIGHT;
+                mothereducation.Text = obj.MOTHEREDUCATION;
+                motherjob.Text = obj.MOTHERJOB;
+                telephone.Text = obj.TELEPHONE;
+                province.Text = obj.PROVINCE;
+                city.Text = obj.CITY;
+                area.Text = obj.AREA;
+                address.Text = obj.ADDRESS;
+                nurseryinstitution.Text = obj.NURSERYINSTITUTION;
 
                 //发证
                 //obj.ImmuneUnit = cbx_immuneUnit.Text.Trim();
@@ -228,24 +228,24 @@ namespace ChildManager.UI.jibenluru
                 //obj.Community = comboBox5.Text.Trim();
                 //obj.CensusRegister = comboBox4.Text.Trim();
                 //出生史
-                cs_fetus.Text = obj.cs_fetus;
-                cs_produce.Text = obj.cs_produce;
-                cs_week.Text = obj.cs_week;
-                cs_day.Text = obj.cs_day;
-                modedelivery.Text = obj.modedelivery;
-                perineumincision.Text = obj.perineumincision;
+                cs_fetus.Text = obj.CS_FETUS;
+                cs_produce.Text = obj.CS_PRODUCE;
+                cs_week.Text = obj.CS_WEEK;
+                cs_day.Text = obj.CS_DAY;
+                modedelivery.Text = obj.MODEDELIVERY;
+                perineumincision.Text = obj.PERINEUMINCISION;
                 //obj.FetusNumber = cbx_fetusNumber.Text = ;
-                neonatalcondition.Text = obj.neonatalcondition;
-                birthweight.Text = obj.birthweight;
-                birthheight.Text = obj.birthheight;
-                birthaddress.Text = obj.birthaddress;
+                neonatalcondition.Text = obj.NEONATALCONDITION;
+                birthweight.Text = obj.BIRTHWEIGHT;
+                birthheight.Text = obj.BIRTHHEIGHT;
+                birthaddress.Text = obj.BIRTHADDRESS;
                 //母乳喂养
                 hospitalizedstates.Text = "纯母乳";
                 onemonth.Text = "纯母乳";
                 infourmonth.Text = "纯母乳";
                 fourtosixmonth.Text = "纯母乳";
                 //obj.Yunqi = getcheckedValue(pnl_yunqi);
-                identityno.Text = obj.identityno;
+                identityno.Text = obj.IDENTITYNO;
             }
             else
             {
@@ -304,10 +304,10 @@ namespace ChildManager.UI.jibenluru
         /// 获取数据
         /// </summary>
         /// <returns></returns>
-        private tb_childbase getChildBaseInfoObj()
+        private TB_CHILDBASE getChildBaseInfoObj()
         {
-            tb_childbase obj = CommonHelper.GetObj<tb_childbase>(panel2.Controls);
-            obj.status = "1";
+            TB_CHILDBASE obj = CommonHelper.GetObj<TB_CHILDBASE>(panel2.Controls);
+            obj.STATUS = "1";
             return obj;
         }
 
@@ -343,12 +343,12 @@ namespace ChildManager.UI.jibenluru
                 }
             }
 
-            tb_childbase obj = getChildBaseInfoObj();
+            TB_CHILDBASE obj = getChildBaseInfoObj();
             if (_jibenobj != null)
             {
-                obj.id = _jibenobj.id;
-                obj.healthcardno = _jibenobj.healthcardno;
-                obj.gaoweiyinsu = _jibenobj.gaoweiyinsu;
+                obj.ID = _jibenobj.ID;
+                obj.HEALTHCARDNO = _jibenobj.HEALTHCARDNO;
+                obj.GAOWEIYINSU = _jibenobj.GAOWEIYINSU;
                 b = jibenbll.Update(obj);
                 if (b)
                 {
@@ -363,12 +363,12 @@ namespace ChildManager.UI.jibenluru
             else
             {
                 //自动生成保健卡号
-                obj.healthcardno = jibenbll.stateval().ToString();//保健卡号
+                obj.HEALTHCARDNO = jibenbll.stateval().ToString();//保健卡号
                 b = jibenbll.Add(obj);
                 if (b)
                 {
                     _jibenobj = obj;
-                    this.healthcardno.Text = obj.healthcardno;
+                    this.healthcardno.Text = obj.HEALTHCARDNO;
                     MessageBox.Show("保存成功！", "软件提示");
                 }
                 else
@@ -411,8 +411,8 @@ namespace ChildManager.UI.jibenluru
                 return;
             }
 
-            tb_childcheck checkobj = GetObj();
-            tb_childcheck _checkobj = checkbll.Get(checkobj.checkday, checkobj.childid);
+            TB_CHILDCHECK checkobj = GetObj();
+            TB_CHILDCHECK _checkobj = checkbll.Get(checkobj.CHECKDAY, (int)checkobj.CHILDID);
             if (_checkobj == null)
             {
                 if (checkbll.Add(checkobj))
@@ -428,7 +428,7 @@ namespace ChildManager.UI.jibenluru
             }
             else
             {
-                checkobj.id = _checkobj.id;
+                checkobj.ID = _checkobj.ID;
                 if (checkbll.UpdateNurse(checkobj))
                 {
                     MessageBox.Show("保存成功！", "软件提示");
@@ -446,10 +446,10 @@ namespace ChildManager.UI.jibenluru
         /// 体检保存
         /// </summary>
         /// <returns></returns>
-        private tb_childcheck GetObj()
+        private TB_CHILDCHECK GetObj()
         {
-            tb_childcheck obj = CommonHelper.GetObj<tb_childcheck>(panel2.Controls);
-            obj.childid = _jibenobj.id;
+            TB_CHILDCHECK obj = CommonHelper.GetObj<TB_CHILDCHECK>(panel2.Controls);
+            obj.CHILDID = _jibenobj.ID;
             return obj;
         }
 
@@ -470,19 +470,19 @@ namespace ChildManager.UI.jibenluru
             if (_jibenobj != null)
             {
                 CommonHelper.setForm(_jibenobj, panel2.Controls);
-                IList<tb_childcheck> checklist = checkbll.GetList(_jibenobj.id);
+                IList<TB_CHILDCHECK> checklist = checkbll.GetList(_jibenobj.ID);
                 if (checklist != null)
                 {
                     dataGridView2.Rows.Clear();
                     int rowindex = -1;
                     for (int i=0;i<checklist.Count;i++)
                     {
-                        tb_childcheck checkobj = checklist[i];
+                        TB_CHILDCHECK checkobj = checklist[i];
                         DataGridViewRow row = new DataGridViewRow();
-                        row.CreateCells(dataGridView2, checkobj.checkday, checkobj.checkweight, checkobj.checkheight, checkobj.checktouwei, checkobj.checkzuogao, checkobj.doctorname);
+                        row.CreateCells(dataGridView2, checkobj.CHECKDAY, checkobj.CHECKWEIGHT, checkobj.CHECKHEIGHT, checkobj.CHECKTOUWEI, checkobj.checkzuogao, checkobj.DOCTORNAME);
                         row.Tag = checkobj;
                         dataGridView2.Rows.Add(row);
-                        if (checkobj.checkday == checkday.Text.Trim())
+                        if (checkobj.CHECKDAY == checkday.Text.Trim())
                         {
                             rowindex = i;
                         }
@@ -529,7 +529,7 @@ namespace ChildManager.UI.jibenluru
         {
             if (e.RowIndex != -1)
             {
-                tb_childcheck checkobj = dataGridView2.SelectedRows[0].Tag as tb_childcheck;
+                TB_CHILDCHECK checkobj = dataGridView2.SelectedRows[0].Tag as TB_CHILDCHECK;
                 CommonHelper.setForm(checkobj, panel2.Controls);
             }
         }
@@ -537,7 +537,7 @@ namespace ChildManager.UI.jibenluru
         private void buttonX4_Click(object sender, EventArgs e)
         {
             dataGridView2.ClearSelection();
-            tb_childcheck checkobj = new tb_childcheck();
+            TB_CHILDCHECK checkobj = new TB_CHILDCHECK();
             checkday.Value = DateTime.Now;
             checkweight.Text = "";
             checkheight.Text = "";

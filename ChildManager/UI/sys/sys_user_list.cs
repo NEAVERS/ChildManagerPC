@@ -19,7 +19,7 @@ namespace ChildManager.UI.sys
         public void jiazaiList()
         {
             Cursor.Current = Cursors.WaitCursor;
-            IList<sys_users> userlist = bll.GetList(textBox1.Text.Trim(), textBox2.Text.Trim(), comboBox2.SelectedValue.ToString());
+            IList<SYS_USERS> userlist = bll.GetList(textBox1.Text.Trim(), textBox2.Text.Trim(), comboBox2.SelectedValue.ToString());
             dgvConditionTreatRecordList.Rows.Clear();//清空列表
 
             try
@@ -27,7 +27,7 @@ namespace ChildManager.UI.sys
                 if (userlist != null && userlist.Count > 0)
                 {
                     int i = 1;
-                    foreach (sys_users csobj in userlist)
+                    foreach (SYS_USERS csobj in userlist)
                     {
                         string role_name = "";
                         sys_role _Role = rolebll.GetByCode(csobj.role_code);
@@ -65,7 +65,7 @@ namespace ChildManager.UI.sys
         {
             if (e.RowIndex >= 0)
             {
-                sys_users userobj = dgvConditionTreatRecordList.Rows[0].Tag as sys_users;
+                SYS_USERS userobj = dgvConditionTreatRecordList.Rows[0].Tag as SYS_USERS;
                 sys_user_edit useredit = new sys_user_edit(-1, userobj, this);
                 useredit.ShowDialog();
             }
@@ -76,7 +76,7 @@ namespace ChildManager.UI.sys
             if (dgvConditionTreatRecordList.SelectedRows.Count >= 1)
             {
 
-                sys_users userobj = dgvConditionTreatRecordList.SelectedRows[0].Tag as sys_users;
+                SYS_USERS userobj = dgvConditionTreatRecordList.SelectedRows[0].Tag as SYS_USERS;
                 sys_user_edit useredit = new sys_user_edit(-1, userobj, this);
                 useredit.ShowDialog();
             }
@@ -91,7 +91,7 @@ namespace ChildManager.UI.sys
             if (dgvConditionTreatRecordList.SelectedRows.Count >= 1)
             {
 
-                sys_users userobj = dgvConditionTreatRecordList.SelectedRows[0].Tag as sys_users;
+                SYS_USERS userobj = dgvConditionTreatRecordList.SelectedRows[0].Tag as SYS_USERS;
 
                 if (MessageBox.Show("删除所选的记录？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
@@ -123,7 +123,7 @@ namespace ChildManager.UI.sys
         {
             if (dgvConditionTreatRecordList.SelectedRows.Count >= 1)
             {
-                sys_users userobj = dgvConditionTreatRecordList.SelectedRows[0].Tag as sys_users;
+                SYS_USERS userobj = dgvConditionTreatRecordList.SelectedRows[0].Tag as SYS_USERS;
                 if (MessageBox.Show("是否重置所选的记录？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     Cursor.Current = Cursors.WaitCursor;
@@ -155,7 +155,7 @@ namespace ChildManager.UI.sys
             IList<int> list = new List<int>();
             for (int i = 0; i < dgvConditionTreatRecordList.Rows.Count; i++)
             {
-                sys_users userobj = dgvConditionTreatRecordList.Rows[i].Tag as sys_users;
+                SYS_USERS userobj = dgvConditionTreatRecordList.Rows[i].Tag as SYS_USERS;
                 string _selectValue = dgvConditionTreatRecordList.Rows[i].Cells["Column6"].EditedFormattedValue.ToString();
                 if (_selectValue == "True")
                 {

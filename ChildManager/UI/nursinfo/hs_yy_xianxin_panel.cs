@@ -42,7 +42,7 @@ namespace ChildManager.UI.nursinfo
                 return;
             }
 
-            hs_yy_xx_tab obj = GetObj();
+            HS_YY_XX_TAB obj = GetObj();
 
             if (bll.SaveOrUpdate(obj))
             {
@@ -59,14 +59,14 @@ namespace ChildManager.UI.nursinfo
         /// 体检保存
         /// </summary>
         /// <returns></returns>
-        private hs_yy_xx_tab GetObj()
+        private HS_YY_XX_TAB GetObj()
         {
-            hs_yy_xx_tab obj = CommonHelper.GetObj<hs_yy_xx_tab>(panel1.Controls);
-            obj.child_id = _hswomeninfo.cd_id;
+            HS_YY_XX_TAB obj = CommonHelper.GetObj<HS_YY_XX_TAB>(panel1.Controls);
+            obj.CHILD_ID = _hswomeninfo.cd_id;
             if (dataGridView2.SelectedRows.Count > 0)
             {
-                hs_yy_xx_tab qttab = dataGridView2.SelectedRows[0].Tag as hs_yy_xx_tab;
-                obj.id = qttab.id;
+                HS_YY_XX_TAB qttab = dataGridView2.SelectedRows[0].Tag as HS_YY_XX_TAB;
+                obj.ID = qttab.ID;
             }
             return obj;
         }
@@ -80,19 +80,19 @@ namespace ChildManager.UI.nursinfo
             Cursor.Current = Cursors.WaitCursor;
             if (_hswomeninfo.cd_id != -1)
             {
-                IList<hs_yy_xx_tab> checklist = bll.GetList(_hswomeninfo.cd_id);
+                IList<HS_YY_XX_TAB> checklist = bll.GetList(_hswomeninfo.cd_id);
                 if (checklist != null)
                 {
-                    foreach (hs_yy_xx_tab checkobj in checklist)
+                    foreach (HS_YY_XX_TAB checkobj in checklist)
                     {
                         string sq = "";
                         string sh = "";
-                        if (checkobj.yy_sqsh == "术前")
+                        if (checkobj.YY_SQSH == "术前")
                             sq = "是";
-                        else if (checkobj.yy_sqsh == "术后")
+                        else if (checkobj.YY_SQSH == "术后")
                             sh = "是";
                         DataGridViewRow row = new DataGridViewRow();
-                        row.CreateCells(dataGridView2, checkobj.yy_rq, sq,sh, checkobj.yy_bz,checkobj.yy_xc);
+                        row.CreateCells(dataGridView2, checkobj.YY_RQ, sq,sh, checkobj.YY_BZ,checkobj.YY_XC);
                         row.Tag = checkobj;
                         dataGridView2.Rows.Add(row);
                     }
@@ -109,7 +109,7 @@ namespace ChildManager.UI.nursinfo
                 MessageBox.Show("请选择要删除的记录！");
                 return;
             }
-            hs_yy_xx_tab _checkobj = dataGridView2.SelectedRows[0].Tag as hs_yy_xx_tab;
+            HS_YY_XX_TAB _checkobj = dataGridView2.SelectedRows[0].Tag as HS_YY_XX_TAB;
             if (_checkobj != null)
             {
                 if (MessageBox.Show("删除该记录？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
@@ -117,7 +117,7 @@ namespace ChildManager.UI.nursinfo
                     Cursor.Current = Cursors.WaitCursor;
                     try
                     {
-                        if (bll.Delete(_checkobj.id))
+                        if (bll.Delete(_checkobj.ID))
                         {
                             MessageBox.Show("删除成功!", "软件提示");
                             RefreshCheckList();
@@ -143,7 +143,7 @@ namespace ChildManager.UI.nursinfo
         {
             if (e.RowIndex != -1)
             {
-                hs_yy_xx_tab checkobj = dataGridView2.SelectedRows[0].Tag as hs_yy_xx_tab;
+                HS_YY_XX_TAB checkobj = dataGridView2.SelectedRows[0].Tag as HS_YY_XX_TAB;
                 CommonHelper.setForm(checkobj, panel1.Controls);
             }
         }

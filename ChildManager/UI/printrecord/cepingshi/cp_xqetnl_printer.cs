@@ -10,10 +10,10 @@ namespace ChildManager.UI.printrecord.cepingshi
     {
         private Rectangle _rectBody;
 
-        private tb_childbase _baseobj = null;
-        private cp_ppvt_tab _obj = null;
+        private TB_CHILDBASE _baseobj = null;
+        private CP_PPVT_TAB _obj = null;
 
-        public cp_xqetnl_printer(tb_childbase baseobj, cp_ppvt_tab obj)
+        public cp_xqetnl_printer(TB_CHILDBASE baseobj, CP_PPVT_TAB obj)
         {
             InitializeComponent();
             _baseobj = baseobj;
@@ -98,7 +98,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             left += nameheadwidth;
 
             rect = new Rectangle(left, top, namewidth, 30);
-            MiddleLeftPrintText(_baseobj.childname,rect,g);
+            MiddleLeftPrintText(_baseobj.CHILDNAME,rect,g);
             g.DrawLine(pen, rect.Left, rect.Top + 20, rect.Right, rect.Top + 20);
             left += namewidth;
 
@@ -107,7 +107,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             left += sexheadwidth;
 
             rect = new Rectangle(left, top, sexwidth, 30);
-            MiddleLeftPrintText(_baseobj.childgender, rect, g);
+            MiddleLeftPrintText(_baseobj.CHILDGENDER, rect, g);
             g.DrawLine(pen, rect.Left, rect.Top + 20, rect.Right, rect.Top + 20);
             left += sexwidth;
 
@@ -115,7 +115,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("年龄", rect, g);
             left += ageheadwidth;
 
-            int[] age = CommonHelper.getAgeBytime(_baseobj.childbirthday, _obj.cyrq);
+            int[] age = CommonHelper.getAgeBytime(_baseobj.CHILDBIRTHDAY, _obj.CYRQ);
             string agestr = (age[0] > 0 ? age[0].ToString() + "岁" : "") + (age[1] > 0 ? age[1].ToString() + "月" : "") + (age[2] > 0 ? age[2].ToString() + "天" : "");
             rect = new Rectangle(left, top, agewidth, 30);
             MiddleLeftPrintText(agestr, rect, g);
@@ -136,11 +136,11 @@ namespace ChildManager.UI.printrecord.cepingshi
             top += 60;
             left = _rectBody.Left;
             rect = new Rectangle(left, top, 200, 30);
-            MiddleLeftPrintText("得分：" + _obj.nlcy_df, rect, g);
+            MiddleLeftPrintText("得分：" + _obj.NLCY_DF, rect, g);
 
             left += 200;
             rect = new Rectangle(left, top, 200, 30);
-            MiddleLeftPrintText("结果：" + _obj.nlcy_jg, rect, g);
+            MiddleLeftPrintText("结果：" + _obj.NLCY_JG, rect, g);
             
             #endregion
             
@@ -148,7 +148,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             #region 签名
             left = _rectBody.Right - 120;
             rect = new Rectangle(left, top, 120, 30);
-            MiddleLeftPrintText(_obj.cyz, rect, g);
+            MiddleLeftPrintText(_obj.CYZ, rect, g);
             g.DrawLine(pen, rect.Left, rect.Top + 20, rect.Right, rect.Top + 20);
             left -= 100;
             rect = new Rectangle(left, top, 100, 30);
@@ -157,7 +157,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             top += 25;
             left = _rectBody.Right - 120;
             rect = new Rectangle(left, top, 120, 30);
-            MiddleLeftPrintText(_obj.cyrq, rect, g);
+            MiddleLeftPrintText(_obj.CYRQ, rect, g);
             g.DrawLine(pen, rect.Left, rect.Top + 20, rect.Right, rect.Top + 20);
             left -= 100;
             rect = new Rectangle(left, top, 100, 30);

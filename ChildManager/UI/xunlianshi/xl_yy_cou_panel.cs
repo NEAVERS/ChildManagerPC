@@ -28,14 +28,14 @@ namespace ChildManager.UI.xunlianshi
         {
             Cursor.Current = Cursors.WaitCursor;
 
-            IList<xl_yy_cou> yylist = xlbll.GetList();
+            IList<XL_YY_COU> yylist = xlbll.GetList();
             if (yylist != null)
             {
                 dataGridView1.Rows.Clear();
-                foreach (xl_yy_cou obj in yylist)
+                foreach (XL_YY_COU obj in yylist)
                 {
                     DataGridViewRow row = new DataGridViewRow();
-                    row.CreateCells(dataGridView1, obj.xmmc, obj.xmsl);
+                    row.CreateCells(dataGridView1, obj.XMMC, obj.XMSL);
                     row.Tag = obj;
                     dataGridView1.Rows.Add(row);
                 }
@@ -45,8 +45,8 @@ namespace ChildManager.UI.xunlianshi
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            xl_yy_cou obj = dataGridView1.Rows[e.RowIndex].Tag as xl_yy_cou;
-            obj.xmsl = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
+            XL_YY_COU obj = dataGridView1.Rows[e.RowIndex].Tag as XL_YY_COU;
+            obj.XMSL = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
 
             if (xlbll.Update(obj))
             {

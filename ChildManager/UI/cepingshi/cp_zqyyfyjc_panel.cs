@@ -19,8 +19,8 @@ namespace ChildManager.UI.cepingshi
         tab_person_databll personbll = new tab_person_databll();
         cp_WomenInfo _cpwomeninfo = null;
         private bool _isShowTopPanel;
-        IList<cp_zqyyfyjc_tab> _list = null;
-        private cp_zqyyfyjc_tab _obj;
+        IList<CP_ZQYYFYJC_TAB> _list = null;
+        private CP_ZQYYFYJC_TAB _obj;
         string _hospital = globalInfoClass.Hospital;
         public List<DicObj> listszys = new List<DicObj>();
         InputLanguage InputHuoDong = null;//当前输入法
@@ -43,16 +43,16 @@ namespace ChildManager.UI.cepingshi
         /// <param name="type">分类</param>
         public void SetData(ListBox con, List<DicObj> diclist, string type)
         {
-            IList<tab_person_data> list = personbll.GetList(type);
+            IList<TAB_PERSON_DATA> list = personbll.GetList(type);
             DataTable dt = new DataTable();
             dt.Columns.Add("code", typeof(string));
             dt.Columns.Add("name", typeof(string));
 
-            foreach (tab_person_data obj in list)
+            foreach (TAB_PERSON_DATA obj in list)
             {
                 DicObj dicobj = new DicObj();
-                dicobj.name = obj.name;   //获取name属性值  
-                dicobj.code = obj.code;   //获取name属性值 
+                dicobj.name = obj.NAME;   //获取name属性值  
+                dicobj.code = obj.CODE;   //获取name属性值 
                 diclist.Add(dicobj);
                 dt.Rows.Add(dicobj.code, dicobj.name);
             }
@@ -194,12 +194,12 @@ namespace ChildManager.UI.cepingshi
         private void buttonX1_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            cp_zqyyfyjc_tab obj = getObj();
+            CP_ZQYYFYJC_TAB obj = getObj();
             if (bll.SaveOrUpdate(obj))
             {
                 MessageBox.Show("保存成功！");
                 RefreshRecordList();
-                update_time.SelectedIndex = _list.IndexOf(_list.FirstOrDefault(t => t.update_time == obj.update_time));
+                update_time.SelectedIndex = _list.IndexOf(_list.FirstOrDefault(t => t.UPDATE_TIME == obj.UPDATE_TIME));
 
             }
             else
@@ -209,20 +209,20 @@ namespace ChildManager.UI.cepingshi
             Cursor.Current = Cursors.Default;
         }
 
-        private cp_zqyyfyjc_tab getObj()
+        private CP_ZQYYFYJC_TAB getObj()
         {
             if (cszqm.Text.Trim() == "")
             {
                 cszqm.Text = globalInfoClass.UserName;
             }
-            cp_zqyyfyjc_tab obj = CommonHelper.GetObjMenzhen<cp_zqyyfyjc_tab>(panel1.Controls, _cpwomeninfo.cd_id);
-            obj.hospital = _hospital;
+            CP_ZQYYFYJC_TAB obj = CommonHelper.GetObjMenzhen<CP_ZQYYFYJC_TAB>(panel1.Controls, _cpwomeninfo.cd_id);
+            obj.HOSPITAL = _hospital;
             if (_obj != null)
             {
-                obj.id = _obj.id;
-                obj.operate_code = _obj.operate_code;
-                obj.operate_name = _obj.operate_name;
-                obj.operate_time = _obj.operate_time;
+                obj.ID = _obj.ID;
+                obj.OPERATE_CODE = _obj.OPERATE_CODE;
+                obj.OPERATE_NAME = _obj.OPERATE_NAME;
+                obj.OPERATE_TIME = _obj.OPERATE_TIME;
             }
             return obj;
 
@@ -249,7 +249,7 @@ namespace ChildManager.UI.cepingshi
 
         private void SetDefault()
         {
-            CommonHelper.setForm(new cp_zqyyfyjc_tab() , panel1.Controls);
+            CommonHelper.setForm(new CP_ZQYYFYJC_TAB() , panel1.Controls);
         }
 
         private void buttonX3_Click(object sender, EventArgs e)
@@ -261,7 +261,7 @@ namespace ChildManager.UI.cepingshi
                     Cursor.Current = Cursors.WaitCursor;
                     try
                     {
-                        if (bll.Delete(_obj.id))
+                        if (bll.Delete(_obj.ID))
                         {
                             MessageBox.Show("删除成功!", "软件提示");
                             RefreshRecordList();
@@ -297,7 +297,7 @@ namespace ChildManager.UI.cepingshi
         public void print(bool ispre)
         {
             Cursor.Current = Cursors.WaitCursor;
-            cp_zqyyfyjc_tab obj = bll.Get(_obj?.id ?? 0);
+            CP_ZQYYFYJC_TAB obj = bll.Get(_obj?.ID ?? 0);
             if (obj == null)
             {
                 MessageBox.Show("请保存后再预览打印！", "软件提示");
@@ -305,7 +305,7 @@ namespace ChildManager.UI.cepingshi
             }
             try
             {
-                tb_childbase baseobj = new tb_childbasebll().Get(_cpwomeninfo.cd_id);
+                TB_CHILDBASE baseobj = new tb_childbasebll().Get(_cpwomeninfo.cd_id);
                 cp_zqyyfyjc_printer printer = new cp_zqyyfyjc_printer(baseobj, obj);
                 printer.Print(ispre);
             }
@@ -338,8 +338,8 @@ namespace ChildManager.UI.cepingshi
         {
             if (_obj != null)
             {
-                var obj = new cp_zqyyfyjc_tab();
-                obj.update_time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                var obj = new CP_ZQYYFYJC_TAB();
+                obj.UPDATE_TIME = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 _list.Add(obj);
                 update_time.DataSource = null;//数据源先置空，否则同一个对象不会刷新
                 update_time.ValueMember = "id";

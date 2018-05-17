@@ -29,11 +29,11 @@ namespace ChildManager.UI.yuyue
         {
             Cursor.Current = Cursors.WaitCursor;
 
-            IList<yy_pz_tab> yypzlist = yypzbll.GetList();
+            IList<YY_PZ_TAB> yypzlist = yypzbll.GetList();
             if (yypzlist != null)
             {
                 dataGridView1.Rows.Clear();
-                foreach (yy_pz_tab obj in yypzlist)
+                foreach (YY_PZ_TAB obj in yypzlist)
                 {
                     DataGridViewRow row = new DataGridViewRow();
                     //row.CreateCells(dataGridView1, obj.pz_lx, obj.pz_xq,obj.pz_sjd);
@@ -53,8 +53,8 @@ namespace ChildManager.UI.yuyue
                     Cursor.Current = Cursors.WaitCursor;
                     try
                     {
-                        yy_pz_tab pzobj = dataGridView1.SelectedRows[0].Tag as yy_pz_tab;
-                        if (yypzbll.Delete(pzobj.id))
+                        YY_PZ_TAB pzobj = dataGridView1.SelectedRows[0].Tag as YY_PZ_TAB;
+                        if (yypzbll.Delete(pzobj.ID))
                         {
                             MessageBox.Show("删除成功!", "软件提示");
                             RefreshCode();

@@ -73,7 +73,7 @@ namespace ChildManager.BLL.childSetInfo
                     {
                         //sdr.Read();//读取第一行数据记录
                         childSetCheckAgeObj obj = new  childSetCheckAgeObj();
-                        obj.Id = Convert.ToInt32(sdr["id"]);
+                        obj.ID = Convert.ToInt32(sdr["id"]);
                         //obj.ChildId = Convert.ToInt32(sdr["childId"]);
                         obj.CheckMonth = sdr["checkMonth"].ToString();
                         obj.CheckContent = sdr["checkContent"].ToString();

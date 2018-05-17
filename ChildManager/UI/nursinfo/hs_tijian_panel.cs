@@ -54,8 +54,8 @@ namespace ChildManager.UI.nursinfo
                 return;
             }
 
-            tb_childcheck checkobj = GetObj();
-            tb_childcheck _checkobj = checkbll.Get(checkobj.checkday, checkobj.childid);
+            TB_CHILDCHECK checkobj = GetObj();
+            TB_CHILDCHECK _checkobj = checkbll.Get(checkobj.CHECKDAY, (int)checkobj.CHILDID);
             if (_checkobj == null)
             {
                 if (checkbll.Add(checkobj))
@@ -71,7 +71,7 @@ namespace ChildManager.UI.nursinfo
             }
             else
             {
-                checkobj.id = _checkobj.id;
+                checkobj.ID = _checkobj.ID;
                 if (checkbll.UpdateNurse(checkobj))
                 {
                     MessageBox.Show("保存成功！", "软件提示");
@@ -89,10 +89,10 @@ namespace ChildManager.UI.nursinfo
         /// 体检保存
         /// </summary>
         /// <returns></returns>
-        private tb_childcheck GetObj()
+        private TB_CHILDCHECK GetObj()
         {
-            tb_childcheck obj = CommonHelper.GetObj<tb_childcheck>(panel1.Controls);
-            obj.childid = _hswomeninfo.cd_id;
+            TB_CHILDCHECK obj = CommonHelper.GetObj<TB_CHILDCHECK>(panel1.Controls);
+            obj.CHILDID = _hswomeninfo.cd_id;
             return obj;
         }
 
@@ -106,16 +106,16 @@ namespace ChildManager.UI.nursinfo
             dataGridView2.Rows.Clear();
             if (_hswomeninfo.cd_id != -1)
             {
-                IList<tb_childcheck> checklist = checkbll.GetList(_hswomeninfo.cd_id);
+                IList<TB_CHILDCHECK> checklist = checkbll.GetList(_hswomeninfo.cd_id);
                 if (checklist != null)
                 {
-                    foreach (tb_childcheck checkobj in checklist)
+                    foreach (TB_CHILDCHECK checkobj in checklist)
                     {
                         DataGridViewRow row = new DataGridViewRow();
-                        row.CreateCells(dataGridView2, checkobj.checkday, checkobj.checkweight, checkobj.checkheight, checkobj.checktouwei, checkobj.checkzuogao, checkobj.ck_fz);
+                        row.CreateCells(dataGridView2, checkobj.CHECKDAY, checkobj.CHECKWEIGHT, checkobj.CHECKHEIGHT, checkobj.CHECKTOUWEI, checkobj.checkzuogao, checkobj.CK_FZ);
                         row.Tag = checkobj;
                         dataGridView2.Rows.Add(row);
-                        if (checkobj.checkday == checkday.Text)
+                        if (checkobj.CHECKDAY == checkday.Text)
                         {
                             row.Selected = true;
                         }
@@ -133,7 +133,7 @@ namespace ChildManager.UI.nursinfo
                 MessageBox.Show("请选择要删除的记录！");
                 return;
             }
-            tb_childcheck _checkobj = dataGridView2.SelectedRows[0].Tag as tb_childcheck;
+            TB_CHILDCHECK _checkobj = dataGridView2.SelectedRows[0].Tag as TB_CHILDCHECK;
             if (_checkobj != null)
             {
                 if (MessageBox.Show("删除该记录？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
@@ -141,7 +141,7 @@ namespace ChildManager.UI.nursinfo
                     Cursor.Current = Cursors.WaitCursor;
                     try
                     {
-                        if (checkbll.Delete(_checkobj.id))
+                        if (checkbll.Delete(_checkobj.ID))
                         {
                             MessageBox.Show("删除成功!", "软件提示");
                             RefreshCheckList();
@@ -167,7 +167,7 @@ namespace ChildManager.UI.nursinfo
         {
             if (e.RowIndex != -1)
             {
-                tb_childcheck checkobj = dataGridView2.SelectedRows[0].Tag as tb_childcheck;
+                TB_CHILDCHECK checkobj = dataGridView2.SelectedRows[0].Tag as TB_CHILDCHECK;
                 CommonHelper.setForm(checkobj, panel1.Controls);
             }
         }

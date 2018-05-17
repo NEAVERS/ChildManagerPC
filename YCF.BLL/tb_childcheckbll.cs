@@ -20,6 +20,10 @@ namespace YCF.BLL
             return dal.GetList(t => t.CHILDID == cd_id, order, isAscs);
         }
 
+        public IList<TB_CHILDCHECK> GetList(decimal cd_id)
+        {
+            return dal.GetList(t => t.CHILDID == cd_id, order, isAscs);
+        }
 
 
         public TB_CHILDCHECK Get(string checkday, int cd_id)

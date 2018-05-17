@@ -24,8 +24,8 @@ namespace ChildManager.UI.yuyue
         {
             foreach (ToolStripItem tsdb in toolStrip2.Items)
             {
-                sys_menus menuobj = tsdb.Tag as sys_menus;
-                tsdb.Text = menuobj.menu_name;
+                SYS_MENUS menuobj = tsdb.Tag as SYS_MENUS;
+                tsdb.Text = menuobj.MENU_NAME;
                 tsdb.BackColor = System.Drawing.Color.Transparent;
                 if (tsdb is ToolStripDropDownButton)
                 {
@@ -49,36 +49,36 @@ namespace ChildManager.UI.yuyue
             try
             {
                 sysmenuBll menubll = new sysmenuBll();
-                IList<sys_menus> list = menubll.GetListBySql("预约工作站",globalInfoClass.User_Role);
-                foreach (sys_menus obj in list)
+                IList<SYS_MENUS> list = menubll.GetListBySql("预约工作站",globalInfoClass.User_Role);
+                foreach (SYS_MENUS obj in list)
                 {
-                    if (obj.menu_lever == "1")
+                    if (obj.MENU_LEVER == "1")
                     {
-                        if (String.IsNullOrEmpty(obj.menu_url))
+                        if (String.IsNullOrEmpty(obj.MENU_URL))
                         {
                             ToolStripDropDownButton tsdb = new ToolStripDropDownButton();
-                            if (File.Exists(@Application.StartupPath + "\\" + obj.menu_image))
+                            if (File.Exists(@Application.StartupPath + "\\" + obj.MENU_IMAGE))
                             {
-                                tsdb.Image = Image.FromFile(Application.StartupPath + "\\" + obj.menu_image);
+                                tsdb.Image = Image.FromFile(Application.StartupPath + "\\" + obj.MENU_IMAGE);
                             }
-                            tsdb.Name = obj.menu_code;
+                            tsdb.Name = obj.MENU_CODE;
                             tsdb.Size = new System.Drawing.Size(85, 29);
-                            tsdb.Text = obj.menu_name;
+                            tsdb.Text = obj.MENU_NAME;
                             tsdb.Tag = obj;
                             toolStrip2.Items.Add(tsdb);
                         }
                         else
                         {
                             ToolStripButton tsdb = new ToolStripButton();
-                            if (File.Exists(@Application.StartupPath + "\\" + obj.menu_image))
+                            if (File.Exists(@Application.StartupPath + "\\" + obj.MENU_IMAGE))
                             {
-                                tsdb.Image = Image.FromFile(Application.StartupPath + "\\" + obj.menu_image);
+                                tsdb.Image = Image.FromFile(Application.StartupPath + "\\" + obj.MENU_IMAGE);
                             }
-                            tsdb.Name = obj.menu_code;
+                            tsdb.Name = obj.MENU_CODE;
                             tsdb.Size = new System.Drawing.Size(85, 29);
-                            tsdb.Text = obj.menu_name;
+                            tsdb.Text = obj.MENU_NAME;
                             tsdb.Tag = obj;
-                            if (obj.is_custom == "2")//如果不是自定义的页面，调用已有的页面
+                            if (obj.IS_CUSTOM == "2")//如果不是自定义的页面，调用已有的页面
                             {
                                 tsdb.Click += new System.EventHandler(this.tsdb_Click);
                             }
@@ -87,26 +87,26 @@ namespace ChildManager.UI.yuyue
                                 tsdb.Click += new System.EventHandler(this.tsdb_temp_Click);
                             }
                             toolStrip2.Items.Add(tsdb);
-                            if (obj.is_default == "1")
+                            if (obj.IS_DEFAULT == "1")
                             {
                                 tsdb.PerformClick();
                             }
                         }
 
                     }
-                    else if (obj.menu_lever == "2")
+                    else if (obj.MENU_LEVER == "2")
                     {
 
                         ToolStripMenuItem tsm = new ToolStripMenuItem();
-                        if (File.Exists(@Application.StartupPath + "\\" + obj.menu_image))
+                        if (File.Exists(@Application.StartupPath + "\\" + obj.MENU_IMAGE))
                         {
-                            tsm.Image = Image.FromFile(Application.StartupPath + "\\" + obj.menu_image);
+                            tsm.Image = Image.FromFile(Application.StartupPath + "\\" + obj.MENU_IMAGE);
                         }
-                        tsm.Name = obj.menu_code;
+                        tsm.Name = obj.MENU_CODE;
                         tsm.Size = new System.Drawing.Size(220, 22);
-                        tsm.Text = obj.menu_name;
+                        tsm.Text = obj.MENU_NAME;
                         tsm.Tag = obj;
-                        if (obj.is_custom == "2")//如果不是自定义的页面，调用已有的页面
+                        if (obj.IS_CUSTOM == "2")//如果不是自定义的页面，调用已有的页面
                         {
                             tsm.Click += new System.EventHandler(this.tsm_Click);
                         }
@@ -116,13 +116,13 @@ namespace ChildManager.UI.yuyue
                         }
                         foreach (ToolStripItem tsdb in toolStrip2.Items)
                         {
-                            if (tsdb.Name == obj.menu_parent)
+                            if (tsdb.Name == obj.MENU_PARENT)
                             {
                                 (tsdb as ToolStripDropDownButton).DropDownItems.Add(tsm);
                                 break;
                             }
                         }
-                        if (obj.is_default == "1")
+                        if (obj.IS_DEFAULT == "1")
                         {
                             tsm.PerformClick();
                         }
@@ -143,25 +143,25 @@ namespace ChildManager.UI.yuyue
         private void tsm_Click(object sender, EventArgs e)
         {
             ToolStripMenuItem tsm = sender as ToolStripMenuItem;
-            sys_menus menuobj = tsm.Tag as sys_menus;
+            SYS_MENUS menuobj = tsm.Tag as SYS_MENUS;
             if (!tsm.Checked)
             {
-                if (Type.GetType(menuobj.menu_url) == null)
+                if (Type.GetType(menuobj.MENU_URL) == null)
                 {
                     return;
                 }
                 CommonHelper.DisposeControls(pnlContent.Controls);
 
                 UserControl uc;
-                //Type ty = Assembly.Load("login").GetType(string.Format("UI.xinxitongji.{0}", menuobj.menu_url));
+                //Type ty = Assembly.Load("login").GetType(string.Format("UI.xinxitongji.{0}", menuobj.MENU_URL));
                 //Object obj = Activator.CreateInstance(ty);
-                if (!String.IsNullOrEmpty(menuobj.menu_para))
+                if (!String.IsNullOrEmpty(menuobj.MENU_PARA))
                 {
-                    uc = Activator.CreateInstance(Type.GetType(menuobj.menu_url), new object[] { menuobj.menu_para }) as UserControl;
+                    uc = Activator.CreateInstance(Type.GetType(menuobj.MENU_URL), new object[] { menuobj.MENU_PARA }) as UserControl;
                 }
                 else
                 {
-                    uc = Activator.CreateInstance(Type.GetType(menuobj.menu_url)) as UserControl;
+                    uc = Activator.CreateInstance(Type.GetType(menuobj.MENU_URL)) as UserControl;
                 }
                 uc.Dock = DockStyle.Fill;
                 this.pnlContent.Controls.Clear();
@@ -171,8 +171,8 @@ namespace ChildManager.UI.yuyue
                 tsm.Checked = true;
                 tsm.BackColor = Color.FromArgb(255, 199, 142);
                 ToolStripDropDownButton tsdb = tsm.OwnerItem as ToolStripDropDownButton;
-                sys_menus tsdbmenuobj = tsdb.Tag as sys_menus;
-                tsdb.Text = tsdbmenuobj.menu_name + "： " + menuobj.menu_name;
+                SYS_MENUS tsdbmenuobj = tsdb.Tag as SYS_MENUS;
+                tsdb.Text = tsdbmenuobj.MENU_NAME + "： " + menuobj.MENU_NAME;
                 tsdb.BackColor = Color.FromArgb(255, 199, 142);
             }
         }
@@ -180,11 +180,11 @@ namespace ChildManager.UI.yuyue
         private void tsm_temp_Click(object sender, EventArgs e)
         {
             ToolStripMenuItem tsm = sender as ToolStripMenuItem;
-            sys_menus menuobj = tsm.Tag as sys_menus;
+            SYS_MENUS menuobj = tsm.Tag as SYS_MENUS;
             if (!tsm.Checked)
             {
                 CommonHelper.DisposeControls(pnlContent.Controls);
-                string bllname = menuobj.menu_url.Substring(menuobj.menu_url.LastIndexOf(".")).Trim('.');
+                string bllname = menuobj.MENU_URL.Substring(menuobj.MENU_URL.LastIndexOf(".")).Trim('.');
                 Assembly ass;
                 //Type type;
                 object obj;
@@ -195,11 +195,11 @@ namespace ChildManager.UI.yuyue
                     ass = Assembly.Load(buffer);
 
                     //获取类的类型：必须使用名称空间+类名称
-                    //type = ass.GetType("login.UI.tempreport." + menuobj.menu_url);
+                    //type = ass.GetType("login.UI.tempreport." + menuobj.MENU_URL);
 
                     //对获取的类进行创建实例。//必须使用名称空间+类名称
                     //UserControl uc = Activator.CreateInstance(Type.GetType("tongji_gaowei.tempreport.tongji_gaowei")) as UserControl;
-                    obj = ass.CreateInstance(menuobj.menu_url, false, BindingFlags.Default, null, new object[] { "xxx" }, null, null);
+                    obj = ass.CreateInstance(menuobj.MENU_URL, false, BindingFlags.Default, null, new object[] { "xxx" }, null, null);
                     UserControl uc = obj as UserControl;
                     uc.Dock = DockStyle.Fill;
                     this.pnlContent.Controls.Clear();
@@ -209,8 +209,8 @@ namespace ChildManager.UI.yuyue
                 tsm.Checked = true;
                 tsm.BackColor = Color.FromArgb(255, 199, 142);
                 ToolStripDropDownButton tsdb = tsm.OwnerItem as ToolStripDropDownButton;
-                sys_menus tsdbmenuobj = tsdb.Tag as sys_menus;
-                tsdb.Text = tsdbmenuobj.menu_name + "： " + menuobj.menu_name;
+                SYS_MENUS tsdbmenuobj = tsdb.Tag as SYS_MENUS;
+                tsdb.Text = tsdbmenuobj.MENU_NAME + "： " + menuobj.MENU_NAME;
                 tsdb.BackColor = Color.FromArgb(255, 199, 142);
             }
         }
@@ -218,24 +218,24 @@ namespace ChildManager.UI.yuyue
         private void tsdb_Click(object sender, EventArgs e)
         {
             ToolStripButton tsb = sender as ToolStripButton;
-            sys_menus menuobj = tsb.Tag as sys_menus;
+            SYS_MENUS menuobj = tsb.Tag as SYS_MENUS;
             if (!tsb.Checked)
             {
-                if (Type.GetType(menuobj.menu_url) == null)
+                if (Type.GetType(menuobj.MENU_URL) == null)
                 {
                     return;
                 }
                 CommonHelper.DisposeControls(pnlContent.Controls);
                 UserControl uc;
-                //Type ty = Assembly.Load("login").GetType(string.Format("UI.xinxitongji.{0}", menuobj.menu_url));
+                //Type ty = Assembly.Load("login").GetType(string.Format("UI.xinxitongji.{0}", menuobj.MENU_URL));
                 //Object obj = Activator.CreateInstance(ty);
-                if (!String.IsNullOrEmpty(menuobj.menu_para))
+                if (!String.IsNullOrEmpty(menuobj.MENU_PARA))
                 {
-                    uc = Activator.CreateInstance(Type.GetType(menuobj.menu_url), new object[] { menuobj.menu_para }) as UserControl;
+                    uc = Activator.CreateInstance(Type.GetType(menuobj.MENU_URL), new object[] { menuobj.MENU_PARA }) as UserControl;
                 }
                 else
                 {
-                    uc = Activator.CreateInstance(Type.GetType(menuobj.menu_url)) as UserControl;
+                    uc = Activator.CreateInstance(Type.GetType(menuobj.MENU_URL)) as UserControl;
                 }
                 uc.Dock = DockStyle.Fill;
                 this.pnlContent.Controls.Clear();
@@ -251,11 +251,11 @@ namespace ChildManager.UI.yuyue
         {
 
             ToolStripButton tsm = sender as ToolStripButton;
-            sys_menus menuobj = tsm.Tag as sys_menus;
+            SYS_MENUS menuobj = tsm.Tag as SYS_MENUS;
             if (!tsm.Checked)
             {
                 CommonHelper.DisposeControls(pnlContent.Controls);
-                string bllname = menuobj.menu_url.Substring(menuobj.menu_url.LastIndexOf(".")).Trim('.');
+                string bllname = menuobj.MENU_URL.Substring(menuobj.MENU_URL.LastIndexOf(".")).Trim('.');
                 Assembly ass;
                 //Type type;
                 object obj;
@@ -266,11 +266,11 @@ namespace ChildManager.UI.yuyue
                     ass = Assembly.Load(buffer);
 
                     //获取类的类型：必须使用名称空间+类名称
-                    //type = ass.GetType("login.UI.tempreport." + menuobj.menu_url);
+                    //type = ass.GetType("login.UI.tempreport." + menuobj.MENU_URL);
 
                     //对获取的类进行创建实例。//必须使用名称空间+类名称
                     //UserControl uc = Activator.CreateInstance(Type.GetType("tongji_gaowei.tempreport.tongji_gaowei")) as UserControl;
-                    obj = ass.CreateInstance(menuobj.menu_url, false, BindingFlags.Default, null, new object[] { "xxx" }, null, null);
+                    obj = ass.CreateInstance(menuobj.MENU_URL, false, BindingFlags.Default, null, new object[] { "xxx" }, null, null);
                     UserControl uc = obj as UserControl;
                     uc.Dock = DockStyle.Fill;
                     this.pnlContent.Controls.Clear();
@@ -280,8 +280,8 @@ namespace ChildManager.UI.yuyue
                 tsm.Checked = true;
                 tsm.BackColor = Color.FromArgb(255, 199, 142);
                 ToolStripDropDownButton tsdb = tsm.OwnerItem as ToolStripDropDownButton;
-                sys_menus tsdbmenuobj = tsdb.Tag as sys_menus;
-                tsdb.Text = tsdbmenuobj.menu_name + "： " + menuobj.menu_name;
+                SYS_MENUS tsdbmenuobj = tsdb.Tag as SYS_MENUS;
+                tsdb.Text = tsdbmenuobj.MENU_NAME + "： " + menuobj.MENU_NAME;
                 tsdb.BackColor = Color.FromArgb(255, 199, 142);
             }
         }

@@ -660,8 +660,8 @@ namespace ChildManager.UI
             //    buttonItem1_Click(sender, e);
             //}
             sysmenuBll menubll = new sysmenuBll();
-            IList<sys_menus> list = menubll.GetListBySql("系统设置",globalInfoClass.User_Role);
-            foreach (sys_menus obj in list)
+            IList<SYS_MENUS> list = menubll.GetListBySql("系统设置",globalInfoClass.User_Role);
+            foreach (SYS_MENUS obj in list)
             {
                 ButtonItem btm = new ButtonItem();
                 btm.ButtonStyle = eButtonStyle.ImageAndText;
@@ -678,8 +678,8 @@ namespace ChildManager.UI
                 this.ribbonBar1.Items.Add(btm);
             }
             
-            IList<sys_menus> listgn = menubll.GetListBySql("功能菜单", globalInfoClass.User_Role);
-            foreach (sys_menus obj in listgn)
+            IList<SYS_MENUS> listgn = menubll.GetListBySql("功能菜单", globalInfoClass.User_Role);
+            foreach (SYS_MENUS obj in listgn)
             {
                 ButtonItem btm = new ButtonItem();
                 btm.ButtonStyle = eButtonStyle.ImageAndText;
@@ -700,8 +700,8 @@ namespace ChildManager.UI
         private void btm_Click(object sender, EventArgs e)
         {
             ButtonItem tsm = sender as ButtonItem;
-            sys_menus menuobj = tsm.Tag as sys_menus;
-            SetMdiForm(menuobj.menu_name, Type.GetType(menuobj.menu_url));
+            SYS_MENUS menuobj = tsm.Tag as SYS_MENUS;
+            SetMdiForm(menuobj.MENU_NAME, Type.GetType(menuobj.MENU_URL));
         }
 
         private void MdiClientControlAddRemove(object sender, ControlEventArgs e)

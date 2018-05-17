@@ -12,10 +12,10 @@ namespace ChildManager.UI.sys
         private bool _modified = false;
         private sys_usersBll bll = new sys_usersBll();
         private sys_user_list userlist = null;
-        private sys_users _userobj = new sys_users();
+        private SYS_USERS _userobj = new SYS_USERS();
         private sys_roleBll rolebll = new sys_roleBll();
 
-        public sys_user_edit(int rowindex, sys_users userobj, sys_user_list yonghuguanli)
+        public sys_user_edit(int rowindex, SYS_USERS userobj, sys_user_list yonghuguanli)
         {
             InitializeComponent();
             userlist = yonghuguanli;
@@ -23,7 +23,7 @@ namespace ChildManager.UI.sys
             if (rowindex != -1)
             {
                 DataGridViewRow row = userlist.dgvConditionTreatRecordList.Rows[rowindex];
-                _userobj = (sys_users)row.Tag;
+                _userobj = (SYS_USERS)row.Tag;
             }
         }
         //保存按钮
@@ -67,15 +67,15 @@ namespace ChildManager.UI.sys
                 return;
             }
 
-            sys_users userobj = CommonHelper.GetObj<sys_users>(this.Controls);
-            userobj.role_code = role_code.SelectedValue.ToString();
+            SYS_USERS userobj = CommonHelper.GetObj<SYS_USERS>(this.Controls);
+            userobj.ROLE_CODE = role_code.SelectedValue.ToString();
 
             if (_userobj == null)
             {
-                userobj.password = "123";
-                userobj.pre_max = 20;
-                userobj.user_type = "2";
-                sys_users obj = bll.Get(user_code.Text.Trim());
+                userobj.PASSWORD = "123";
+                userobj.PRE_MAX = 20;
+                userobj.USER_TYPE = "2";
+                SYS_USERS obj = bll.Get(user_code.Text.Trim());
                 if (obj != null)
                 {
                     MessageBox.Show("该账户已存在!", "系统提示");
@@ -85,11 +85,11 @@ namespace ChildManager.UI.sys
             }
             else
             {
-                userobj.id = _userobj.id;
-                userobj.password = _userobj.password;
-                userobj.user_type = _userobj.user_type;
-                userobj.pre_max = _userobj.pre_max;
-                userobj.ward_id = _userobj.ward_id;
+                userobj.ID = _userobj.ID;
+                userobj.PASSWORD = _userobj.PASSWORD;
+                userobj.USER_TYPE = _userobj.USER_TYPE;
+                userobj.PRE_MAX = _userobj.PRE_MAX;
+                userobj.WARD_ID = _userobj.WARD_ID;
             }
 
             if (bll.SaveOrUpdate(userobj))
@@ -108,17 +108,17 @@ namespace ChildManager.UI.sys
         //页面加载数据
         private void xiugaiu_Load(object sender, EventArgs e)
         {
-            IList<sys_role> listrole = rolebll.GetList();
+            IList<SYS_ROLE> listrole = rolebll.GetList();
             role_code.DataSource = listrole;
             role_code.DisplayMember = "role_name";
             role_code.ValueMember = "role_code";
             if (_userobj != null)
             {
                 Cursor.Current = Cursors.WaitCursor;
-                CommonHelper.setForm<sys_users>(_userobj,this.Controls);
-                if (!string.IsNullOrEmpty(_userobj.role_code))
+                CommonHelper.setForm<SYS_USERS>(_userobj,this.Controls);
+                if (!string.IsNullOrEmpty(_userobj.ROLE_CODE))
                 {
-                    role_code.SelectedValue = _userobj.role_code;
+                    role_code.SelectedValue = _userobj.ROLE_CODE;
                 }
                 
                 Cursor.Current = Cursors.Default;

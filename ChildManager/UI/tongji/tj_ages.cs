@@ -20,7 +20,7 @@ namespace ChildManager.UI.tongji
         {
             string starttime = dateTimePicker1.Value.ToString("yyyy-MM-dd");
             string endtime = dateTimePicker2.Value.ToString("yyyy-MM-dd");
-            string sqls = "select b.nnd couname,count(*) cou from tb_childbase a ";
+            string sqls = "select b.nnd couname,count(*) cou from TB_CHILDBASE a ";
             sqls += " left join";
             sqls += " (";
             sqls += " select";
@@ -31,7 +31,7 @@ namespace ChildManager.UI.tongji
             sqls += "  when datediff(year, childbirthday, getdate()) >= 6 and datediff(year, childbirthday, getdate()) < 10 then '6~10岁'";
             sqls += "  when datediff(year, childbirthday, getdate()) >= 10 then '>10岁'";
             sqls += "  end";
-            sqls += "  as nnd, id from tb_childbase";
+            sqls += "  as nnd, id from TB_CHILDBASE";
             sqls += " ) b on a.id = b.id";
             sqls += " where  childbuildday>='" + starttime + "' and childbuildday <='" + endtime + "' ";
             sqls += " group by b.nnd order by nnd ";

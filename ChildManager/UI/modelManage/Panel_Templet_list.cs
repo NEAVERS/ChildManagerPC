@@ -12,7 +12,7 @@ namespace ChildManager.UI
     public partial class Panel_Templet_list : Office2007Form
     {
         private tab_templet_Infobll bll = new tab_templet_Infobll();
-        public tab_templet_Info _templetobj = new tab_templet_Info();
+        public TAB_TEMPLET_INFO _templetobj = new TAB_TEMPLET_INFO();
         string _type = "";
         string _child_type = "";
 
@@ -30,7 +30,7 @@ namespace ChildManager.UI
 
         public void refreshRecordList()
         {
-            IList<tab_templet_Info> mobanlist = null;
+            IList<TAB_TEMPLET_INFO> mobanlist = null;
             if (string.IsNullOrEmpty(_child_type))
             {
                 mobanlist = bll.GetList(_type);
@@ -46,10 +46,10 @@ namespace ChildManager.UI
                 try
                 {
                     int i = 1;
-                    foreach (tab_templet_Info obj in mobanlist)
+                    foreach (TAB_TEMPLET_INFO obj in mobanlist)
                     {
                         DataGridViewRow row = new DataGridViewRow();
-                        row.CreateCells(dataGridView1, obj.name, obj.conts, obj.child_type, obj.type);
+                        row.CreateCells(dataGridView1, obj.NAME, obj.CONTS, obj.CHILD_TYPE, obj.TYPE);
                         row.Tag = obj;
                         dataGridView1.Rows.Add(row);
                         i++;
@@ -73,7 +73,7 @@ namespace ChildManager.UI
         {
             if (e.RowIndex != -1)
             {
-                tab_templet_Info templet_Info = dataGridView1.SelectedRows[0].Tag as tab_templet_Info;
+                TAB_TEMPLET_INFO templet_Info = dataGridView1.SelectedRows[0].Tag as TAB_TEMPLET_INFO;
                 _templetobj = templet_Info;
                 this.DialogResult = DialogResult.OK;//关闭窗体，导入值
             }
@@ -103,7 +103,7 @@ namespace ChildManager.UI
         {
             if (dataGridView1.SelectedCells.Count > 0)
             {
-                tab_templet_Info templet_Info = dataGridView1.SelectedRows[0].Tag as tab_templet_Info;
+                TAB_TEMPLET_INFO templet_Info = dataGridView1.SelectedRows[0].Tag as TAB_TEMPLET_INFO;
                 _templetobj = templet_Info;
                 this.DialogResult = DialogResult.OK;//关闭窗体，导入值
             }
@@ -125,7 +125,7 @@ namespace ChildManager.UI
             {
                 if (dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Selected == true)
                 {
-                    tab_templet_Info templet_Info = dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Tag as tab_templet_Info;
+                    TAB_TEMPLET_INFO templet_Info = dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Tag as TAB_TEMPLET_INFO;
                     _templetobj = templet_Info;
                     this.DialogResult = DialogResult.OK;
                 }
@@ -138,7 +138,7 @@ namespace ChildManager.UI
             {
                 if (dataGridView1.Rows[0].Selected == true)
                 {
-                    tab_templet_Info templet_Info = dataGridView1.Rows[0].Tag as tab_templet_Info;
+                    TAB_TEMPLET_INFO templet_Info = dataGridView1.Rows[0].Tag as TAB_TEMPLET_INFO;
                     _templetobj = templet_Info;
                     DialogResult = DialogResult.OK;
                 }

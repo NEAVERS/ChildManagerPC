@@ -10,10 +10,10 @@ namespace ChildManager.UI.printrecord.cepingshi
     {
         private Rectangle _rectBody;
 
-        private tb_childbase _baseobj = null;
-        private cp_dream_tab _obj = null;
+        private TB_CHILDBASE _baseobj = null;
+        private CP_DREAM_TAB _obj = null;
 
-        public cp_dream_printer(tb_childbase baseobj, cp_dream_tab obj)
+        public cp_dream_printer(TB_CHILDBASE baseobj, CP_DREAM_TAB obj)
         {
             InitializeComponent();
             _baseobj = baseobj;
@@ -105,7 +105,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             left += nameheadwidth;
 
             rect = new Rectangle(left, top, namewidth, 30);
-            MiddleLeftPrintTextAndLine(_baseobj.childname, rect, g);
+            MiddleLeftPrintTextAndLine(_baseobj.CHILDNAME, rect, g);
             left += namewidth;
 			left += 50;
             rect = new Rectangle(left, top, sexheadwidth, 30);
@@ -113,14 +113,14 @@ namespace ChildManager.UI.printrecord.cepingshi
             left += sexheadwidth;
 
             rect = new Rectangle(left, top, sexwidth, 30);
-            MiddleLeftPrintTextAndLine(_baseobj.childgender, rect, g);
+            MiddleLeftPrintTextAndLine(_baseobj.CHILDGENDER, rect, g);
             left += sexwidth;
 			left += 50;
             rect = new Rectangle(left, top, ageheadwidth, 30);
             MiddleLeftPrintText("年龄", rect, g);
             left += ageheadwidth;
 
-            int[] age = CommonHelper.getAgeBytime(_baseobj.childbirthday, _obj.csrq);
+            int[] age = CommonHelper.getAgeBytime(_baseobj.CHILDBIRTHDAY, _obj.CSRQ);
             string agestr = (age[0] > 0 ? age[0].ToString() + "岁" : "") + (age[1] > 0 ? age[1].ToString() + "月" : "") + (age[2] > 0 ? age[2].ToString() + "天" : "");
             rect = new Rectangle(left, top, agewidth, 30);
             MiddleLeftPrintTextAndLine(agestr, rect, g);
@@ -166,19 +166,19 @@ namespace ChildManager.UI.printrecord.cepingshi
             g.DrawString("标准化分数\r\n STANDARD SCORES", font, brush, rect, sf);
             rect = new Rectangle(left + Width / 6 * 1, top, Width / 6, High * 2);
             g.DrawRectangle(pen, rect);
-            g.DrawString(_obj.bzh_ztyy, font, brush, rect, sf);
+            g.DrawString(_obj.BZH_ZTYY, font, brush, rect, sf);
             rect = new Rectangle(left + Width / 6 * 2, top, Width / 6, High * 2);
             g.DrawRectangle(pen, rect);
-            g.DrawString(_obj.bzh_tllj, font, brush, rect, sf);
+            g.DrawString(_obj.BZH_TLLJ, font, brush, rect, sf);
             rect = new Rectangle(left + Width / 6 * 3, top, Width / 6, High * 2);
             g.DrawRectangle(pen, rect);
-            g.DrawString(_obj.bzh_yybd, font, brush, rect, sf);
+            g.DrawString(_obj.BZH_YYBD, font, brush, rect, sf);
             rect = new Rectangle(left + Width / 6 * 4, top, Width / 6, High * 2);
             g.DrawRectangle(pen, rect);
-            g.DrawString(_obj.bzh_yy, font, brush, rect, sf);
+            g.DrawString(_obj.BZH_YY, font, brush, rect, sf);
             rect = new Rectangle(left + Width / 6 * 5, top, Width / 6, High * 2);
             g.DrawRectangle(pen, rect);
-            g.DrawString(_obj.bzh_jf, font, brush, rect, sf);
+            g.DrawString(_obj.BZH_JF, font, brush, rect, sf);
             top += High * 2;
 
             rect = new Rectangle(left + Width / 6 * 0, top, Width / 6, High * 2);
@@ -186,31 +186,31 @@ namespace ChildManager.UI.printrecord.cepingshi
             g.DrawString("百分等级\r\n PERCENTILES", font, brush, rect, sf);
             rect = new Rectangle(left + Width / 6 * 1, top, Width / 6, High * 2);
             g.DrawRectangle(pen, rect);
-            g.DrawString(_obj.bfdj_ztyy, font, brush, rect, sf);
+            g.DrawString(_obj.BFDJ_ZTYY, font, brush, rect, sf);
             rect = new Rectangle(left + Width / 6 * 2, top, Width / 6, High * 2);
             g.DrawRectangle(pen, rect);
-            g.DrawString(_obj.bfdj_tllj, font, brush, rect, sf);
+            g.DrawString(_obj.BFDJ_TLLJ, font, brush, rect, sf);
             rect = new Rectangle(left + Width / 6 * 3, top, Width / 6, High * 2);
             g.DrawRectangle(pen, rect);
-            g.DrawString(_obj.bfdj_yybd, font, brush, rect, sf);
+            g.DrawString(_obj.BFDJ_YYBD, font, brush, rect, sf);
             rect = new Rectangle(left + Width / 6 * 4, top, Width / 6, High * 2);
             g.DrawRectangle(pen, rect);
-            g.DrawString(_obj.bfdj_yy, font, brush, rect, sf);
+            g.DrawString(_obj.BFDJ_YY, font, brush, rect, sf);
             rect = new Rectangle(left + Width / 6 * 5, top, Width / 6, High * 2);
             g.DrawRectangle(pen, rect);
-            g.DrawString(_obj.bfdj_jf, font, brush, rect, sf);
+            g.DrawString(_obj.BFDJ_JF, font, brush, rect, sf);
             top += High * 2;
 
             rect = new Rectangle(left, top, Width, High * 8);
             g.DrawRectangle(pen, rect);
             rect = new Rectangle(left + 3, top + 3, Width - 6, High * 8 - 6);
-            g.DrawString(_obj.doctor_result, font, brush, rect, lf);
+            g.DrawString(_obj.DOCTOR_RESULT, font, brush, rect, lf);
             top += High * 8 ;
 
             rect = new Rectangle(left, top, Width, High * 8);
             g.DrawRectangle(pen, rect);
             rect = new Rectangle(left + 3, top + 3, Width - 6, High * 8 - 6);
-            g.DrawString(_obj.doctor_advice, font, brush, rect, lf);
+            g.DrawString(_obj.DOCTOR_ADVICE, font, brush, rect, lf);
             top += High * 8 + 10;
 
             top += High;
@@ -222,7 +222,7 @@ namespace ChildManager.UI.printrecord.cepingshi
 
             left = _rectBody.Right - 120;
             rect = new Rectangle(left, top, 120, 30);
-            MiddleLeftPrintText(_obj.cszqm, rect, g);
+            MiddleLeftPrintText(_obj.CSZQM, rect, g);
             g.DrawLine(pen, rect.Left, rect.Top + 20, rect.Right, rect.Top + 20);
             left -= 100;
             rect = new Rectangle(left, top, 100, 30);
@@ -231,7 +231,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             top += 25;
             left = _rectBody.Right - 120;
             rect = new Rectangle(left, top, 120, 30);
-            MiddleLeftPrintText(_obj.csrq, rect, g);
+            MiddleLeftPrintText(_obj.CSRQ, rect, g);
             g.DrawLine(pen, rect.Left, rect.Top + 20, rect.Right, rect.Top + 20);
             left -= 100;
             rect = new Rectangle(left, top, 100, 30);

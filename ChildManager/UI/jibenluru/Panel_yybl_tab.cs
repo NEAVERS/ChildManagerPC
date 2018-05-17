@@ -28,7 +28,7 @@ namespace ChildManager.UI.jibenluru
 
         private void btnsave_Click(object sender, EventArgs e)
         {
-            ys_yybl_tab tab = getObj();
+            YS_YYBL_TAB tab = getObj();
             if (blls.SaveOrUpdate(tab))
             {
                 MessageBox.Show("保存成功！");
@@ -39,15 +39,15 @@ namespace ChildManager.UI.jibenluru
             }
         }
 
-        private ys_yybl_tab getObj()
+        private YS_YYBL_TAB getObj()
         {
-            ys_yybl_tab _obj = blls.GetByCdId(_womeninfo.cd_id);
-            ys_yybl_tab obj = CommonHelper.GetObjMenzhen<ys_yybl_tab>(panel1.Controls, _womeninfo.cd_id);
+            YS_YYBL_TAB _obj = blls.GetByCdId(_womeninfo.cd_id);
+            YS_YYBL_TAB obj = CommonHelper.GetObjMenzhen<YS_YYBL_TAB>(panel1.Controls, _womeninfo.cd_id);
             if (_obj != null)
             {
-                obj.id = _obj.id;
-                obj.testName = _obj.testName;
-                obj.testDate = _obj.testDate;
+                obj.ID = _obj.ID;
+                obj.TESTNAME = _obj.TESTNAME;
+                obj.TESTDATE = _obj.TESTDATE;
             }
             return obj;
         }
@@ -60,7 +60,7 @@ namespace ChildManager.UI.jibenluru
         private void RefreshCode()
         {
             Cursor.Current = Cursors.Default;
-            ys_yybl_tab _obj = blls.GetByCdId(_womeninfo.cd_id);
+            YS_YYBL_TAB _obj = blls.GetByCdId(_womeninfo.cd_id);
             if (_obj != null)
             {
                 CommonHelper.setForm(_obj, panel1.Controls);
@@ -74,7 +74,7 @@ namespace ChildManager.UI.jibenluru
 
         private void buttonX1_Click(object sender, EventArgs e)
         {
-            ys_yybl_tab _obj = blls.GetByCdId(_womeninfo.cd_id);
+            YS_YYBL_TAB _obj = blls.GetByCdId(_womeninfo.cd_id);
             if (_obj != null)
             {
                 if (MessageBox.Show("删除该记录？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
@@ -82,7 +82,7 @@ namespace ChildManager.UI.jibenluru
                     Cursor.Current = Cursors.WaitCursor;
                     try
                     {
-                        if (blls.Delete(_obj.id))
+                        if (blls.Delete(_obj.ID))
                         {
                             MessageBox.Show("删除成功!", "软件提示");
                             RefreshCode();
@@ -112,7 +112,7 @@ namespace ChildManager.UI.jibenluru
         public void print(bool ispre)
         {
             Cursor.Current = Cursors.WaitCursor;
-            ys_yybl_tab _obj = blls.GetByCdId(_womeninfo.cd_id);
+            YS_YYBL_TAB _obj = blls.GetByCdId(_womeninfo.cd_id);
             if (_obj == null)
             {
                 MessageBox.Show("请保存后再预览打印！", "软件提示");
@@ -120,7 +120,7 @@ namespace ChildManager.UI.jibenluru
             }
             try
             {
-                //tb_childbase baseobj = new tb_childbasebll().Get(_womeninfo.cd_id);
+                //TB_CHILDBASE baseobj = new tb_childbasebll().Get(_womeninfo.cd_id);
                 Panel_ysyyblPrinter printer = new Panel_ysyyblPrinter(_obj);
                 printer.Print(ispre);
             }

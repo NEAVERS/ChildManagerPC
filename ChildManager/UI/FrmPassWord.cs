@@ -46,7 +46,7 @@ namespace ChildManager.UI
                 return;
             }
 
-            strSql = "Update sys_users Set PassWord = '" + txt_newPwd.Text + "' Where user_code = '" +
+            strSql = "Update SYS_USERS Set PassWord = '" + txt_newPwd.Text + "' Where user_code = '" +
          globalInfoClass.UserCode+ "'";
 
             int i = dg.executeupdate(strSql);

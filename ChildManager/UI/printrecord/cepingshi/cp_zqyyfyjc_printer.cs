@@ -10,10 +10,10 @@ namespace ChildManager.UI.printrecord.cepingshi
     {
         private Rectangle _rectBody;
 
-        private tb_childbase _baseobj = null;
-        private cp_zqyyfyjc_tab _obj = null;
+        private TB_CHILDBASE _baseobj = null;
+        private CP_ZQYYFYJC_TAB _obj = null;
 
-        public cp_zqyyfyjc_printer(tb_childbase baseobj, cp_zqyyfyjc_tab obj)
+        public cp_zqyyfyjc_printer(TB_CHILDBASE baseobj, CP_ZQYYFYJC_TAB obj)
         {
             InitializeComponent();
             _baseobj = baseobj;
@@ -98,7 +98,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             left += nameheadwidth;
 
             rect = new Rectangle(left, top, namewidth, 30);
-            MiddleLeftPrintText(_baseobj.childname,rect,g);
+            MiddleLeftPrintText(_baseobj.CHILDNAME,rect,g);
             g.DrawLine(pen, rect.Left, rect.Top + 20, rect.Right, rect.Top + 20);
             left += namewidth;
 
@@ -107,7 +107,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             left += sexheadwidth;
 
             rect = new Rectangle(left, top, sexwidth, 30);
-            MiddleLeftPrintText(_baseobj.childgender, rect, g);
+            MiddleLeftPrintText(_baseobj.CHILDGENDER, rect, g);
             g.DrawLine(pen, rect.Left, rect.Top + 20, rect.Right, rect.Top + 20);
             left += sexwidth;
 
@@ -115,7 +115,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("年龄", rect, g);
             left += ageheadwidth;
 
-            int[] age = CommonHelper.getAgeBytime(_baseobj.childbirthday, _obj.csrq);
+            int[] age = CommonHelper.getAgeBytime(_baseobj.CHILDBIRTHDAY, _obj.CSRQ);
             string agestr = (age[0] > 0 ? age[0].ToString() + "岁" : "") + (age[1] > 0 ? age[1].ToString() + "月" : "") + (age[2] > 0 ? age[2].ToString() + "天" : "");
             rect = new Rectangle(left, top, agewidth, 30);
             MiddleLeftPrintText(agestr, rect, g);
@@ -136,7 +136,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("1.A语言表达能力        （",rect,g);
             left += 220;
             rect = new Rectangle(left, top, 30, 30);
-            MiddleLeftPrintText(_obj.yybd_df, rect, g);
+            MiddleLeftPrintText(_obj.YYBD_DF, rect, g);
 
             left += 30;
             rect = new Rectangle(left, top, 40, 30);
@@ -148,7 +148,7 @@ namespace ChildManager.UI.printrecord.cepingshi
 
             left += 140;
             rect = new Rectangle(left, top, 50, 30);
-            MiddleLeftPrintText(_obj.yybd_yl, rect, g);
+            MiddleLeftPrintText(_obj.YYBD_YL, rect, g);
 
             left += 50;
             rect = new Rectangle(left, top, 30, 30);
@@ -161,7 +161,7 @@ namespace ChildManager.UI.printrecord.cepingshi
 
             left += 80;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.yybd_p50, rect, g);
+            MiddleLeftPrintText(_obj.YYBD_P50, rect, g);
 
             left += 40;
             rect = new Rectangle(left, top, 120, 30);
@@ -174,7 +174,7 @@ namespace ChildManager.UI.printrecord.cepingshi
 
             left += 80;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.yybd_p75, rect, g);
+            MiddleLeftPrintText(_obj.YYBD_P75, rect, g);
 
             left += 40;
             rect = new Rectangle(left, top, 120, 30);
@@ -188,7 +188,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("2.B听觉及语言理解能力  （", rect, g);
             left += 220;
             rect = new Rectangle(left, top, 30, 30);
-            MiddleLeftPrintText(_obj.tjnl_df, rect, g);
+            MiddleLeftPrintText(_obj.TJNL_DF, rect, g);
 
             left += 30;
             rect = new Rectangle(left, top, 40, 30);
@@ -200,7 +200,7 @@ namespace ChildManager.UI.printrecord.cepingshi
 
             left += 140;
             rect = new Rectangle(left, top, 50, 30);
-            MiddleLeftPrintText(_obj.tjnl_yl, rect, g);
+            MiddleLeftPrintText(_obj.TJNL_YL, rect, g);
 
             left += 50;
             rect = new Rectangle(left, top, 30, 30);
@@ -213,7 +213,7 @@ namespace ChildManager.UI.printrecord.cepingshi
 
             left += 80;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.tjnl_p50, rect, g);
+            MiddleLeftPrintText(_obj.TJNL_P50, rect, g);
 
             left += 40;
             rect = new Rectangle(left, top, 120, 30);
@@ -226,7 +226,7 @@ namespace ChildManager.UI.printrecord.cepingshi
 
             left += 80;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.tjnl_p75, rect, g);
+            MiddleLeftPrintText(_obj.TJNL_P75, rect, g);
 
             left += 40;
             rect = new Rectangle(left, top, 120, 30);
@@ -240,7 +240,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("3.C与视觉相关的表达能力（", rect, g);
             left += 220;
             rect = new Rectangle(left, top, 30, 30);
-            MiddleLeftPrintText(_obj.sjxg_df, rect, g);
+            MiddleLeftPrintText(_obj.SJXG_DF, rect, g);
 
             left += 30;
             rect = new Rectangle(left, top, 40, 30);
@@ -252,7 +252,7 @@ namespace ChildManager.UI.printrecord.cepingshi
 
             left += 140;
             rect = new Rectangle(left, top, 50, 30);
-            MiddleLeftPrintText(_obj.sjxg_yl, rect, g);
+            MiddleLeftPrintText(_obj.SJXG_YL, rect, g);
 
             left += 50;
             rect = new Rectangle(left, top, 30, 30);
@@ -265,7 +265,7 @@ namespace ChildManager.UI.printrecord.cepingshi
 
             left += 80;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.sjxg_p50, rect, g);
+            MiddleLeftPrintText(_obj.SJXG_P50, rect, g);
 
             left += 40;
             rect = new Rectangle(left, top, 120, 30);
@@ -278,7 +278,7 @@ namespace ChildManager.UI.printrecord.cepingshi
 
             left += 80;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.sjxg_p75, rect, g);
+            MiddleLeftPrintText(_obj.SJXG_P75, rect, g);
 
             left += 40;
             rect = new Rectangle(left, top, 120, 30);
@@ -292,7 +292,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             MiddleLeftPrintText("4.全量表               （", rect, g);
             left += 220;
             rect = new Rectangle(left, top, 30, 30);
-            MiddleLeftPrintText(_obj.qlb_df, rect, g);
+            MiddleLeftPrintText(_obj.QLB_DF, rect, g);
 
             left += 30;
             rect = new Rectangle(left, top, 40, 30);
@@ -304,7 +304,7 @@ namespace ChildManager.UI.printrecord.cepingshi
 
             left += 140;
             rect = new Rectangle(left, top, 50, 30);
-            MiddleLeftPrintText(_obj.qlb_yl, rect, g);
+            MiddleLeftPrintText(_obj.QLB_YL, rect, g);
 
             left += 50;
             rect = new Rectangle(left, top, 30, 30);
@@ -317,7 +317,7 @@ namespace ChildManager.UI.printrecord.cepingshi
 
             left += 80;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.qlb_p50, rect, g);
+            MiddleLeftPrintText(_obj.QLB_P50, rect, g);
 
             left += 40;
             rect = new Rectangle(left, top, 120, 30);
@@ -330,7 +330,7 @@ namespace ChildManager.UI.printrecord.cepingshi
 
             left += 80;
             rect = new Rectangle(left, top, 40, 30);
-            MiddleLeftPrintText(_obj.qlb_p75, rect, g);
+            MiddleLeftPrintText(_obj.QLB_P75, rect, g);
 
             left += 40;
             rect = new Rectangle(left, top, 120, 30);
@@ -345,7 +345,7 @@ namespace ChildManager.UI.printrecord.cepingshi
 
             left += 60;
             rect = new Rectangle(left, top, 80, 30);
-            MiddleLeftPrintText(_obj.hz, rect, g);
+            MiddleLeftPrintText(_obj.HZ, rect, g);
 
             left += 100;
             rect = new Rectangle(left, top, 70, 30);
@@ -353,7 +353,7 @@ namespace ChildManager.UI.printrecord.cepingshi
 
             left += 70;
             rect = new Rectangle(left, top, 80, 30);
-            MiddleLeftPrintText(_obj.zyl, rect, g);
+            MiddleLeftPrintText(_obj.ZYL, rect, g);
 
             top += 30;
             left = _rectBody.Left;
@@ -362,7 +362,7 @@ namespace ChildManager.UI.printrecord.cepingshi
 
             left += 60;
             rect = new Rectangle(left, top, 80, 30);
-            MiddleLeftPrintText(_obj.fy, rect, g);
+            MiddleLeftPrintText(_obj.FY, rect, g);
 
             left += 100;
             rect = new Rectangle(left, top, 70, 30);
@@ -370,14 +370,14 @@ namespace ChildManager.UI.printrecord.cepingshi
 
             left += 70;
             rect = new Rectangle(left, top, 80, 30);
-            MiddleLeftPrintText(_obj.qx, rect, g);
+            MiddleLeftPrintText(_obj.QX, rect, g);
 
             #endregion
             top += 50;
             #region 签名
             left = _rectBody.Right - 120;
             rect = new Rectangle(left, top, 120, 30);
-            MiddleLeftPrintText(_obj.cszqm, rect, g);
+            MiddleLeftPrintText(_obj.CSZQM, rect, g);
             g.DrawLine(pen, rect.Left, rect.Top + 20, rect.Right, rect.Top + 20);
             left -= 100;
             rect = new Rectangle(left, top, 100, 30);
@@ -386,7 +386,7 @@ namespace ChildManager.UI.printrecord.cepingshi
             top += 25;
             left = _rectBody.Right - 120;
             rect = new Rectangle(left, top, 120, 30);
-            MiddleLeftPrintText(_obj.csrq, rect, g);
+            MiddleLeftPrintText(_obj.CSRQ, rect, g);
             g.DrawLine(pen, rect.Left, rect.Top + 20, rect.Right, rect.Top + 20);
             left -= 100;
             rect = new Rectangle(left, top, 100, 30);

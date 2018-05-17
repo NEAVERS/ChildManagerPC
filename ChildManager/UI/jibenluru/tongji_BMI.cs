@@ -21,7 +21,7 @@ namespace ChildManager.UI.jibenluru
         ChildStandardBll standbll = new ChildStandardBll();
         ChildCheckBll checkbll = new ChildCheckBll();
         private ChildBaseInfoBll bll = new ChildBaseInfoBll();
-        tb_childbase jibenobj = null;
+        TB_CHILDBASE jibenobj = null;
         private string _sex = "男";
         private string _birthtime = "";
         private string _week = "";
@@ -464,7 +464,7 @@ namespace ChildManager.UI.jibenluru
                 //h_factlist.Add(new Point(0,0));
                 List<Point> h_w_factlist = new List<Point>();//身高、体重曲线图实际值点
                 //w_factlist.Add(new Point(0,0));
-                string sqls_check = "select datediff(month,'" + _birthtime + "',checkday) as yf,* from tb_childcheck where childId=" + _womeninfo.cd_id + " and datediff(month,'" + _birthtime + "',checkday)<=36 and checkDay!='0001-01-01 00:00:00' order by checkDay asc";
+                string sqls_check = "select datediff(month,'" + _birthtime + "',checkday) as yf,* from TB_CHILDCHECK where childId=" + _womeninfo.cd_id + " and datediff(month,'" + _birthtime + "',checkday)<=36 and checkDay!='0001-01-01 00:00:00' order by checkDay asc";
                 ArrayList checklist = checkbll.getChildCheckList(sqls_check);
 
                 if (checklist != null)
@@ -1126,7 +1126,7 @@ namespace ChildManager.UI.jibenluru
                 List<Point> w_factlist = new List<Point>();//体重曲线图实际值点
                 List<Point> bmi_factlist = new List<Point>();//bmi曲线图实际值点
 
-                string sqls_check = "select datediff(month,'" + _birthtime + "',checkday) as yf,* from tb_childcheck where childId=" + _womeninfo.cd_id + " and datediff(month,'" + _birthtime + "',checkday)>=24 and checkDay!='0001-01-01 00:00:00' order by checkDay asc";
+                string sqls_check = "select datediff(month,'" + _birthtime + "',checkday) as yf,* from TB_CHILDCHECK where childId=" + _womeninfo.cd_id + " and datediff(month,'" + _birthtime + "',checkday)>=24 and checkDay!='0001-01-01 00:00:00' order by checkDay asc";
                 ArrayList checklist = checkbll.getChildCheckList(sqls_check);
 
                 if (checklist != null)
@@ -1374,7 +1374,7 @@ namespace ChildManager.UI.jibenluru
             //List<Point> t_factlist = new List<Point>();//头围曲线图实际值点
             //List<Point> h_w_factlist = new List<Point>();//身高、体重曲线图实际值点
 
-            //string sqls_check = "select datediff(month,'" + _birthtime + "',checkday) as yf,* from tb_childcheck where childId=" + globalInfoClass.Wm_Index + " and datediff(month,'" + _birthtime + "',checkday)<=60 and checkDay!='0001-01-01 00:00:00' order by checkDay asc";
+            //string sqls_check = "select datediff(month,'" + _birthtime + "',checkday) as yf,* from TB_CHILDCHECK where childId=" + globalInfoClass.Wm_Index + " and datediff(month,'" + _birthtime + "',checkday)<=60 and checkDay!='0001-01-01 00:00:00' order by checkDay asc";
             //ArrayList checklist = checkbll.getChildCheckList(sqls_check);
 
             //if (checklist != null)
@@ -1980,7 +1980,7 @@ namespace ChildManager.UI.jibenluru
                 g.FillEllipse(bbrush, bmi_factstr.X - 2, bmi_factstr.Y - 2, 4, 4);
                 bmi_factlist.Add(bmi_factstr);
             }
-            string sqls_check = "select datediff(month,'" + _birthtime + "',checkday) as yf,* from tb_childcheck where childId=" + _womeninfo.cd_id + " and datediff(month,'" + _birthtime + "',checkday)<=60 and checkDay!='0001-01-01 00:00:00' order by datediff(day,'" + _birthtime + "',checkday) asc";
+            string sqls_check = "select datediff(month,'" + _birthtime + "',checkday) as yf,* from TB_CHILDCHECK where childId=" + _womeninfo.cd_id + " and datediff(month,'" + _birthtime + "',checkday)<=60 and checkDay!='0001-01-01 00:00:00' order by datediff(day,'" + _birthtime + "',checkday) asc";
             ArrayList checklist = checkbll.getChildCheckList(sqls_check);
             if (checklist != null)
             {
@@ -2544,7 +2544,7 @@ namespace ChildManager.UI.jibenluru
             List<Point> w_factlist2 = new List<Point>();//体重曲线图实际值点
             List<Point> bmi_factlist2 = new List<Point>();//bmi曲线图实际值点
 
-            string sqls_check = "select datediff(month,'" + _birthtime + "',checkday) as yf,* from tb_childcheck where childId=" + _womeninfo.cd_id + " and datediff(month,'" + _birthtime + "',checkday)>60 and checkDay!='0001-01-01 00:00:00' order by datediff(day,'" + _birthtime + "',checkday) asc";
+            string sqls_check = "select datediff(month,'" + _birthtime + "',checkday) as yf,* from TB_CHILDCHECK where childId=" + _womeninfo.cd_id + " and datediff(month,'" + _birthtime + "',checkday)>60 and checkDay!='0001-01-01 00:00:00' order by datediff(day,'" + _birthtime + "',checkday) asc";
             ArrayList checklist = checkbll.getChildCheckList(sqls_check);
             if (checklist != null)
             {
@@ -2831,12 +2831,12 @@ namespace ChildManager.UI.jibenluru
             string sqls = "";
             if (ckb_isPre.Checked)
             {
-                sqls = "update tb_childbase set ispre='1' where id=" + _womeninfo.cd_id + "";
+                sqls = "update TB_CHILDBASE set ispre='1' where id=" + _womeninfo.cd_id + "";
                 _ispre = "1";
             }
             else
             {
-                sqls = "update tb_childbase set ispre='0' where id=" + _womeninfo.cd_id + "";
+                sqls = "update TB_CHILDBASE set ispre='0' where id=" + _womeninfo.cd_id + "";
                 _ispre = "0";
             }
             bll.updaterecord(sqls);
@@ -2953,7 +2953,7 @@ namespace ChildManager.UI.jibenluru
             //    h_factlist.Add(h_factstr);
             //}
 
-            string sqls_check = "select (" + Convert.ToInt32(_week) * 7 + " + datediff(day, '" + _birthtime + "', checkday)) as yf,* from tb_childcheck where childid = " + _womeninfo.cd_id + "";
+            string sqls_check = "select (" + Convert.ToInt32(_week) * 7 + " + datediff(day, '" + _birthtime + "', checkday)) as yf,* from TB_CHILDCHECK where childid = " + _womeninfo.cd_id + "";
 
             sqls_check += " and (" + Convert.ToInt32(_week) * 7 + " + datediff(day, '" + _birthtime + "', checkday)) < 350";
             sqls_check += " and (" + Convert.ToInt32(_week) * 7 + " + datediff(day, '" + _birthtime + "', checkday)) > 154 ";

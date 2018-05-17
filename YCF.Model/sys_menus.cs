@@ -21,6 +21,7 @@ namespace YCF.Model
         public string MENU_PARENT { get; set; }
         public string MENU_CODE { get; set; }
         public string MENU_URL { get; set; }
+        public object menu_url { get; set; }
         public string IS_CUSTOM { get; set; }
         public string IS_ENABLE { get; set; }
         public string MENU_IMAGE { get; set; }

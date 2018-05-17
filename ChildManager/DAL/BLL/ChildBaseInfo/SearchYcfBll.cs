@@ -33,13 +33,13 @@ namespace ChildManager.BLL.ChildBaseInfo
                     while (sdr.Read())
                     {
                         //sdr.Read();//读取第一行数据记录
-                        tb_childbase obj = new tb_childbase();
-                        //obj.Id = Convert.ToInt32(sdr["id"]);
+                        TB_CHILDBASE obj = new TB_CHILDBASE();
+                        //obj.ID = Convert.ToInt32(sdr["id"]);
                         //obj.HealthCardNo = sdr["healthCardNo"].ToString();
                         //obj.ChildName = sdr["childName"].ToString();
-                        obj.childgender = sdr["baby_sex"].ToString();
+                        obj.CHILDGENDER = sdr["baby_sex"].ToString();
                         //obj.BloodType = sdr["bloodType"].ToString();
-                        obj.childbirthday = sdr["fenmian_riqi"].ToString();
+                        obj.CHILDBIRTHDAY = sdr["fenmian_riqi"].ToString();
                         //obj.ChildBuildDay = sdr["childBuildDay"].ToString();
                         //保存图片  
                         //obj.ChildPhoto
@@ -52,16 +52,16 @@ namespace ChildManager.BLL.ChildBaseInfo
                         //obj.FatherHeight = sdr["fatherHeight"].ToString();
                         //obj.FatherEducation = sdr["fatherEducation"].ToString();
                         //obj.FatherJob = sdr["fatherJob"].ToString();
-                        obj.mothername = sdr["wm_name"].ToString();
-                        obj.motherage = sdr["wm_age"].ToString().Replace("岁","");
+                        obj.MOTHERNAME = sdr["wm_name"].ToString();
+                        obj.MOTHERAGE = sdr["wm_age"].ToString().Replace("岁","");
                         //obj.MotherHeight = sdr["motherHeight"].ToString();
                         //obj.MotherEducation = sdr["motherEducation"].ToString();
-                        obj.motherjob = sdr["wm_job"].ToString();
+                        obj.MOTHERJOB = sdr["wm_job"].ToString();
                         //obj.Telephone = sdr["telephone"].ToString();
-                        obj.province = sdr["wm_pro"].ToString();
-                        obj.city = sdr["wm_city"].ToString();
-                        obj.area = sdr["wm_area"].ToString();
-                        obj.address = sdr["wm_address"].ToString();
+                        obj.PROVINCE = sdr["wm_pro"].ToString();
+                        obj.CITY = sdr["wm_city"].ToString();
+                        obj.AREA = sdr["wm_area"].ToString();
+                        obj.ADDRESS = sdr["wm_address"].ToString();
                         //obj.NurseryInstitution = sdr["nurseryInstitution"].ToString();//托幼机构
                         //发证
                         //obj.ImmuneUnit = sdr["immuneUnit"].ToString();
@@ -69,34 +69,34 @@ namespace ChildManager.BLL.ChildBaseInfo
                         //obj.Community = sdr["community"].ToString();
                         //obj.CensusRegister = sdr["censusRegister"].ToString();
                         //出生史
-                        obj.cs_fetus = sdr["wm_yunci"].ToString();
-                        obj.cs_produce = sdr["wm_chanci"].ToString();
-                        obj.cs_week = sdr["wm_yunzhou"].ToString();
-                        obj.cs_day = sdr["wm_yuntian"].ToString();
-                        obj.modedelivery = sdr["fenmian_fangshi"].ToString();
+                        obj.CS_FETUS = sdr["wm_yunci"].ToString();
+                        obj.CS_PRODUCE = sdr["wm_chanci"].ToString();
+                        obj.CS_WEEK = sdr["wm_yunzhou"].ToString();
+                        obj.CS_DAY = sdr["wm_yuntian"].ToString();
+                        obj.MODEDELIVERY = sdr["fenmian_fangshi"].ToString();
                         if (String.IsNullOrEmpty(sdr["huiyin_qiekai"].ToString()))
                         {
-                            obj.perineumincision = "否";
+                            obj.PERINEUMINCISION = "否";
                         }
                         else
                         {
-                            obj.perineumincision = "是";
+                            obj.PERINEUMINCISION = "是";
                         }
                         //obj.FetusNumber = sdr["fetusNumber"].ToString();
 
                         //obj.NeonatalCondition = sdr["neonatalCondition"].ToString();
                         double weight = 0;
                         if(double.TryParse(sdr["baby_weight"].ToString(),out weight))
-                        obj.birthweight = (weight/1000).ToString();
-                        obj.birthheight = sdr["baby_hight"].ToString();
-                        obj.birthaddress = CommonHelper.GetHospitalName();
+                        obj.BIRTHWEIGHT = (weight/1000).ToString();
+                        obj.BIRTHHEIGHT = sdr["baby_hight"].ToString();
+                        obj.BIRTHADDRESS = CommonHelper.GetHospitalName();
                         //母乳喂养
                         //obj.HospitalizedStates = sdr["hospitalizedStates"].ToString();
                         //obj.OneMonth = sdr["oneMonth"].ToString();
                         //obj.InFourMonth = sdr["inFourMonth"].ToString();
                         //obj.FourToSixMonth = sdr["fourToSixMonth"].ToString();
                         //obj.Yunqi = sdr["yunqi"].ToString();
-                        obj.identityno = sdr["wm_identityno"].ToString();
+                        obj.IDENTITYNO = sdr["wm_identityno"].ToString();
                         arraylist.Add(obj);
                     }
                 }

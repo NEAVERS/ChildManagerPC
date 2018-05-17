@@ -51,10 +51,10 @@ namespace ChildManager.UI.childSetInfo
             ChildCheckObj obj = new ChildCheckObj();
             obj.nuerzhidao = this.txt_nuruzhidao.Text.Trim();
             obj.checkdiagnose = this.txt_diagnose.Text.Trim();
-            builder.Append("update tb_childcheck set ");
+            builder.Append("update TB_CHILDCHECK set ");
             builder.Append("nuerzhidao = '" + obj.nuerzhidao + "',");
             builder.Append("checkdiagnose = '" + obj.checkdiagnose + "'");
-            builder.Append(" where id ="+_obj.Id+"");
+            builder.Append(" where id ="+_obj.ID+"");
             return builder.ToString();
         }
 

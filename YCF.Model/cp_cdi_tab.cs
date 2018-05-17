@@ -14,7 +14,7 @@ namespace YCF.Model
     
     public partial class CP_CDI_TAB
     {
-        public decimal ID { get; set; }
+        public int ID { get; set; }
         public decimal CHILD_ID { get; set; }
         public string YYLJ_DF { get; set; }
         public string YYLJ_YL { get; set; }

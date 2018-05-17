@@ -87,7 +87,7 @@ namespace ChildManager.BLL.childSetInfo
                     {
                         //sdr.Read();//读取第一行数据记录
                         childSetbaoJiangGuidObj obj = new  childSetbaoJiangGuidObj();
-                        obj.Id = Convert.ToInt32(sdr["id"]);
+                        obj.ID = Convert.ToInt32(sdr["id"]);
                         //obj.ChildId = Convert.ToInt32(sdr["childId"]);
                         obj.Setage = sdr["setage"].ToString();
                         obj.Eduction = sdr["eduction"].ToString();
@@ -130,7 +130,7 @@ namespace ChildManager.BLL.childSetInfo
                 {
                     obj = new  childSetbaoJiangGuidObj();
                     sdr.Read();//读取第一行数据记录
-                    obj.Id = Convert.ToInt32(sdr["id"]);
+                    obj.ID = Convert.ToInt32(sdr["id"]);
                     //obj.ChildId = Convert.ToInt32(sdr["childId"]);
                     obj.Setage = sdr["setage"].ToString();
                     obj.Eduction = sdr["eduction"].ToString();

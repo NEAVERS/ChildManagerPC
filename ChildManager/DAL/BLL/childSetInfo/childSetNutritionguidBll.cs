@@ -73,7 +73,7 @@ namespace ChildManager.BLL.childSetInfo
                     {
                         //sdr.Read();//读取第一行数据记录
                         childSetNutritionguidObj obj = new childSetNutritionguidObj();
-                        obj.Id = Convert.ToInt32(sdr["id"]);
+                        obj.ID = Convert.ToInt32(sdr["id"]);
                         //obj.ChildId = Convert.ToInt32(sdr["childId"]);
                         obj.SetAge = sdr["setAge"].ToString();
                         arraylist.Add(obj);
@@ -105,13 +105,13 @@ namespace ChildManager.BLL.childSetInfo
                 {
                          obj = new childSetNutritionguidObj();
                         sdr.Read();//读取第一行数据记录
-                        obj.Id = Convert.ToInt32(sdr["id"]);
+                        obj.ID = Convert.ToInt32(sdr["id"]);
                         //obj.ChildId = Convert.ToInt32(sdr["childId"]);
                         obj.SetAge = sdr["setAge"].ToString();
                         //obj.SetContent = sdr["setContent"].ToString();
                         obj.Shiyongxing = sdr["shiyongxing"].ToString();
                         obj.Bigdongzuo = sdr["bigdongzuo"].ToString();
-                        //obj.Type =Convert.ToInt32(sdr["type"]);
+                        //obj.TYPE =Convert.ToInt32(sdr["type"]);
                         return obj;
                     }
                 }

@@ -44,11 +44,11 @@ namespace ChildManager.UI.versionmanage
                 //Image image = new Image();
                 if (obj.isfabu == 1)
                 {
-                    row.CreateCells(dataGridView1, ChildManager.Properties.Resources.ok, obj.id, obj.version, obj.updatetime, obj.updatecontent);// 
+                    row.CreateCells(dataGridView1, ChildManager.Properties.Resources.ok, obj.ID, obj.version, obj.updatetime, obj.updatecontent);// 
                 }
                 else
                 {
-                    row.CreateCells(dataGridView1, ChildManager.Properties.Resources.nothing, obj.id, obj.version, obj.updatetime, obj.updatecontent);// 
+                    row.CreateCells(dataGridView1, ChildManager.Properties.Resources.nothing, obj.ID, obj.version, obj.updatetime, obj.updatecontent);// 
                 }
 
                 row.Tag = obj;

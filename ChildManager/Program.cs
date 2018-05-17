@@ -70,7 +70,7 @@ namespace ChildManager
                     var mappingCollection = (System.Data.Entity.Core.Mapping.StorageMappingItemCollection)objectContext.MetadataWorkspace.GetItemCollection(System.Data.Entity.Core.Metadata.Edm.DataSpace.CSSpace);
                     mappingCollection.GenerateViews(new List<System.Data.Entity.Core.Metadata.Edm.EdmSchemaError>());
 
-                    db.sys_menus.Count(t => t.id == 0);
+                    db.SYS_MENUS.Count(t => t.id == 0);
                 }
 
             }

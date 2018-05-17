@@ -130,8 +130,8 @@ namespace ChildManager.UI.tongji
             string starttime = dateTimePicker1.Value.ToString("yyyy-MM-dd") + " 00:00:00";
             string endtime = dateTimePicker2.Value.ToString("yyyy-MM-dd") + " 23:59:59";
             string sqls = "select d.province couname,count(*) as cou "
-            + " from tb_childcheck a "
-            + " left join tb_childBase d on a.childid=d.id "
+            + " from TB_CHILDCHECK a "
+            + " left join TB_CHILDBASE d on a.childid=d.id "
             + "where  checkDay>='" + starttime + "' and checkDay <='" + endtime + "' group by d.province ";
 
             IList<countObj> list = bll.GetList(sqls);

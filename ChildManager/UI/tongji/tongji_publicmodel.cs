@@ -17,7 +17,7 @@ namespace ChildManager.UI.tongji
     {
         temp_reportbll reportbll = new temp_reportbll();
         temp_report_nodebll nodebll = new temp_report_nodebll();
-        private temp_report reportobj = null;
+        private TEMP_REPORT reportobj = null;
         int _report_id = 0;
 
         public tongji_publicmodel(string reportid)
@@ -53,7 +53,7 @@ namespace ChildManager.UI.tongji
                     prms.Add(new SqlParameter("@" + ct.Name, (ct.Text.Trim() + " " + ct.Tag?.ToString() ?? "").Trim()));
                 }
             }
-            string strSql = reportobj.report_procedure;
+            string strSql = reportobj.REPORT_PROCEDURE;
             DataSet ds = BLLStatic.GetDataSet(strSql, CommandType.StoredProcedure, prms.ToArray());
             dgvDiscourseList.DataSource = ds.Tables[0];
         }
@@ -68,11 +68,11 @@ namespace ChildManager.UI.tongji
         {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Filter = "导出Excel(*.xls)|*.xls";
-            sfd.FileName = "" + reportobj.report_displayname + "" + DateTime.Now.ToString("yyyyMMddhhmmss");
+            sfd.FileName = "" + reportobj.REPORT_DISPLAYNAME + "" + DateTime.Now.ToString("yyyyMMddhhmmss");
             if (sfd.ShowDialog() == DialogResult.OK)
             {
                 Cursor.Current = Cursors.WaitCursor;
-                bool res = ExcelHelper.CreateExcel(dgvDiscourseList, sfd.FileName, @"" + (reportobj.report_xls == "publicXls" ? "" : reportobj.report_xls) + "");
+                bool res = ExcelHelper.CreateExcel(dgvDiscourseList, sfd.FileName, @"" + (reportobj.REPORT_XLS == "publicXls" ? "" : reportobj.REPORT_XLS) + "");
                 if (res)
                     MessageBox.Show("导出成功！");
                 else
@@ -84,85 +84,85 @@ namespace ChildManager.UI.tongji
         private void tongji_putong_Load(object sender, EventArgs e)
         {
             reportobj = reportbll.Get(_report_id);
-            IList<temp_report_node> list = nodebll.GetList(_report_id);
+            IList<TEMP_REPORT_NODE> list = nodebll.GetList(_report_id);
 
-            string report_name = reportobj.report_name;
+            string report_name = reportobj.REPORT_NAME;
 
             int locationLeft = 3;
             int locationTop = 6;
             Font font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
-            foreach (temp_report_node node in list)
+            foreach (TEMP_REPORT_NODE node in list)
             {
-                Size presize = TextRenderer.MeasureText(node.node_prefix, font);
-                int width = Convert.ToInt32(node.node_width);
-                Size sufsize = TextRenderer.MeasureText(node.node_prefix, font);
+                Size presize = TextRenderer.MeasureText(node.NODE_PREFIX, font);
+                int width = Convert.ToInt32(node.NODE_WIDTH);
+                Size sufsize = TextRenderer.MeasureText(node.NODE_PREFIX, font);
                 if ((locationLeft + presize.Width + width + sufsize.Width) > 760)
                 {
                     locationLeft = 3;
                     locationTop += 26;
                 }
 
-                if (!String.IsNullOrEmpty(node.node_prefix))
+                if (!String.IsNullOrEmpty(node.NODE_PREFIX))
                 {
                     Label label = new Label();
                     label.AutoSize = true;
                     label.BackColor = Color.Transparent;
                     label.Font = font;
                     label.Location = new Point(locationLeft, (locationTop + 3));
-                    label.Name = "labelpre_" + node.node_name;
+                    label.Name = "labelpre_" + node.NODE_NAME;
                     label.Size = new Size((presize.Width - 3), presize.Height);
-                    label.Text = node.node_prefix;
+                    label.Text = node.NODE_PREFIX;
                     this.panel2.Controls.Add(label);
                     locationLeft += presize.Width;
                 }
 
-                if (node.node_type == "文本框")
+                if (node.NODE_TYPE == "文本框")
                 {
                     TextBox temcontrol = new TextBox();
                     temcontrol.Font = font;
                     temcontrol.Location = new Point(locationLeft, locationTop);
-                    temcontrol.Name = node.node_name;
+                    temcontrol.Name = node.NODE_NAME;
                     temcontrol.Size = new Size(width, 23);
                     this.panel2.Controls.Add(temcontrol);
                     locationLeft += width;
                 }
-                else if (node.node_type == "日期框")
+                else if (node.NODE_TYPE == "日期框")
                 {
                     DateTimePicker temcontrol = new DateTimePicker();
                     temcontrol.CustomFormat = "yyyy-MM-dd";
                     temcontrol.Font = font;
                     temcontrol.Format = DateTimePickerFormat.Custom;
                     temcontrol.Location = new Point(locationLeft, locationTop);
-                    temcontrol.Name = node.node_name;
-                    temcontrol.Tag = node.node_value;
+                    temcontrol.Name = node.NODE_NAME;
+                    temcontrol.Tag = node.NODE_VALUE;
                     temcontrol.Size = new Size(width, 23);
                     this.panel2.Controls.Add(temcontrol);
                     locationLeft += width;
                 }
-                else if (node.node_type == "下拉框")
+                else if (node.NODE_TYPE == "下拉框")
                 {
                     ComboBox temcontrol = new ComboBox();
                     temcontrol.Font = font;
                     temcontrol.FormattingEnabled = true;
-                    string[] comlist = node.node_value.Split(',');
+                    string[] comlist = node.NODE_VALUE.Split(',');
                     temcontrol.Items.AddRange(comlist);
                     temcontrol.Location = new Point(locationLeft, locationTop);
-                    temcontrol.Name = node.node_name;
+                    temcontrol.Name = node.NODE_NAME;
                     temcontrol.Size = new Size(width, 23);
                     this.panel2.Controls.Add(temcontrol);
                     locationLeft += width;
                 }
 
-                if (!String.IsNullOrEmpty(node.node_suffix))
+                if (!String.IsNullOrEmpty(node.NODE_SUFFIX))
                 {
                     Label label = new Label();
                     label.AutoSize = true;
                     label.BackColor = Color.Transparent;
                     label.Font = font;
                     label.Location = new Point(locationLeft, (locationTop + 3));
-                    label.Name = "labelsuf_" + node.node_name + "";
+                    label.Name = "labelsuf_" + node.NODE_NAME + "";
                     label.Size = new Size((presize.Width - 3), sufsize.Height);
-                    label.Text = node.node_suffix;
+                    label.Text = node.NODE_SUFFIX;
                     panel2.Controls.Add(label);
                     locationLeft += sufsize.Width;
                 }

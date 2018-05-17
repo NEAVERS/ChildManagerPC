@@ -100,10 +100,10 @@ namespace ChildManager.UI.jibenluru
                 //+ " ("
                 //+ "select childid,(select gaoweiyinsu+',' from tb_gaowei where childid=b.childid for xml path('')) as gaoweistr from tb_gaowei b where b.type='营养不良' group by childid"
                 //+ ") c "
-            + " tb_childBase a  "
-            + " left join(  select childid,max(fuzenday) fuzenday from tb_childcheck  group by childid  ) c  "
+            + " TB_CHILDBASE a  "
+            + " left join(  select childid,max(fuzenday) fuzenday from TB_CHILDCHECK  group by childid  ) c  "
             + " on a.id=c.childid   "
-            + " left join tb_childcheck b  on b.childid=c.childid and b.fuzenday=c.fuzenday  "
+            + " left join TB_CHILDCHECK b  on b.childid=c.childid and b.fuzenday=c.fuzenday  "
             + " left join child_yingyanggean d on a.id=d.childid "
             + "where  childBuildDay>='" + starttime + "' and childBuildDay <='" + endtime + "' and yingyangbuliang is not null and yingyangbuliang!=''";
 
@@ -193,7 +193,7 @@ namespace ChildManager.UI.jibenluru
             if (dataGridView1.RowCount > 0 && dataGridView1.CurrentCell.RowIndex != -1)
             {
                 ChildBaseInfoObj obj = dataGridView1.CurrentRow.Tag as ChildBaseInfoObj;
-                int id = obj.Id;
+                int id = obj.ID;
                 globalInfoClass.Wm_Index = id;
                 ChildMainForm mianform = this.ParentForm as ChildMainForm;
                 mianform.updateMdiForm("儿保建卡", typeof(PanelyibanxinxiMain));

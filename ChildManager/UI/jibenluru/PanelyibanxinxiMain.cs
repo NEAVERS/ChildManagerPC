@@ -207,8 +207,8 @@ namespace ChildManager.UI.jibenluru
                     b = childBaseInfobll.insertChildBaseInfo(obj);
                     if (b)
                     {
-                        globalInfoClass.Wm_Index = childBaseInfobll.getchild_id("select id from tb_childBase where healthCardNo='" + obj.HealthCardNo + "'");
-                        obj.Id = globalInfoClass.Wm_Index;
+                        globalInfoClass.Wm_Index = childBaseInfobll.getchild_id("select id from TB_CHILDBASE where healthCardNo='" + obj.HealthCardNo + "'");
+                        obj.ID = globalInfoClass.Wm_Index;
                         this.textBoxX2.Text = obj.HealthCardNo;
                         MessageBox.Show("保存成功！", "软件提示");
                         if (!String.IsNullOrEmpty(textBoxX12.Text.Trim()))
@@ -319,7 +319,7 @@ namespace ChildManager.UI.jibenluru
             ChildBaseInfoObj obj1 = new ChildBaseInfoObj();
             obj1.Id = globalInfoClass.Wm_Index;
             //自动生成保健卡号
-            obj1.HealthCardNo = childBaseInfobll.stateval("select max(healthCardNo)  from  tb_childBase").ToString();//保健卡号
+            obj1.HealthCardNo = childBaseInfobll.stateval("select max(healthCardNo)  from  TB_CHILDBASE").ToString();//保健卡号
             obj1.jiuzhenCardNo = textBoxX20.Text.Trim();//就诊卡号
             obj1.ChildName = textBoxX1.Text.Trim();//姓名
             obj1.ChildGender = comboBox1.Text.Trim();//性别
@@ -392,7 +392,7 @@ namespace ChildManager.UI.jibenluru
             if (id != -1)
             {
                 Cursor.Current = Cursors.WaitCursor;
-                string sqls = "select * from  tb_childBase where id=" + id + "";
+                string sqls = "select * from  TB_CHILDBASE where id=" + id + "";
                 obj = childBaseInfobll.getchildBaseobj(sqls);
 
                 if (obj != null)
@@ -733,7 +733,7 @@ namespace ChildManager.UI.jibenluru
             obj.zhenduan = this.textBox8.Text.Trim();
             obj.chuli = this.textBox9.Text.Trim();
 
-            builder.Append("insert into tb_childcheck (");
+            builder.Append("insert into TB_CHILDCHECK (");
             builder.Append("childId");
             builder.Append(",checkAge");
             builder.Append(",checkFactAge");
@@ -955,7 +955,7 @@ namespace ChildManager.UI.jibenluru
             obj.zhenduan = this.textBox8.Text.Trim();
             obj.chuli = this.textBox9.Text.Trim();
 
-            builder.Append("update  tb_childcheck set ");
+            builder.Append("update  TB_CHILDCHECK set ");
             builder.Append("childId=" + obj.ChildId + "");
             builder.Append(",checkAge='" + obj.CheckAge + "'");
             builder.Append(",checkFactAge='" + obj.CheckFactAge + "'");
@@ -1261,7 +1261,7 @@ namespace ChildManager.UI.jibenluru
             this.label51.Text = obj.ChildGender;
             this.label57.Text = Convert.ToDateTime(obj.ChildBirthDay).ToString("yyyy-MM-dd");
             
-            //string sqls = string.Format("select * from tb_childcheck where childId = " + globalInfoClass.Wm_Index + "");
+            //string sqls = string.Format("select * from TB_CHILDCHECK where childId = " + globalInfoClass.Wm_Index + "");
             //_checkobj = checkbll.getChildCheckobj(sqls);
             if (_checkobj != null)
             {
@@ -1454,7 +1454,7 @@ namespace ChildManager.UI.jibenluru
         public void Refreshcheckdatagridview()
         {
             dgvcheckMonthList.Rows.Clear();
-            string sqls1 = "select * from tb_childcheck where childId=" + globalInfoClass.Wm_Index+" order by checkday ";
+            string sqls1 = "select * from TB_CHILDCHECK where childId=" + globalInfoClass.Wm_Index+" order by checkday ";
             ArrayList checkobjlist = checkbll.getChildCheckList(sqls1);
             if (checkobjlist != null && checkobjlist.Count > 0)
             {
@@ -1783,7 +1783,7 @@ namespace ChildManager.UI.jibenluru
             }
             try
             {
-                string sqls = "select * from tb_childBase where id=" + globalInfoClass.Wm_Index + "";
+                string sqls = "select * from TB_CHILDBASE where id=" + globalInfoClass.Wm_Index + "";
                 ChildBaseInfoObj baseobj = childBaseInfobll.getchildBaseobj(sqls);
                 if (baseobj == null)
                 {
@@ -1805,7 +1805,7 @@ namespace ChildManager.UI.jibenluru
                     //    return;
                     //}
                     //yf = checkInfo.getDqCheckMonth();
-                    //string sqls1 = string.Format("select * from tb_childcheck where childId=" + globalInfoClass.Wm_Index + " and checkMonth='" + yf + "'  order by checkDay desc");
+                    //string sqls1 = string.Format("select * from TB_CHILDCHECK where childId=" + globalInfoClass.Wm_Index + " and checkMonth='" + yf + "'  order by checkDay desc");
                     //ChildCheckObj checkobj = childcheckbll.getChildCheckobj(sqls1);
                     //if (checkobj != null)
                     //{
@@ -1850,7 +1850,7 @@ namespace ChildManager.UI.jibenluru
                         Cursor.Current = Cursors.WaitCursor;
                         try
                         {
-                            string sqls = "update tb_childBase set status = '0'  where id=" + globalInfoClass.Wm_Index;
+                            string sqls = "update TB_CHILDBASE set status = '0'  where id=" + globalInfoClass.Wm_Index;
                             if (childBaseInfobll.updaterecord(sqls) > 0)
                             {
 
@@ -1886,7 +1886,7 @@ namespace ChildManager.UI.jibenluru
                         {
                             if (_checkobj != null)
                             {
-                                string sqls = "delete from tb_childcheck  where id=" + _checkobj.Id;
+                                string sqls = "delete from TB_CHILDCHECK  where id=" + _checkobj.Id;
                                 if (checkbll.deleterecord(sqls) > 0)
                                 {
 
@@ -2006,7 +2006,7 @@ namespace ChildManager.UI.jibenluru
         //        OracleDataReader sdr = null;
         //        HosDateLogic dg = new HosDateLogic();
 
-        //        string sqls = string.Format("select * from tb_childBase where status='1' ");
+        //        string sqls = string.Format("select * from TB_CHILDBASE where status='1' ");
         //        if (!String.IsNullOrEmpty(textBoxX20.Text))
         //        {
         //            sqls += " and jiuzhenCardNo = '" + textBoxX20.Text + "'";
@@ -2020,7 +2020,7 @@ namespace ChildManager.UI.jibenluru
         //        if (list != null && list.Count > 0)
         //        {
         //            ChildBaseInfoObj obj = list[0] as ChildBaseInfoObj;
-        //            int id = obj.Id;
+        //            int id = obj.ID;
         //            globalInfoClass.Wm_Index = id;
         //            this.obj = obj;
         //            this.RefreshCode();
@@ -2281,7 +2281,7 @@ namespace ChildManager.UI.jibenluru
         {
             if (tabControl1.SelectedTab == tabPage2)
             {
-                tb_healthcheck_moban healthmoban = new tb_healthcheck_moban();
+                TB_HEALTHCHECK_MOBAN healthmoban = new TB_HEALTHCHECK_MOBAN();
                 healthmoban.zhusu = this.textBox5.Text.Trim();
                 healthmoban.bingshi = this.textBox6.Text.Trim();
                 healthmoban.tijian = this.textBox7.Text.Trim();
@@ -2300,7 +2300,7 @@ namespace ChildManager.UI.jibenluru
                 mobanlist.ShowDialog();
                 if(mobanlist.DialogResult == DialogResult.OK)
                 {
-                    tb_healthcheck_moban healthmoban = mobanlist._healthcheckobj;
+                    TB_HEALTHCHECK_MOBAN healthmoban = mobanlist._healthcheckobj;
                     this.textBox5.Text = healthmoban.zhusu;
                     this.textBox6.Text = healthmoban.bingshi;
                     this.textBox7.Text = healthmoban.tijian;
@@ -2320,7 +2320,7 @@ namespace ChildManager.UI.jibenluru
             }
             try
             {
-                string sqls = "select * from tb_childBase where id=" + globalInfoClass.Wm_Index + "";
+                string sqls = "select * from TB_CHILDBASE where id=" + globalInfoClass.Wm_Index + "";
                 ChildBaseInfoObj baseobj = childBaseInfobll.getchildBaseobj(sqls);
                 if (baseobj == null)
                 {
@@ -2358,7 +2358,7 @@ namespace ChildManager.UI.jibenluru
             }
             try
             {
-                string sqls = "select * from tb_childBase where id=" + globalInfoClass.Wm_Index + "";
+                string sqls = "select * from TB_CHILDBASE where id=" + globalInfoClass.Wm_Index + "";
                 ChildBaseInfoObj baseobj = childBaseInfobll.getchildBaseobj(sqls);
                 if (baseobj == null)
                 {

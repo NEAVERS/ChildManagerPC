@@ -35,9 +35,9 @@ namespace login.UI
 
         private void Paneltsb_yingyang_zhuanan_Load(object sender, EventArgs e)
         {
-            textBoxX1.Text = _baseobj.ChildName;
-            textBoxX4.Text = _baseobj.ChildGender;
-            textBoxX5.Text = _baseobj.ChildBirthDay;
+            textBoxX1.Text = _baseobj.CHILDNAME;
+            textBoxX4.Text = _baseobj.CHILDGENDER;
+            textBoxX5.Text = _baseobj.CHILDBIRTHDAY;
             textBoxX8.Text = _baseobj.MotherName;
             textBoxX9.Text = _baseobj.Telephone;
             textBoxX10.Text = _baseobj.address;
@@ -76,7 +76,7 @@ namespace login.UI
 
         public void refreshRecordList()
         {
-            string childchecksqlstr = "select *,b.id recordid from tb_childcheck a left join child_yingyanggean_record b on a.id=b.checkid "
+            string childchecksqlstr = "select *,b.id recordid from TB_CHILDCHECK a left join child_yingyanggean_record b on a.id=b.checkid "
                 + "where a.childid=" + _baseobj.Id;//+ " and a.checkDay>=(select max(recordtime)+' 00:00:00' from tb_gaowei where childid=" + _baseobj.Id + ")";
             ArrayList checklist = yingyanggeanrecordbll.getChildCheckAndYingyangList(childchecksqlstr);
 

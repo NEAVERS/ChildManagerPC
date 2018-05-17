@@ -223,10 +223,10 @@ namespace ChildManager.UI.jibenluru
             //+ " ("
             //+ "select childid,(select gaoweiyinsu+',' from tb_gaowei where childid=b.childid for xml path('')) as gaoweistr from tb_gaowei b where b.type='营养不良' group by childid"
             //+ ") c "
-            + " tb_childBase a  "
-            + " left join(  select childid,max(fuzenday) fuzenday from tb_childcheck  group by childid  ) c  "
+            + " TB_CHILDBASE a  "
+            + " left join(  select childid,max(fuzenday) fuzenday from TB_CHILDCHECK  group by childid  ) c  "
             + " on a.id=c.childid   "
-            + " left join tb_childcheck b  on b.childid=c.childid and b.fuzenday=c.fuzenday  "
+            + " left join TB_CHILDCHECK b  on b.childid=c.childid and b.fuzenday=c.fuzenday  "
             + " left join child_yingyanggean d on a.id=d.childid "
             + "where  childBuildDay>='" + starttime + "' and childBuildDay <='" + endtime + "' and yingyangbuliang is not null and yingyangbuliang!=''";
 
