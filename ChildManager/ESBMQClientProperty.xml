@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+ <root>
+ 
+   <cion>
+    <qManager connectionString="QMGR.S36_1"/>
+    <channel connectionString="C.S36.C"/>
+    <hostname connectionString="172.18.111.134"/>
+    <port connectionString="5036"/>
+    <BS10006_0 connectionString="EQ.S36.BS10006.PUT"/>
+    <BS10006_1 connectionString="EQ.S36.BS10006.GET"/>
+    <MS02004_0 connectionString="EQ.S36.MS02004.PUT"/>
+    <MS02004_1 connectionString="EQ.S36.MS02004.GET"/>
+    <MS02023_0 connectionString="EQ.S36.MS02023.PUT"/>
+    <MS02023_1 connectionString="EQ.S36.MS02023.GET"/>
+  </cion>
+
+</root>

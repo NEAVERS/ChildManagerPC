@@ -1,0 +1,1 @@
+alter table tb_childbase add jtzz_cx varchar(10),sfst varchar(10),sfzy varchar(50)

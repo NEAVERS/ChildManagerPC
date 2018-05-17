@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="GB2312" ?> 
+<root>  
+<person name="文盲" id="zr"></person>  
+<person name="小学" id="fzr"></person>  
+<person name="初中" id="zq"></person>  
+<person name="高中" id="ys"></person>  
+<person name="中专" id="cq"></person>  
+<person name="专科" id="cs"></person>
+<person name="本科" id="cs"></person>  
+<person name="硕士" id="cs"></person>  
+<person name="博士" id="cs"></person>  
+<person name="博士后" id="cs"></person>     
+</root>  

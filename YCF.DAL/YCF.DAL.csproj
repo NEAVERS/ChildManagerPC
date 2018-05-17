@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5848C98E-3A51-44B7-9808-5A3565105DD4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YCF.DAL</RootNamespace>
+    <AssemblyName>YCF.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\DALStatic.cs" />
+    <Compile Include="cepingshi\cp_ados2_tabdal.cs" />
+    <Compile Include="cepingshi\cp_ados3_tabdal.cs" />
+    <Compile Include="cepingshi\cp_ados4_tabdal.cs" />
+    <Compile Include="cepingshi\cp_cdi1_tabdal.cs" />
+    <Compile Include="cepingshi\cp_gmyjc_tabdal.cs" />
+    <Compile Include="cepingshi\cp_gyqt_tabdal.cs" />
+    <Compile Include="cepingshi\cp_peabody_tabdal.cs" />
+    <Compile Include="cepingshi\cp_gy_tabdal.cs" />
+    <Compile Include="cepingshi\cp_ddst_tabdal.cs" />
+    <Compile Include="cepingshi\cp_dst_tabdal.cs" />
+    <Compile Include="cepingshi\cp_ptoni_tabdal.cs" />
+    <Compile Include="cepingshi\cp_tpch_tabdal.cs" />
+    <Compile Include="cepingshi\cp_ppvt_tabdal.cs" />
+    <Compile Include="cepingshi\cp_cdi_tabdal.cs" />
+    <Compile Include="cepingshi\cp_dream_tabdal.cs" />
+    <Compile Include="Template\tab_ysf_xdnldal.cs" />
+    <Compile Include="Template\tab_bzfzh_Numdal.cs" />
+    <Compile Include="Template\tab_Peabody_Numdal.cs" />
+    <Compile Include="Template\tab_templet_Infodal.cs" />
+    <Compile Include="Template\tab_person_datadal.cs" />
+    <Compile Include="Template\tab_dept_datadal.cs" />
+    <Compile Include="Template\tab_yysc_Numdal.cs" />
+    <Compile Include="Template\mb_wydal.cs" />
+    <Compile Include="Template\mb_zddal.cs" />
+    <Compile Include="ys_gdzpxza_tabdal.cs" />
+    <Compile Include="ys_ywgm_tabdal.cs" />
+    <Compile Include="ys_yybl_tabdal.cs" />
+    <Compile Include="yuyue\yy_asd_tabdal.cs" />
+    <Compile Include="yuyue\yy_pz_details_tabdal.cs" />
+    <Compile Include="yuyue\yy_pz_tabdal.cs" />
+    <Compile Include="cepingshi\cp_zylcy_tabdal.cs" />
+    <Compile Include="cepingshi\cp_zqyyfyjc_tabdal.cs" />
+    <Compile Include="cepingshi\cp_gesell_tabdal.cs" />
+    <Compile Include="cepingshi\cp_sm_tabdal.cs" />
+    <Compile Include="cepingshi\cp_yy_coudal.cs" />
+    <Compile Include="cepingshi\cp_yy_tabdal.cs" />
+    <Compile Include="cepingshi\cp_wisc_tabdal.cs" />
+    <Compile Include="cepingshi\cp_wycsi_tabdal.cs" />
+    <Compile Include="cepingshi\cp_ados1_tabdal.cs" />
+    <Compile Include="cepingshi\cp_asd2_tabdal.cs" />
+    <Compile Include="cepingshi\cp_asd1_tabdal.cs" />
+    <Compile Include="DALBase.cs" />
+    <Compile Include="nursinfo\hs_yy_qt_tabdal.cs" />
+    <Compile Include="nursinfo\hs_yy_gw_tabdal.cs" />
+    <Compile Include="nursinfo\hs_yy_xx_tabdal.cs" />
+    <Compile Include="sys\sys_roleDAL.cs" />
+    <Compile Include="sys\sys_role_menuDAL.cs" />
+    <Compile Include="sys\sys_usersDAL.cs" />
+    <Compile Include="tb_childbasedal.cs" />
+    <Compile Include="cepingshi\cp_adhd_tabdal.cs" />
+    <Compile Include="tb_childcheckdal.cs" />
+    <Compile Include="sys\sysmenuDAL.cs" />
+    <Compile Include="temp_reportdal.cs" />
+    <Compile Include="temp_report_nodedal.cs" />
+    <Compile Include="tj_yingtijianDal.cs" />
+    <Compile Include="tj_diqudal.cs" />
+    <Compile Include="tb_healthcheck_mobandal.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="xunlianshi\xl_yy_coudal.cs" />
+    <Compile Include="xunlianshi\xl_yy_tabdal.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YCF.Common\YCF.Common.csproj">
+      <Project>{41C8F68A-9608-4ECE-B632-3577D4247F6C}</Project>
+      <Name>YCF.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YCF.Model\YCF.Model.csproj">
+      <Project>{01b499be-88f1-4b5e-a0ca-7db34f48a243}</Project>
+      <Name>YCF.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Entities2010.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="Entities2010StoreContainer">
+    <EntitySet Name="tb_childcheck" EntityType="Entities2010.Store.tb_childcheck" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_gaowei" EntityType="Entities2010.Store.tb_gaowei" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="tb_childcheck">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="childId" Type="numeric" />
+    <Property Name="checkAge" Type="varchar" MaxLength="10" />
+    <Property Name="checkFactAge" Type="varchar" MaxLength="10" />
+    <Property Name="checkDay" Type="varchar" MaxLength="50" />
+    <Property Name="doctorName" Type="varchar" MaxLength="50" />
+    <Property Name="checkHeight" Type="varchar" MaxLength="10" />
+    <Property Name="checkWeight" Type="varchar" MaxLength="10" />
+    <Property Name="checkTouwei" Type="varchar" MaxLength="10" />
+    <Property Name="checkZuogao" Type="varchar" MaxLength="10" />
+    <Property Name="checkTunwei" Type="varchar" MaxLength="10" />
+    <Property Name="checkQianlu" Type="varchar" MaxLength="20" />
+    <Property Name="checkIQ" Type="varchar" MaxLength="20" />
+    <Property Name="checkZiping" Type="varchar" MaxLength="50" />
+    <Property Name="yuCeHeight" Type="varchar" MaxLength="10" />
+    <Property Name="leftyan" Type="varchar" MaxLength="20" />
+    <Property Name="rightyan" Type="varchar" MaxLength="20" />
+    <Property Name="leftyanshili" Type="varchar" MaxLength="20" />
+    <Property Name="rightyanshili" Type="varchar" MaxLength="20" />
+    <Property Name="xieshi" Type="varchar" MaxLength="20" />
+    <Property Name="lefter" Type="varchar" MaxLength="20" />
+    <Property Name="righter" Type="varchar" MaxLength="20" />
+    <Property Name="lefterlisten" Type="varchar" MaxLength="20" />
+    <Property Name="rightlisten" Type="varchar" MaxLength="20" />
+    <Property Name="checkbi" Type="varchar" MaxLength="20" />
+    <Property Name="kouQiang" Type="varchar" MaxLength="20" />
+    <Property Name="yaciNumber" Type="varchar" MaxLength="10" />
+    <Property Name="yuciNumber" Type="varchar" MaxLength="10" />
+    <Property Name="skin" Type="varchar" MaxLength="20" />
+    <Property Name="lingbajie" Type="varchar" MaxLength="20" />
+    <Property Name="bianTaoti" Type="varchar" MaxLength="20" />
+    <Property Name="xinZang" Type="varchar" MaxLength="20" />
+    <Property Name="feiBu" Type="varchar" MaxLength="20" />
+    <Property Name="ganZang" Type="varchar" MaxLength="20" />
+    <Property Name="piZang" Type="varchar" MaxLength="20" />
+    <Property Name="qiZhi" Type="varchar" MaxLength="20" />
+    <Property Name="siZhi" Type="varchar" MaxLength="20" />
+    <Property Name="xiongBu" Type="varchar" MaxLength="20" />
+    <Property Name="miNiaoQi" Type="varchar" MaxLength="20" />
+    <Property Name="wuGuan" Type="varchar" MaxLength="20" />
+    <Property Name="jiZhu" Type="varchar" MaxLength="20" />
+    <Property Name="pingPqiu" Type="varchar" MaxLength="50" />
+    <Property Name="checkContent" Type="varchar" MaxLength="100" />
+    <Property Name="yufangJiezhong" Type="varchar" MaxLength="50" />
+    <Property Name="bloodseSu" Type="varchar" MaxLength="20" />
+    <Property Name="shiWugouCheng" Type="varchar" MaxLength="50" />
+    <Property Name="vitd" Type="varchar" MaxLength="50" />
+    <Property Name="bigSport" Type="varchar" MaxLength="50" />
+    <Property Name="spirtSport" Type="varchar" MaxLength="50" />
+    <Property Name="laguage" Type="varchar" MaxLength="20" />
+    <Property Name="signSocial" Type="varchar" MaxLength="50" />
+    <Property Name="otherBingshi" Type="varchar" MaxLength="100" />
+    <Property Name="handle" Type="varchar" MaxLength="100" />
+    <Property Name="diagnose" Type="varchar" MaxLength="100" />
+    <Property Name="checkMonth" Type="varchar" MaxLength="50" />
+    <Property Name="fuzenDay" Type="varchar" MaxLength="50" />
+    <Property Name="fubu" Type="varchar" MaxLength="20" />
+    <Property Name="fuwei" Type="varchar" MaxLength="20" />
+    <Property Name="nuerzhidao" Type="varchar" MaxLength="2000" />
+    <Property Name="checkdiagnose" Type="varchar" MaxLength="2000" />
+    <Property Name="zhushi" Type="varchar" MaxLength="50" />
+    <Property Name="fushi" Type="varchar" MaxLength="50" />
+    <Property Name="shehui" Type="varchar" MaxLength="50" />
+    <Property Name="dongzuo" Type="varchar" MaxLength="50" />
+    <Property Name="toulu" Type="varchar" MaxLength="50" />
+    <Property Name="gouloubing" Type="varchar" MaxLength="50" />
+    <Property Name="zonghefazhan" Type="varchar" MaxLength="2000" />
+    <Property Name="fuzhujiancha" Type="varchar" MaxLength="2000" />
+    <Property Name="otherjiancha" Type="varchar" MaxLength="2000" />
+    <Property Name="zhusu" Type="varchar" MaxLength="4000" />
+    <Property Name="bingshi" Type="varchar" MaxLength="4000" />
+    <Property Name="tijian" Type="varchar" MaxLength="4000" />
+    <Property Name="zhenduan" Type="varchar" MaxLength="4000" />
+    <Property Name="chuli" Type="varchar" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="tb_gaowei">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="childId" Type="int" />
+    <Property Name="gaoweiyinsu" Type="varchar" MaxLength="50" />
+    <Property Name="recordtime" Type="varchar" MaxLength="50" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="doctorName" Type="varchar" MaxLength="50" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,1479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="jianyiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="cp_adhd_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="adhd1_bstgz" Type="varchar" MaxLength="10" />
+    <Property Name="adhd1_pf" Type="varchar" MaxLength="10" />
+    <Property Name="adhd1_jl" Type="varchar" MaxLength="50" />
+    <Property Name="adhd2_bstgz" Type="varchar" MaxLength="10" />
+    <Property Name="adhd2_zyqx" Type="varchar" MaxLength="10" />
+    <Property Name="adhd2_zyqx_sum" Type="varchar" MaxLength="10" />
+    <Property Name="adhd2_ddcd" Type="varchar" MaxLength="10" />
+    <Property Name="adhd2_ddcd_sum" Type="varchar" MaxLength="10" />
+    <Property Name="adhd2_gnsh" Type="varchar" MaxLength="10" />
+    <Property Name="adhd2_gnsh_sum" Type="varchar" MaxLength="10" />
+    <Property Name="adhd2_jl" Type="varchar" MaxLength="10" />
+    <Property Name="adhd3_bstgz" Type="varchar" MaxLength="10" />
+    <Property Name="adhd3_dlwk" Type="varchar" MaxLength="10" />
+    <Property Name="adhd3_dlwk_sum" Type="varchar" MaxLength="10" />
+    <Property Name="adhd3_pxza" Type="varchar" MaxLength="10" />
+    <Property Name="adhd3_pxza_sum" Type="varchar" MaxLength="10" />
+    <Property Name="adhd3_jlyy" Type="varchar" MaxLength="10" />
+    <Property Name="adhd3_jlyy_sum" Type="varchar" MaxLength="10" />
+    <Property Name="adhd4_bstgz" Type="varchar" MaxLength="10" />
+    <Property Name="adhd4_zyqx" Type="varchar" MaxLength="10" />
+    <Property Name="adhd4_zyqx_sum" Type="varchar" MaxLength="10" />
+    <Property Name="adhd4_ddcd" Type="varchar" MaxLength="10" />
+    <Property Name="adhd4_ddcd_sum" Type="varchar" MaxLength="10" />
+    <Property Name="adhd4_gnsh" Type="varchar" MaxLength="10" />
+    <Property Name="adhd4_gnsh_sum" Type="varchar" MaxLength="10" />
+    <Property Name="adhd4_jl" Type="varchar" MaxLength="10" />
+    <Property Name="cszqm" Type="varchar" MaxLength="50" />
+    <Property Name="csrq" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cp_ados1_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="gt_cxtr" Type="varchar" MaxLength="10" />
+    <Property Name="gt_kb" Type="varchar" MaxLength="10" />
+    <Property Name="gt_sytrst" Type="varchar" MaxLength="10" />
+    <Property Name="gt_zwdz" Type="varchar" MaxLength="10" />
+    <Property Name="gt_zsdz" Type="varchar" MaxLength="10" />
+    <Property Name="gt_sum" Type="varchar" MaxLength="10" />
+    <Property Name="hd_bxc" Type="varchar" MaxLength="10" />
+    <Property Name="hd_cxtr" Type="varchar" MaxLength="10" />
+    <Property Name="hd_hdzgxlq" Type="varchar" MaxLength="10" />
+    <Property Name="hd_zs" Type="varchar" MaxLength="10" />
+    <Property Name="hd_zfdzd" Type="varchar" MaxLength="10" />
+    <Property Name="hd_dxhxt" Type="varchar" MaxLength="10" />
+    <Property Name="hd_zdbd" Type="varchar" MaxLength="10" />
+    <Property Name="hd_sum" Type="varchar" MaxLength="10" />
+    <Property Name="gt_hd_sum" Type="varchar" MaxLength="10" />
+    <Property Name="yx_sywp" Type="varchar" MaxLength="10" />
+    <Property Name="yx_xx" Type="varchar" MaxLength="10" />
+    <Property Name="yx_sum" Type="varchar" MaxLength="10" />
+    <Property Name="kbxw_dyxsc" Type="varchar" MaxLength="10" />
+    <Property Name="kbxw_shsz" Type="varchar" MaxLength="10" />
+    <Property Name="kbxw_btxc" Type="varchar" MaxLength="10" />
+    <Property Name="kbxw_sum" Type="varchar" MaxLength="10" />
+    <Property Name="jl" Type="varchar" MaxLength="10" />
+    <Property Name="pgzqm" Type="varchar" MaxLength="50" />
+    <Property Name="pgrq" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+    <Property Name="bz" Type="varchar" MaxLength="100" />
+    <Property Name="bz_visible" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cp_ados2_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="gt_zdbd" Type="varchar" MaxLength="10" />
+    <Property Name="gt_kb" Type="varchar" MaxLength="10" />
+    <Property Name="gt_hh" Type="varchar" MaxLength="10" />
+    <Property Name="gt_zwdz" Type="varchar" MaxLength="10" />
+    <Property Name="gt_msxdz" Type="varchar" MaxLength="10" />
+    <Property Name="gt_sum" Type="varchar" MaxLength="10" />
+    <Property Name="hd_bxc" Type="varchar" MaxLength="10" />
+    <Property Name="hd_cxtr" Type="varchar" MaxLength="10" />
+    <Property Name="hd_zfdzd" Type="varchar" MaxLength="10" />
+    <Property Name="hd_zdbd" Type="varchar" MaxLength="10" />
+    <Property Name="hd_sjfy" Type="varchar" MaxLength="10" />
+    <Property Name="hd_xhxshgt" Type="varchar" MaxLength="10" />
+    <Property Name="hd_gx" Type="varchar" MaxLength="10" />
+    <Property Name="hd_sum" Type="varchar" MaxLength="10" />
+    <Property Name="gt_hd_sum" Type="varchar" MaxLength="10" />
+    <Property Name="xx_fs" Type="varchar" MaxLength="10" />
+    <Property Name="kbxw_dyxsc" Type="varchar" MaxLength="10" />
+    <Property Name="kbxw_shsz" Type="varchar" MaxLength="10" />
+    <Property Name="kbxw_btxc" Type="varchar" MaxLength="10" />
+    <Property Name="kbxw_sum" Type="varchar" MaxLength="10" />
+    <Property Name="jl" Type="varchar" MaxLength="10" />
+    <Property Name="pgzqm" Type="varchar" MaxLength="50" />
+    <Property Name="pgrq" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+    <Property Name="bz" Type="varchar" MaxLength="100" />
+    <Property Name="bz_visible" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cp_ados3_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="gt_kb" Type="varchar" MaxLength="10" />
+    <Property Name="gt_bgsj" Type="varchar" MaxLength="10" />
+    <Property Name="gt_hh" Type="varchar" MaxLength="10" />
+    <Property Name="gt_msxdz" Type="varchar" MaxLength="10" />
+    <Property Name="gt_sum" Type="varchar" MaxLength="10" />
+    <Property Name="hd_bxc" Type="varchar" MaxLength="10" />
+    <Property Name="hd_dcl" Type="varchar" MaxLength="10" />
+    <Property Name="hd_zdbd" Type="varchar" MaxLength="10" />
+    <Property Name="hd_sjfy" Type="varchar" MaxLength="10" />
+    <Property Name="hd_xhxsh" Type="varchar" MaxLength="10" />
+    <Property Name="hd_gx" Type="varchar" MaxLength="10" />
+    <Property Name="hd_sum" Type="varchar" MaxLength="10" />
+    <Property Name="gt_hd_sum" Type="varchar" MaxLength="10" />
+    <Property Name="yx_xx" Type="varchar" MaxLength="10" />
+    <Property Name="kbxw_dyxsc" Type="varchar" MaxLength="10" />
+    <Property Name="kbxw_shsz" Type="varchar" MaxLength="10" />
+    <Property Name="kbxw_btxc" Type="varchar" MaxLength="10" />
+    <Property Name="kbxw_qpxw" Type="varchar" MaxLength="10" />
+    <Property Name="jl" Type="varchar" MaxLength="10" />
+    <Property Name="pgzqm" Type="varchar" MaxLength="50" />
+    <Property Name="pgrq" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="hd_cxtr" Type="varchar" MaxLength="10" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+    <Property Name="kbxw_sum" Type="varchar" MaxLength="10" />
+    <Property Name="bz" Type="varchar" MaxLength="100" />
+    <Property Name="bz_visible" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cp_ados4_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="gt_kb" Type="varchar" MaxLength="10" />
+    <Property Name="gt_hh" Type="varchar" MaxLength="10" />
+    <Property Name="gt_msxdz" Type="varchar" MaxLength="10" />
+    <Property Name="gt_jjxdz" Type="varchar" MaxLength="10" />
+    <Property Name="gt_sum" Type="varchar" MaxLength="10" />
+    <Property Name="hd_bxc" Type="varchar" MaxLength="10" />
+    <Property Name="hd_cxtr" Type="varchar" MaxLength="10" />
+    <Property Name="hd_dtrqx" Type="varchar" MaxLength="10" />
+    <Property Name="hd_zr" Type="varchar" MaxLength="10" />
+    <Property Name="hd_zdbd" Type="varchar" MaxLength="10" />
+    <Property Name="hd_sjfy" Type="varchar" MaxLength="10" />
+    <Property Name="hd_xhxshgt" Type="varchar" MaxLength="10" />
+    <Property Name="hd_sum" Type="varchar" MaxLength="10" />
+    <Property Name="gt_hd_sum" Type="varchar" MaxLength="10" />
+    <Property Name="xx_fs" Type="varchar" MaxLength="10" />
+    <Property Name="kbxw_dyxsc" Type="varchar" MaxLength="10" />
+    <Property Name="kbxw_shsz" Type="varchar" MaxLength="10" />
+    <Property Name="kbxw_btxc" Type="varchar" MaxLength="10" />
+    <Property Name="kbxw_qpxw" Type="varchar" MaxLength="10" />
+    <Property Name="jl" Type="varchar" MaxLength="10" />
+    <Property Name="pgzqm" Type="varchar" MaxLength="50" />
+    <Property Name="pgrq" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+    <Property Name="kbxw_sum" Type="varchar" MaxLength="10" />
+    <Property Name="bz" Type="varchar" MaxLength="100" />
+    <Property Name="bz_visible" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cp_asd1_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="m_chat_gwxm" Type="varchar" MaxLength="10" />
+    <Property Name="m_chat_ryxm" Type="varchar" MaxLength="10" />
+    <Property Name="m_chat_jl" Type="varchar" MaxLength="10" />
+    <Property Name="abc_df" Type="varchar" MaxLength="10" />
+    <Property Name="abc_jl" Type="varchar" MaxLength="10" />
+    <Property Name="cszqm" Type="varchar" MaxLength="50" />
+    <Property Name="csrq" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+    <Property Name="bz" Type="varchar" MaxLength="100" />
+    <Property Name="bz_visible" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cp_asd2_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="srs_zj" Type="varchar" MaxLength="10" />
+    <Property Name="srs_rz" Type="varchar" MaxLength="10" />
+    <Property Name="srs_jliu" Type="varchar" MaxLength="10" />
+    <Property Name="srs_dj" Type="varchar" MaxLength="10" />
+    <Property Name="srs_xwfs" Type="varchar" MaxLength="10" />
+    <Property Name="srs_zlb" Type="varchar" MaxLength="10" />
+    <Property Name="srs_jl" Type="varchar" MaxLength="10" />
+    <Property Name="abc_df" Type="varchar" MaxLength="10" />
+    <Property Name="abc_jl" Type="varchar" MaxLength="10" />
+    <Property Name="cszqm" Type="varchar" MaxLength="50" />
+    <Property Name="csrq" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+    <Property Name="bz" Type="varchar" MaxLength="100" />
+    <Property Name="bz_visible" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cp_cdi_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="yylj_df" Type="varchar" MaxLength="10" />
+    <Property Name="yylj_yl" Type="varchar" MaxLength="10" />
+    <Property Name="yylj_p50" Type="varchar" MaxLength="50" />
+    <Property Name="yylj_p75" Type="varchar" MaxLength="10" />
+    <Property Name="chbd_df" Type="varchar" MaxLength="10" />
+    <Property Name="chbd_yl" Type="varchar" MaxLength="10" />
+    <Property Name="chbd_p50" Type="varchar" MaxLength="50" />
+    <Property Name="chbd_p75" Type="varchar" MaxLength="10" />
+    <Property Name="bstgz" Type="varchar" MaxLength="10" />
+    <Property Name="etdyr" Type="varchar" MaxLength="10" />
+    <Property Name="cszqm" Type="varchar" MaxLength="50" />
+    <Property Name="csrq" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cp_cdi1_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="chbd_df" Type="varchar" MaxLength="10" />
+    <Property Name="chbd_p50" Type="varchar" MaxLength="50" />
+    <Property Name="chbd_p75" Type="varchar" MaxLength="10" />
+    <Property Name="bstgz" Type="varchar" MaxLength="10" />
+    <Property Name="etdyr" Type="varchar" MaxLength="10" />
+    <Property Name="cszqm" Type="varchar" MaxLength="50" />
+    <Property Name="csrq" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+    <Property Name="externalid" Type="int" />
+  </EntityType>
+  <EntityType Name="cp_ddst_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="ddst_grysh" Type="varchar" MaxLength="10" />
+    <Property Name="ddst_jxydnq" Type="varchar" MaxLength="10" />
+    <Property Name="ddst_yynq" Type="varchar" MaxLength="50" />
+    <Property Name="ddst_dydnq" Type="varchar" MaxLength="10" />
+    <Property Name="ddst_jg" Type="varchar" MaxLength="10" />
+    <Property Name="cszqm" Type="varchar" MaxLength="50" />
+    <Property Name="csrq" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="externalid" Type="int" />
+    <Property Name="jz_ddst_grysh" Type="varchar" MaxLength="50" />
+    <Property Name="jz_ddst_yynq" Type="varchar" MaxLength="50" />
+    <Property Name="jz_ddst_dydnq" Type="varchar" MaxLength="50" />
+    <Property Name="jz_ddst_jg" Type="varchar" MaxLength="50" />
+    <Property Name="jz_ddst_jxydnq" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cp_dream_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="bzh_ztyy" Type="varchar" MaxLength="50" />
+    <Property Name="bzh_tllj" Type="varchar" MaxLength="50" />
+    <Property Name="bzh_yybd" Type="varchar" MaxLength="50" />
+    <Property Name="bzh_yy" Type="varchar" MaxLength="50" />
+    <Property Name="bzh_jf" Type="varchar" MaxLength="50" />
+    <Property Name="bfdj_ztyy" Type="varchar" MaxLength="50" />
+    <Property Name="bfdj_tllj" Type="varchar" MaxLength="50" />
+    <Property Name="bfdj_yybd" Type="varchar" MaxLength="50" />
+    <Property Name="bfdj_yy" Type="varchar" MaxLength="50" />
+    <Property Name="bfdj_jf" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+    <Property Name="cszqm" Type="varchar" MaxLength="50" />
+    <Property Name="csrq" Type="varchar" MaxLength="50" />
+    <Property Name="doctor_result" Type="varchar" MaxLength="2000" />
+    <Property Name="doctor_advice" Type="varchar" MaxLength="2000" />
+    <Property Name="bz" Type="varchar" MaxLength="100" />
+    <Property Name="bz_visible" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cp_dst_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="dst_yszf" Type="varchar" MaxLength="10" />
+    <Property Name="dst_dq" Type="varchar" MaxLength="50" />
+    <Property Name="dst_jg" Type="varchar" MaxLength="10" />
+    <Property Name="cszqm" Type="varchar" MaxLength="50" />
+    <Property Name="csrq" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cp_gesell_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="syx_dq" Type="varchar" MaxLength="10" />
+    <Property Name="syx_da" Type="varchar" MaxLength="10" />
+    <Property Name="dydn_dq" Type="varchar" MaxLength="10" />
+    <Property Name="dydn_da" Type="varchar" MaxLength="10" />
+    <Property Name="xydn_dq" Type="varchar" MaxLength="10" />
+    <Property Name="xydn_da" Type="varchar" MaxLength="10" />
+    <Property Name="yyn_dq" Type="varchar" MaxLength="10" />
+    <Property Name="yyn_da" Type="varchar" MaxLength="10" />
+    <Property Name="grsj_dq" Type="varchar" MaxLength="10" />
+    <Property Name="grsj_da" Type="varchar" MaxLength="10" />
+    <Property Name="hz" Type="varchar" MaxLength="20" />
+    <Property Name="fy" Type="varchar" MaxLength="20" />
+    <Property Name="zyl" Type="varchar" MaxLength="20" />
+    <Property Name="qx" Type="varchar" MaxLength="20" />
+    <Property Name="cszqm" Type="varchar" MaxLength="50" />
+    <Property Name="csrq" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+    <Property Name="bz" Type="varchar" MaxLength="500" />
+    <Property Name="bz_visible" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cp_gmyjc_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="cszqm" Type="varchar" MaxLength="50" />
+    <Property Name="csrq" Type="varchar" MaxLength="50" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="jd_qiuzhen" Type="varchar" MaxLength="50" />
+    <Property Name="jd_result" Type="varchar" MaxLength="50" />
+    <Property Name="jr_qiuzhen" Type="varchar" MaxLength="50" />
+    <Property Name="jr_result" Type="varchar" MaxLength="50" />
+    <Property Name="nn_qiuzhen" Type="varchar" MaxLength="50" />
+    <Property Name="nn_result" Type="varchar" MaxLength="50" />
+    <Property Name="dd_qiuzhen" Type="varchar" MaxLength="50" />
+    <Property Name="dd_result" Type="varchar" MaxLength="50" />
+    <Property Name="hs_qiuzhen" Type="varchar" MaxLength="50" />
+    <Property Name="hs_result" Type="varchar" MaxLength="50" />
+    <Property Name="jy_qiuzhen" Type="varchar" MaxLength="50" />
+    <Property Name="jy_result" Type="varchar" MaxLength="50" />
+    <Property Name="x_qiuzhen" Type="varchar" MaxLength="50" />
+    <Property Name="x_result" Type="varchar" MaxLength="50" />
+    <Property Name="xm_qiuzhen" Type="varchar" MaxLength="50" />
+    <Property Name="xm_result" Type="varchar" MaxLength="50" />
+    <Property Name="jz_qiuzhen" Type="varchar" MaxLength="50" />
+    <Property Name="jz_result" Type="varchar" MaxLength="50" />
+    <Property Name="ht_qiuzhen" Type="varchar" MaxLength="50" />
+    <Property Name="ht_result" Type="varchar" MaxLength="50" />
+    <Property Name="dm_qiuzhen" Type="varchar" MaxLength="50" />
+    <Property Name="dm_result" Type="varchar" MaxLength="50" />
+    <Property Name="bc_qiuzhen" Type="varchar" MaxLength="50" />
+    <Property Name="bc_result" Type="varchar" MaxLength="50" />
+    <Property Name="yang_qiuzhen" Type="varchar" MaxLength="50" />
+    <Property Name="yin_qiuzhen" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cp_gy_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="shengmu" Type="varchar" MaxLength="2000" />
+    <Property Name="yunmu" Type="varchar" MaxLength="2000" />
+    <Property Name="cszqm" Type="varchar" MaxLength="50" />
+    <Property Name="csrq" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cp_gyqt_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="shengmu" Type="varchar" MaxLength="2000" />
+    <Property Name="yunmu" Type="varchar" MaxLength="2000" />
+    <Property Name="ppvt_cf" Type="varchar" MaxLength="50" />
+    <Property Name="ppvt_iq" Type="varchar" MaxLength="50" />
+    <Property Name="ppvt_p" Type="varchar" MaxLength="50" />
+    <Property Name="ppvt_year" Type="varchar" MaxLength="50" />
+    <Property Name="ppvt_mouth" Type="varchar" MaxLength="50" />
+    <Property Name="ddst_grysh" Type="varchar" MaxLength="50" />
+    <Property Name="ddst_jxydnq" Type="varchar" MaxLength="50" />
+    <Property Name="ddst_yynq" Type="varchar" MaxLength="50" />
+    <Property Name="ddst_dydnq" Type="varchar" MaxLength="50" />
+    <Property Name="ddst_jg" Type="varchar" MaxLength="50" />
+    <Property Name="cszqm" Type="varchar" MaxLength="50" />
+    <Property Name="csrq" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cp_peabody_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="fanshe_ysf" Type="varchar" MaxLength="50" />
+    <Property Name="fanshe_xdnl" Type="varchar" MaxLength="50" />
+    <Property Name="fanshe_bfw" Type="varchar" MaxLength="50" />
+    <Property Name="fanshe_bzf1" Type="varchar" MaxLength="50" />
+    <Property Name="fanshe_bzf2" Type="varchar" MaxLength="50" />
+    <Property Name="zishi_ysf" Type="varchar" MaxLength="50" />
+    <Property Name="zishi_xdnl" Type="varchar" MaxLength="50" />
+    <Property Name="zishi_bfw" Type="varchar" MaxLength="50" />
+    <Property Name="zishi_bzf1" Type="varchar" MaxLength="50" />
+    <Property Name="zishi_bzf2" Type="varchar" MaxLength="50" />
+    <Property Name="yidong_ysf" Type="varchar" MaxLength="50" />
+    <Property Name="yidong_xdnl" Type="varchar" MaxLength="50" />
+    <Property Name="yidong_bfw" Type="varchar" MaxLength="50" />
+    <Property Name="yidong_bzf1" Type="varchar" MaxLength="50" />
+    <Property Name="yidong_bzf2" Type="varchar" MaxLength="50" />
+    <Property Name="caozuo_ysf" Type="varchar" MaxLength="50" />
+    <Property Name="caozuo_xdnl" Type="varchar" MaxLength="50" />
+    <Property Name="caozuo_bfw" Type="varchar" MaxLength="50" />
+    <Property Name="caozuo_bzf1" Type="varchar" MaxLength="50" />
+    <Property Name="caozuo_bzf2" Type="varchar" MaxLength="50" />
+    <Property Name="zhuawo_ysf" Type="varchar" MaxLength="50" />
+    <Property Name="zhuawo_xdnl" Type="varchar" MaxLength="50" />
+    <Property Name="zhuawo_bfw" Type="varchar" MaxLength="50" />
+    <Property Name="zhuawo_bzf1" Type="varchar" MaxLength="50" />
+    <Property Name="zhuawo_bzf2" Type="varchar" MaxLength="50" />
+    <Property Name="shijue_ysf" Type="varchar" MaxLength="50" />
+    <Property Name="shijue_xdnl" Type="varchar" MaxLength="50" />
+    <Property Name="shijue_bfw" Type="varchar" MaxLength="50" />
+    <Property Name="shijue_bzf1" Type="varchar" MaxLength="50" />
+    <Property Name="shijue_bzf2" Type="varchar" MaxLength="50" />
+    <Property Name="bzf_gmq" Type="varchar" MaxLength="50" />
+    <Property Name="bzf_fmq" Type="varchar" MaxLength="50" />
+    <Property Name="bzf_tmq" Type="varchar" MaxLength="50" />
+    <Property Name="fys_gmq" Type="varchar" MaxLength="50" />
+    <Property Name="fys_fmq" Type="varchar" MaxLength="50" />
+    <Property Name="fys_tmq" Type="varchar" MaxLength="50" />
+    <Property Name="bfw_gmq" Type="varchar" MaxLength="50" />
+    <Property Name="bfw_fmq" Type="varchar" MaxLength="50" />
+    <Property Name="bfw_tmq" Type="varchar" MaxLength="50" />
+    <Property Name="cszqm" Type="varchar" MaxLength="50" />
+    <Property Name="csrq" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+    <Property Name="jznl_n" Type="varchar" MaxLength="50" />
+    <Property Name="jznl_y" Type="varchar" MaxLength="50" />
+    <Property Name="jznl_r" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cp_ppvt_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="ppvt_dd" Type="varchar" MaxLength="10" />
+    <Property Name="ppvt_cw" Type="varchar" MaxLength="10" />
+    <Property Name="ppvt_df" Type="varchar" MaxLength="50" />
+    <Property Name="ppvt_zs" Type="varchar" MaxLength="10" />
+    <Property Name="ppvt_zl" Type="varchar" MaxLength="10" />
+    <Property Name="hrsy_zf" Type="varchar" MaxLength="10" />
+    <Property Name="hrsy_zs" Type="varchar" MaxLength="10" />
+    <Property Name="hrsy_zl" Type="varchar" MaxLength="10" />
+    <Property Name="nlcy_df" Type="varchar" MaxLength="10" />
+    <Property Name="nlcy_jg" Type="varchar" MaxLength="10" />
+    <Property Name="cyz" Type="varchar" MaxLength="50" />
+    <Property Name="cyrq" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="externalid" Type="int" />
+  </EntityType>
+  <EntityType Name="cp_ptoni_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="cs_yuanyin" Type="varchar" MaxLength="50" />
+    <Property Name="cs_yuyan" Type="varchar" MaxLength="50" />
+    <Property Name="csrq" Type="varchar" MaxLength="50" />
+    <Property Name="cszqm" Type="varchar" MaxLength="50" />
+    <Property Name="dengji" Type="varchar" MaxLength="50" />
+    <Property Name="fayu" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+    <Property Name="miaoshu" Type="varchar" MaxLength="50" />
+    <Property Name="nianji" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="school" Type="varchar" MaxLength="50" />
+    <Property Name="sem" Type="varchar" MaxLength="50" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="yuanshifen" Type="varchar" MaxLength="50" />
+    <Property Name="zhishu" Type="varchar" MaxLength="50" />
+    <Property Name="zhiwei" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cp_sm_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="bzf" Type="varchar" MaxLength="10" />
+    <Property Name="jl" Type="varchar" MaxLength="10" />
+    <Property Name="bz" Type="varchar" MaxLength="100" />
+    <Property Name="cszqm" Type="varchar" MaxLength="50" />
+    <Property Name="csrq" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+    <Property Name="bz_visible" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cp_tpch_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="tpch_cf" Type="varchar" MaxLength="10" />
+    <Property Name="tpch_iq" Type="varchar" MaxLength="50" />
+    <Property Name="tpch_p" Type="varchar" MaxLength="10" />
+    <Property Name="tpch_zl_sui" Type="varchar" MaxLength="10" />
+    <Property Name="tpch_zl_yue" Type="varchar" MaxLength="10" />
+    <Property Name="cszqm" Type="varchar" MaxLength="50" />
+    <Property Name="csrq" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cp_wisc_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="zzs" Type="varchar" MaxLength="10" />
+    <Property Name="yyzs" Type="varchar" MaxLength="10" />
+    <Property Name="czzs" Type="varchar" MaxLength="10" />
+    <Property Name="yycy_sum" Type="varchar" MaxLength="10" />
+    <Property Name="yycy_zs" Type="varchar" MaxLength="10" />
+    <Property Name="yycy_fl" Type="varchar" MaxLength="10" />
+    <Property Name="yycy_ch" Type="varchar" MaxLength="10" />
+    <Property Name="yycy_lw" Type="varchar" MaxLength="10" />
+    <Property Name="yycy_szgd" Type="varchar" MaxLength="10" />
+    <Property Name="czcy_sum" Type="varchar" MaxLength="10" />
+    <Property Name="czcy_tt" Type="varchar" MaxLength="10" />
+    <Property Name="czcy_tppl" Type="varchar" MaxLength="10" />
+    <Property Name="czcy_mkt" Type="varchar" MaxLength="10" />
+    <Property Name="czcy_txpc" Type="varchar" MaxLength="10" />
+    <Property Name="czcy_bm" Type="varchar" MaxLength="10" />
+    <Property Name="hz" Type="varchar" MaxLength="20" />
+    <Property Name="fy" Type="varchar" MaxLength="20" />
+    <Property Name="zyl" Type="varchar" MaxLength="20" />
+    <Property Name="qx" Type="varchar" MaxLength="20" />
+    <Property Name="cszqm" Type="varchar" MaxLength="50" />
+    <Property Name="csrq" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="yycy_ss" Type="varchar" MaxLength="10" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+    <Property Name="bz" Type="varchar" MaxLength="500" />
+    <Property Name="bz_visible" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cp_wycsi_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="zzs" Type="varchar" MaxLength="10" />
+    <Property Name="yyzs" Type="varchar" MaxLength="10" />
+    <Property Name="czzs" Type="varchar" MaxLength="10" />
+    <Property Name="yycy_sum" Type="varchar" MaxLength="10" />
+    <Property Name="yycy_zs" Type="varchar" MaxLength="10" />
+    <Property Name="yycy_tpch" Type="varchar" MaxLength="10" />
+    <Property Name="yycy_ss" Type="varchar" MaxLength="10" />
+    <Property Name="yycy_tpgk" Type="varchar" MaxLength="10" />
+    <Property Name="yycy_lw" Type="varchar" MaxLength="10" />
+    <Property Name="czcy_sum" Type="varchar" MaxLength="10" />
+    <Property Name="czcy_dwxd" Type="varchar" MaxLength="10" />
+    <Property Name="czcy_xdcc" Type="varchar" MaxLength="10" />
+    <Property Name="czcy_thtc" Type="varchar" MaxLength="10" />
+    <Property Name="czcy_mj" Type="varchar" MaxLength="10" />
+    <Property Name="czcy_mkta" Type="varchar" MaxLength="10" />
+    <Property Name="czcy_jhtx" Type="varchar" MaxLength="10" />
+    <Property Name="czcy_sjfx" Type="varchar" MaxLength="10" />
+    <Property Name="hz" Type="varchar" MaxLength="20" />
+    <Property Name="fy" Type="varchar" MaxLength="20" />
+    <Property Name="zyl" Type="varchar" MaxLength="20" />
+    <Property Name="qx" Type="varchar" MaxLength="20" />
+    <Property Name="cszqm" Type="varchar" MaxLength="50" />
+    <Property Name="csrq" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+    <Property Name="bz" Type="varchar" MaxLength="500" />
+    <Property Name="bz_visible" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cp_yy_cou">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="xmmc" Type="varchar" MaxLength="50" />
+    <Property Name="xmsl" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="cp_yy_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="yy_rq" Type="varchar" MaxLength="50" />
+    <Property Name="yy_xm" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="yy_sjd" Type="varchar" MaxLength="50" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cp_zqyyfyjc_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="yybd_df" Type="varchar" MaxLength="10" />
+    <Property Name="yybd_yl" Type="varchar" MaxLength="10" />
+    <Property Name="yybd_p50" Type="varchar" MaxLength="50" />
+    <Property Name="yybd_p75" Type="varchar" MaxLength="10" />
+    <Property Name="tjnl_df" Type="varchar" MaxLength="10" />
+    <Property Name="tjnl_yl" Type="varchar" MaxLength="10" />
+    <Property Name="tjnl_p50" Type="varchar" MaxLength="50" />
+    <Property Name="tjnl_p75" Type="varchar" MaxLength="10" />
+    <Property Name="sjxg_df" Type="varchar" MaxLength="10" />
+    <Property Name="sjxg_yl" Type="varchar" MaxLength="10" />
+    <Property Name="sjxg_p50" Type="varchar" MaxLength="50" />
+    <Property Name="sjxg_p75" Type="varchar" MaxLength="10" />
+    <Property Name="qlb_df" Type="varchar" MaxLength="10" />
+    <Property Name="qlb_yl" Type="varchar" MaxLength="10" />
+    <Property Name="qlb_p50" Type="varchar" MaxLength="50" />
+    <Property Name="qlb_p75" Type="varchar" MaxLength="10" />
+    <Property Name="hz" Type="varchar" MaxLength="20" />
+    <Property Name="fy" Type="varchar" MaxLength="20" />
+    <Property Name="zyl" Type="varchar" MaxLength="20" />
+    <Property Name="qx" Type="varchar" MaxLength="20" />
+    <Property Name="cszqm" Type="varchar" MaxLength="50" />
+    <Property Name="csrq" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="externalid" Type="int" />
+  </EntityType>
+  <EntityType Name="cp_zylcy_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="zylcy_sj_fen" Type="varchar" MaxLength="10" />
+    <Property Name="zylcy_sj_miao" Type="varchar" MaxLength="10" />
+    <Property Name="zylcy_hc" Type="varchar" MaxLength="50" />
+    <Property Name="zylcy_lh" Type="varchar" MaxLength="10" />
+    <Property Name="zylcy_df" Type="varchar" MaxLength="10" />
+    <Property Name="zylcy_pj" Type="varchar" MaxLength="10" />
+    <Property Name="rwcy_sj_fen" Type="varchar" MaxLength="50" />
+    <Property Name="rwcy_sj_miao" Type="varchar" MaxLength="10" />
+    <Property Name="rwcy_ddts" Type="varchar" MaxLength="10" />
+    <Property Name="rwcy_iq" Type="varchar" MaxLength="10" />
+    <Property Name="rwcy_bfwdj" Type="varchar" MaxLength="50" />
+    <Property Name="sjyd_ysfs" Type="varchar" MaxLength="10" />
+    <Property Name="sjyd_iq" Type="varchar" MaxLength="10" />
+    <Property Name="sjyd_vmi_sui" Type="varchar" MaxLength="10" />
+    <Property Name="sjyd_vmi_yue" Type="varchar" MaxLength="50" />
+    <Property Name="sjyd_szj_sui" Type="varchar" MaxLength="10" />
+    <Property Name="sjyd_szj_yue" Type="varchar" MaxLength="50" />
+    <Property Name="sjyd_dz_sui" Type="varchar" MaxLength="10" />
+    <Property Name="sjyd_dz_yue" Type="varchar" MaxLength="50" />
+    <Property Name="cyz" Type="varchar" MaxLength="50" />
+    <Property Name="cyrq" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="szys" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="hs_yy_gw_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="yy_rq" Type="varchar" MaxLength="50" />
+    <Property Name="yy_sfjf" Type="varchar" MaxLength="50" />
+    <Property Name="yy_bz" Type="varchar" MaxLength="500" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="hs_yy_qt_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="yy_rq" Type="varchar" MaxLength="50" />
+    <Property Name="yy_sfjf" Type="varchar" MaxLength="50" />
+    <Property Name="yy_bz" Type="varchar" MaxLength="500" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="hs_yy_xx_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="yy_rq" Type="varchar" MaxLength="50" />
+    <Property Name="yy_sqsh" Type="varchar" MaxLength="50" />
+    <Property Name="yy_bz" Type="varchar" MaxLength="500" />
+    <Property Name="yy_xc" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mb_wy">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="yfks" Type="int" Nullable="false" />
+    <Property Name="yfjs" Type="int" Nullable="false" />
+    <Property Name="wylx" Type="varchar" MaxLength="50" />
+    <Property Name="wyzd" Type="nvarchar" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="mb_zd">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="yfks" Type="int" Nullable="false" />
+    <Property Name="yfjs" Type="int" Nullable="false" />
+    <Property Name="wyzd" Type="nvarchar" MaxLength="4000" />
+    <Property Name="zjzd" Type="nvarchar" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="sys_menus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="menu_name" Type="varchar" MaxLength="50" />
+    <Property Name="menu_type" Type="varchar" MaxLength="50" />
+    <Property Name="menu_lever" Type="varchar" MaxLength="50" />
+    <Property Name="menu_parent" Type="varchar" MaxLength="50" />
+    <Property Name="menu_code" Type="varchar" MaxLength="50" />
+    <Property Name="menu_url" Type="varchar" MaxLength="500" />
+    <Property Name="is_custom" Type="varchar" MaxLength="50" />
+    <Property Name="is_enable" Type="varchar" MaxLength="50" />
+    <Property Name="menu_image" Type="varchar" MaxLength="100" />
+    <Property Name="is_default" Type="varchar" MaxLength="50" />
+    <Property Name="menu_para" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sys_role">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="role_name" Type="varchar" MaxLength="50" />
+    <Property Name="role_code" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sys_role_menu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="role_code" Type="varchar" MaxLength="50" />
+    <Property Name="menu_code" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sys_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_code" Type="varchar" MaxLength="40" />
+    <Property Name="user_name" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
+    <Property Name="phone" Type="varchar" MaxLength="60" />
+    <Property Name="user_type" Type="varchar" MaxLength="50" />
+    <Property Name="address" Type="varchar" MaxLength="100" />
+    <Property Name="pre_max" Type="int" Nullable="false" />
+    <Property Name="dept_id" Type="varchar" MaxLength="50" />
+    <Property Name="ward_id" Type="varchar" MaxLength="50" />
+    <Property Name="zhicheng" Type="varchar" MaxLength="50" />
+    <Property Name="zhiwu" Type="varchar" MaxLength="50" />
+    <Property Name="role_code" Type="varchar" MaxLength="50" />
+    <Property Name="dept_name" Type="varchar" MaxLength="50" />
+    <Property Name="ward_name" Type="varchar" MaxLength="50" />
+    <Property Name="gonghao" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tab_bzfzh_Num">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bzf_zyd" Type="varchar" MaxLength="50" />
+    <Property Name="bzf_cdyd" Type="varchar" MaxLength="50" />
+    <Property Name="bzf_jxyd" Type="varchar" MaxLength="50" />
+    <Property Name="To_S" Type="varchar" MaxLength="50" />
+    <Property Name="To_Bfw" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tab_dept_data">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dept_name" Type="varchar" MaxLength="50" />
+    <Property Name="dept_code" Type="varchar" MaxLength="50" />
+    <Property Name="doctor_name" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tab_Peabody_Num">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="yueling" Type="varchar" MaxLength="50" />
+    <Property Name="ysf_fs" Type="varchar" MaxLength="50" />
+    <Property Name="ysf_zs" Type="varchar" MaxLength="50" />
+    <Property Name="ysf_yd" Type="varchar" MaxLength="50" />
+    <Property Name="ysf_zw" Type="varchar" MaxLength="50" />
+    <Property Name="ysf_sjyd" Type="varchar" MaxLength="50" />
+    <Property Name="ysf_sjcz" Type="varchar" MaxLength="50" />
+    <Property Name="bzf" Type="varchar" MaxLength="50" />
+    <Property Name="bfw" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tab_person_data">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="50" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tab_templet_Info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="conts" Type="varchar" MaxLength="2000" />
+    <Property Name="child_type" Type="varchar" MaxLength="100" />
+    <Property Name="type" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tab_ysf_xdnl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ysf_fs" Type="varchar" MaxLength="50" />
+    <Property Name="ysf_zs" Type="varchar" MaxLength="50" />
+    <Property Name="ysf_yd" Type="varchar" MaxLength="50" />
+    <Property Name="ysf_swcz" Type="varchar" MaxLength="50" />
+    <Property Name="ysf_zw" Type="varchar" MaxLength="50" />
+    <Property Name="ysf_sjyd" Type="varchar" MaxLength="50" />
+    <Property Name="xdnl" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tab_yysc_Num">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="yueling" Type="int" Nullable="false" />
+    <Property Name="p10" Type="varchar" MaxLength="50" />
+    <Property Name="p25" Type="varchar" MaxLength="50" />
+    <Property Name="p50" Type="varchar" MaxLength="50" />
+    <Property Name="p75" Type="varchar" MaxLength="50" />
+    <Property Name="p90" Type="varchar" MaxLength="50" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tb_childbase">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="healthcardno" Type="varchar" MaxLength="20" />
+    <Property Name="childname" Type="varchar" MaxLength="50" />
+    <Property Name="childgender" Type="varchar" MaxLength="10" />
+    <Property Name="bloodtype" Type="varchar" MaxLength="10" />
+    <Property Name="childbirthday" Type="varchar" MaxLength="50" />
+    <Property Name="childbuildday" Type="varchar" MaxLength="50" />
+    <Property Name="childbuildhospital" Type="varchar" MaxLength="100" />
+    <Property Name="fathername" Type="varchar" MaxLength="50" />
+    <Property Name="fatherage" Type="varchar" MaxLength="10" />
+    <Property Name="fatherheight" Type="varchar" MaxLength="10" />
+    <Property Name="fathereducation" Type="varchar" MaxLength="10" />
+    <Property Name="fatherjob" Type="varchar" MaxLength="100" />
+    <Property Name="mothername" Type="varchar" MaxLength="50" />
+    <Property Name="motherage" Type="varchar" MaxLength="10" />
+    <Property Name="motherheight" Type="varchar" MaxLength="10" />
+    <Property Name="mothereducation" Type="varchar" MaxLength="10" />
+    <Property Name="motherjob" Type="varchar" MaxLength="100" />
+    <Property Name="telephone" Type="varchar" MaxLength="50" />
+    <Property Name="address" Type="varchar" MaxLength="200" />
+    <Property Name="nurseryinstitution" Type="varchar" MaxLength="100" />
+    <Property Name="immuneunit" Type="varchar" MaxLength="100" />
+    <Property Name="immuneday" Type="varchar" MaxLength="50" />
+    <Property Name="community" Type="varchar" MaxLength="100" />
+    <Property Name="censusregister" Type="varchar" MaxLength="200" />
+    <Property Name="cs_fetus" Type="varchar" MaxLength="10" />
+    <Property Name="cs_produce" Type="varchar" MaxLength="10" />
+    <Property Name="cs_week" Type="varchar" MaxLength="10" />
+    <Property Name="cs_day" Type="varchar" MaxLength="10" />
+    <Property Name="modedelivery" Type="varchar" MaxLength="50" />
+    <Property Name="perineumincision" Type="varchar" MaxLength="10" />
+    <Property Name="fetusnumber" Type="varchar" MaxLength="10" />
+    <Property Name="neonatalcondition" Type="varchar" MaxLength="50" />
+    <Property Name="birthweight" Type="varchar" MaxLength="10" />
+    <Property Name="birthheight" Type="varchar" MaxLength="10" />
+    <Property Name="birthaddress" Type="varchar" MaxLength="200" />
+    <Property Name="hospitalizedstates" Type="varchar" MaxLength="20" />
+    <Property Name="onemonth" Type="varchar" MaxLength="20" />
+    <Property Name="infourmonth" Type="varchar" MaxLength="20" />
+    <Property Name="fourtosixmonth" Type="varchar" MaxLength="20" />
+    <Property Name="yunqi" Type="varchar" MaxLength="30" />
+    <Property Name="chanqianhebing" Type="varchar" MaxLength="500" />
+    <Property Name="towncountry" Type="varchar" MaxLength="20" />
+    <Property Name="identityno" Type="varchar" MaxLength="60" />
+    <Property Name="status" Type="varchar" MaxLength="10" />
+    <Property Name="gaoweiyinsu" Type="varchar" MaxLength="500" />
+    <Property Name="yingyangbuliang" Type="varchar" MaxLength="500" />
+    <Property Name="jiuzhencardno" Type="varchar" MaxLength="500" />
+    <Property Name="linshi" Type="varchar" MaxLength="10" />
+    <Property Name="telephone2" Type="varchar" MaxLength="50" />
+    <Property Name="ispre" Type="varchar" MaxLength="10" />
+    <Property Name="province" Type="varchar" MaxLength="50" />
+    <Property Name="city" Type="varchar" MaxLength="50" />
+    <Property Name="area" Type="varchar" MaxLength="50" />
+    <Property Name="gerenshi" Type="varchar" MaxLength="2000" />
+    <Property Name="jiwangshi" Type="varchar" MaxLength="2000" />
+    <Property Name="jiazushi" Type="varchar" MaxLength="2000" />
+    <Property Name="jtzz_cx" Type="varchar" MaxLength="10" />
+    <Property Name="sfst" Type="varchar" MaxLength="10" />
+    <Property Name="sfzy" Type="varchar" MaxLength="50" />
+    <Property Name="sfzlb" Type="varchar" MaxLength="20" />
+    <Property Name="patient_id" Type="varchar" MaxLength="50" />
+    <Property Name="fuzencombobox" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tb_childcheck">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="childid" Type="int" Nullable="false" />
+    <Property Name="checkage" Type="varchar" MaxLength="10" />
+    <Property Name="checkfactage" Type="varchar" MaxLength="10" />
+    <Property Name="checkday" Type="varchar" MaxLength="50" />
+    <Property Name="doctorname" Type="varchar" MaxLength="50" />
+    <Property Name="checkheight" Type="varchar" MaxLength="10" />
+    <Property Name="checkweight" Type="varchar" MaxLength="10" />
+    <Property Name="checktouwei" Type="varchar" MaxLength="10" />
+    <Property Name="checkzuogao" Type="varchar" MaxLength="10" />
+    <Property Name="checktunwei" Type="varchar" MaxLength="10" />
+    <Property Name="checkqianlu" Type="varchar" MaxLength="20" />
+    <Property Name="checkiq" Type="varchar" MaxLength="20" />
+    <Property Name="checkziping" Type="varchar" MaxLength="50" />
+    <Property Name="yuceheight" Type="varchar" MaxLength="10" />
+    <Property Name="leftyan" Type="varchar" MaxLength="20" />
+    <Property Name="rightyan" Type="varchar" MaxLength="20" />
+    <Property Name="leftyanshili" Type="varchar" MaxLength="20" />
+    <Property Name="rightyanshili" Type="varchar" MaxLength="20" />
+    <Property Name="xieshi" Type="varchar" MaxLength="20" />
+    <Property Name="lefter" Type="varchar" MaxLength="20" />
+    <Property Name="righter" Type="varchar" MaxLength="20" />
+    <Property Name="lefterlisten" Type="varchar" MaxLength="20" />
+    <Property Name="rightlisten" Type="varchar" MaxLength="20" />
+    <Property Name="checkbi" Type="varchar" MaxLength="20" />
+    <Property Name="kouqiang" Type="varchar" MaxLength="20" />
+    <Property Name="yacinumber" Type="varchar" MaxLength="10" />
+    <Property Name="yucinumber" Type="varchar" MaxLength="10" />
+    <Property Name="skin" Type="varchar" MaxLength="20" />
+    <Property Name="lingbajie" Type="varchar" MaxLength="20" />
+    <Property Name="biantaoti" Type="varchar" MaxLength="20" />
+    <Property Name="xinzang" Type="varchar" MaxLength="20" />
+    <Property Name="feibu" Type="varchar" MaxLength="20" />
+    <Property Name="ganzang" Type="varchar" MaxLength="20" />
+    <Property Name="pizang" Type="varchar" MaxLength="20" />
+    <Property Name="qizhi" Type="varchar" MaxLength="20" />
+    <Property Name="sizhi" Type="varchar" MaxLength="20" />
+    <Property Name="xiongbu" Type="varchar" MaxLength="20" />
+    <Property Name="miniaoqi" Type="varchar" MaxLength="20" />
+    <Property Name="wuguan" Type="varchar" MaxLength="20" />
+    <Property Name="jizhu" Type="varchar" MaxLength="20" />
+    <Property Name="pingpqiu" Type="varchar" MaxLength="50" />
+    <Property Name="checkcontent" Type="varchar" MaxLength="100" />
+    <Property Name="yufangjiezhong" Type="varchar" MaxLength="50" />
+    <Property Name="bloodsesu" Type="varchar" MaxLength="20" />
+    <Property Name="shiwugoucheng" Type="varchar" MaxLength="50" />
+    <Property Name="vitd" Type="varchar" MaxLength="50" />
+    <Property Name="bigsport" Type="varchar" MaxLength="50" />
+    <Property Name="spirtsport" Type="varchar" MaxLength="50" />
+    <Property Name="laguage" Type="varchar" MaxLength="100" />
+    <Property Name="signsocial" Type="varchar" MaxLength="50" />
+    <Property Name="otherbingshi" Type="varchar" MaxLength="100" />
+    <Property Name="handle" Type="varchar" MaxLength="100" />
+    <Property Name="diagnose" Type="varchar" MaxLength="100" />
+    <Property Name="checkmonth" Type="varchar" MaxLength="50" />
+    <Property Name="fuzenday" Type="varchar" MaxLength="50" />
+    <Property Name="fubu" Type="varchar" MaxLength="20" />
+    <Property Name="fuwei" Type="varchar" MaxLength="20" />
+    <Property Name="nuerzhidao" Type="varchar" MaxLength="2000" />
+    <Property Name="checkdiagnose" Type="varchar" MaxLength="2000" />
+    <Property Name="zhushi" Type="varchar" MaxLength="50" />
+    <Property Name="fushi" Type="varchar" MaxLength="50" />
+    <Property Name="shehui" Type="varchar" MaxLength="50" />
+    <Property Name="dongzuo" Type="varchar" MaxLength="50" />
+    <Property Name="toulu" Type="varchar" MaxLength="50" />
+    <Property Name="gouloubing" Type="varchar" MaxLength="50" />
+    <Property Name="zonghefazhan" Type="varchar" MaxLength="2000" />
+    <Property Name="fuzhujiancha" Type="varchar" MaxLength="2000" />
+    <Property Name="otherjiancha" Type="varchar" MaxLength="2000" />
+    <Property Name="zhusu" Type="nvarchar" MaxLength="4000" />
+    <Property Name="bingshi" Type="nvarchar" MaxLength="4000" />
+    <Property Name="tijian" Type="nvarchar" MaxLength="4000" />
+    <Property Name="zhenduan" Type="nvarchar" MaxLength="4000" />
+    <Property Name="chuli" Type="nvarchar" MaxLength="4000" />
+    <Property Name="user_code" Type="varchar" MaxLength="50" />
+    <Property Name="ck_fz" Type="varchar" MaxLength="50" />
+    <Property Name="fuzencombobox" Type="varchar" MaxLength="50" />
+    <Property Name="hospital" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tb_healthcheck_moban">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="moban_name" Type="varchar" MaxLength="200" />
+    <Property Name="moban_type" Type="varchar" MaxLength="50" />
+    <Property Name="zhusu" Type="nvarchar" MaxLength="4000" />
+    <Property Name="bingshi" Type="nvarchar" MaxLength="4000" />
+    <Property Name="tijian" Type="nvarchar" MaxLength="4000" />
+    <Property Name="zhenduan" Type="nvarchar" MaxLength="4000" />
+    <Property Name="chuli" Type="nvarchar" MaxLength="4000" />
+    <Property Name="creater_name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="temp_report">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="report_name" Type="varchar" MaxLength="50" />
+    <Property Name="report_displayname" Type="varchar" MaxLength="50" />
+    <Property Name="report_desc" Type="varchar" MaxLength="500" />
+    <Property Name="creater" Type="varchar" MaxLength="50" />
+    <Property Name="create_time" Type="varchar" MaxLength="50" />
+    <Property Name="updater" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="report_procedure" Type="varchar" MaxLength="100" />
+    <Property Name="report_xls" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="temp_report_node">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="report_id" Type="int" />
+    <Property Name="node_name" Type="varchar" MaxLength="50" />
+    <Property Name="node_text" Type="varchar" MaxLength="50" />
+    <Property Name="isteam" Type="varchar" MaxLength="50" />
+    <Property Name="node_area" Type="varchar" MaxLength="50" />
+    <Property Name="node_type" Type="varchar" MaxLength="50" />
+    <Property Name="node_prefix" Type="varchar" MaxLength="50" />
+    <Property Name="node_suffix" Type="varchar" MaxLength="50" />
+    <Property Name="node_fontsize" Type="varchar" MaxLength="50" />
+    <Property Name="node_fontname" Type="varchar" MaxLength="50" />
+    <Property Name="node_value" Type="varchar" MaxLength="1000" />
+    <Property Name="node_offset" Type="varchar" MaxLength="50" />
+    <Property Name="node_width" Type="varchar" MaxLength="50" />
+    <Property Name="node_height" Type="varchar" MaxLength="50" />
+    <Property Name="node_number" Type="varchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="xl_yy_cou">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="xmmc" Type="varchar" MaxLength="50" />
+    <Property Name="xmsl" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="xl_yy_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="yy_rq" Type="varchar" MaxLength="50" />
+    <Property Name="yy_xm" Type="varchar" MaxLength="50" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+    <Property Name="yy_sjd" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ys_gdzpxza_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" />
+    <Property Name="zs_text" Type="varchar" MaxLength="500" />
+    <Property Name="zs_check" Type="varchar" MaxLength="200" />
+    <Property Name="xbs_text" Type="varchar" MaxLength="500" />
+    <Property Name="xbs_yylj" Type="varchar" MaxLength="200" />
+    <Property Name="xbs_yybd" Type="varchar" MaxLength="200" />
+    <Property Name="xbs_fyybd" Type="varchar" MaxLength="200" />
+    <Property Name="xbs_shjw" Type="varchar" MaxLength="500" />
+    <Property Name="xbs_cfkb" Type="varchar" MaxLength="200" />
+    <Property Name="xbs_cf" Type="varchar" MaxLength="500" />
+    <Property Name="xbs_other" Type="varchar" MaxLength="500" />
+    <Property Name="testName" Type="varchar" MaxLength="50" />
+    <Property Name="testDate" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ys_ywgm_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" />
+    <Property Name="zs_zz" Type="varchar" MaxLength="50" />
+    <Property Name="zs_time" Type="varchar" MaxLength="20" />
+    <Property Name="xbs_pf" Type="varchar" MaxLength="50" />
+    <Property Name="xbs_xhd" Type="varchar" MaxLength="50" />
+    <Property Name="xbs_hxd" Type="varchar" MaxLength="50" />
+    <Property Name="xbs_other" Type="varchar" MaxLength="50" />
+    <Property Name="xbs_ysswgx" Type="varchar" MaxLength="20" />
+    <Property Name="xbs_wyfs" Type="varchar" MaxLength="20" />
+    <Property Name="xbs_kysw" Type="varchar" MaxLength="50" />
+    <Property Name="xbs_jshzzsj" Type="varchar" MaxLength="20" />
+    <Property Name="xbs_kzsw" Type="varchar" MaxLength="50" />
+    <Property Name="xbs_lszz" Type="varchar" MaxLength="20" />
+    <Property Name="xbs_jwqk" Type="varchar" MaxLength="500" />
+    <Property Name="xbs_gw_gwjzs" Type="varchar" MaxLength="50" />
+    <Property Name="xbs_gw_fmfs" Type="varchar" MaxLength="50" />
+    <Property Name="xbs_gw_yz" Type="varchar" MaxLength="20" />
+    <Property Name="xbs_gw_jssy" Type="varchar" MaxLength="50" />
+    <Property Name="xbs_cw" Type="varchar" MaxLength="20" />
+    <Property Name="testName" Type="varchar" MaxLength="50" />
+    <Property Name="testDate" Type="varchar" MaxLength="50" />
+    <Property Name="xbs_fu" Type="varchar" MaxLength="100" />
+    <Property Name="xbs_mu" Type="varchar" MaxLength="100" />
+    <Property Name="xbs_tb" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ys_yybl_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="child_id" Type="int" />
+    <Property Name="zs_check" Type="varchar" MaxLength="50" />
+    <Property Name="xbs" Type="varchar" MaxLength="500" />
+    <Property Name="sc_g" Type="varchar" MaxLength="20" />
+    <Property Name="sc_p" Type="varchar" MaxLength="20" />
+    <Property Name="sc_yz" Type="varchar" MaxLength="20" />
+    <Property Name="sc_fs" Type="varchar" MaxLength="50" />
+    <Property Name="sc_yy" Type="varchar" MaxLength="50" />
+    <Property Name="sc_weight" Type="varchar" MaxLength="20" />
+    <Property Name="sc_mqyqyy" Type="varchar" MaxLength="200" />
+    <Property Name="sc_ismqjb" Type="varchar" MaxLength="20" />
+    <Property Name="sc_mqjb" Type="varchar" MaxLength="50" />
+    <Property Name="sc_isbts" Type="varchar" MaxLength="20" />
+    <Property Name="sc_bts" Type="varchar" MaxLength="50" />
+    <Property Name="wy_sh" Type="varchar" MaxLength="200" />
+    <Property Name="wy_xs" Type="varchar" MaxLength="20" />
+    <Property Name="wy_qs" Type="varchar" MaxLength="20" />
+    <Property Name="wy_cnsd" Type="varchar" MaxLength="50" />
+    <Property Name="wy_jjcn" Type="varchar" MaxLength="50" />
+    <Property Name="wy_jsl" Type="varchar" MaxLength="50" />
+    <Property Name="wy_fsnl" Type="varchar" MaxLength="50" />
+    <Property Name="szfy_dyd" Type="varchar" MaxLength="50" />
+    <Property Name="szfy_jxyd" Type="varchar" MaxLength="50" />
+    <Property Name="szfy_yy" Type="varchar" MaxLength="50" />
+    <Property Name="szfy_grsh" Type="varchar" MaxLength="50" />
+    <Property Name="yfjz_jz" Type="varchar" MaxLength="200" />
+    <Property Name="jws_sb" Type="varchar" MaxLength="20" />
+    <Property Name="jws_fxs" Type="varchar" MaxLength="200" />
+    <Property Name="jws_fys" Type="varchar" MaxLength="200" />
+    <Property Name="jws_xcs" Type="varchar" MaxLength="200" />
+    <Property Name="jws_swgm" Type="varchar" MaxLength="200" />
+    <Property Name="jws_ywgm" Type="varchar" MaxLength="200" />
+    <Property Name="jthj_fmtx" Type="varchar" MaxLength="200" />
+    <Property Name="jthj_ycs" Type="varchar" MaxLength="200" />
+    <Property Name="jthj_crbs" Type="varchar" MaxLength="200" />
+    <Property Name="tj_w" Type="varchar" MaxLength="20" />
+    <Property Name="tj_l" Type="varchar" MaxLength="20" />
+    <Property Name="tj_js" Type="varchar" MaxLength="200" />
+    <Property Name="testName" Type="varchar" MaxLength="50" />
+    <Property Name="testDate" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="yy_asd_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="yy_djrq" Type="varchar" MaxLength="50" />
+    <Property Name="yy_bh" Type="varchar" MaxLength="50" />
+    <Property Name="yy_xm" Type="varchar" MaxLength="50" />
+    <Property Name="yy_rq" Type="varchar" MaxLength="50" />
+    <Property Name="yy_sjd" Type="varchar" MaxLength="50" />
+    <Property Name="yy_sfjf" Type="varchar" MaxLength="50" />
+    <Property Name="yy_bz" Type="varchar" MaxLength="500" />
+    <Property Name="operate_name" Type="varchar" MaxLength="50" />
+    <Property Name="operate_code" Type="varchar" MaxLength="50" />
+    <Property Name="operate_time" Type="varchar" MaxLength="50" />
+    <Property Name="update_name" Type="varchar" MaxLength="50" />
+    <Property Name="update_code" Type="varchar" MaxLength="50" />
+    <Property Name="update_time" Type="varchar" MaxLength="50" />
+    <Property Name="child_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="yy_pz_details_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="countPerTime" Type="int" Nullable="false" />
+    <Property Name="pzid" Type="int" />
+    <Property Name="time" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="yy_pz_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pz_xq" Type="varchar" MaxLength="1000" />
+    <Property Name="pz_sjd" Type="varchar" MaxLength="1000" />
+    <Property Name="pz_lx" Type="varchar" MaxLength="50" />
+    <Property Name="pz_status" Type="varchar" MaxLength="50" />
+    <Property Name="pz_xm" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="jianyiModelStoreContainer">
+    <EntitySet Name="cp_adhd_tab" EntityType="Self.cp_adhd_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_ados1_tab" EntityType="Self.cp_ados1_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_ados2_tab" EntityType="Self.cp_ados2_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_ados3_tab" EntityType="Self.cp_ados3_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_ados4_tab" EntityType="Self.cp_ados4_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_asd1_tab" EntityType="Self.cp_asd1_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_asd2_tab" EntityType="Self.cp_asd2_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_cdi_tab" EntityType="Self.cp_cdi_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_cdi1_tab" EntityType="Self.cp_cdi1_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_ddst_tab" EntityType="Self.cp_ddst_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_dream_tab" EntityType="Self.cp_dream_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_dst_tab" EntityType="Self.cp_dst_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_gesell_tab" EntityType="Self.cp_gesell_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_gmyjc_tab" EntityType="Self.cp_gmyjc_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_gy_tab" EntityType="Self.cp_gy_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_gyqt_tab" EntityType="Self.cp_gyqt_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_peabody_tab" EntityType="Self.cp_peabody_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_ppvt_tab" EntityType="Self.cp_ppvt_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_ptoni_tab" EntityType="Self.cp_ptoni_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_sm_tab" EntityType="Self.cp_sm_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_tpch_tab" EntityType="Self.cp_tpch_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_wisc_tab" EntityType="Self.cp_wisc_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_wycsi_tab" EntityType="Self.cp_wycsi_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_yy_cou" EntityType="Self.cp_yy_cou" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_yy_tab" EntityType="Self.cp_yy_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_zqyyfyjc_tab" EntityType="Self.cp_zqyyfyjc_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cp_zylcy_tab" EntityType="Self.cp_zylcy_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="hs_yy_gw_tab" EntityType="Self.hs_yy_gw_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="hs_yy_qt_tab" EntityType="Self.hs_yy_qt_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="hs_yy_xx_tab" EntityType="Self.hs_yy_xx_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mb_wy" EntityType="Self.mb_wy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mb_zd" EntityType="Self.mb_zd" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sys_menus" EntityType="Self.sys_menus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sys_role" EntityType="Self.sys_role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sys_role_menu" EntityType="Self.sys_role_menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sys_users" EntityType="Self.sys_users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tab_bzfzh_Num" EntityType="Self.tab_bzfzh_Num" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tab_dept_data" EntityType="Self.tab_dept_data" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tab_Peabody_Num" EntityType="Self.tab_Peabody_Num" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tab_person_data" EntityType="Self.tab_person_data" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tab_templet_Info" EntityType="Self.tab_templet_Info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tab_ysf_xdnl" EntityType="Self.tab_ysf_xdnl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tab_yysc_Num" EntityType="Self.tab_yysc_Num" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_childbase" EntityType="Self.tb_childbase" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_childcheck" EntityType="Self.tb_childcheck" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_healthcheck_moban" EntityType="Self.tb_healthcheck_moban" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="temp_report" EntityType="Self.temp_report" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="temp_report_node" EntityType="Self.temp_report_node" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="xl_yy_cou" EntityType="Self.xl_yy_cou" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="xl_yy_tab" EntityType="Self.xl_yy_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ys_gdzpxza_tab" EntityType="Self.ys_gdzpxza_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ys_ywgm_tab" EntityType="Self.ys_ywgm_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ys_yybl_tab" EntityType="Self.ys_yybl_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="yy_asd_tab" EntityType="Self.yy_asd_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="yy_pz_details_tab" EntityType="Self.yy_pz_details_tab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="yy_pz_tab" EntityType="Self.yy_pz_tab" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{01B499BE-88F1-4B5E-A0CA-7DB34F48A243}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YCF.Model</RootNamespace>
+    <AssemblyName>YCF.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.12.2.1100\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CHILD_GAOWEIGEAN.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHILD_GAOWEIGEAN_RECORD.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHILD_GOULOUGEAN_RECORD.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHILD_JIBINGGUANLI.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHILD_JIBINGGUANLI_RECORD.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHILD_PINXUEGEAN_RECORD.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHILD_STANDARD.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHILD_STANDARD_BMI.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHILD_STANDARD_W_H.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHILD_XINLIXINGWEI.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHILD_XINLIXINGWEI_RECORD.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHILD_YINGYANGGEAN.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHILD_YINGYANGGEAN_RECORD.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_dream_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_gmyjc_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CP_GRIFFITHS_TAB.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_gyqt_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_gy_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_peabody_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_ptoni_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DEPT.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DicObj.cs" />
+    <Compile Include="cp_adhd_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_ados1_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_ados2_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_ados3_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_ados4_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_asd1_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_asd2_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_cdi1_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_cdi_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_ddst_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_dst_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_gesell_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_ppvt_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_sm_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_tpch_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_wisc_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_wycsi_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_yy_cou.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_yy_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_zqyyfyjc_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cp_zylcy_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMP.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hs_yy_gw_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hs_yy_qt_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hs_yy_xx_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mb_wy.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mb_zd.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NotMaps\Entities.cs" />
+    <Compile Include="NotMaps\ys_ceping_tab.cs" />
+    <Compile Include="NotMaps\yy_asd_tabCount.cs" />
+    <Compile Include="NotMaps\yy_asd_tabNotMap.cs" />
+    <Compile Include="OracleEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OracleEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OracleEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OracleEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OracleEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="sys_menus.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sys_role.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sys_role_menu.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sys_users.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tab_bzfzh_Num.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tab_dept_data.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tab_Peabody_Num.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tab_person_data.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tab_templet_Info.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tab_ysf_xdnl.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tab_yysc_Num.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_BAOJIANGUID.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_childbase.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_childcheck.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_CHILDCHECK_MOBAN.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_GAOWEI.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_GAOWEICONTENT.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_GAOWEIPROJECT.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_GAOWEI_RECORD.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_MIANYIAGE.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_MOBAN.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_NUTRITIONGUID.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_RUTUOCHECK.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_SETCHECKAGE.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_SETYIMIAO.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_YIMIAO.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_report.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_report_node.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UPDATEVERSION.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="xl_yy_cou.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="xl_yy_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yingtijianObj.cs" />
+    <Compile Include="countObj.cs" />
+    <Compile Include="Entities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Entities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Entities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tb_healthcheck_moban.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ys_gdzpxza_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ys_ywgm_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ys_yybl_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yy_asd_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yy_pz_details_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yy_pz_tab.cs">
+      <DependentUpon>OracleEntities.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="Entities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Entities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entities.edmx.diagram">
+      <DependentUpon>Entities.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="OracleEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OracleEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="OracleEntities.edmx.diagram">
+      <DependentUpon>OracleEntities.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Template\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Entities.edmx</DependentUpon>
+      <LastGenOutput>Entities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Entities.edmx</DependentUpon>
+      <LastGenOutput>Entities.cs</LastGenOutput>
+    </Content>
+    <Content Include="OracleEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OracleEntities.edmx</DependentUpon>
+      <LastGenOutput>OracleEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="OracleEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OracleEntities.edmx</DependentUpon>
+      <LastGenOutput>OracleEntities.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YCF.Common\YCF.Common.csproj">
+      <Project>{41c8f68a-9608-4ece-b632-3577d4247f6c}</Project>
+      <Name>YCF.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

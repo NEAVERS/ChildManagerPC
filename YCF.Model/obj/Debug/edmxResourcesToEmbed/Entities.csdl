@@ -1,0 +1,1479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="jianyiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tb_healthcheck_moban" EntityType="jianyiModel.tb_healthcheck_moban" />
+    <EntitySet Name="sys_menus" EntityType="jianyiModel.sys_menus" />
+    <EntitySet Name="tb_childbase" EntityType="jianyiModel.tb_childbase" />
+    <EntitySet Name="sys_role" EntityType="jianyiModel.sys_role" />
+    <EntitySet Name="sys_role_menu" EntityType="jianyiModel.sys_role_menu" />
+    <EntitySet Name="sys_users" EntityType="jianyiModel.sys_users" />
+    <EntitySet Name="cp_yy_cou" EntityType="jianyiModel.cp_yy_cou" />
+    <EntitySet Name="temp_report" EntityType="jianyiModel.temp_report" />
+    <EntitySet Name="temp_report_node" EntityType="jianyiModel.temp_report_node" />
+    <EntitySet Name="xl_yy_cou" EntityType="jianyiModel.xl_yy_cou" />
+    <EntitySet Name="xl_yy_tab" EntityType="jianyiModel.xl_yy_tab" />
+    <EntitySet Name="hs_yy_gw_tab" EntityType="jianyiModel.hs_yy_gw_tab" />
+    <EntitySet Name="hs_yy_qt_tab" EntityType="jianyiModel.hs_yy_qt_tab" />
+    <EntitySet Name="hs_yy_xx_tab" EntityType="jianyiModel.hs_yy_xx_tab" />
+    <EntitySet Name="mb_zd" EntityType="jianyiModel.mb_zd" />
+    <EntitySet Name="mb_wy" EntityType="jianyiModel.mb_wy" />
+    <EntitySet Name="tb_childcheck" EntityType="jianyiModel.tb_childcheck" />
+    <EntitySet Name="cp_dream_tab" EntityType="jianyiModel.cp_dream_tab" />
+    <EntitySet Name="cp_gmyjc_tab" EntityType="jianyiModel.cp_gmyjc_tab" />
+    <EntitySet Name="cp_gyqt_tab" EntityType="jianyiModel.cp_gyqt_tab" />
+    <EntitySet Name="cp_gy_tab" EntityType="jianyiModel.cp_gy_tab" />
+    <EntitySet Name="cp_peabody_tab" EntityType="jianyiModel.cp_peabody_tab" />
+    <EntitySet Name="tab_bzfzh_Num" EntityType="jianyiModel.tab_bzfzh_Num" />
+    <EntitySet Name="tab_dept_data" EntityType="jianyiModel.tab_dept_data" />
+    <EntitySet Name="tab_Peabody_Num" EntityType="jianyiModel.tab_Peabody_Num" />
+    <EntitySet Name="tab_person_data" EntityType="jianyiModel.tab_person_data" />
+    <EntitySet Name="cp_ppvt_tab" EntityType="jianyiModel.cp_ppvt_tab" />
+    <EntitySet Name="cp_zqyyfyjc_tab" EntityType="jianyiModel.cp_zqyyfyjc_tab" />
+    <EntitySet Name="cp_zylcy_tab" EntityType="jianyiModel.cp_zylcy_tab" />
+    <EntitySet Name="cp_cdi1_tab" EntityType="jianyiModel.cp_cdi1_tab" />
+    <EntitySet Name="cp_cdi_tab" EntityType="jianyiModel.cp_cdi_tab" />
+    <EntitySet Name="cp_adhd_tab" EntityType="jianyiModel.cp_adhd_tab" />
+    <EntitySet Name="cp_ados1_tab" EntityType="jianyiModel.cp_ados1_tab" />
+    <EntitySet Name="cp_ados2_tab" EntityType="jianyiModel.cp_ados2_tab" />
+    <EntitySet Name="cp_ados3_tab" EntityType="jianyiModel.cp_ados3_tab" />
+    <EntitySet Name="cp_ados4_tab" EntityType="jianyiModel.cp_ados4_tab" />
+    <EntitySet Name="cp_asd1_tab" EntityType="jianyiModel.cp_asd1_tab" />
+    <EntitySet Name="cp_asd2_tab" EntityType="jianyiModel.cp_asd2_tab" />
+    <EntitySet Name="cp_gesell_tab" EntityType="jianyiModel.cp_gesell_tab" />
+    <EntitySet Name="cp_sm_tab" EntityType="jianyiModel.cp_sm_tab" />
+    <EntitySet Name="cp_wisc_tab" EntityType="jianyiModel.cp_wisc_tab" />
+    <EntitySet Name="cp_wycsi_tab" EntityType="jianyiModel.cp_wycsi_tab" />
+    <EntitySet Name="cp_yy_tab" EntityType="jianyiModel.cp_yy_tab" />
+    <EntitySet Name="cp_dst_tab" EntityType="jianyiModel.cp_dst_tab" />
+    <EntitySet Name="cp_tpch_tab" EntityType="jianyiModel.cp_tpch_tab" />
+    <EntitySet Name="yy_pz_tab" EntityType="jianyiModel.yy_pz_tab" />
+    <EntitySet Name="yy_asd_tab" EntityType="jianyiModel.yy_asd_tab" />
+    <EntitySet Name="yy_pz_details_tab" EntityType="jianyiModel.yy_pz_details_tab" />
+    <EntitySet Name="tab_templet_Info" EntityType="jianyiModel.tab_templet_Info" />
+    <EntitySet Name="tab_ysf_xdnl" EntityType="jianyiModel.tab_ysf_xdnl" />
+    <EntitySet Name="tab_yysc_Num" EntityType="jianyiModel.tab_yysc_Num" />
+    <EntitySet Name="cp_ptoni_tab" EntityType="jianyiModel.cp_ptoni_tab" />
+    <EntitySet Name="cp_ddst_tab" EntityType="jianyiModel.cp_ddst_tab" />
+    <EntitySet Name="ys_gdzpxza_tab" EntityType="jianyiModel.ys_gdzpxza_tab" />
+    <EntitySet Name="ys_ywgm_tab" EntityType="jianyiModel.ys_ywgm_tab" />
+    <EntitySet Name="ys_yybl_tab" EntityType="jianyiModel.ys_yybl_tab" />
+  </EntityContainer>
+  <EntityType Name="tb_healthcheck_moban">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="moban_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="moban_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="zhusu" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="bingshi" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="tijian" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="zhenduan" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="chuli" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="creater_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sys_menus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="menu_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="menu_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="menu_lever" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="menu_parent" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="menu_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="menu_url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="is_custom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="is_enable" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="menu_image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="is_default" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="menu_para" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tb_childbase">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="healthcardno" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="childname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="childgender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="bloodtype" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="childbirthday" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="childbuildday" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="childbuildhospital" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="fathername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fatherage" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="fatherheight" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="fathereducation" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="fatherjob" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="mothername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="motherage" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="motherheight" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="mothereducation" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="motherjob" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="nurseryinstitution" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="immuneunit" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="immuneday" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="community" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="censusregister" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="cs_fetus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="cs_produce" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="cs_week" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="cs_day" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="modedelivery" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="perineumincision" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="fetusnumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="neonatalcondition" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="birthweight" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="birthheight" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="birthaddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="hospitalizedstates" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="onemonth" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="infourmonth" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="fourtosixmonth" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="yunqi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="chanqianhebing" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="towncountry" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="identityno" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="gaoweiyinsu" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="yingyangbuliang" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="jiuzhencardno" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="linshi" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="telephone2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ispre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="province" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="area" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gerenshi" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="jiwangshi" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="jiazushi" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="jtzz_cx" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="sfst" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="sfzy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sfzlb" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="patient_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fuzencombobox" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sys_role">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="role_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="role_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sys_role_menu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="role_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="menu_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sys_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_code" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="user_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="pre_max" Type="Int32" Nullable="false" />
+    <Property Name="dept_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ward_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="zhicheng" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="zhiwu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="role_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dept_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ward_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gonghao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cp_yy_cou">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="xmmc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="xmsl" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="temp_report">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="report_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="report_displayname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="report_desc" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="creater" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="create_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="updater" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="report_procedure" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="report_xls" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="temp_report_node">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="report_id" Type="Int32" />
+    <Property Name="node_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="node_text" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="isteam" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="node_area" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="node_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="node_prefix" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="node_suffix" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="node_fontsize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="node_fontname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="node_value" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="node_offset" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="node_width" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="node_height" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="node_number" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="xl_yy_cou">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="xmmc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="xmsl" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="xl_yy_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="yy_rq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yy_xm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="yy_sjd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="hs_yy_gw_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="yy_rq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yy_sfjf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yy_bz" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="hs_yy_qt_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="yy_rq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yy_sfjf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yy_bz" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="hs_yy_xx_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="yy_rq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yy_sqsh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yy_bz" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="yy_xc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mb_zd">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="yfks" Type="Int32" Nullable="false" />
+    <Property Name="yfjs" Type="Int32" Nullable="false" />
+    <Property Name="wyzd" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="zjzd" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="mb_wy">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="yfks" Type="Int32" Nullable="false" />
+    <Property Name="yfjs" Type="Int32" Nullable="false" />
+    <Property Name="wylx" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="wyzd" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tb_childcheck">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="childid" Type="Int32" Nullable="false" />
+    <Property Name="checkage" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="checkfactage" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="checkday" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="doctorname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="checkheight" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="checkweight" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="checktouwei" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="checkzuogao" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="checktunwei" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="checkqianlu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="checkiq" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="checkziping" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yuceheight" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="leftyan" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="rightyan" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="leftyanshili" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="rightyanshili" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="xieshi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="lefter" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="righter" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="lefterlisten" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="rightlisten" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="checkbi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="kouqiang" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="yacinumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yucinumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="skin" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="lingbajie" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="biantaoti" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="xinzang" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="feibu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ganzang" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pizang" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="qizhi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sizhi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="xiongbu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="miniaoqi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="wuguan" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="jizhu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pingpqiu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="checkcontent" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="yufangjiezhong" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bloodsesu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="shiwugoucheng" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="vitd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bigsport" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="spirtsport" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="laguage" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="signsocial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="otherbingshi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="handle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="diagnose" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="checkmonth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fuzenday" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fubu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="fuwei" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="nuerzhidao" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="checkdiagnose" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="zhushi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fushi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="shehui" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dongzuo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="toulu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gouloubing" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="zonghefazhan" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="fuzhujiancha" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="otherjiancha" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="zhusu" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="bingshi" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="tijian" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="zhenduan" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="chuli" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="user_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ck_fz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fuzencombobox" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cp_dream_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="bzh_ztyy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bzh_tllj" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bzh_yybd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bzh_yy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bzh_jf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bfdj_ztyy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bfdj_tllj" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bfdj_yybd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bfdj_yy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bfdj_jf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cszqm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="csrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="doctor_result" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="doctor_advice" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="bz" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="bz_visible" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cp_gmyjc_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="cszqm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="csrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="jd_qiuzhen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="jd_result" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="jr_qiuzhen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="jr_result" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nn_qiuzhen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nn_result" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dd_qiuzhen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dd_result" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hs_qiuzhen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hs_result" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="jy_qiuzhen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="jy_result" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="x_qiuzhen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="x_result" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="xm_qiuzhen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="xm_result" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="jz_qiuzhen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="jz_result" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ht_qiuzhen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ht_result" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dm_qiuzhen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dm_result" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bc_qiuzhen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bc_result" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yang_qiuzhen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yin_qiuzhen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cp_gyqt_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="shengmu" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="yunmu" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="ppvt_cf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ppvt_iq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ppvt_p" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ppvt_year" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ppvt_mouth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ddst_grysh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ddst_jxydnq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ddst_yynq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ddst_dydnq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ddst_jg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cszqm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="csrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cp_gy_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="shengmu" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="yunmu" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="cszqm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="csrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cp_peabody_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="fanshe_ysf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fanshe_xdnl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fanshe_bfw" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fanshe_bzf1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fanshe_bzf2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="zishi_ysf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="zishi_xdnl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="zishi_bfw" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="zishi_bzf1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="zishi_bzf2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yidong_ysf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yidong_xdnl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yidong_bfw" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yidong_bzf1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yidong_bzf2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="caozuo_ysf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="caozuo_xdnl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="caozuo_bfw" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="caozuo_bzf1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="caozuo_bzf2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="zhuawo_ysf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="zhuawo_xdnl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="zhuawo_bfw" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="zhuawo_bzf1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="zhuawo_bzf2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="shijue_ysf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="shijue_xdnl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="shijue_bfw" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="shijue_bzf1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="shijue_bzf2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bzf_gmq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bzf_fmq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bzf_tmq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fys_gmq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fys_fmq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fys_tmq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bfw_gmq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bfw_fmq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bfw_tmq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cszqm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="csrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="jznl_n" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="jznl_y" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="jznl_r" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tab_bzfzh_Num">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bzf_zyd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bzf_cdyd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bzf_jxyd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="To_S" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="To_Bfw" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tab_dept_data">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dept_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dept_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="doctor_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tab_Peabody_Num">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="yueling" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ysf_fs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ysf_zs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ysf_yd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ysf_zw" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ysf_sjyd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ysf_sjcz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bzf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bfw" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tab_person_data">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cp_ppvt_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="ppvt_dd" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ppvt_cw" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ppvt_df" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ppvt_zs" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ppvt_zl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hrsy_zf" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hrsy_zs" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hrsy_zl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="nlcy_df" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="nlcy_jg" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="cyz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cyrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="externalid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="cp_zqyyfyjc_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="yybd_df" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yybd_yl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yybd_p50" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yybd_p75" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="tjnl_df" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="tjnl_yl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="tjnl_p50" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tjnl_p75" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="sjxg_df" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="sjxg_yl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="sjxg_p50" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sjxg_p75" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="qlb_df" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="qlb_yl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="qlb_p50" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="qlb_p75" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hz" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="fy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="zyl" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="qx" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="cszqm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="csrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="externalid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="cp_zylcy_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="zylcy_sj_fen" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="zylcy_sj_miao" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="zylcy_hc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="zylcy_lh" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="zylcy_df" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="zylcy_pj" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="rwcy_sj_fen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="rwcy_sj_miao" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="rwcy_ddts" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="rwcy_iq" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="rwcy_bfwdj" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sjyd_ysfs" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="sjyd_iq" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="sjyd_vmi_sui" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="sjyd_vmi_yue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sjyd_szj_sui" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="sjyd_szj_yue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sjyd_dz_sui" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="sjyd_dz_yue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cyz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cyrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cp_cdi1_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="chbd_df" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="chbd_p50" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="chbd_p75" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="bstgz" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="etdyr" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="cszqm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="csrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="externalid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="cp_cdi_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="yylj_df" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yylj_yl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yylj_p50" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yylj_p75" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="chbd_df" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="chbd_yl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="chbd_p50" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="chbd_p75" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="bstgz" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="etdyr" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="cszqm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="csrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cp_adhd_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="adhd1_bstgz" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="adhd1_pf" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="adhd1_jl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="adhd2_bstgz" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="adhd2_zyqx" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="adhd2_zyqx_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="adhd2_ddcd" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="adhd2_ddcd_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="adhd2_gnsh" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="adhd2_gnsh_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="adhd2_jl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="adhd3_bstgz" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="adhd3_dlwk" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="adhd3_dlwk_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="adhd3_pxza" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="adhd3_pxza_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="adhd3_jlyy" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="adhd3_jlyy_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="adhd4_bstgz" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="adhd4_zyqx" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="adhd4_zyqx_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="adhd4_ddcd" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="adhd4_ddcd_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="adhd4_gnsh" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="adhd4_gnsh_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="adhd4_jl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="cszqm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="csrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cp_ados1_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="gt_cxtr" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="gt_kb" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="gt_sytrst" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="gt_zwdz" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="gt_zsdz" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="gt_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_bxc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_cxtr" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_hdzgxlq" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_zs" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_zfdzd" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_dxhxt" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_zdbd" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="gt_hd_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yx_sywp" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yx_xx" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yx_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="kbxw_dyxsc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="kbxw_shsz" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="kbxw_btxc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="kbxw_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="jl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="pgzqm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pgrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bz" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="bz_visible" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cp_ados2_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="gt_zdbd" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="gt_kb" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="gt_hh" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="gt_zwdz" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="gt_msxdz" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="gt_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_bxc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_cxtr" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_zfdzd" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_zdbd" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_sjfy" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_xhxshgt" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_gx" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="gt_hd_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="xx_fs" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="kbxw_dyxsc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="kbxw_shsz" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="kbxw_btxc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="kbxw_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="jl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="pgzqm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pgrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bz" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="bz_visible" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cp_ados3_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="gt_kb" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="gt_bgsj" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="gt_hh" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="gt_msxdz" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="gt_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_bxc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_dcl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_zdbd" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_sjfy" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_xhxsh" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_gx" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="gt_hd_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yx_xx" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="kbxw_dyxsc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="kbxw_shsz" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="kbxw_btxc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="kbxw_qpxw" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="jl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="pgzqm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pgrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hd_cxtr" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="kbxw_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="bz" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="bz_visible" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cp_ados4_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="gt_kb" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="gt_hh" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="gt_msxdz" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="gt_jjxdz" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="gt_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_bxc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_cxtr" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_dtrqx" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_zr" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_zdbd" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_sjfy" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_xhxshgt" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hd_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="gt_hd_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="xx_fs" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="kbxw_dyxsc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="kbxw_shsz" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="kbxw_btxc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="kbxw_qpxw" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="jl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="pgzqm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pgrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="kbxw_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="bz" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="bz_visible" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cp_asd1_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="m_chat_gwxm" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="m_chat_ryxm" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="m_chat_jl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="abc_df" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="abc_jl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="cszqm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="csrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bz" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="bz_visible" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cp_asd2_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="srs_zj" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="srs_rz" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="srs_jliu" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="srs_dj" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="srs_xwfs" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="srs_zlb" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="srs_jl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="abc_df" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="abc_jl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="cszqm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="csrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bz" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="bz_visible" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cp_gesell_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="syx_dq" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="syx_da" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="dydn_dq" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="dydn_da" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="xydn_dq" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="xydn_da" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yyn_dq" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yyn_da" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="grsj_dq" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="grsj_da" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hz" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="fy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="zyl" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="qx" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="cszqm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="csrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bz" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="bz_visible" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cp_sm_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="bzf" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="jl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="bz" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="cszqm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="csrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bz_visible" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cp_wisc_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="zzs" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yyzs" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="czzs" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yycy_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yycy_zs" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yycy_fl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yycy_ch" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yycy_lw" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yycy_szgd" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="czcy_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="czcy_tt" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="czcy_tppl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="czcy_mkt" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="czcy_txpc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="czcy_bm" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hz" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="fy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="zyl" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="qx" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="cszqm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="csrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yycy_ss" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bz" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="bz_visible" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cp_wycsi_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="zzs" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yyzs" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="czzs" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yycy_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yycy_zs" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yycy_tpch" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yycy_ss" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yycy_tpgk" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="yycy_lw" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="czcy_sum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="czcy_dwxd" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="czcy_xdcc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="czcy_thtc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="czcy_mj" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="czcy_mkta" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="czcy_jhtx" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="czcy_sjfx" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="hz" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="fy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="zyl" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="qx" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="cszqm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="csrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bz" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="bz_visible" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cp_yy_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="yy_rq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yy_xm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="yy_sjd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cp_dst_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="dst_yszf" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="dst_dq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dst_jg" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="cszqm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="csrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cp_tpch_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="tpch_cf" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="tpch_iq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tpch_p" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="tpch_zl_sui" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="tpch_zl_yue" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="cszqm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="csrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="yy_pz_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pz_xq" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="pz_sjd" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="pz_lx" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pz_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pz_xm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="yy_asd_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="yy_djrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yy_bh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yy_xm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yy_rq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yy_sjd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yy_sfjf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yy_bz" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="yy_pz_details_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="countPerTime" Type="Int32" Nullable="false" />
+    <Property Name="pzid" Type="Int32" />
+    <Property Name="time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tab_templet_Info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="conts" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="child_type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tab_ysf_xdnl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ysf_fs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ysf_zs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ysf_yd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ysf_swcz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ysf_zw" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ysf_sjyd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="xdnl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tab_yysc_Num">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="yueling" Type="Int32" Nullable="false" />
+    <Property Name="p10" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="p25" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="p50" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="p75" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="p90" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cp_ptoni_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="cs_yuanyin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cs_yuyan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="csrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cszqm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dengji" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fayu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="miaoshu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nianji" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="school" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yuanshifen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="zhishu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="zhiwei" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cp_ddst_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" Nullable="false" />
+    <Property Name="ddst_grysh" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ddst_jxydnq" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ddst_yynq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ddst_dydnq" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ddst_jg" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="cszqm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="csrq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="operate_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="externalid" Type="Int32" />
+    <Property Name="jz_ddst_grysh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="jz_ddst_yynq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="jz_ddst_dydnq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="jz_ddst_jg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="jz_ddst_jxydnq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ys_gdzpxza_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" />
+    <Property Name="zs_text" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="zs_check" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_text" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_yylj" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_yybd" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_fyybd" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_shjw" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_cfkb" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_cf" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_other" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="testName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="testDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ys_ywgm_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" />
+    <Property Name="zs_zz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="zs_time" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_pf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_xhd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_hxd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_other" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_ysswgx" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_wyfs" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_kysw" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_jshzzsj" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_kzsw" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_lszz" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_jwqk" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_gw_gwjzs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_gw_fmfs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_gw_yz" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_gw_jssy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_cw" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="testName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="testDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_fu" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_mu" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="xbs_tb" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ys_yybl_tab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="child_id" Type="Int32" />
+    <Property Name="zs_check" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="xbs" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="sc_g" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sc_p" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sc_yz" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sc_fs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sc_yy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sc_weight" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sc_mqyqyy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="sc_ismqjb" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sc_mqjb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sc_isbts" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sc_bts" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="wy_sh" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="wy_xs" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="wy_qs" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="wy_cnsd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="wy_jjcn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="wy_jsl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="wy_fsnl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szfy_dyd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szfy_jxyd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szfy_yy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szfy_grsh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yfjz_jz" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="jws_sb" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="jws_fxs" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="jws_fys" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="jws_xcs" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="jws_swgm" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="jws_ywgm" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="jthj_fmtx" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="jthj_ycs" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="jthj_crbs" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="tj_w" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="tj_l" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="tj_js" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="testName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="testDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

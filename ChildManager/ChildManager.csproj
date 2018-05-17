@@ -1,0 +1,1749 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{036A19AC-6F03-427B-8CDE-D66D0139F7D5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ChildManager</RootNamespace>
+    <AssemblyName>ChildManager</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ico_h.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="amqmdnet, Version=7.5.0.2, Culture=neutral, PublicKeyToken=dd3cb1c9aae9ec97, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\amqmdnet.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Schedule, Version=12.7.0.10, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=12.7.0.10, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\YCF.Model\bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="MQDLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MQDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient">
+      <HintPath>bin\Debug\System.Data.OracleClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="YCF.Extension">
+      <HintPath>..\packages\YCF.Extension\YCF.Extension.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\BLL\ChildBaseInfo\ChildBaseInfoBll.cs" />
+    <Compile Include="DAL\BLL\ChildBaseInfo\ChildGaoweigeanBll.cs" />
+    <Compile Include="DAL\BLL\ChildBaseInfo\ChildGaoweigeanRecordBll.cs" />
+    <Compile Include="DAL\BLL\ChildBaseInfo\SearchYcfBll.cs" />
+    <Compile Include="DAL\BLL\ChildBaseInfo\ChildStandardBll.cs" />
+    <Compile Include="DAL\BLL\ChildBaseInfo\TbGaoweiBll.cs" />
+    <Compile Include="DAL\BLL\ChildBaseInfo\ChildGoulougeanRecordBll.cs" />
+    <Compile Include="DAL\BLL\ChildBaseInfo\ChildPinxuegeanRecordBll.cs" />
+    <Compile Include="DAL\BLL\ChildBaseInfo\ChildYingyanggeanBll.cs" />
+    <Compile Include="DAL\BLL\ChildBaseInfo\ChildYingyanggeanRecordBll.cs" />
+    <Compile Include="DAL\BLL\ChildBaseInfo\MobanManageBll.cs" />
+    <Compile Include="DAL\BLL\hisRegistBll.cs" />
+    <Compile Include="DAL\BLL\ChildCheckBll.cs" />
+    <Compile Include="DAL\BLL\childSetInfo\childSetbaoJiangGuidBll.cs" />
+    <Compile Include="DAL\BLL\childSetInfo\childSetCheckAgeBll.cs" />
+    <Compile Include="DAL\BLL\childSetInfo\childSetMianyiAgeBll.cs" />
+    <Compile Include="DAL\BLL\childSetInfo\childSetNutritionguidBll.cs" />
+    <Compile Include="DAL\BLL\childSetInfo\childSetyimiaoBll.cs" />
+    <Compile Include="DAL\BLL\ProjectGaoweibll.cs" />
+    <Compile Include="DAL\BLL\tongji\tj_tijianBll.cs" />
+    <Compile Include="DAL\BLL\UpdateVersionbll.cs" />
+    <Compile Include="cqet_yytchild2DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cqet_yytchild2DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\YcfDateLogic.cs" />
+    <Compile Include="Hospital\Common\Converbirthage.cs" />
+    <Compile Include="Hospital\Common\ConverCard.cs" />
+    <Compile Include="Hospital\DAL\HosDateLogic.cs" />
+    <Compile Include="Hospital\DAL\LisDateLogic.cs" />
+    <Compile Include="Hospital\DAL\RisDataLogic.cs" />
+    <Compile Include="Model\ChildBaseInfo\ChildBaseInfoObj.cs" />
+    <Compile Include="Model\ChildBaseInfo\ChildGaoweigeanObj.cs" />
+    <Compile Include="Model\ChildBaseInfo\ChildGaoweigeanRecordObj.cs" />
+    <Compile Include="Model\ChildBaseInfo\WhoChildStandardDayObj.cs" />
+    <Compile Include="Model\ChildBaseInfo\ChildStandardObj.cs" />
+    <Compile Include="Model\ChildBaseInfo\ChildStandard_w_hObj.cs" />
+    <Compile Include="Model\ChildBaseInfo\TbGaoweiObj.cs" />
+    <Compile Include="Model\ChildBaseInfo\TbGaoweiRecordObj.cs" />
+    <Compile Include="Model\ChildBaseInfo\ChildGoulougeanRecordObj.cs" />
+    <Compile Include="Model\ChildBaseInfo\ChildPinxuegeanRecordObj.cs" />
+    <Compile Include="Model\ChildBaseInfo\ChildStandard_bmiObj.cs" />
+    <Compile Include="Model\ChildBaseInfo\WhoChildStandardObj.cs" />
+    <Compile Include="Model\ChildCheckObj.cs" />
+    <Compile Include="Model\childSetInfo\childSetbaoJiangGuidObj.cs" />
+    <Compile Include="Model\childSetInfo\childSetCheckAgeObj.cs" />
+    <Compile Include="Model\childSetInfo\childSetMianyiAgeObj.cs" />
+    <Compile Include="Model\childSetInfo\childSetNutritionguidObj.cs" />
+    <Compile Include="Model\childSetInfo\childSetyimiaoObj.cs" />
+    <Compile Include="Model\childSetInfo\mobanManageObj.cs" />
+    <Compile Include="Model\hisRegistObj.cs" />
+    <Compile Include="Model\ProjectGaoweiobj.cs" />
+    <Compile Include="Model\rutuojianchanObj.cs" />
+    <Compile Include="Model\UpdateVersionobj.cs" />
+    <Compile Include="UI\cepingshi\cp_ptoni_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_ptoni_panel.Designer.cs">
+      <DependentUpon>cp_ptoni_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_peabody_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_peabody_panel.Designer.cs">
+      <DependentUpon>cp_peabody_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_dream_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_dream_panel.Designer.cs">
+      <DependentUpon>cp_dream_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_gyqt_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_gyqt_panel.Designer.cs">
+      <DependentUpon>cp_gyqt_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_gy_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_gy_panel.Designer.cs">
+      <DependentUpon>cp_gy_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_gmyjc_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_gmyjc_panel.Designer.cs">
+      <DependentUpon>cp_gmyjc_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_xqetnl_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_xqetnl_panel.Designer.cs">
+      <DependentUpon>cp_xqetnl_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_hrcs_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_hrcs_panel.Designer.cs">
+      <DependentUpon>cp_hrcs_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_yysc1_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_yysc1_panel.Designer.cs">
+      <DependentUpon>cp_yysc1_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_yysc_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_yysc_panel.Designer.cs">
+      <DependentUpon>cp_yysc_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_dst_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_dst_panel.Designer.cs">
+      <DependentUpon>cp_dst_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_ddst_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_ddst_panel.Designer.cs">
+      <DependentUpon>cp_ddst_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_tpch_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_tpch_panel.Designer.cs">
+      <DependentUpon>cp_tpch_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_cdi_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_cdi_panel.Designer.cs">
+      <DependentUpon>cp_cdi_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_zqyyfyjc_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_zqyyfyjc_panel.Designer.cs">
+      <DependentUpon>cp_zqyyfyjc_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_ppvt_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_ppvt_panel.Designer.cs">
+      <DependentUpon>cp_ppvt_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_rwcy_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_rwcy_panel.Designer.cs">
+      <DependentUpon>cp_rwcy_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_zylcy_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_zylcy_panel.Designer.cs">
+      <DependentUpon>cp_zylcy_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_yy_cou_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_yy_cou_panel.Designer.cs">
+      <DependentUpon>cp_yy_cou_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_wycsi_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_wycsi_panel.Designer.cs">
+      <DependentUpon>cp_wycsi_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_wisc_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_wisc_panel.Designer.cs">
+      <DependentUpon>cp_wisc_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_sm_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_sm_panel.Designer.cs">
+      <DependentUpon>cp_sm_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_gesell_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_gesell_panel.Designer.cs">
+      <DependentUpon>cp_gesell_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_asd1_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_asd1_panel.Designer.cs">
+      <DependentUpon>cp_asd1_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_asd2_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_asd2_panel.Designer.cs">
+      <DependentUpon>cp_asd2_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_ados4_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_ados4_panel.Designer.cs">
+      <DependentUpon>cp_ados4_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_ados3_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_ados3_panel.Designer.cs">
+      <DependentUpon>cp_ados3_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_ados2_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_ados2_panel.Designer.cs">
+      <DependentUpon>cp_ados2_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_ados1_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_ados1_panel.Designer.cs">
+      <DependentUpon>cp_ados1_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_WomenInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_WomenInfo.designer.cs">
+      <DependentUpon>cp_WomenInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_jibenxinxi_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_jibenxinxi_panel.Designer.cs">
+      <DependentUpon>cp_jibenxinxi_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_adhd_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_adhd_panel.Designer.cs">
+      <DependentUpon>cp_adhd_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_jibenxinxi_edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\cepingshi\cp_jibenxinxi_edit.Designer.cs">
+      <DependentUpon>cp_jibenxinxi_edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChildMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ChildMainForm.Designer.cs">
+      <DependentUpon>ChildMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DateLogic.cs" />
+    <Compile Include="UI\childSetInfo\FrmCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\childSetInfo\FrmCheck.Designer.cs">
+      <DependentUpon>FrmCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\childSetInfo\FrmSetbaoJiangGuid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\childSetInfo\FrmSetbaoJiangGuid.Designer.cs">
+      <DependentUpon>FrmSetbaoJiangGuid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\childSetInfo\FrmSetCheckAge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\childSetInfo\FrmSetCheckAge.Designer.cs">
+      <DependentUpon>FrmSetCheckAge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\childSetInfo\FrmSetmianyi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\childSetInfo\FrmSetmianyi.Designer.cs">
+      <DependentUpon>FrmSetmianyi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\childSetInfo\FrmSetNutritionguid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\childSetInfo\FrmSetNutritionguid.Designer.cs">
+      <DependentUpon>FrmSetNutritionguid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\childSetInfo\FrmSetyimiao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\childSetInfo\FrmSetyimiao.Designer.cs">
+      <DependentUpon>FrmSetyimiao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\childSetInfo\Panel_moban_manage_save.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\childSetInfo\Panel_moban_manage_save.designer.cs">
+      <DependentUpon>Panel_moban_manage_save.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\childSetInfo\Panel_moban_manage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\childSetInfo\Panel_moban_manage.designer.cs">
+      <DependentUpon>Panel_moban_manage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\firstpage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\firstpage.designer.cs">
+      <DependentUpon>firstpage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmConfig.designer.cs">
+      <DependentUpon>FrmConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmPassWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmPassWord.designer.cs">
+      <DependentUpon>FrmPassWord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmRelogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmRelogin.designer.cs">
+      <DependentUpon>FrmRelogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\jibenluru\doc_jibenxinxi_edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\doc_jibenxinxi_edit.Designer.cs">
+      <DependentUpon>doc_jibenxinxi_edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Paneljibingguanli.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Paneljibingguanli.Designer.cs">
+      <DependentUpon>Paneljibingguanli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Paneljibingguanli_zhuanan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Paneljibingguanli_zhuanan.Designer.cs">
+      <DependentUpon>Paneljibingguanli_zhuanan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Paneljibingguanli_zhuanan_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Paneljibingguanli_zhuanan_add.Designer.cs">
+      <DependentUpon>Paneljibingguanli_zhuanan_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Paneltsb_jiben_gaowei.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Paneltsb_jiben_gaowei.Designer.cs">
+      <DependentUpon>Paneltsb_jiben_gaowei.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Paneltsb_jiben_gaowei_projectadd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Paneltsb_jiben_gaowei_projectadd.Designer.cs">
+      <DependentUpon>Paneltsb_jiben_gaowei_projectadd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Paneltsb_jiben_select_gaowei.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Paneltsb_jiben_select_gaowei.designer.cs">
+      <DependentUpon>Paneltsb_jiben_select_gaowei.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Paneltsb_readCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Paneltsb_readCard.Designer.cs">
+      <DependentUpon>Paneltsb_readCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Paneltsb_rowspanInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Paneltsb_rowspanInfo.Designer.cs">
+      <DependentUpon>Paneltsb_rowspanInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\PanelxinlijibingMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\PanelxinlijibingMain.Designer.cs">
+      <DependentUpon>PanelxinlijibingMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panelxinliyichang_zhuanan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panelxinliyichang_zhuanan.Designer.cs">
+      <DependentUpon>Panelxinliyichang_zhuanan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panelxinliyichang_zhuanan_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panelxinliyichang_zhuanan_add.Designer.cs">
+      <DependentUpon>Panelxinliyichang_zhuanan_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\jibenxinxi_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\jibenxinxi_panel.Designer.cs">
+      <DependentUpon>jibenxinxi_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panel_gdzpxza_tab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panel_gdzpxza_tab.Designer.cs">
+      <DependentUpon>Panel_gdzpxza_tab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panel_swgm_tab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panel_swgm_tab.Designer.cs">
+      <DependentUpon>Panel_swgm_tab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panel_yybl_tab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panel_yybl_tab.Designer.cs">
+      <DependentUpon>Panel_yybl_tab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Testtongji519.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Testtongji519.designer.cs">
+      <DependentUpon>Testtongji519.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\tijian_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\tijian_panel.Designer.cs">
+      <DependentUpon>tijian_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\PanelyibanxinxiMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\PanelyibanxinxiMain.Designer.cs">
+      <DependentUpon>PanelyibanxinxiMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panel_readCardlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panel_readCardlist.designer.cs">
+      <DependentUpon>Panel_readCardlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\tongji_BMI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\tongji_BMI.designer.cs">
+      <DependentUpon>tongji_BMI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\PanelgaoweiMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\PanelgaoweiMain.Designer.cs">
+      <DependentUpon>PanelgaoweiMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\PanelyingyangMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\PanelyingyangMain.Designer.cs">
+      <DependentUpon>PanelyingyangMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panel_gaowei_zhuanan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panel_gaowei_zhuanan.designer.cs">
+      <DependentUpon>Panel_gaowei_zhuanan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panel_gaowei_zhuanan_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panel_gaowei_zhuanan_add.designer.cs">
+      <DependentUpon>Panel_gaowei_zhuanan_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panel_goulou_zhuanan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panel_goulou_zhuanan.designer.cs">
+      <DependentUpon>Panel_goulou_zhuanan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panel_pinxue_zhuanan_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panel_pinxue_zhuanan_add.designer.cs">
+      <DependentUpon>Panel_pinxue_zhuanan_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panel_pinxue_zhuanan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panel_pinxue_zhuanan.designer.cs">
+      <DependentUpon>Panel_pinxue_zhuanan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panel_goulou_zhuanan_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panel_goulou_zhuanan_add.designer.cs">
+      <DependentUpon>Panel_goulou_zhuanan_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panel_yingyang_zhuanan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panel_yingyang_zhuanan.designer.cs">
+      <DependentUpon>Panel_yingyang_zhuanan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panel_yingyang_zhuanan_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Panel_yingyang_zhuanan_add.designer.cs">
+      <DependentUpon>Panel_yingyang_zhuanan_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Paneltsb_gaowei_zhuanan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Paneltsb_gaowei_zhuanan.designer.cs">
+      <DependentUpon>Paneltsb_gaowei_zhuanan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\Paneltsb_gaowei_zhuanan_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\Paneltsb_gaowei_zhuanan_add.designer.cs">
+      <DependentUpon>Paneltsb_gaowei_zhuanan_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\PanelYingyangZhuananMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\PanelYingyangZhuananMain.Designer.cs">
+      <DependentUpon>PanelYingyangZhuananMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\NursInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\NursInfo.designer.cs">
+      <DependentUpon>NursInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\panel_ceping.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\panel_ceping.designer.cs">
+      <DependentUpon>panel_ceping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\tongji_BMI519.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\tongji_BMI519.designer.cs">
+      <DependentUpon>tongji_BMI519.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\jibenluru\WomenInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\jibenluru\WomenInfo.designer.cs">
+      <DependentUpon>WomenInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\modelManage\Panel_Templet_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\modelManage\Panel_Templet_list.Designer.cs">
+      <DependentUpon>Panel_Templet_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\modelManage\Panel_moban_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\modelManage\Panel_moban_list.Designer.cs">
+      <DependentUpon>Panel_moban_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\modelManage\Panel_moban_save.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\modelManage\Panel_moban_save.Designer.cs">
+      <DependentUpon>Panel_moban_save.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\nursinfo\hs_yy_xianxin_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\nursinfo\hs_yy_xianxin_panel.Designer.cs">
+      <DependentUpon>hs_yy_xianxin_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\nursinfo\hs_yy_gaowei_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\nursinfo\hs_yy_gaowei_panel.Designer.cs">
+      <DependentUpon>hs_yy_gaowei_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\nursinfo\hs_yy_quetie_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\nursinfo\hs_yy_quetie_panel.Designer.cs">
+      <DependentUpon>hs_yy_quetie_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\nursinfo\hs_tijian_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\nursinfo\hs_tijian_panel.Designer.cs">
+      <DependentUpon>hs_tijian_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\nursinfo\hs_WomenInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\nursinfo\hs_WomenInfo.designer.cs">
+      <DependentUpon>hs_WomenInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\nursinfo\Panel_searchHisInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\nursinfo\Panel_searchHisInfo.Designer.cs">
+      <DependentUpon>Panel_searchHisInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Paneltsb_searchInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Paneltsb_searchInfo.Designer.cs">
+      <DependentUpon>Paneltsb_searchInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_ptoni_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_ptoni_printer.Designer.cs">
+      <DependentUpon>cp_ptoni_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_peabody_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_peabody_printer.Designer.cs">
+      <DependentUpon>cp_peabody_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_dst_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_dst_printer.Designer.cs">
+      <DependentUpon>cp_dst_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_dream_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_dream_printer.Designer.cs">
+      <DependentUpon>cp_dream_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_gmyjc_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_gmyjc_printer.Designer.cs">
+      <DependentUpon>cp_gmyjc_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_gyqt_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_gyqt_printer.Designer.cs">
+      <DependentUpon>cp_gyqt_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_hrsy_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_hrsy_printer.Designer.cs">
+      <DependentUpon>cp_hrsy_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_xqetnl_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_xqetnl_printer.Designer.cs">
+      <DependentUpon>cp_xqetnl_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_tpch_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_tpch_printer.Designer.cs">
+      <DependentUpon>cp_tpch_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_yysc1_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_yysc1_printer.Designer.cs">
+      <DependentUpon>cp_yysc1_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_gy_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_gy_printer.Designer.cs">
+      <DependentUpon>cp_gy_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_yysc_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_yysc_printer.Designer.cs">
+      <DependentUpon>cp_yysc_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_ddst_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_ddst_printer.Designer.cs">
+      <DependentUpon>cp_ddst_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_rwcy_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_rwcy_printer.Designer.cs">
+      <DependentUpon>cp_rwcy_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_zylcy_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_zylcy_printer.Designer.cs">
+      <DependentUpon>cp_zylcy_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_ppvt_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_ppvt_printer.Designer.cs">
+      <DependentUpon>cp_ppvt_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_zqyyfyjc_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_zqyyfyjc_printer.Designer.cs">
+      <DependentUpon>cp_zqyyfyjc_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_cdi_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_cdi_printer.Designer.cs">
+      <DependentUpon>cp_cdi_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_ados1_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_ados1_printer.Designer.cs">
+      <DependentUpon>cp_ados1_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_ados2_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_ados2_printer.Designer.cs">
+      <DependentUpon>cp_ados2_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_ados3_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_ados3_printer.Designer.cs">
+      <DependentUpon>cp_ados3_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_ados4_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_ados4_printer.Designer.cs">
+      <DependentUpon>cp_ados4_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_asd1_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_asd1_printer.Designer.cs">
+      <DependentUpon>cp_asd1_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_asd2_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_asd2_printer.Designer.cs">
+      <DependentUpon>cp_asd2_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_gesell_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_gesell_printer.Designer.cs">
+      <DependentUpon>cp_gesell_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_sm_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_sm_printer.Designer.cs">
+      <DependentUpon>cp_sm_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_wisc_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_wisc_printer.Designer.cs">
+      <DependentUpon>cp_wisc_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_wycsi_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_wycsi_printer.Designer.cs">
+      <DependentUpon>cp_wycsi_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\FormPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\FormPrint.Designer.cs">
+      <DependentUpon>FormPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\PanelBMIPrinter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\PanelBMIPrinter.Designer.cs">
+      <DependentUpon>PanelBMIPrinter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\PanelGaoweizhuananPrinter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\PanelGaoweizhuananPrinter.designer.cs">
+      <DependentUpon>PanelGaoweizhuananPrinter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\PaneljibenCheckBingliPrinter1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\PaneljibenCheckBingliPrinter1.Designer.cs">
+      <DependentUpon>PaneljibenCheckBingliPrinter1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\PaneljibenCheckBingliPrinter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\PaneljibenCheckBingliPrinter.Designer.cs">
+      <DependentUpon>PaneljibenCheckBingliPrinter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_adhd_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\cepingshi\cp_adhd_printer.Designer.cs">
+      <DependentUpon>cp_adhd_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\PaneljibenChildCheckPrinter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\PaneljibenChildCheckPrinter.Designer.cs">
+      <DependentUpon>PaneljibenChildCheckPrinter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Paneltsb_searchycfInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Paneltsb_searchycfInfo.Designer.cs">
+      <DependentUpon>Paneltsb_searchycfInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\PanelYingyangzhuananPrinter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\PanelYingyangzhuananPrinter.designer.cs">
+      <DependentUpon>PanelYingyangzhuananPrinter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\PanelGoulouzhuananPrinter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\PanelGoulouzhuananPrinter.designer.cs">
+      <DependentUpon>PanelGoulouzhuananPrinter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\PanelPinxuezhuananPrinter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\PanelPinxuezhuananPrinter.designer.cs">
+      <DependentUpon>PanelPinxuezhuananPrinter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\PanelGaoweimianPrinter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\PanelGaoweimianPrinter.designer.cs">
+      <DependentUpon>PanelGaoweimianPrinter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\PanelYingyangmianPrinter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\PanelYingyangmianPrinter.designer.cs">
+      <DependentUpon>PanelYingyangmianPrinter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\Panel_ysgdzpxzaPrinter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\Panel_ysgdzpxzaPrinter.Designer.cs">
+      <DependentUpon>Panel_ysgdzpxzaPrinter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\Panel_ysswgmPrinter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\Panel_ysswgmPrinter.Designer.cs">
+      <DependentUpon>Panel_ysswgmPrinter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\Panel_ysyyblPrinter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\Panel_ysyyblPrinter.Designer.cs">
+      <DependentUpon>Panel_ysyyblPrinter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\pritner.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\pritner.Designer.cs">
+      <DependentUpon>pritner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\printrecord\yuyue\yy_asd_printer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\printrecord\yuyue\yy_asd_printer.Designer.cs">
+      <DependentUpon>yy_asd_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RowMergeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\RowMergeView.Designer.cs">
+      <DependentUpon>RowMergeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\sys\HelperTree.cs" />
+    <Compile Include="UI\sys\sys_rolemenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\sys\sys_rolemenu.designer.cs">
+      <DependentUpon>sys_rolemenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\sys\sys_user_edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\sys\sys_user_edit.designer.cs">
+      <DependentUpon>sys_user_edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\sys\sys_name_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\sys\sys_name_list.designer.cs">
+      <DependentUpon>sys_name_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\sys\sys_user_list.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\sys\sys_user_list.designer.cs">
+      <DependentUpon>sys_user_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\sys\sys_user_roles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\sys\sys_user_roles.designer.cs">
+      <DependentUpon>sys_user_roles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\tongji\tj_ages.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\tongji\tj_ages.Designer.cs">
+      <DependentUpon>tj_ages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\tongji\tj_yingtijian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\tongji\tj_yingtijian.Designer.cs">
+      <DependentUpon>tj_yingtijian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\tongji\tj_jibing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\tongji\tj_jibing.Designer.cs">
+      <DependentUpon>tj_jibing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\tongji\tj_renci.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\tongji\tj_renci.Designer.cs">
+      <DependentUpon>tj_renci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\tongji\tj_diqu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\tongji\tj_diqu.Designer.cs">
+      <DependentUpon>tj_diqu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\tongji\tj_tijian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\tongji\tj_tijian.Designer.cs">
+      <DependentUpon>tj_tijian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\tongji\tongji_MainInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\tongji\tongji_MainInfo.designer.cs">
+      <DependentUpon>tongji_MainInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\tongji\tongji_publicmodel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\tongji\tongji_publicmodel.designer.cs">
+      <DependentUpon>tongji_publicmodel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\versionmanage\VersionList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\versionmanage\VersionList.designer.cs">
+      <DependentUpon>VersionList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_jibenxinxi_edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_jibenxinxi_edit.Designer.cs">
+      <DependentUpon>xl_jibenxinxi_edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_yy_cou_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_yy_cou_panel.Designer.cs">
+      <DependentUpon>xl_yy_cou_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_ados1_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_ados1_panel.Designer.cs">
+      <DependentUpon>xl_ados1_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_ados2_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_ados2_panel.Designer.cs">
+      <DependentUpon>xl_ados2_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_ados3_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_ados3_panel.Designer.cs">
+      <DependentUpon>xl_ados3_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_ados4_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_ados4_panel.Designer.cs">
+      <DependentUpon>xl_ados4_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_asd1_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_asd1_panel.Designer.cs">
+      <DependentUpon>xl_asd1_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_asd2_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_asd2_panel.Designer.cs">
+      <DependentUpon>xl_asd2_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_gesell_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_gesell_panel.Designer.cs">
+      <DependentUpon>xl_gesell_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_sm_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_sm_panel.Designer.cs">
+      <DependentUpon>xl_sm_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_wisc_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_wisc_panel.Designer.cs">
+      <DependentUpon>xl_wisc_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_wycsi_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_wycsi_panel.Designer.cs">
+      <DependentUpon>xl_wycsi_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_adhd_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_adhd_panel.Designer.cs">
+      <DependentUpon>xl_adhd_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_WomenInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_WomenInfo.designer.cs">
+      <DependentUpon>xl_WomenInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_jibenxinxi_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\xunlianshi\xl_jibenxinxi_panel.Designer.cs">
+      <DependentUpon>xl_jibenxinxi_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\yuyue\yy_all_details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\yuyue\yy_all_details.Designer.cs">
+      <DependentUpon>yy_all_details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\yuyue\yy_all_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\yuyue\yy_all_panel.Designer.cs">
+      <DependentUpon>yy_all_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\yuyue\yy_all_edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\yuyue\yy_all_edit.designer.cs">
+      <DependentUpon>yy_all_edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\yuyue\yy_WomenInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\yuyue\yy_WomenInfo.designer.cs">
+      <DependentUpon>yy_WomenInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\yuyue\yy_pz_xg_panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\yuyue\yy_pz_xg_panel.designer.cs">
+      <DependentUpon>yy_pz_xg_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\yuyue\yy_pz_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\yuyue\yy_pz_panel.Designer.cs">
+      <DependentUpon>yy_pz_panel.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\cepingshi\cp_ptoni_panel.resx">
+      <DependentUpon>cp_ptoni_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_peabody_panel.resx">
+      <DependentUpon>cp_peabody_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_dream_panel.resx">
+      <DependentUpon>cp_dream_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_gyqt_panel.resx">
+      <DependentUpon>cp_gyqt_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_gy_panel.resx">
+      <DependentUpon>cp_gy_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_gmyjc_panel.resx">
+      <DependentUpon>cp_gmyjc_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_xqetnl_panel.resx">
+      <DependentUpon>cp_xqetnl_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_hrcs_panel.resx">
+      <DependentUpon>cp_hrcs_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_yysc1_panel.resx">
+      <DependentUpon>cp_yysc1_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_yysc_panel.resx">
+      <DependentUpon>cp_yysc_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_dst_panel.resx">
+      <DependentUpon>cp_dst_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_ddst_panel.resx">
+      <DependentUpon>cp_ddst_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_tpch_panel.resx">
+      <DependentUpon>cp_tpch_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_cdi_panel.resx">
+      <DependentUpon>cp_cdi_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_zqyyfyjc_panel.resx">
+      <DependentUpon>cp_zqyyfyjc_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_ppvt_panel.resx">
+      <DependentUpon>cp_ppvt_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_rwcy_panel.resx">
+      <DependentUpon>cp_rwcy_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_zylcy_panel.resx">
+      <DependentUpon>cp_zylcy_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_yy_cou_panel.resx">
+      <DependentUpon>cp_yy_cou_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_wycsi_panel.resx">
+      <DependentUpon>cp_wycsi_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_wisc_panel.resx">
+      <DependentUpon>cp_wisc_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_sm_panel.resx">
+      <DependentUpon>cp_sm_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_gesell_panel.resx">
+      <DependentUpon>cp_gesell_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_asd1_panel.resx">
+      <DependentUpon>cp_asd1_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_asd2_panel.resx">
+      <DependentUpon>cp_asd2_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_ados4_panel.resx">
+      <DependentUpon>cp_ados4_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_ados3_panel.resx">
+      <DependentUpon>cp_ados3_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_ados2_panel.resx">
+      <DependentUpon>cp_ados2_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_ados1_panel.resx">
+      <DependentUpon>cp_ados1_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_WomenInfo.resx">
+      <DependentUpon>cp_WomenInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_jibenxinxi_panel.resx">
+      <DependentUpon>cp_jibenxinxi_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_adhd_panel.resx">
+      <DependentUpon>cp_adhd_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\cepingshi\cp_jibenxinxi_edit.resx">
+      <DependentUpon>cp_jibenxinxi_edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ChildMainForm.resx">
+      <DependentUpon>ChildMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\childSetInfo\FrmCheck.resx">
+      <DependentUpon>FrmCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\childSetInfo\FrmSetbaoJiangGuid.resx">
+      <DependentUpon>FrmSetbaoJiangGuid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\childSetInfo\FrmSetCheckAge.resx">
+      <DependentUpon>FrmSetCheckAge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\childSetInfo\FrmSetmianyi.resx">
+      <DependentUpon>FrmSetmianyi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\childSetInfo\FrmSetNutritionguid.resx">
+      <DependentUpon>FrmSetNutritionguid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\childSetInfo\FrmSetyimiao.resx">
+      <DependentUpon>FrmSetyimiao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\childSetInfo\Panel_moban_manage_save.resx">
+      <DependentUpon>Panel_moban_manage_save.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\childSetInfo\Panel_moban_manage.resx">
+      <DependentUpon>Panel_moban_manage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\firstpage.resx">
+      <DependentUpon>firstpage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmConfig.resx">
+      <DependentUpon>FrmConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmPassWord.resx">
+      <DependentUpon>FrmPassWord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmRelogin.resx">
+      <DependentUpon>FrmRelogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\jibenluru\doc_jibenxinxi_edit.resx">
+      <DependentUpon>doc_jibenxinxi_edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Paneljibingguanli.resx">
+      <DependentUpon>Paneljibingguanli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Paneljibingguanli_zhuanan.resx">
+      <DependentUpon>Paneljibingguanli_zhuanan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Paneljibingguanli_zhuanan_add.resx">
+      <DependentUpon>Paneljibingguanli_zhuanan_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Paneltsb_jiben_gaowei.resx">
+      <DependentUpon>Paneltsb_jiben_gaowei.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Paneltsb_jiben_gaowei_projectadd.resx">
+      <DependentUpon>Paneltsb_jiben_gaowei_projectadd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Paneltsb_jiben_select_gaowei.resx">
+      <DependentUpon>Paneltsb_jiben_select_gaowei.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Paneltsb_readCard.resx">
+      <DependentUpon>Paneltsb_readCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Paneltsb_rowspanInfo.resx">
+      <DependentUpon>Paneltsb_rowspanInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\PanelxinlijibingMain.resx">
+      <DependentUpon>PanelxinlijibingMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Panelxinliyichang_zhuanan.resx">
+      <DependentUpon>Panelxinliyichang_zhuanan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Panelxinliyichang_zhuanan_add.resx">
+      <DependentUpon>Panelxinliyichang_zhuanan_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\jibenxinxi_panel.resx">
+      <DependentUpon>jibenxinxi_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Panel_gdzpxza_tab.resx">
+      <DependentUpon>Panel_gdzpxza_tab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Panel_swgm_tab.resx">
+      <DependentUpon>Panel_swgm_tab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Panel_yybl_tab.resx">
+      <DependentUpon>Panel_yybl_tab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Testtongji519.resx">
+      <DependentUpon>Testtongji519.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\tijian_panel.resx">
+      <DependentUpon>tijian_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\PanelyibanxinxiMain.resx">
+      <DependentUpon>PanelyibanxinxiMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Panel_readCardlist.resx">
+      <DependentUpon>Panel_readCardlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\tongji_BMI.resx">
+      <DependentUpon>tongji_BMI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\PanelgaoweiMain.resx">
+      <DependentUpon>PanelgaoweiMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\PanelyingyangMain.resx">
+      <DependentUpon>PanelyingyangMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Panel_gaowei_zhuanan.resx">
+      <DependentUpon>Panel_gaowei_zhuanan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Panel_gaowei_zhuanan_add.resx">
+      <DependentUpon>Panel_gaowei_zhuanan_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Panel_goulou_zhuanan.resx">
+      <DependentUpon>Panel_goulou_zhuanan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Panel_pinxue_zhuanan_add.resx">
+      <DependentUpon>Panel_pinxue_zhuanan_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Panel_pinxue_zhuanan.resx">
+      <DependentUpon>Panel_pinxue_zhuanan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Panel_goulou_zhuanan_add.resx">
+      <DependentUpon>Panel_goulou_zhuanan_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Panel_yingyang_zhuanan.resx">
+      <DependentUpon>Panel_yingyang_zhuanan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Panel_yingyang_zhuanan_add.resx">
+      <DependentUpon>Panel_yingyang_zhuanan_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Paneltsb_gaowei_zhuanan.resx">
+      <DependentUpon>Paneltsb_gaowei_zhuanan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\Paneltsb_gaowei_zhuanan_add.resx">
+      <DependentUpon>Paneltsb_gaowei_zhuanan_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\PanelYingyangZhuananMain.resx">
+      <DependentUpon>PanelYingyangZhuananMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\NursInfo.resx">
+      <DependentUpon>NursInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\panel_ceping.resx">
+      <DependentUpon>panel_ceping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\tongji_BMI519.resx">
+      <DependentUpon>tongji_BMI519.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\jibenluru\WomenInfo.resx">
+      <DependentUpon>WomenInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\modelManage\Panel_Templet_list.resx">
+      <DependentUpon>Panel_Templet_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\modelManage\Panel_moban_list.resx">
+      <DependentUpon>Panel_moban_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\modelManage\Panel_moban_save.resx">
+      <DependentUpon>Panel_moban_save.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\nursinfo\hs_yy_xianxin_panel.resx">
+      <DependentUpon>hs_yy_xianxin_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\nursinfo\hs_yy_gaowei_panel.resx">
+      <DependentUpon>hs_yy_gaowei_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\nursinfo\hs_yy_quetie_panel.resx">
+      <DependentUpon>hs_yy_quetie_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\nursinfo\hs_tijian_panel.resx">
+      <DependentUpon>hs_tijian_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\nursinfo\hs_WomenInfo.resx">
+      <DependentUpon>hs_WomenInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\nursinfo\Panel_searchHisInfo.resx">
+      <DependentUpon>Panel_searchHisInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Paneltsb_searchInfo.resx">
+      <DependentUpon>Paneltsb_searchInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Paneltsb_searchycfInfo.resx">
+      <DependentUpon>Paneltsb_searchycfInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Model\ChildBaseInfo\ChildYingyanggeanObj.cs" />
+    <Compile Include="Model\ChildBaseInfo\ChildYingyanggeanRecordObj.cs" />
+    <EmbeddedResource Include="UI\printrecord\FormPrint.resx">
+      <DependentUpon>FormPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\printrecord\PanelGaoweizhuananPrinter.resx">
+      <DependentUpon>PanelGaoweizhuananPrinter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\printrecord\PanelYingyangzhuananPrinter.resx">
+      <DependentUpon>PanelYingyangzhuananPrinter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\printrecord\PanelGoulouzhuananPrinter.resx">
+      <DependentUpon>PanelGoulouzhuananPrinter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\printrecord\PanelPinxuezhuananPrinter.resx">
+      <DependentUpon>PanelPinxuezhuananPrinter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\printrecord\PanelGaoweimianPrinter.resx">
+      <DependentUpon>PanelGaoweimianPrinter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\printrecord\PanelYingyangmianPrinter.resx">
+      <DependentUpon>PanelYingyangmianPrinter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\printrecord\Report1.rdlc" />
+    <EmbeddedResource Include="UI\printrecord\Report2.rdlc" />
+    <EmbeddedResource Include="UI\sys\sys_rolemenu.resx">
+      <DependentUpon>sys_rolemenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\sys\sys_user_edit.resx">
+      <DependentUpon>sys_user_edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\sys\sys_name_list.resx">
+      <DependentUpon>sys_name_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\sys\sys_user_list.resx">
+      <DependentUpon>sys_user_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\sys\sys_user_roles.resx">
+      <DependentUpon>sys_user_roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\tongji\tj_ages.resx">
+      <DependentUpon>tj_ages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\tongji\tj_yingtijian.resx">
+      <DependentUpon>tj_yingtijian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\tongji\tj_jibing.resx">
+      <DependentUpon>tj_jibing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\tongji\tj_renci.resx">
+      <DependentUpon>tj_renci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\tongji\tj_diqu.resx">
+      <DependentUpon>tj_diqu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\tongji\tj_tijian.resx">
+      <DependentUpon>tj_tijian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\tongji\tongji_MainInfo.resx">
+      <DependentUpon>tongji_MainInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\tongji\tongji_publicmodel.resx">
+      <DependentUpon>tongji_publicmodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\versionmanage\VersionList.resx">
+      <DependentUpon>VersionList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\xunlianshi\xl_jibenxinxi_edit.resx">
+      <DependentUpon>xl_jibenxinxi_edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\xunlianshi\xl_yy_cou_panel.resx">
+      <DependentUpon>xl_yy_cou_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\xunlianshi\xl_ados1_panel.resx">
+      <DependentUpon>xl_ados1_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\xunlianshi\xl_ados2_panel.resx">
+      <DependentUpon>xl_ados2_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\xunlianshi\xl_ados3_panel.resx">
+      <DependentUpon>xl_ados3_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\xunlianshi\xl_ados4_panel.resx">
+      <DependentUpon>xl_ados4_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\xunlianshi\xl_asd1_panel.resx">
+      <DependentUpon>xl_asd1_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\xunlianshi\xl_asd2_panel.resx">
+      <DependentUpon>xl_asd2_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\xunlianshi\xl_gesell_panel.resx">
+      <DependentUpon>xl_gesell_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\xunlianshi\xl_sm_panel.resx">
+      <DependentUpon>xl_sm_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\xunlianshi\xl_wisc_panel.resx">
+      <DependentUpon>xl_wisc_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\xunlianshi\xl_wycsi_panel.resx">
+      <DependentUpon>xl_wycsi_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\xunlianshi\xl_adhd_panel.resx">
+      <DependentUpon>xl_adhd_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\xunlianshi\xl_WomenInfo.resx">
+      <DependentUpon>xl_WomenInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\xunlianshi\xl_jibenxinxi_panel.resx">
+      <DependentUpon>xl_jibenxinxi_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\yuyue\yy_all_details.resx">
+      <DependentUpon>yy_all_details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\yuyue\yy_all_panel.resx">
+      <DependentUpon>yy_all_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\yuyue\yy_all_edit.resx">
+      <DependentUpon>yy_all_edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\yuyue\yy_WomenInfo.resx">
+      <DependentUpon>yy_WomenInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\yuyue\yy_pz_xg_panel.resx">
+      <DependentUpon>yy_pz_xg_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\yuyue\yy_pz_panel.resx">
+      <DependentUpon>yy_pz_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="cqet_yytchild2DataSet.xsc">
+      <DependentUpon>cqet_yytchild2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="cqet_yytchild2DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>cqet_yytchild2DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="cqet_yytchild2DataSet.xss">
+      <DependentUpon>cqet_yytchild2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="UI\printrecord\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="UI\printrecord\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="UI\printrecord\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_reset.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_submit.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toolstrip04.jpg" />
+    <None Include="bin\Debug\images\bg.jpg" />
+    <Content Include="ESBMQClientProperty.xml" />
+    <Content Include="ico_h.ico" />
+    <Content Include="Resources\nothing.png" />
+    <Content Include="Resources\ok.png" />
+    <None Include="Resources\view.jpg" />
+    <Content Include="WomenPC.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YCF.BLL\YCF.BLL.csproj">
+      <Project>{089fc16e-45c8-471a-a39c-6d6e0efa6769}</Project>
+      <Name>YCF.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YCF.Common\YCF.Common.csproj">
+      <Project>{41c8f68a-9608-4ece-b632-3577d4247f6c}</Project>
+      <Name>YCF.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YCF.DAL\YCF.DAL.csproj">
+      <Project>{5848c98e-3a51-44b7-9808-5a3565105dd4}</Project>
+      <Name>YCF.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YCF.Model\YCF.Model.csproj">
+      <Project>{01b499be-88f1-4b5e-a0ca-7db34f48a243}</Project>
+      <Name>YCF.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,13 @@
+F:\Winform\广州南方医院EF\WindowsForms\DAL\bin\Release\DAL.dll.config
+F:\Winform\广州南方医院EF\WindowsForms\DAL\bin\Release\DAL.dll
+F:\Winform\广州南方医院EF\WindowsForms\DAL\bin\Release\DAL.pdb
+F:\Winform\广州南方医院EF\WindowsForms\DAL\bin\Release\EntityFramework.dll
+F:\Winform\广州南方医院EF\WindowsForms\DAL\bin\Release\EntityFramework.SqlServer.dll
+F:\Winform\广州南方医院EF\WindowsForms\DAL\bin\Release\Model.dll
+F:\Winform\广州南方医院EF\WindowsForms\DAL\bin\Release\Model.pdb
+F:\Winform\广州南方医院EF\WindowsForms\DAL\bin\Release\EntityFramework.xml
+F:\Winform\广州南方医院EF\WindowsForms\DAL\bin\Release\EntityFramework.SqlServer.xml
+F:\Winform\广州南方医院EF\WindowsForms\DAL\bin\Release\zh-Hans\EntityFramework.resources.dll
+F:\Winform\广州南方医院EF\WindowsForms\DAL\bin\Release\zh-Hans\EntityFramework.SqlServer.resources.dll
+F:\Winform\广州南方医院EF\WindowsForms\DAL\obj\Release\DAL.dll
+F:\Winform\广州南方医院EF\WindowsForms\DAL\obj\Release\DAL.pdb

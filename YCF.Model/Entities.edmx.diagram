@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="629defdaa8bc401d96c159cf9d51d0d5" Name="分娩管理" ZoomLevel="67" >
+        <EntityTypeShape EntityType="jianyiModel.tb_healthcheck_moban" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="jianyiModel.sys_menus" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="jianyiModel.tb_childbase" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="jianyiModel.sys_role" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="jianyiModel.sys_role_menu" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="jianyiModel.sys_users" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="jianyiModel.cp_yy_cou" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="jianyiModel.xl_yy_cou" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="jianyiModel.xl_yy_tab" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="jianyiModel.hs_yy_gw_tab" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="jianyiModel.hs_yy_qt_tab" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="jianyiModel.hs_yy_xx_tab" Width="1.5" PointX="6.75" PointY="8.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="jianyiModel.mb_zd" Width="1.5" PointX="8.75" PointY="10.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="jianyiModel.mb_wy" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="jianyiModel.tb_childcheck" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="jianyiModel.cp_dream_tab" Width="1.5" PointX="3.375" PointY="12.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_gmyjc_tab" Width="1.5" PointX="9.375" PointY="12.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_gyqt_tab" Width="1.5" PointX="11.375" PointY="12.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_gy_tab" Width="1.5" PointX="13.375" PointY="2.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_peabody_tab" Width="1.5" PointX="5.375" PointY="13.75" />
+        <EntityTypeShape EntityType="jianyiModel.tab_bzfzh_Num" Width="1.5" PointX="13.375" PointY="14.75" />
+        <EntityTypeShape EntityType="jianyiModel.tab_dept_data" Width="1.5" PointX="15.75" PointY="0.75" />
+        <EntityTypeShape EntityType="jianyiModel.tab_Peabody_Num" Width="1.5" PointX="0.75" PointY="15.75" />
+        <EntityTypeShape EntityType="jianyiModel.tab_person_data" Width="1.5" PointX="15.375" PointY="3.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_ppvt_tab" Width="1.5" PointX="15.375" PointY="6.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_zqyyfyjc_tab" Width="1.5" PointX="15.375" PointY="13.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_zylcy_tab" Width="1.5" PointX="17.375" PointY="3.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_cdi1_tab" Width="1.5" PointX="17.375" PointY="11.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_cdi_tab" Width="1.5" PointX="19.375" PointY="0.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_adhd_tab" Width="1.5" PointX="0.75" PointY="19.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_ados1_tab" Width="1.5" PointX="19.375" PointY="7.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_ados2_tab" Width="1.5" PointX="11.375" PointY="19.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_ados3_tab" Width="1.5" PointX="19.375" PointY="16.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_ados4_tab" Width="1.5" PointX="21.375" PointY="0.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_asd1_tab" Width="1.5" PointX="21.375" PointY="9.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_asd2_tab" Width="1.5" PointX="21.375" PointY="15.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_gesell_tab" Width="1.5" PointX="7.375" PointY="22.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_sm_tab" Width="1.5" PointX="13.375" PointY="22.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_wisc_tab" Width="1.5" PointX="21.375" PointY="22.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_wycsi_tab" Width="1.5" PointX="23.375" PointY="0.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_yy_tab" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_dst_tab" Width="1.5" PointX="23.375" PointY="9.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_tpch_tab" Width="1.5" PointX="23.375" PointY="14.75" />
+        <EntityTypeShape EntityType="jianyiModel.yy_pz_tab" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="jianyiModel.yy_asd_tab" Width="1.5" PointX="15.375" PointY="23.75" />
+        <EntityTypeShape EntityType="jianyiModel.yy_pz_details_tab" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="jianyiModel.tab_templet_Info" Width="1.5" PointX="5.375" PointY="10.75" />
+        <EntityTypeShape EntityType="jianyiModel.tab_ysf_xdnl" Width="1.5" PointX="23.375" PointY="20.75" />
+        <EntityTypeShape EntityType="jianyiModel.tab_yysc_Num" Width="1.5" PointX="23.375" PointY="24.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_ptoni_tab" Width="1.5" PointX="25.375" PointY="0.75" />
+        <EntityTypeShape EntityType="jianyiModel.cp_ddst_tab" Width="1.5" PointX="25.375" PointY="7.75" />
+        <EntityTypeShape EntityType="jianyiModel.ys_gdzpxza_tab" Width="1.5" PointX="25.375" PointY="14.75" />
+        <EntityTypeShape EntityType="jianyiModel.ys_ywgm_tab" Width="1.5" PointX="17.375" PointY="25.75" />
+        <EntityTypeShape EntityType="jianyiModel.ys_yybl_tab" Width="1.5" PointX="25.375" PointY="19.75" />
+      </Diagram>
+      <Diagram DiagramId="a0fd33ede4a64c1f9309d7bd42fecf99" Name="系统配置" >
+        <EntityTypeShape EntityType="jianyiModel.temp_report" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="jianyiModel.temp_report_node" Width="1.5" PointX="2.75" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

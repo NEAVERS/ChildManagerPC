@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Entities2010" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="Entities2010Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tb_gaowei" EntityType="Entities2010.tb_gaowei" />
+    <EntitySet Name="tb_childcheck" EntityType="Entities2010.tb_childcheck" />
+  </EntityContainer>
+  <EntityType Name="tb_gaowei">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="childId" />
+    <Property Type="String" Name="gaoweiyinsu" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="recordtime" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="type" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="doctorName" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tb_childcheck">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Decimal" Name="id" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Decimal" Name="childId" Precision="18" Scale="0" />
+    <Property Type="String" Name="checkAge" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="checkFactAge" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="checkDay" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="doctorName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="checkHeight" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="checkWeight" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="checkTouwei" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="checkZuogao" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="checkTunwei" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="checkQianlu" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="checkIQ" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="checkZiping" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="yuCeHeight" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="leftyan" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="rightyan" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="leftyanshili" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="rightyanshili" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="xieshi" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="lefter" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="righter" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="lefterlisten" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="rightlisten" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="checkbi" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="kouQiang" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="yaciNumber" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="yuciNumber" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="skin" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="lingbajie" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="bianTaoti" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="xinZang" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="feiBu" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ganZang" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="piZang" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="qiZhi" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="siZhi" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="xiongBu" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="miNiaoQi" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="wuGuan" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="jiZhu" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="pingPqiu" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="checkContent" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="yufangJiezhong" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="bloodseSu" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="shiWugouCheng" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="vitd" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="bigSport" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="spirtSport" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="laguage" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="signSocial" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="otherBingshi" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="handle" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="diagnose" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="checkMonth" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="fuzenDay" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="fubu" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="fuwei" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nuerzhidao" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="checkdiagnose" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="zhushi" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="fushi" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="shehui" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="dongzuo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="toulu" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="gouloubing" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="zonghefazhan" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="fuzhujiancha" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="otherjiancha" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="zhusu" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="bingshi" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="tijian" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="zhenduan" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="chuli" MaxLength="4000" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

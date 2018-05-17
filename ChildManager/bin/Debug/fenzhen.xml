@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="GB2312" ?> 
+<root>  
+  <person name="主任医师" id="zr"></person>  
+  <person name="副主任医师" id="fzr"></person>  
+  <person name="主治医师" id="zq"></person>  
+  <person name="医师" id="ys"></person>  
+  <person name="程茜" id="cq"></person>  
+   <person name="测试" id="cs"></person>  
+</root>  

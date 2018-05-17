@@ -1,0 +1,12 @@
+F:\Winform\广州南方医院EF\WindowsForms\Model\bin\Release\Model.dll.config
+F:\Winform\广州南方医院EF\WindowsForms\Model\bin\Release\Model.dll
+F:\Winform\广州南方医院EF\WindowsForms\Model\bin\Release\Model.pdb
+F:\Winform\广州南方医院EF\WindowsForms\Model\bin\Release\EntityFramework.dll
+F:\Winform\广州南方医院EF\WindowsForms\Model\bin\Release\EntityFramework.SqlServer.dll
+F:\Winform\广州南方医院EF\WindowsForms\Model\bin\Release\EntityFramework.xml
+F:\Winform\广州南方医院EF\WindowsForms\Model\bin\Release\EntityFramework.SqlServer.xml
+F:\Winform\广州南方医院EF\WindowsForms\Model\bin\Release\zh-Hans\EntityFramework.resources.dll
+F:\Winform\广州南方医院EF\WindowsForms\Model\bin\Release\zh-Hans\EntityFramework.SqlServer.resources.dll
+F:\Winform\广州南方医院EF\WindowsForms\Model\obj\Release\Model.dll
+F:\Winform\广州南方医院EF\WindowsForms\Model\obj\Release\Model.pdb
+F:\Winform\广州南方医院EF\WindowsForms\Model\obj\Release\Model.csprojResolveAssemblyReference.cache

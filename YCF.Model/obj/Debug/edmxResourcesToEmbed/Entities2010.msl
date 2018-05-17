@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
+  <Alias Key="Model" Value="Entities2010" />
+  <Alias Key="Target" Value="Entities2010.Store" />
+  <EntityContainerMapping CdmEntityContainer="Entities2010Container" StorageEntityContainer="Entities2010StoreContainer">
+    <EntitySetMapping Name="tb_gaowei">
+      <EntityTypeMapping TypeName="Entities2010.tb_gaowei">
+        <MappingFragment StoreEntitySet="tb_gaowei">
+          <ScalarProperty Name="doctorName" ColumnName="doctorName" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="recordtime" ColumnName="recordtime" />
+          <ScalarProperty Name="gaoweiyinsu" ColumnName="gaoweiyinsu" />
+          <ScalarProperty Name="childId" ColumnName="childId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_childcheck">
+      <EntityTypeMapping TypeName="Entities2010.tb_childcheck">
+        <MappingFragment StoreEntitySet="tb_childcheck">
+          <ScalarProperty Name="chuli" ColumnName="chuli" />
+          <ScalarProperty Name="zhenduan" ColumnName="zhenduan" />
+          <ScalarProperty Name="tijian" ColumnName="tijian" />
+          <ScalarProperty Name="bingshi" ColumnName="bingshi" />
+          <ScalarProperty Name="zhusu" ColumnName="zhusu" />
+          <ScalarProperty Name="otherjiancha" ColumnName="otherjiancha" />
+          <ScalarProperty Name="fuzhujiancha" ColumnName="fuzhujiancha" />
+          <ScalarProperty Name="zonghefazhan" ColumnName="zonghefazhan" />
+          <ScalarProperty Name="gouloubing" ColumnName="gouloubing" />
+          <ScalarProperty Name="toulu" ColumnName="toulu" />
+          <ScalarProperty Name="dongzuo" ColumnName="dongzuo" />
+          <ScalarProperty Name="shehui" ColumnName="shehui" />
+          <ScalarProperty Name="fushi" ColumnName="fushi" />
+          <ScalarProperty Name="zhushi" ColumnName="zhushi" />
+          <ScalarProperty Name="checkdiagnose" ColumnName="checkdiagnose" />
+          <ScalarProperty Name="nuerzhidao" ColumnName="nuerzhidao" />
+          <ScalarProperty Name="fuwei" ColumnName="fuwei" />
+          <ScalarProperty Name="fubu" ColumnName="fubu" />
+          <ScalarProperty Name="fuzenDay" ColumnName="fuzenDay" />
+          <ScalarProperty Name="checkMonth" ColumnName="checkMonth" />
+          <ScalarProperty Name="diagnose" ColumnName="diagnose" />
+          <ScalarProperty Name="handle" ColumnName="handle" />
+          <ScalarProperty Name="otherBingshi" ColumnName="otherBingshi" />
+          <ScalarProperty Name="signSocial" ColumnName="signSocial" />
+          <ScalarProperty Name="laguage" ColumnName="laguage" />
+          <ScalarProperty Name="spirtSport" ColumnName="spirtSport" />
+          <ScalarProperty Name="bigSport" ColumnName="bigSport" />
+          <ScalarProperty Name="vitd" ColumnName="vitd" />
+          <ScalarProperty Name="shiWugouCheng" ColumnName="shiWugouCheng" />
+          <ScalarProperty Name="bloodseSu" ColumnName="bloodseSu" />
+          <ScalarProperty Name="yufangJiezhong" ColumnName="yufangJiezhong" />
+          <ScalarProperty Name="checkContent" ColumnName="checkContent" />
+          <ScalarProperty Name="pingPqiu" ColumnName="pingPqiu" />
+          <ScalarProperty Name="jiZhu" ColumnName="jiZhu" />
+          <ScalarProperty Name="wuGuan" ColumnName="wuGuan" />
+          <ScalarProperty Name="miNiaoQi" ColumnName="miNiaoQi" />
+          <ScalarProperty Name="xiongBu" ColumnName="xiongBu" />
+          <ScalarProperty Name="siZhi" ColumnName="siZhi" />
+          <ScalarProperty Name="qiZhi" ColumnName="qiZhi" />
+          <ScalarProperty Name="piZang" ColumnName="piZang" />
+          <ScalarProperty Name="ganZang" ColumnName="ganZang" />
+          <ScalarProperty Name="feiBu" ColumnName="feiBu" />
+          <ScalarProperty Name="xinZang" ColumnName="xinZang" />
+          <ScalarProperty Name="bianTaoti" ColumnName="bianTaoti" />
+          <ScalarProperty Name="lingbajie" ColumnName="lingbajie" />
+          <ScalarProperty Name="skin" ColumnName="skin" />
+          <ScalarProperty Name="yuciNumber" ColumnName="yuciNumber" />
+          <ScalarProperty Name="yaciNumber" ColumnName="yaciNumber" />
+          <ScalarProperty Name="kouQiang" ColumnName="kouQiang" />
+          <ScalarProperty Name="checkbi" ColumnName="checkbi" />
+          <ScalarProperty Name="rightlisten" ColumnName="rightlisten" />
+          <ScalarProperty Name="lefterlisten" ColumnName="lefterlisten" />
+          <ScalarProperty Name="righter" ColumnName="righter" />
+          <ScalarProperty Name="lefter" ColumnName="lefter" />
+          <ScalarProperty Name="xieshi" ColumnName="xieshi" />
+          <ScalarProperty Name="rightyanshili" ColumnName="rightyanshili" />
+          <ScalarProperty Name="leftyanshili" ColumnName="leftyanshili" />
+          <ScalarProperty Name="rightyan" ColumnName="rightyan" />
+          <ScalarProperty Name="leftyan" ColumnName="leftyan" />
+          <ScalarProperty Name="yuCeHeight" ColumnName="yuCeHeight" />
+          <ScalarProperty Name="checkZiping" ColumnName="checkZiping" />
+          <ScalarProperty Name="checkIQ" ColumnName="checkIQ" />
+          <ScalarProperty Name="checkQianlu" ColumnName="checkQianlu" />
+          <ScalarProperty Name="checkTunwei" ColumnName="checkTunwei" />
+          <ScalarProperty Name="checkZuogao" ColumnName="checkZuogao" />
+          <ScalarProperty Name="checkTouwei" ColumnName="checkTouwei" />
+          <ScalarProperty Name="checkWeight" ColumnName="checkWeight" />
+          <ScalarProperty Name="checkHeight" ColumnName="checkHeight" />
+          <ScalarProperty Name="doctorName" ColumnName="doctorName" />
+          <ScalarProperty Name="checkDay" ColumnName="checkDay" />
+          <ScalarProperty Name="checkFactAge" ColumnName="checkFactAge" />
+          <ScalarProperty Name="checkAge" ColumnName="checkAge" />
+          <ScalarProperty Name="childId" ColumnName="childId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
